@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675">
+  <defs>
+    <linearGradient id="grad7" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.7" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#grad7)" />
+  <circle cx="260" cy="320" r="110" fill="#8b5cf6" opacity="0.16" />
+  <circle cx="660" cy="280" r="90" fill="#22d3ee" opacity="0.22" />
+  <circle cx="940" cy="400" r="140" fill="#eab308" opacity="0.14" />
+  <text x="50%" y="58%" dominant-baseline="middle" text-anchor="middle" font-family="Inter, sans-serif" font-size="28" fill="#f8fafc">Fast-paced scoring interface</text>
+</svg>

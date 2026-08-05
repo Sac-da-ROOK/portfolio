@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675">
+  <defs>
+    <linearGradient id="grad4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#111827" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#grad4)" />
+  <path d="M180 480 C320 360 520 300 680 360 C840 420 920 460 1040 260" stroke="#38bdf8" stroke-width="18" fill="none" opacity="0.9" />
+  <circle cx="184" cy="478" r="18" fill="#facc15" />
+  <circle cx="1044" cy="256" r="18" fill="#10b981" />
+  <text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" font-family="Inter, sans-serif" font-size="30" fill="#e2e8f0">Route planning UI</text>
+</svg>

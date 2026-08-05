@@ -1,0 +1,59 @@
+"use client";
+
+import GithubRepoCard from "@/components/GithubRepoCard";
+import RepoSkeleton from "@/components/RepoSkeleton";
+import { useGithubRepos } from "@/hooks/useGithubRepos";
+import type { GithubRepo } from "@/lib/github";
+
+const featuredRepoNames = ["ultimate-type", "omnimath", "math-sprint-arena"];
+
+const sortRepos = (repos: GithubRepo[]) => {
+    return [...repos].sort((a, b) => {
+        const aFeatured = featuredRepoNames.includes(a.name.toLowerCase());
+        const bFeatured = featuredRepoNames.includes(b.name.toLowerCase());
+        if (aFeatured !== bFeatured) return aFeatured ? -1 : 1;
+        return b.updated_at.localeCompare(a.updated_at);
+    });
+};
+
+export default function GithubRepos() {
+    const { data, error, isLoading } = useGithubRepos();
+    const repos = data ? sortRepos(data).slice(0, 6) : [];
+    const displayedRepos = isLoading || error ? [] : repos;
+
+    return (
+        <section id="github-repos" className="border-t border-white/10 bg-[#050816] px-6 py-24 sm:px-8 lg:px-12" aria-labelledby="github-repos-heading">
+            <div className="mx-auto max-w-6xl">
+                <div className="max-w-2xl">
+                    <p className="text-sm font-semibold uppercase tracking-[0.3em] text-cyan-200">GitHub Repositories</p>
+                    <h2 id="github-repos-heading" className="mt-3 text-3xl font-semibold text-white sm:text-4xl">Always up to date with your latest work.</h2>
+                    <p className="mt-6 text-base leading-8 text-slate-300 sm:text-lg">
+                        These public repositories are pulled directly from GitHub so the list stays current with every new push. Featured work is surfaced first, and the newest updates appear next.
+                    </p>
+                </div>
+
+                <div className="mt-12 grid gap-6 lg:grid-cols-2">
+                    {isLoading
+                        ? Array.from({ length: 4 }).map((_, index) => <RepoSkeleton key={index} />)
+                        : error
+                            ? (
+                                <div className="rounded-3xl border border-red-500/20 bg-red-500/5 p-8 text-slate-100 shadow-xl shadow-red-500/10">
+                                    <p className="text-sm font-semibold uppercase tracking-[0.3em] text-red-300">GitHub load error</p>
+                                    <p className="mt-4 text-base leading-7 text-slate-200">{error}</p>
+                                    <p className="mt-3 text-sm text-slate-400">If rate limiting is active, try again later or add a GitHub token to your environment variables.</p>
+                                </div>
+                            )
+                            : repos.length === 0
+                                ? (
+                                    <div className="rounded-3xl border border-white/10 bg-slate-950/80 p-8 text-slate-300 shadow-xl shadow-black/20">
+                                        <p className="text-base leading-7">No public repositories were found. Make sure the configured GitHub username is correct and the account has public projects.</p>
+                                    </div>
+                                )
+                                : displayedRepos.map((repo) => (
+                                    <GithubRepoCard key={repo.id} repo={repo} featured={featuredRepoNames.includes(repo.name.toLowerCase())} />
+                                ))}
+                </div>
+            </div>
+        </section>
+    );
+}

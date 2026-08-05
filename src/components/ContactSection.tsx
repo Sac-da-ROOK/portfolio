@@ -1,0 +1,74 @@
+import ContactForm from "@/components/ContactForm";
+import Section from "@/components/Section";
+
+const socials = [
+    { label: "Email", href: "mailto:hello@example.com", display: "hello@example.com" },
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/yourprofile", display: "LinkedIn" },
+    { label: "GitHub", href: "https://github.com/Sac-da-ROOK", display: "GitHub" },
+];
+
+export default function ContactSection() {
+    return (
+        <Section id="contact" aria-labelledby="contact-heading">
+            <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[1.2fr_1fr] lg:items-start">
+                <div className="relative overflow-hidden rounded-[2.5rem] border border-white/10 bg-white/5 p-10 shadow-2xl shadow-black/20 backdrop-blur-xl">
+                    <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-cyan-400/10 to-transparent" />
+                    <p className="text-sm font-semibold uppercase tracking-[0.35em] text-cyan-200">Get in touch</p>
+                    <h2 id="contact-heading" className="mt-4 text-4xl font-semibold text-white sm:text-5xl">Let’s build your next learning experience together.</h2>
+                    <p className="mt-6 text-base leading-8 text-slate-300 sm:text-lg">
+                        I’m available for new freelance opportunities and collaborative projects. If you have a product, course, or interactive tool in mind, I’ll respond quickly with a professional plan.
+                    </p>
+
+                    <div className="mt-10 grid gap-4 rounded-[2rem] border border-white/10 bg-slate-950/60 p-6">
+                        <div className="flex items-center justify-between gap-4 rounded-3xl border border-cyan-400/10 bg-slate-950/80 px-5 py-4">
+                            <div>
+                                <p className="text-sm uppercase tracking-[0.28em] text-slate-400">Availability</p>
+                                <p className="mt-2 text-lg font-semibold text-white">Open for new work</p>
+                            </div>
+                            <span className="inline-flex rounded-full bg-emerald-400/10 px-3 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-emerald-200">Now</span>
+                        </div>
+                        <div className="flex items-center justify-between gap-4 rounded-3xl border border-white/10 bg-slate-950/80 px-5 py-4">
+                            <div>
+                                <p className="text-sm uppercase tracking-[0.28em] text-slate-400">Response time</p>
+                                <p className="mt-2 text-lg font-semibold text-white">1–2 business days</p>
+                            </div>
+                            <span className="inline-flex rounded-full bg-cyan-400/10 px-3 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-cyan-200">Reliable</span>
+                        </div>
+                    </div>
+
+                    <div className="mt-10">
+                        <p className="text-sm uppercase tracking-[0.35em] text-slate-400">Connect</p>
+                        <div className="mt-4 flex flex-col gap-3">
+                            {socials.map((social) => (
+                                <a
+                                    key={social.label}
+                                    href={social.href}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="rounded-3xl border border-white/10 bg-slate-950/80 px-5 py-4 text-sm font-medium text-slate-200 transition duration-300 hover:border-cyan-400/30 hover:bg-slate-900/90 hover:text-white"
+                                >
+                                    <span className="block text-xs uppercase tracking-[0.3em] text-slate-500">{social.label}</span>
+                                    <span className="mt-1 block text-base font-semibold">{social.display}</span>
+                                </a>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+
+                <div className="relative overflow-hidden rounded-[2.5rem] border border-white/10 bg-white/5 p-8 shadow-2xl shadow-black/20 backdrop-blur-xl sm:p-10">
+                    <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-cyan-400/10 to-transparent" />
+                    <div className="relative">
+                        <p className="text-sm font-semibold uppercase tracking-[0.35em] text-cyan-200">Contact form</p>
+                        <h3 className="mt-3 text-3xl font-semibold text-white">Send a message</h3>
+                        <p className="mt-4 text-sm leading-7 text-slate-300">
+                            Use the form to tell me about your project, timeline, or collaboration goals. The experience is designed to feel smooth and polished on every device.
+                        </p>
+                    </div>
+                    <div className="mt-8">
+                        <ContactForm />
+                    </div>
+                </div>
+            </div>
+        </Section>
+    );
+}

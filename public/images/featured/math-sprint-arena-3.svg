@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675">
+  <defs>
+    <linearGradient id="grad8" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.8" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#grad8)" />
+  <path d="M180 520 H1020 L920 220 H300 Z" fill="#14b8a6" opacity="0.12" />
+  <path d="M360 540 C420 360 540 320 700 380 C860 440 920 500 980 360" stroke="#fb923c" stroke-width="18" fill="none" opacity="0.28" />
+  <text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" font-family="Inter, sans-serif" font-size="30" fill="#f8fafc">Live performance dashboard</text>
+</svg>

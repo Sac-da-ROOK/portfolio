@@ -1,0 +1,21 @@
+{
+    "name": "Aarush Srivastava Portfolio",
+    "short_name": "AarushDev",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#020617",
+    "theme_color": "#0f172a",
+    "description": "A premium portfolio showcasing educational software, interactive games, and modern web projects.",
+    "icons": [
+        {
+            "src": "/android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}

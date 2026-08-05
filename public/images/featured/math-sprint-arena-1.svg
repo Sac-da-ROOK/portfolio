@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675">
+  <defs>
+    <linearGradient id="grad6" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#111827" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="675" fill="url(#grad6)" />
+  <rect x="240" y="210" width="720" height="240" rx="32" fill="#0ea5e9" opacity="0.18" />
+  <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Inter, sans-serif" font-size="44" fill="#e2e8f0">Math Sprint Arena</text>
+  <text x="50%" y="60%" dominant-baseline="middle" text-anchor="middle" font-family="Inter, sans-serif" font-size="24" fill="#94a3b8">Rhythmic math practice experience</text>
+</svg>

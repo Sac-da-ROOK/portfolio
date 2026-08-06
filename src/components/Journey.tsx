@@ -53,26 +53,26 @@ const journeyEntries: JourneyEntry[] = [
         image: true
     },
     {
-        year: "2023",
-        title: "OmniMath",
-        description: "Built an adaptive math toolkit that blends practice, visual learning, and constructive feedback.",
-        technologies: ["Next.js", "UI", "Learning"],
-        icon: "atom",
-        image: false
+        year: "June 2026",
+        title: "Building Educational Software",
+        description: "Applied modern web technologies to create interactive learning platforms focused on mathematics, typing, and student productivity.",
+        technologies: ["Next.js", "React", "TypeScript"],
+        icon: "school",
+        image: true
     },
     {
-        year: "2024",
-        title: "Math Sprint Arena",
+        year: "July 2026",
+        title: "Learning React and Next.js",
         description: "Developed a fast-paced math fluency game with rhythm, reward loops, and immersive interaction.",
         technologies: ["JavaScript", "Game Design", "Web"],
         icon: "gamepad",
         image: true
     },
     {
-        year: "2025",
-        title: "Portfolio launch",
-        description: "Published a premium developer portfolio that showcases my growth, projects, and creative vision.",
-        technologies: ["Next.js", "Tailwind CSS", "Vercel"],
+        year: "Present Day",
+        title: "Portfolio launch and JS Mastery",
+        description: "Published a premium developer portfolio that showcases my growth, projects, and creative vision. Continuing to refine my skills in JavaScript, React, and Next.js while exploring new technologies and frameworks.",
+        technologies: ["Next.js", "Tailwind CSS", "JavaScript"],
         icon: "launch",
         image: false
     }

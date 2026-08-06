@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import type { GithubRepo } from "@/lib/github";
 
 export type GithubRepoState = {
@@ -9,12 +9,14 @@ export type GithubRepoState = {
     isLoading: boolean;
 };
 
+const EMPTY_STATE: GithubRepoState = {
+    data: null,
+    error: null,
+    isLoading: true,
+};
+
 export function useGithubRepos() {
-    const [state, setState] = useState<GithubRepoState>({
-        data: null,
-        error: null,
-        isLoading: true,
-    });
+    const [state, setState] = useState<GithubRepoState>(EMPTY_STATE);
 
     useEffect(() => {
         const controller = new AbortController();
@@ -24,6 +26,9 @@ export function useGithubRepos() {
                 const response = await fetch("/api/github", {
                     signal: controller.signal,
                     cache: "no-store",
+                    headers: {
+                        Accept: "application/json",
+                    },
                 });
 
                 if (!response.ok) {
@@ -39,9 +44,9 @@ export function useGithubRepos() {
             }
         }
 
-        load();
+        void load();
         return () => controller.abort();
     }, []);
 
-    return state;
+    return useMemo(() => state, [state.data, state.error, state.isLoading]);
 }

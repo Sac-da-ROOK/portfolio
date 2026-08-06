@@ -10,7 +10,8 @@ type ProjectCardProps = {
     details: string;
     status: string;
     tags: string[];
-    href: string;
+    detailPath: string;
+    liveHref: string;
     repo: string;
     screenshot: string;
     gallery?: string[];
@@ -23,7 +24,8 @@ export default function ProjectCard({
     details,
     status,
     tags,
-    href,
+    detailPath,
+    liveHref,
     repo,
     screenshot,
     gallery = [],
@@ -76,7 +78,10 @@ export default function ProjectCard({
 
                     <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                         <div className="flex flex-wrap gap-3">
-                            <Link href={href} target="_blank" rel="noopener noreferrer" className="rounded-full bg-cyan-400/10 px-4 py-2 text-sm font-semibold text-cyan-200 transition duration-300 hover:bg-cyan-400/20 hover:text-white">
+                            <Link href={detailPath} className="rounded-full bg-cyan-400/10 px-4 py-2 text-sm font-semibold text-cyan-200 transition duration-300 hover:bg-cyan-400/20 hover:text-white">
+                                View Details
+                            </Link>
+                            <Link href={liveHref} target="_blank" rel="noopener noreferrer" className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold text-white transition duration-300 hover:border-cyan-400/30 hover:bg-slate-900/80 hover:text-cyan-200">
                                 Live Demo
                             </Link>
                             <Link href={repo} target="_blank" rel="noopener noreferrer" className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold text-white transition duration-300 hover:border-cyan-400/30 hover:bg-slate-900/80 hover:text-cyan-200">

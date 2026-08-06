@@ -62,8 +62,8 @@ const journeyEntries: JourneyEntry[] = [
     },
     {
         year: "July 2026",
-        title: "Learning React and Next.js",
-        description: "Developed a fast-paced math fluency game with rhythm, reward loops, and immersive interaction.",
+        title: "Learning React & Node.js",
+        description: "Learned React and Node.js to build modern, interactive web applications with scalable architecture.",
         technologies: ["JavaScript", "Game Design", "Web"],
         icon: "gamepad",
         image: true

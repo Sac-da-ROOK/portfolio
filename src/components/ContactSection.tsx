@@ -2,7 +2,7 @@ import ContactForm from "@/components/ContactForm";
 import Section from "@/components/Section";
 
 const socials = [
-    { label: "Email", href: "mailto:hello@example.com", display: "hello@example.com" },
+    { label: "Email", href: "mailto:aarushsrivastava04@gmail.com", display: "Email" },
     { label: "LinkedIn", href: "https://www.linkedin.com/in/yourprofile", display: "LinkedIn" },
     { label: "GitHub", href: "https://github.com/Sac-da-ROOK", display: "GitHub" },
 ];

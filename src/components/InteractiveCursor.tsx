@@ -6,16 +6,15 @@ import { usePrefersReducedMotion } from "@/hooks/usePrefersReducedMotion";
 export default function InteractiveCursor() {
     const [position, setPosition] = useState({ x: 0, y: 0 });
     const [hovering, setHovering] = useState(false);
-    const [canUseFinePointer, setCanUseFinePointer] = useState(() => {
-        if (typeof window === "undefined") return false;
-        return window.matchMedia("(pointer: fine)").matches;
-    });
+    // Keep the initial render deterministic between server and client.
+    const [canUseFinePointer, setCanUseFinePointer] = useState(false);
     const prefersReducedMotion = usePrefersReducedMotion();
     const enabled = canUseFinePointer && !prefersReducedMotion;
 
     useEffect(() => {
         if (typeof window === "undefined") return;
         const mediaQuery = window.matchMedia("(pointer: fine)");
+        setCanUseFinePointer(mediaQuery.matches);
         const onChange = (event: MediaQueryListEvent) => setCanUseFinePointer(event.matches);
         mediaQuery.addEventListener("change", onChange);
         return () => mediaQuery.removeEventListener("change", onChange);

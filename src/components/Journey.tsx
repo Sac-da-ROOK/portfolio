@@ -14,67 +14,67 @@ type JourneyEntry = {
 
 const journeyEntries: JourneyEntry[] = [
     {
-        year: "April 2022",
-        title: "Starting from Scratch",
-        description: "Began with logic puzzles, small scripts, and building confidence through practice.",
-        technologies: ["Scratch", "Block Coding", "Interactive Learning"],
+        year: "2022",
+        title: "Early Curiosity in STEM",
+        description: "Started exploring math puzzles and science challenges, building confidence through consistent practice.",
+        technologies: ["Math Puzzles", "Logic", "Scientific Curiosity"],
         icon: "code",
         image: false
     },
     {
-        year: "July 2024",
-        title: "Transition to Python",
-        description: "Transitioned to Python, learning real programming through projects, practice, and problem-solving.",
-        technologies: ["Python", "Object-Oriented Programming", "Data Structures"],
-        icon: "web",
+        year: "2023",
+        title: "Structured Competition Preparation",
+        description: "Built stronger study systems for mathematics and science competitions with focused review cycles.",
+        technologies: ["AMC 8", "MathCounts", "Science Prep"],
+        icon: "math",
         image: true
     },
     {
-        year: "June 2025",
-        title: "Building Desktop Applications",
-        description: "Created interactive desktop applications with Python, learning GUI design and user interaction.",
-        technologies: ["Python", "Tkinter", "GUI Design"],
-        icon: "math",
+        year: "2024",
+        title: "First Robotics Builds",
+        description: "Started designing and improving robotic prototypes, learning iteration, testing, and teamwork.",
+        technologies: ["Robotics", "Sensors", "Iteration"],
+        icon: "keyboard",
         image: false
     },
     {
-        year: "October 2025",
-        title: "AI-Assisted Development",
-        description: "Learned to use AI tools to accelerate learning, solve problems, and build increasingly ambitious projects.",
-        technologies: ["React", "TypeScript", "Tailwind CSS"],
+        year: "2025",
+        title: "Science Olympiad Expansion",
+        description: "Expanded across STEM events and improved experimental thinking, documentation, and analysis.",
+        technologies: ["Science Olympiad", "Experiment Design", "Research Notes"],
         icon: "school",
         image: true
     },
     {
-        year: "May 2026",
-        title: "My First Website",
-        description: "Launched a refined math platform focused on analytics, mastery, and speed training.",
-        technologies: ["React", "TypeScript", "Vercel"],
-        icon: "keyboard",
-        image: true
-    },
-    {
-        year: "June 2026",
-        title: "Building Educational Software",
-        description: "Applied modern web technologies to create interactive learning platforms focused on mathematics, typing, and student productivity.",
-        technologies: ["Next.js", "React", "TypeScript"],
-        icon: "school",
-        image: true
-    },
-    {
-        year: "July 2026",
-        title: "Learning React & Node.js",
-        description: "Learned React and Node.js to build modern, interactive web applications with scalable architecture.",
-        technologies: ["JavaScript", "Game Design", "Web"],
+        year: "2025",
+        title: "Chess as Strategic Training",
+        description: "Used tournament play and post-game analysis to strengthen planning, discipline, and decision quality.",
+        technologies: ["Tournament Play", "Endgame Study", "Game Analysis"],
         icon: "gamepad",
         image: true
     },
     {
-        year: "Present Day",
-        title: "Portfolio launch and JS Mastery",
-        description: "Published a premium developer portfolio that showcases my growth, projects, and creative vision. Continuing to refine my skills in JavaScript, React, and Next.js while exploring new technologies and frameworks.",
-        technologies: ["Next.js", "Tailwind CSS", "JavaScript"],
+        year: "2026",
+        title: "Integrated STEM Portfolio",
+        description: "Consolidated projects, achievements, learning logs, and reflections into one structured STEM platform.",
+        technologies: ["Projects", "Competitions", "Learning Journal"],
         icon: "launch",
+        image: true
+    },
+    {
+        year: "Present",
+        title: "Robotics + Math Growth Phase",
+        description: "Focused on stronger competition outcomes, deeper conceptual understanding, and consistent project execution.",
+        technologies: ["Robotics", "Mathematics", "Scientific Thinking"],
+        icon: "atom",
+        image: true
+    },
+    {
+        year: "Next Step",
+        title: "Future STEM Goals",
+        description: "Preparing for advanced competitions, richer research projects, and interdisciplinary problem-solving at a higher level.",
+        technologies: ["Advanced Competitions", "Research", "Engineering Mindset"],
+        icon: "school",
         image: false
     }
 ];
@@ -142,9 +142,13 @@ export default function Journey() {
     const prefersReducedMotion = usePrefersReducedMotion();
 
     useEffect(() => {
-        if (prefersReducedMotion) {
-            setVisibleCards(journeyEntries.map(() => true));
-        }
+        if (prefersReducedMotion) return;
+
+        const fallback = window.setTimeout(() => {
+            setVisibleCards((prev) => (prev.some(Boolean) ? prev : journeyEntries.map(() => true)));
+        }, 650);
+
+        return () => window.clearTimeout(fallback);
     }, [prefersReducedMotion]);
 
     useEffect(() => {
@@ -197,13 +201,13 @@ export default function Journey() {
     }, []);
 
     return (
-        <section id="journey" ref={sectionRef} className="relative overflow-hidden border-t border-white/10 bg-[#050816] px-6 py-24 sm:px-8 lg:px-12" aria-labelledby="journey-heading">
+        <section id="journey" ref={sectionRef} className="section-shell px-6 py-12 sm:px-8 sm:py-16 lg:px-12 lg:py-20" aria-labelledby="journey-heading">
             <div className="mx-auto max-w-6xl">
                 <div className="max-w-2xl">
-                    <p className="text-sm font-semibold uppercase tracking-[0.3em] text-amber-200">Development Journey</p>
-                    <h2 id="journey-heading" className="mt-3 text-3xl font-semibold text-white sm:text-4xl">A story of growth, experimentation, and purposeful creation.</h2>
-                    <p className="mt-6 text-base leading-8 text-slate-300 sm:text-lg">
-                        This timeline highlights the moments that shaped my developer path, from early experiments to product-ready learning experiences. Each step reflects a renewed focus on usability, systems thinking, and polished craftsmanship.
+                    <p className="section-kicker text-amber-200">Journey Timeline</p>
+                    <h2 id="journey-heading" className="section-title">A STEM journey shaped by competitions, projects, and reflection.</h2>
+                    <p className="section-lead">
+                        This timeline highlights milestones that shaped my growth across math, science, robotics, chess, and long-term learning. Each step informs how I prepare, perform, and improve.
                     </p>
                 </div>
 
@@ -214,12 +218,12 @@ export default function Journey() {
                     <div className="grid gap-10">
                         {journeyEntries.map((entry, index) => {
                             const isLeft = index % 2 === 0;
-                            const visible = visibleCards[index];
+                            const visible = prefersReducedMotion || visibleCards[index];
                             return (
                                 <article
                                     key={entry.title}
                                     data-index={index}
-                                    className={`interactive-card timeline-card relative rounded-[2rem] border border-white/10 bg-white/5 p-6 shadow-2xl shadow-black/20 transition duration-700 ease-out ui-transition ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+                                    className={`interactive-card glass-card timeline-card relative rounded-[2rem] p-6 transition duration-700 ease-out ui-transition ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
                                         } ${isLeft ? "lg:ml-auto lg:max-w-[45%]" : "lg:mr-auto lg:max-w-[45%]"}`}
                                     aria-labelledby={`journey-title-${index}`}
                                 >
@@ -228,7 +232,7 @@ export default function Journey() {
                                     </div>
 
                                     <div className="flex items-center gap-4">
-                                        <div className="flex h-14 w-14 items-center justify-center rounded-3xl bg-slate-950/90 text-cyan-300 ring-1 ring-white/10 transition group-hover:bg-cyan-400/10">
+                                        <div className="glass-card-soft flex h-14 w-14 items-center justify-center rounded-3xl text-cyan-300 transition group-hover:bg-cyan-400/10">
                                             {journeyIconMap[entry.icon]}
                                         </div>
                                         <div>
@@ -243,7 +247,7 @@ export default function Journey() {
 
                                     <div className="mt-5 flex flex-wrap gap-2">
                                         {entry.technologies.map((tech) => (
-                                            <span key={tech} className="rounded-full border border-white/10 bg-slate-950/70 px-3 py-1 text-xs font-medium uppercase tracking-[0.22em] text-slate-300">
+                                            <span key={tech} className="glass-chip rounded-full px-3 py-1 text-xs font-medium uppercase tracking-[0.22em] text-slate-300">
                                                 {tech}
                                             </span>
                                         ))}

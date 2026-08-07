@@ -1,8 +1,15 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fffdf2;
+  --foreground: #1f2937;
+  --surface-1: rgba(255, 255, 255, 0.88);
+  --surface-2: rgba(255, 251, 214, 0.82);
+  --stroke-soft: rgba(31, 41, 55, 0.36);
+  --stroke-strong: rgba(234, 179, 8, 0.62);
+  --text-muted: #4b5563;
+  --section-glow-cyan: rgba(250, 204, 21, 0.2);
+  --section-glow-indigo: rgba(245, 158, 11, 0.18);
   --ui-ease: cubic-bezier(0.2, 0.8, 0.2, 1);
   --ui-duration-fast: 180ms;
   --ui-duration-base: 320ms;
@@ -17,16 +24,20 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #fffdf2;
+    --foreground: #1f2937;
   }
 }
 
 body {
   margin: 0;
-  background: #050816;
-  color: #f8fafc;
+  background:
+    radial-gradient(circle at 10% 0%, rgba(251, 191, 36, 0.2), transparent 34%),
+    radial-gradient(circle at 90% 0%, rgba(250, 204, 21, 0.24), transparent 40%),
+    linear-gradient(180deg, #fffef7 0%, #fff9db 48%, #fffdf2 100%);
+  color: #111827;
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  letter-spacing: 0.01em;
 }
 
 * {
@@ -41,6 +52,122 @@ html {
   transition-property: color, background-color, border-color, box-shadow, opacity, transform;
   transition-duration: var(--ui-duration-base);
   transition-timing-function: var(--ui-ease);
+}
+
+.section-shell {
+  position: relative;
+  overflow: hidden;
+  border-top: 2px solid rgba(31, 41, 55, 0.18);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(255, 250, 215, 0.92)),
+    radial-gradient(circle at 15% 0%, var(--section-glow-cyan), transparent 44%),
+    radial-gradient(circle at 85% 10%, var(--section-glow-indigo), transparent 52%);
+}
+
+.section-shell::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(rgba(17, 24, 39, 0.08) 0.9px, transparent 0.9px);
+  background-size: 18px 18px;
+  mask-image: linear-gradient(to bottom, black 8%, transparent 88%);
+  opacity: 0.3;
+}
+
+.section-kicker {
+  color: #92400e;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}
+
+.section-title {
+  margin-top: 0.9rem;
+  font-size: clamp(1.95rem, 3vw, 2.7rem);
+  line-height: 1.15;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #111827;
+}
+
+.section-lead {
+  margin-top: 1.2rem;
+  max-width: 66ch;
+  color: #374151;
+  font-size: clamp(1rem, 1.3vw, 1.12rem);
+  line-height: 1.9;
+}
+
+.glass-card {
+  border: 2px solid var(--stroke-soft);
+  background:
+    linear-gradient(160deg, rgba(255, 255, 255, 0.95), rgba(255, 251, 214, 0.92)),
+    linear-gradient(130deg, rgba(250, 204, 21, 0.18), transparent 42%);
+  box-shadow: 8px 8px 0 rgba(17, 24, 39, 0.18), 0 12px 26px rgba(17, 24, 39, 0.14);
+  backdrop-filter: none;
+}
+
+.glass-card-soft {
+  border: 2px solid rgba(31, 41, 55, 0.26);
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.94), rgba(255, 249, 196, 0.88));
+  box-shadow: 5px 5px 0 rgba(17, 24, 39, 0.12);
+  backdrop-filter: none;
+}
+
+.glass-chip {
+  border: 2px solid rgba(31, 41, 55, 0.26);
+  background: rgba(254, 252, 232, 0.9);
+}
+
+.interactive-card:hover {
+  box-shadow: 10px 10px 0 rgba(17, 24, 39, 0.2), 0 14px 24px rgba(17, 24, 39, 0.16);
+}
+
+:is(a, button):focus-visible {
+  outline: 2px solid rgba(180, 83, 9, 0.75);
+  outline-offset: 2px;
+}
+
+.glass-card .text-white,
+.glass-card-soft .text-white,
+.glass-chip .text-white,
+.section-shell .text-white {
+  color: #111827 !important;
+}
+
+.glass-card .text-slate-300,
+.glass-card-soft .text-slate-300,
+.section-shell .text-slate-300 {
+  color: #374151 !important;
+}
+
+.glass-card .text-slate-400,
+.glass-card-soft .text-slate-400,
+.section-shell .text-slate-400 {
+  color: #4b5563 !important;
+}
+
+.section-shell .text-cyan-200,
+.section-shell .text-cyan-100,
+.section-shell .text-cyan-300 {
+  color: #92400e !important;
+}
+
+.section-shell .bg-slate-950\/70,
+.section-shell .bg-slate-950\/80,
+.section-shell .bg-slate-900\/80,
+.section-shell .bg-slate-900\/70,
+.section-shell .bg-white\/5 {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.section-shell .border-white\/10,
+.section-shell .border-white\/12,
+.section-shell .border-cyan-300\/20,
+.section-shell .border-cyan-300\/24 {
+  border-color: rgba(31, 41, 55, 0.24) !important;
 }
 
 a,
@@ -90,7 +217,7 @@ select,
   left: -8%;
   width: 18rem;
   height: 18rem;
-  background: rgba(34, 211, 238, 0.45);
+  background: rgba(251, 191, 36, 0.36);
 }
 
 .ambient-orb-two {
@@ -98,7 +225,7 @@ select,
   right: -6%;
   width: 22rem;
   height: 22rem;
-  background: rgba(129, 140, 248, 0.4);
+  background: rgba(250, 204, 21, 0.34);
   animation-delay: 2s;
 }
 
@@ -107,7 +234,7 @@ select,
   left: 20%;
   width: 16rem;
   height: 16rem;
-  background: rgba(167, 139, 250, 0.35);
+  background: rgba(245, 158, 11, 0.28);
   animation-delay: 4s;
 }
 
@@ -135,6 +262,22 @@ select,
     transform: translate3d(16px, -20px, 0) scale(1.35);
     opacity: 0.75;
   }
+}
+
+@keyframes pageIn {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 6px, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.animate-page-in {
+  animation: pageIn 420ms var(--ui-ease) both;
 }
 
 @media (prefers-reduced-motion: reduce) {

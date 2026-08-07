@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import dynamic from "next/dynamic";
+import { useRouter } from "next/navigation";
 
 const MatrixCanvas = dynamic(() => import("./MatrixCanvas"), { ssr: false });
 const ParticlesCanvas = dynamic(() => import("./ParticlesCanvas"), { ssr: false });
@@ -9,6 +10,7 @@ const ChessAnimation = dynamic(() => import("./ChessAnimation"), { ssr: false })
 const CommandPalette = dynamic(() => import("./CommandPalette"), { ssr: false });
 
 export default function EasterEggs() {
+    const router = useRouter();
     const [matrix, setMatrix] = useState(false);
     const [particles, setParticles] = useState(false);
     const [chess, setChess] = useState(false);
@@ -105,7 +107,7 @@ export default function EasterEggs() {
                     if (parts[0] === "particles") toggle("particles", parts[1] !== "off");
                     if (parts[0] === "chess") toggle("chess", parts[1] !== "off");
                     if (parts[0] === "dark") toggle("darkVariant", parts[1] !== "off");
-                    if (parts[0] === "about") window.location.href = "/secret-about";
+                    if (parts[0] === "about") router.push("/secret-about");
                 }}
             />
         </div>

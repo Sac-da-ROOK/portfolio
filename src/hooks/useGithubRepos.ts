@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import type { GithubRepo } from "@/lib/github";
 
 export type GithubRepoState = {
@@ -48,5 +48,5 @@ export function useGithubRepos() {
         return () => controller.abort();
     }, []);
 
-    return useMemo(() => state, [state.data, state.error, state.isLoading]);
+    return state;
 }

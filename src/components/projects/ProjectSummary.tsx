@@ -7,7 +7,7 @@ type ProjectSummaryProps = {
 
 export default function ProjectSummary({ project }: ProjectSummaryProps) {
     return (
-        <aside className="space-y-10 rounded-[2rem] border border-white/10 bg-slate-950/70 p-8 shadow-2xl shadow-black/20">
+        <aside className="glass-card space-y-10 rounded-[2rem] p-8">
             <div>
                 <h3 className="text-xl font-semibold text-white">Project details</h3>
                 <dl className="mt-6 grid gap-4 text-sm leading-7 text-slate-300">
@@ -19,7 +19,7 @@ export default function ProjectSummary({ project }: ProjectSummaryProps) {
                         <dt className="font-semibold text-white">Tech stack</dt>
                         <dd className="mt-1 flex flex-wrap gap-2">
                             {project.techStack.map((tech) => (
-                                <span key={tech} className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs uppercase tracking-[0.24em] text-slate-300">
+                                <span key={tech} className="glass-chip rounded-full px-3 py-1 text-xs uppercase tracking-[0.24em] text-slate-300">
                                     {tech}
                                 </span>
                             ))}

@@ -1,19 +1,19 @@
 import dynamic from "next/dynamic";
 import About from "@/components/About";
 import AnimatedSection from "@/components/AnimatedSection";
+import BlogSection from "@/components/BlogSection";
+import ChessSection from "@/components/ChessSection";
+import CompetitionsAchievements from "@/components/CompetitionsAchievements";
+import LearningSection from "@/components/LearningSection";
 import Hero from "@/components/Hero";
 import Navbar from "@/components/Navbar";
-import Projects from "@/components/Projects";
+import RoboticsSection from "@/components/RoboticsSection";
 import SectionSkeleton from "@/components/SectionSkeleton";
+import StemGallerySection from "@/components/StemGallerySection";
 
 const Journey = dynamic(() => import("@/components/Journey"), {
   ssr: true,
   loading: () => <SectionSkeleton minHeightClass="min-h-[720px]" />,
-});
-
-const GithubRepos = dynamic(() => import("@/components/GithubRepos"), {
-  ssr: true,
-  loading: () => <SectionSkeleton minHeightClass="min-h-[640px]" />,
 });
 
 const ContactSection = dynamic(() => import("@/components/ContactSection"), {
@@ -30,25 +30,37 @@ export default function Home() {
   return (
     <main id="main-content">
       <Navbar />
-      <div className="pt-24">
+      <div>
         <Hero />
         <AnimatedSection delay={60}>
-          <Projects />
+          <About />
         </AnimatedSection>
-        <AnimatedSection delay={90}>
+        <AnimatedSection delay={80}>
+          <Skills />
+        </AnimatedSection>
+        <AnimatedSection delay={100}>
           <Journey />
         </AnimatedSection>
         <AnimatedSection delay={120}>
-          <GithubRepos />
+          <CompetitionsAchievements />
         </AnimatedSection>
-        <AnimatedSection delay={150}>
-          <ContactSection />
+        <AnimatedSection delay={140}>
+          <LearningSection />
+        </AnimatedSection>
+        <AnimatedSection delay={160}>
+          <ChessSection />
         </AnimatedSection>
         <AnimatedSection delay={180}>
-          <Skills />
+          <RoboticsSection />
         </AnimatedSection>
-        <AnimatedSection delay={210}>
-          <About />
+        <AnimatedSection delay={200}>
+          <StemGallerySection />
+        </AnimatedSection>
+        <AnimatedSection delay={220}>
+          <BlogSection />
+        </AnimatedSection>
+        <AnimatedSection delay={240}>
+          <ContactSection />
         </AnimatedSection>
       </div>
     </main>

@@ -12,16 +12,16 @@ export default function SeoStructuredData() {
                     "https://github.com/Sac-da-ROOK",
                     "https://www.linkedin.com/in/yourprofile"
                 ],
-                "jobTitle": "Student Developer",
-                "description": "Aarush is a student developer building educational software, interactive games, and modern web experiences.",
-                "knowsAbout": ["Next.js", "React", "TypeScript", "Tailwind CSS", "AI", "Educational Technology"]
+                "jobTitle": "Student STEM Researcher",
+                "description": "Aarush is a student focused on mathematics, robotics, chess, and long-term STEM learning through projects and competitions.",
+                "knowsAbout": ["Mathematics", "Robotics", "Science Competitions", "Chess", "Educational Technology", "AI Foundations"]
             },
             {
                 "@type": "WebSite",
                 "@id": `${siteUrl}/#website`,
                 "url": siteUrl,
-                "name": "Aarush Srivastava Portfolio",
-                "description": "A portfolio showcasing educational software, game design, and web development projects by Aarush Srivastava.",
+                "name": "Aarush Srivastava STEM Portfolio",
+                "description": "A premium STEM portfolio showcasing projects, competitions, robotics work, chess progress, and a learning journal.",
                 "publisher": {
                     "@id": `${siteUrl}/#person`
                 }
@@ -31,7 +31,7 @@ export default function SeoStructuredData() {
                 "@id": `${siteUrl}/#breadcrumb`,
                 "itemListElement": [
                     { "@type": "ListItem", "position": 1, "item": { "@id": `${siteUrl}/`, "name": "Home" } },
-                    { "@type": "ListItem", "position": 2, "item": { "@id": `${siteUrl}/#projects`, "name": "Projects" } },
+                    { "@type": "ListItem", "position": 2, "item": { "@id": `${siteUrl}/#competitions`, "name": "Competitions & Achievements" } },
                     { "@type": "ListItem", "position": 3, "item": { "@id": `${siteUrl}/#contact`, "name": "Contact" } }
                 ]
             }

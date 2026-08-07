@@ -29,14 +29,13 @@ export default function ProjectCard({
     liveHref,
     repo,
     screenshot,
-    gallery = [],
     featured = false,
     delay = 0
 }: ProjectCardProps) {
     const [expanded, setExpanded] = useState(false);
 
     return (
-        <article className={`interactive-card group relative overflow-hidden rounded-3xl border bg-slate-950/70 shadow-xl backdrop-blur-xl ui-transition hover:-translate-y-1 ${featured ? "border-2 border-yellow-300/80 shadow-[0_0_60px_rgba(250,204,21,0.18)]" : "border-white/10 hover:border-cyan-400/30 hover:bg-slate-900/80"}`} style={{ transitionDelay: `${delay}ms` }}>
+        <article className={`interactive-card glass-card group relative overflow-hidden rounded-3xl ui-transition hover:-translate-y-1 ${featured ? "border-2 border-yellow-300/80 shadow-[0_0_60px_rgba(250,204,21,0.18)]" : "hover:border-cyan-400/30"}`} style={{ transitionDelay: `${delay}ms` }}>
             <div className="relative overflow-hidden rounded-[28px] border border-white/10 bg-slate-900/80">
                 <div className="relative h-52 overflow-hidden">
                     <Image
@@ -63,7 +62,7 @@ export default function ProjectCard({
                 <div className="flex flex-col gap-3">
                     <div className="flex items-center justify-between gap-3">
                         <h3 className="text-xl font-semibold text-white">{title}</h3>
-                        <span className={`rounded-full px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.24em] ${featured ? "border border-yellow-300/30 bg-yellow-300/10 text-yellow-200" : "border border-white/10 bg-white/5 text-slate-300"}`}>
+                        <span className={`rounded-full px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.24em] ${featured ? "border border-yellow-300/30 bg-yellow-300/10 text-yellow-200" : "glass-chip text-slate-300"}`}>
                             {featured ? "Featured" : "Live"}
                         </span>
                     </div>
@@ -72,7 +71,7 @@ export default function ProjectCard({
 
                     <div className="flex flex-wrap gap-2">
                         {tags.map((tag) => (
-                            <span key={tag} className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-slate-300">
+                            <span key={tag} className="glass-chip rounded-full px-3 py-1 text-xs text-slate-300">
                                 {tag}
                             </span>
                         ))}

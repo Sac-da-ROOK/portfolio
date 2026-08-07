@@ -6,14 +6,20 @@ import { usePrefersReducedMotion } from "@/hooks/usePrefersReducedMotion";
 export default function InteractiveCursor() {
     const [position, setPosition] = useState({ x: 0, y: 0 });
     const [hovering, setHovering] = useState(false);
-    const [enabled, setEnabled] = useState(false);
+    const [canUseFinePointer, setCanUseFinePointer] = useState(() => {
+        if (typeof window === "undefined") return false;
+        return window.matchMedia("(pointer: fine)").matches;
+    });
     const prefersReducedMotion = usePrefersReducedMotion();
+    const enabled = canUseFinePointer && !prefersReducedMotion;
 
     useEffect(() => {
         if (typeof window === "undefined") return;
-        const canUseFinePointer = window.matchMedia("(pointer: fine)").matches;
-        setEnabled(canUseFinePointer && !prefersReducedMotion);
-    }, [prefersReducedMotion]);
+        const mediaQuery = window.matchMedia("(pointer: fine)");
+        const onChange = (event: MediaQueryListEvent) => setCanUseFinePointer(event.matches);
+        mediaQuery.addEventListener("change", onChange);
+        return () => mediaQuery.removeEventListener("change", onChange);
+    }, []);
 
     useEffect(() => {
         if (!enabled) return;
@@ -22,23 +28,28 @@ export default function InteractiveCursor() {
             setPosition({ x: event.clientX, y: event.clientY });
         };
 
-        const onEnter = () => setHovering(true);
-        const onLeave = () => setHovering(false);
+        const selector = "a, button, .interactive-card, input, textarea, select";
 
-        const targets = document.querySelectorAll("a, button, .interactive-card, input, textarea, select");
+        const onOver = (event: MouseEvent) => {
+            const target = event.target as HTMLElement | null;
+            setHovering(Boolean(target?.closest(selector)));
+        };
+
+        const onOut = (event: MouseEvent) => {
+            const related = event.relatedTarget as HTMLElement | null;
+            if (!related?.closest(selector)) {
+                setHovering(false);
+            }
+        };
 
         window.addEventListener("mousemove", onMove);
-        targets.forEach((target) => {
-            target.addEventListener("mouseenter", onEnter);
-            target.addEventListener("mouseleave", onLeave);
-        });
+        document.addEventListener("mouseover", onOver);
+        document.addEventListener("mouseout", onOut);
 
         return () => {
             window.removeEventListener("mousemove", onMove);
-            targets.forEach((target) => {
-                target.removeEventListener("mouseenter", onEnter);
-                target.removeEventListener("mouseleave", onLeave);
-            });
+            document.removeEventListener("mouseover", onOver);
+            document.removeEventListener("mouseout", onOut);
         };
     }, [enabled]);
 

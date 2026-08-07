@@ -17,7 +17,7 @@ export default function ProjectGallery({ project }: ProjectGalleryProps) {
 
             <div className="grid gap-6 sm:grid-cols-2">
                 {project.gallery.map((image) => (
-                    <div key={image} className="relative h-64 overflow-hidden rounded-[1.75rem] border border-white/10 bg-slate-950/70">
+                    <div key={image} className="glass-card relative h-64 overflow-hidden rounded-[1.75rem]">
                         <Image src={image} alt={`${project.title} screenshot`} fill className="object-cover" sizes="(max-width: 640px) 100vw, 50vw" />
                     </div>
                 ))}

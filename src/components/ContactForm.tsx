@@ -1,18 +1,18 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { MAX_MESSAGE_LENGTH, ContactFormValues, validateContactValues } from "@/lib/contact";
 
 type SubmissionState = "idle" | "loading" | "success" | "error";
 
-const initialValues: ContactFormValues = {
+const createInitialValues = (): ContactFormValues => ({
     name: "",
     email: "",
     subject: "",
     message: "",
     botField: "",
-    timestamp: "",
-};
+    timestamp: String(Date.now()),
+});
 
 const fieldLabels: Record<keyof Omit<ContactFormValues, "botField" | "timestamp">, string> = {
     name: "Name",
@@ -22,14 +22,10 @@ const fieldLabels: Record<keyof Omit<ContactFormValues, "botField" | "timestamp"
 };
 
 export default function ContactForm() {
-    const [values, setValues] = useState<ContactFormValues>(initialValues);
+    const [values, setValues] = useState<ContactFormValues>(() => createInitialValues());
     const [errors, setErrors] = useState<Record<string, string>>({});
     const [state, setState] = useState<SubmissionState>("idle");
     const [serverError, setServerError] = useState<string | null>(null);
-
-    useEffect(() => {
-        setValues((prev) => ({ ...prev, timestamp: String(Date.now()) }));
-    }, []);
 
     const messageLength = useMemo(() => values.message.length, [values.message]);
     const remaining = Math.max(0, MAX_MESSAGE_LENGTH - messageLength);
@@ -66,7 +62,7 @@ export default function ContactForm() {
             }
 
             setState("success");
-            setValues(initialValues);
+            setValues(createInitialValues());
             setTimeout(() => setState("idle"), 4200);
         } catch (error) {
             setState("error");

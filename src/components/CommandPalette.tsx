@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
 type Props = {
     open: boolean;
@@ -25,21 +25,24 @@ export default function CommandPalette({ open, onClose, onCommand }: Props) {
     const [value, setValue] = useState("");
     const ref = useRef<HTMLInputElement | null>(null);
 
+    const closePalette = useCallback(() => {
+        setValue("");
+        onClose();
+    }, [onClose]);
+
     useEffect(() => {
         if (open) {
             setTimeout(() => ref.current?.focus(), 50);
-        } else {
-            setValue("");
         }
     }, [open]);
 
     useEffect(() => {
         const handler = (e: KeyboardEvent) => {
-            if (e.key === "Escape") onClose();
+            if (e.key === "Escape") closePalette();
         };
         window.addEventListener("keydown", handler);
         return () => window.removeEventListener("keydown", handler);
-    }, [onClose]);
+    }, [closePalette]);
 
     const filtered = useMemo(() => {
         if (!value) return suggestions;
@@ -50,7 +53,7 @@ export default function CommandPalette({ open, onClose, onCommand }: Props) {
         const c = cmd ?? value;
         if (!c) return;
         onCommand(c);
-        onClose();
+        closePalette();
     };
 
     if (!open) return null;
@@ -70,7 +73,7 @@ export default function CommandPalette({ open, onClose, onCommand }: Props) {
                 </div>
 
                 <div className="mt-4 flex justify-end">
-                    <button onClick={onClose} className="rounded-md bg-white/5 px-3 py-2 text-sm text-white">Close</button>
+                    <button onClick={closePalette} className="rounded-md bg-white/5 px-3 py-2 text-sm text-white">Close</button>
                 </div>
             </div>
         </div>

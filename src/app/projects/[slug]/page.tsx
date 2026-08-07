@@ -49,7 +49,7 @@ export default function ProjectDetailPage({ params }: ProjectPageProps) {
                             <ProjectSection title="Core features">
                                 <div className="mt-6 grid gap-4 sm:grid-cols-2">
                                     {project.features.map((feature) => (
-                                        <div key={feature} className="rounded-[1.5rem] border border-white/10 bg-slate-950/60 p-5">
+                                        <div key={feature} className="glass-card-soft rounded-[1.5rem] p-5">
                                             <p className="text-sm font-semibold text-white">{feature}</p>
                                         </div>
                                     ))}

@@ -21,22 +21,21 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://aarushsrivastava.de
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Aarush Srivastava — Portfolio",
+    default: "Aarush Srivastava — STEM Portfolio",
     template: "%s | Aarush Srivastava",
   },
   description:
-    "A premium student developer portfolio showcasing educational software, interactive games, and modern web experiences.",
-  applicationName: "Aarush Srivastava Portfolio",
+    "A premium personal STEM portfolio featuring projects, competitions, robotics, chess, and long-term learning progress.",
+  applicationName: "Aarush Srivastava STEM Portfolio",
   keywords: [
     "Aarush Srivastava",
-    "student developer",
-    "portfolio",
-    "Next.js",
-    "TypeScript",
-    "Tailwind CSS",
-    "web development",
-    "education",
-    "interactive projects",
+    "student STEM portfolio",
+    "mathematics",
+    "robotics",
+    "science competitions",
+    "chess",
+    "learning journal",
+    "projects",
   ],
   creator: "Aarush Srivastava",
   authors: [
@@ -46,11 +45,11 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Aarush Srivastava — Portfolio",
+    title: "Aarush Srivastava — STEM Portfolio",
     description:
-      "A premium student developer portfolio showcasing educational software, interactive games, and modern web experiences.",
+      "A premium personal STEM portfolio featuring projects, competitions, robotics, chess, and learning milestones.",
     url: siteUrl,
-    siteName: "Aarush Srivastava Portfolio",
+    siteName: "Aarush Srivastava STEM Portfolio",
     type: "website",
     locale: "en_US",
     images: [
@@ -64,9 +63,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Aarush Srivastava — Portfolio",
+    title: "Aarush Srivastava — STEM Portfolio",
     description:
-      "A premium student developer portfolio showcasing educational software, interactive games, and modern web experiences.",
+      "A premium personal STEM portfolio featuring projects, competitions, robotics, chess, and learning milestones.",
     creator: "@Sac_da_ROOK",
     images: [`${siteUrl}/og-image.png`],
   },
@@ -100,8 +99,8 @@ export const viewport = {
   initialScale: 1,
   minimumScale: 1,
   maximumScale: 1,
-  themeColor: "#0f172a",
-  colorScheme: "dark",
+  themeColor: "#fef3c7",
+  colorScheme: "light",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

@@ -27,12 +27,7 @@ export default function AnimatedSection({
 
     useEffect(() => {
         if (!elementRef.current) return;
-
-        if (prefersReducedMotion) {
-            setIsVisible(true);
-            setHasAnimated(true);
-            return;
-        }
+        if (prefersReducedMotion) return;
 
         const observer = new IntersectionObserver(
             ([entry]) => {

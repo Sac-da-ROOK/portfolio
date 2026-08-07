@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState, type ReactNode } from "react";
+import { usePrefersReducedMotion } from "@/hooks/usePrefersReducedMotion";
 
 type JourneyEntry = {
     year: string;
@@ -138,10 +139,17 @@ export default function Journey() {
     const sectionRef = useRef<HTMLElement | null>(null);
     const [visibleCards, setVisibleCards] = useState<boolean[]>(journeyEntries.map(() => false));
     const [fillProgress, setFillProgress] = useState(0);
+    const prefersReducedMotion = usePrefersReducedMotion();
+
+    useEffect(() => {
+        if (prefersReducedMotion) {
+            setVisibleCards(journeyEntries.map(() => true));
+        }
+    }, [prefersReducedMotion]);
 
     useEffect(() => {
         const root = sectionRef.current;
-        if (!root) return;
+        if (!root || prefersReducedMotion) return;
 
         const cards = Array.from(root.querySelectorAll<HTMLDivElement>(".timeline-card"));
         const observer = new IntersectionObserver(
@@ -163,7 +171,7 @@ export default function Journey() {
 
         cards.forEach((card) => observer.observe(card));
         return () => observer.disconnect();
-    }, []);
+    }, [prefersReducedMotion]);
 
     useEffect(() => {
         const root = sectionRef.current;
@@ -201,7 +209,7 @@ export default function Journey() {
 
                 <div className="relative mt-14">
                     <div className="pointer-events-none absolute left-1/2 top-0 h-full w-1 -translate-x-1/2 bg-white/10" aria-hidden="true" />
-                    <div className="pointer-events-none absolute left-1/2 top-0 h-full w-1 -translate-x-1/2 bg-cyan-400/70 origin-top transition-all duration-500" style={{ height: `${fillProgress}%` }} aria-hidden="true" />
+                    <div className="pointer-events-none absolute left-1/2 top-0 h-full w-1 -translate-x-1/2 bg-cyan-400/70 origin-top transition-all duration-500" style={{ height: `${prefersReducedMotion ? 100 : fillProgress}%` }} aria-hidden="true" />
 
                     <div className="grid gap-10">
                         {journeyEntries.map((entry, index) => {
@@ -211,7 +219,7 @@ export default function Journey() {
                                 <article
                                     key={entry.title}
                                     data-index={index}
-                                    className={`timeline-card relative rounded-[2rem] border border-white/10 bg-white/5 p-6 shadow-2xl shadow-black/20 transition duration-700 ease-out ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+                                    className={`interactive-card timeline-card relative rounded-[2rem] border border-white/10 bg-white/5 p-6 shadow-2xl shadow-black/20 transition duration-700 ease-out ui-transition ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
                                         } ${isLeft ? "lg:ml-auto lg:max-w-[45%]" : "lg:mr-auto lg:max-w-[45%]"}`}
                                     aria-labelledby={`journey-title-${index}`}
                                 >

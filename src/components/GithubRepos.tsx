@@ -48,7 +48,7 @@ export default function GithubRepos() {
                         </div>
                     ) : repos.length === 0 ? (
                         <div className="rounded-3xl border border-white/10 bg-slate-950/80 p-8 text-slate-300 shadow-xl shadow-black/20 lg:col-span-2">
-                            <p className="text-base leading-7">No public repositories were found. Make sure the configured GitHub username is correct and the account has public projects.</p>
+                            <p className="text-base leading-7">No repositories matched the current display rules. Try removing blacklist values or publish at least one active public repo with a valid name.</p>
                         </div>
                     ) : (
                         repos.map((repo) => (

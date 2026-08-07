@@ -16,6 +16,7 @@ type ProjectCardProps = {
     screenshot: string;
     gallery?: string[];
     featured?: boolean;
+    delay?: number;
 };
 
 export default function ProjectCard({
@@ -29,12 +30,13 @@ export default function ProjectCard({
     repo,
     screenshot,
     gallery = [],
-    featured = false
+    featured = false,
+    delay = 0
 }: ProjectCardProps) {
     const [expanded, setExpanded] = useState(false);
 
     return (
-        <article className={`group relative overflow-hidden rounded-3xl border bg-slate-950/70 shadow-xl backdrop-blur-xl transition duration-300 hover:-translate-y-1 ${featured ? "border-2 border-yellow-300/80 shadow-[0_0_60px_rgba(250,204,21,0.18)]" : "border-white/10 hover:border-cyan-400/30 hover:bg-slate-900/80"}`}>
+        <article className={`interactive-card group relative overflow-hidden rounded-3xl border bg-slate-950/70 shadow-xl backdrop-blur-xl ui-transition hover:-translate-y-1 ${featured ? "border-2 border-yellow-300/80 shadow-[0_0_60px_rgba(250,204,21,0.18)]" : "border-white/10 hover:border-cyan-400/30 hover:bg-slate-900/80"}`} style={{ transitionDelay: `${delay}ms` }}>
             <div className="relative overflow-hidden rounded-[28px] border border-white/10 bg-slate-900/80">
                 <div className="relative h-52 overflow-hidden">
                     <Image
@@ -78,20 +80,20 @@ export default function ProjectCard({
 
                     <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                         <div className="flex flex-wrap gap-3">
-                            <Link href={detailPath} className="rounded-full bg-cyan-400/10 px-4 py-2 text-sm font-semibold text-cyan-200 transition duration-300 hover:bg-cyan-400/20 hover:text-white">
+                            <Link href={detailPath} className="rounded-full bg-cyan-400/10 px-4 py-2 text-sm font-semibold text-cyan-200 ui-transition hover:bg-cyan-400/20 hover:text-white">
                                 View Details
                             </Link>
-                            <Link href={liveHref} target="_blank" rel="noopener noreferrer" className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold text-white transition duration-300 hover:border-cyan-400/30 hover:bg-slate-900/80 hover:text-cyan-200">
+                            <Link href={liveHref} target="_blank" rel="noopener noreferrer" className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold text-white ui-transition hover:border-cyan-400/30 hover:bg-slate-900/80 hover:text-cyan-200">
                                 Live Demo
                             </Link>
-                            <Link href={repo} target="_blank" rel="noopener noreferrer" className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold text-white transition duration-300 hover:border-cyan-400/30 hover:bg-slate-900/80 hover:text-cyan-200">
+                            <Link href={repo} target="_blank" rel="noopener noreferrer" className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold text-white ui-transition hover:border-cyan-400/30 hover:bg-slate-900/80 hover:text-cyan-200">
                                 GitHub
                             </Link>
                         </div>
                         <button
                             type="button"
                             onClick={() => setExpanded((prev) => !prev)}
-                            className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold text-slate-200 transition duration-300 hover:bg-white/10 hover:text-white"
+                            className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold text-slate-200 ui-transition hover:bg-white/10 hover:text-white"
                         >
                             {expanded ? "Show Less" : "Read More"}
                             <span className={`transition-transform ${expanded ? "rotate-180" : "rotate-0"}`}>

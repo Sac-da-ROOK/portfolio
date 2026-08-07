@@ -4,8 +4,8 @@ import Section from "@/components/Section";
 
 export default function About() {
     return (
-        <Section aria-labelledby="about-heading">
-            <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
+        <Section id="about" aria-labelledby="about-heading">
+            <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
                 <div>
                     <p className="text-sm font-semibold uppercase tracking-[0.3em] text-cyan-200">About</p>
                     <h2 id="about-heading" className="mt-3 text-3xl font-semibold text-white sm:text-4xl">A student builder with a strong interest in meaningful technology.</h2>
@@ -17,11 +17,11 @@ export default function About() {
                     </p>
                 </div>
 
-                <div className="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl">
+                <div className="interactive-card rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl ui-transition hover:-translate-y-1 hover:border-cyan-400/30">
                     <p className="text-sm font-semibold uppercase tracking-[0.3em] text-slate-400">Areas of Focus</p>
                     <div className="mt-6 space-y-3">
                         {interests.map((interest) => (
-                            <div key={interest} className="rounded-2xl border border-white/10 bg-slate-950/60 px-4 py-3 text-sm font-medium text-slate-200">
+                            <div key={interest} className="rounded-2xl border border-white/10 bg-slate-950/60 px-4 py-3 text-sm font-medium text-slate-200 ui-transition hover:border-cyan-400/30 hover:bg-slate-900/80">
                                 {interest}
                             </div>
                         ))}

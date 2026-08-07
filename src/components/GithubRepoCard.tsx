@@ -15,7 +15,7 @@ const formatUpdatedDate = (updatedAt: string) => {
 
 export default function GithubRepoCard({ repo, featured = false }: GithubRepoCardProps) {
     return (
-        <article className={`group relative overflow-hidden rounded-3xl border bg-slate-950/80 p-6 shadow-xl transition duration-300 hover:-translate-y-1 hover:border-cyan-400/30 hover:bg-slate-900/90 ${featured ? "border-cyan-400/40" : "border-white/10"}`}>
+        <article className={`interactive-card group relative overflow-hidden rounded-3xl border bg-slate-950/80 p-6 shadow-xl ui-transition hover:-translate-y-1 hover:border-cyan-400/30 hover:bg-slate-900/90 ${featured ? "border-cyan-400/40" : "border-white/10"}`}>
             <div className="flex items-start justify-between gap-4">
                 <div>
                     <p className="text-sm font-semibold uppercase tracking-[0.28em] text-cyan-300">{repo.language ?? "Unknown"}</p>
@@ -63,7 +63,7 @@ export default function GithubRepoCard({ repo, featured = false }: GithubRepoCar
                     href={repo.html_url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center rounded-full border border-white/10 bg-white/5 px-5 py-3 text-sm font-semibold text-white transition duration-300 hover:border-cyan-400/30 hover:bg-cyan-400/10 hover:text-cyan-200"
+                    className="inline-flex items-center justify-center rounded-full border border-white/10 bg-white/5 px-5 py-3 text-sm font-semibold text-white ui-transition hover:border-cyan-400/30 hover:bg-cyan-400/10 hover:text-cyan-200"
                 >
                     View on GitHub
                 </a>
@@ -72,7 +72,7 @@ export default function GithubRepoCard({ repo, featured = false }: GithubRepoCar
                         href={repo.homepage}
                         target="_blank"
                         rel="noreferrer"
-                        className="inline-flex items-center justify-center rounded-full border border-white/10 bg-slate-900/80 px-5 py-3 text-sm font-semibold text-slate-200 transition duration-300 hover:border-cyan-400/30 hover:bg-slate-900/95 hover:text-white"
+                        className="inline-flex items-center justify-center rounded-full border border-white/10 bg-slate-900/80 px-5 py-3 text-sm font-semibold text-slate-200 ui-transition hover:border-cyan-400/30 hover:bg-slate-900/95 hover:text-white"
                     >
                         Live Demo
                     </a>

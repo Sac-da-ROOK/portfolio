@@ -33,7 +33,15 @@ const normalizeRepo = (item: Record<string, unknown>): GitHubRepository => ({
 const isExcludedRepo = (repo: GitHubRepository, blacklist: string[] = BLACKLISTED_REPOS) => {
     const normalizedName = repo.name.toLowerCase();
     const normalizedFullName = repo.full_name.toLowerCase();
-    return repo.archived || repo.disabled || repo.fork || repo.private || repo.is_template || blacklist.some((name) => normalizedName === name || normalizedFullName.includes(name));
+
+    const isBlocked = blacklist.some((item) => {
+        const normalized = item.trim().toLowerCase();
+        if (!normalized) return false;
+        if (normalized.includes("/")) return normalizedFullName === normalized;
+        return normalizedName === normalized || normalizedFullName.endsWith(`/${normalized}`);
+    });
+
+    return repo.archived || repo.disabled || repo.fork || repo.private || repo.is_template || isBlocked;
 };
 
 const getSortWeight = (repo: GitHubRepository) => {

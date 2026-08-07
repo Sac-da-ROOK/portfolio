@@ -3,7 +3,7 @@ import { fetchGithubRepos } from "@/lib/github";
 
 const GITHUB_USERNAME = process.env.GITHUB_USERNAME ?? "Sac-da-ROOK";
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
-const BLACKLIST = (process.env.GITHUB_REPO_BLACKLIST ?? "portfolio,sac-da-rook")
+const BLACKLIST = (process.env.GITHUB_REPO_BLACKLIST ?? "portfolio")
     .split(",")
     .map((item) => item.trim())
     .filter(Boolean);

@@ -78,7 +78,7 @@ export default function ContactForm() {
         <form className="grid gap-6" onSubmit={handleSubmit} noValidate>
             <div className="grid gap-6 md:grid-cols-2">
                 {(["name", "email", "subject"] as const).map((field) => (
-                    <label key={field} className="group relative block overflow-hidden rounded-3xl border border-white/10 bg-slate-950/80 p-4 transition duration-300 focus-within:border-cyan-400/50 focus-within:ring-2 focus-within:ring-cyan-400/20">
+                    <label key={field} className="group relative block overflow-hidden rounded-3xl border border-white/10 bg-slate-950/80 p-4 ui-transition focus-within:border-cyan-400/50 focus-within:ring-2 focus-within:ring-cyan-400/20">
                         <span className="pointer-events-none absolute left-4 top-4 text-sm uppercase tracking-[0.3em] text-slate-400 transition-all duration-200 group-focus-within:-translate-y-5 group-focus-within:scale-90">
                             {fieldLabels[field]}
                         </span>
@@ -98,7 +98,7 @@ export default function ContactForm() {
                 ))}
             </div>
 
-            <label className="group relative block overflow-hidden rounded-3xl border border-white/10 bg-slate-950/80 p-4 transition duration-300 focus-within:border-cyan-400/50 focus-within:ring-2 focus-within:ring-cyan-400/20">
+            <label className="group relative block overflow-hidden rounded-3xl border border-white/10 bg-slate-950/80 p-4 ui-transition focus-within:border-cyan-400/50 focus-within:ring-2 focus-within:ring-cyan-400/20">
                 <span className="pointer-events-none absolute left-4 top-4 text-sm uppercase tracking-[0.3em] text-slate-400 transition-all duration-200 group-focus-within:-translate-y-5 group-focus-within:scale-90">
                     Message
                 </span>
@@ -125,7 +125,7 @@ export default function ContactForm() {
                 <input id="bot-field" name="botField" type="text" value={values.botField} onChange={handleChange("botField")} autoComplete="off" />
             </div>
 
-            <button type="submit" disabled={state === "loading"} className="inline-flex items-center justify-center rounded-full bg-cyan-400 px-6 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-slate-950 transition duration-300 hover:bg-cyan-300 disabled:cursor-not-allowed disabled:opacity-60">
+            <button type="submit" disabled={state === "loading"} className="inline-flex items-center justify-center rounded-full bg-cyan-400 px-6 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-slate-950 ui-transition hover:-translate-y-0.5 hover:bg-cyan-300 disabled:cursor-not-allowed disabled:opacity-60">
                 {state === "loading" ? "Sending..." : state === "success" ? "Sent" : "Send Message"}
             </button>
 

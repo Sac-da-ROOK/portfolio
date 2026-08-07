@@ -3,6 +3,9 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --ui-ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --ui-duration-fast: 180ms;
+  --ui-duration-base: 320ms;
 }
 
 @theme inline {
@@ -32,6 +35,23 @@ body {
 
 html {
   scroll-behavior: smooth;
+}
+
+.ui-transition {
+  transition-property: color, background-color, border-color, box-shadow, opacity, transform;
+  transition-duration: var(--ui-duration-base);
+  transition-timing-function: var(--ui-ease);
+}
+
+a,
+button,
+input,
+textarea,
+select,
+.interactive-card {
+  transition-property: color, background-color, border-color, box-shadow, opacity, transform;
+  transition-duration: var(--ui-duration-fast);
+  transition-timing-function: var(--ui-ease);
 }
 
 /* Skip link utilities: hidden by default, visible on focus */
@@ -100,5 +120,34 @@ html {
 
   50% {
     transform: translate3d(20px, -20px, 0) scale(1.06);
+  }
+}
+
+@keyframes particleDrift {
+
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.25;
+  }
+
+  50% {
+    transform: translate3d(16px, -20px, 0) scale(1.35);
+    opacity: 0.75;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }

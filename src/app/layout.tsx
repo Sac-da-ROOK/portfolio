@@ -4,6 +4,11 @@ import "./globals.css";
 import SeoStructuredData from "@/components/SeoStructuredData";
 import PerformanceMonitor from "@/components/PerformanceMonitor";
 import EasterEggs from "@/components/EasterEggs";
+import PageTransitionProvider from "@/components/PageTransitionProvider";
+import ScrollProgressBar from "@/components/ScrollProgressBar";
+import BackToTopButton from "@/components/BackToTopButton";
+import InteractiveCursor from "@/components/InteractiveCursor";
+import AmbientBackground from "@/components/AmbientBackground";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -108,10 +113,14 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="min-h-full flex flex-col">
         <PerformanceMonitor />
         <SeoStructuredData />
+        <ScrollProgressBar />
+        <BackToTopButton />
+        <InteractiveCursor />
+        <AmbientBackground />
         {/* Easter eggs controller (hidden by default) */}
         <EasterEggs />
         <a href="#main-content" className="skip-link sr-only focus:not-sr-only fixed left-4 top-4 z-50 rounded-md bg-white/5 px-3 py-2 text-sm text-white">Skip to main content</a>
-        {children}
+        <PageTransitionProvider>{children}</PageTransitionProvider>
       </body>
     </html>
   );

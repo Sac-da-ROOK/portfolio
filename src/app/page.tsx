@@ -38,9 +38,7 @@ export default function Home() {
         <AnimatedSection delay={80}>
           <Skills />
         </AnimatedSection>
-        <AnimatedSection delay={100}>
-          <Journey />
-        </AnimatedSection>
+        <Journey />
         <AnimatedSection delay={120}>
           <CompetitionsAchievements />
         </AnimatedSection>

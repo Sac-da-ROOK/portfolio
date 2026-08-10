@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Section from "@/components/Section";
 
 const posts = [
@@ -25,9 +26,17 @@ export default function BlogSection() {
                 <p className="section-kicker">Blog</p>
                 <h2 id="blog-heading" className="section-title">Technical notes, reflections, and STEM experiences.</h2>
                 <p className="section-lead">A curated journal for articles, project build logs, competition reflections, and weekly learning snapshots.</p>
+                <div className="mt-6">
+                    <Link
+                        href="/lab-journal"
+                        className="inline-flex min-h-11 items-center justify-center rounded-full border-2 border-slate-900/20 bg-amber-300 px-6 py-3 text-sm font-semibold text-slate-900 ui-transition hover:-translate-y-0.5 hover:bg-amber-200"
+                    >
+                        VIsit the Lab Journal 🧪
+                    </Link>
+                </div>
             </div>
 
-            <div className="mt-10 grid gap-6 md:grid-cols-3">
+            <div className="mt-10 grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
                 {posts.map((post) => (
                     <article key={post.title} className="interactive-card glass-card rounded-3xl p-6 ui-transition hover:-translate-y-1 hover:border-cyan-400/30">
                         <p className="text-[11px] uppercase tracking-[0.27em] text-cyan-200">{post.type}</p>

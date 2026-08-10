@@ -37,7 +37,7 @@ export default function ProjectCard({
     return (
         <article className={`interactive-card glass-card group relative overflow-hidden rounded-3xl ui-transition hover:-translate-y-1 ${featured ? "border-2 border-yellow-300/80 shadow-[0_0_60px_rgba(250,204,21,0.18)]" : "hover:border-cyan-400/30"}`} style={{ transitionDelay: `${delay}ms` }}>
             <div className="relative overflow-hidden rounded-[28px] border border-white/10 bg-slate-900/80">
-                <div className="relative h-52 overflow-hidden">
+                <div className="relative h-44 overflow-hidden sm:h-52">
                     <Image
                         src={screenshot}
                         alt={`${title} screenshot`}
@@ -58,9 +58,9 @@ export default function ProjectCard({
                 )}
             </div>
 
-            <div className="p-6">
+            <div className="p-5 sm:p-6">
                 <div className="flex flex-col gap-3">
-                    <div className="flex items-center justify-between gap-3">
+                    <div className="flex flex-col items-start justify-between gap-3 sm:flex-row sm:items-center">
                         <h3 className="text-xl font-semibold text-white">{title}</h3>
                         <span className={`rounded-full px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.24em] ${featured ? "border border-yellow-300/30 bg-yellow-300/10 text-yellow-200" : "glass-chip text-slate-300"}`}>
                             {featured ? "Featured" : "Live"}
@@ -77,15 +77,15 @@ export default function ProjectCard({
                         ))}
                     </div>
 
-                    <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                    <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between">
                         <div className="flex flex-wrap gap-3">
-                            <Link href={detailPath} className="rounded-full bg-cyan-400/10 px-4 py-2 text-sm font-semibold text-cyan-200 ui-transition hover:bg-cyan-400/20 hover:text-white">
+                            <Link href={detailPath} className="inline-flex min-h-11 items-center justify-center rounded-full bg-cyan-400/10 px-4 py-2 text-sm font-semibold text-cyan-200 ui-transition hover:bg-cyan-400/20 hover:text-white">
                                 View Details
                             </Link>
-                            <Link href={liveHref} target="_blank" rel="noopener noreferrer" className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold text-white ui-transition hover:border-cyan-400/30 hover:bg-slate-900/80 hover:text-cyan-200">
+                            <Link href={liveHref} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center justify-center rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold text-white ui-transition hover:border-cyan-400/30 hover:bg-slate-900/80 hover:text-cyan-200">
                                 Live Demo
                             </Link>
-                            <Link href={repo} target="_blank" rel="noopener noreferrer" className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold text-white ui-transition hover:border-cyan-400/30 hover:bg-slate-900/80 hover:text-cyan-200">
+                            <Link href={repo} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center justify-center rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-semibold text-white ui-transition hover:border-cyan-400/30 hover:bg-slate-900/80 hover:text-cyan-200">
                                 GitHub
                             </Link>
                         </div>

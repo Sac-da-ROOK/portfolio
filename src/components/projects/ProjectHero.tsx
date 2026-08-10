@@ -8,10 +8,10 @@ type ProjectHeroProps = {
 
 export default function ProjectHero({ project }: ProjectHeroProps) {
     return (
-        <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between">
+        <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between lg:gap-8">
             <div className="max-w-3xl">
                 <p className="section-kicker">Project Case Study</p>
-                <h1 id="project-detail-heading" className="section-title text-4xl sm:text-5xl">
+                <h1 id="project-detail-heading" className="section-title text-3xl sm:text-4xl lg:text-5xl">
                     {project.title}
                 </h1>
                 <p className="section-lead">{project.subtitle}</p>
@@ -30,7 +30,7 @@ export default function ProjectHero({ project }: ProjectHeroProps) {
                         href={project.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center rounded-full bg-cyan-400/10 px-5 py-3 text-sm font-semibold text-cyan-200 transition duration-300 hover:bg-cyan-400/20 hover:text-white"
+                        className="inline-flex min-h-11 items-center justify-center rounded-full bg-cyan-400/10 px-5 py-3 text-sm font-semibold text-cyan-200 transition duration-300 hover:bg-cyan-400/20 hover:text-white"
                     >
                         Visit Live App
                     </Link>
@@ -38,7 +38,7 @@ export default function ProjectHero({ project }: ProjectHeroProps) {
                         href={project.repo}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center rounded-full border border-white/10 bg-white/5 px-5 py-3 text-sm font-semibold text-white transition duration-300 hover:border-cyan-400/30 hover:bg-slate-900/80 hover:text-cyan-200"
+                        className="inline-flex min-h-11 items-center justify-center rounded-full border border-white/10 bg-white/5 px-5 py-3 text-sm font-semibold text-white transition duration-300 hover:border-cyan-400/30 hover:bg-slate-900/80 hover:text-cyan-200"
                     >
                         View GitHub
                     </Link>
@@ -46,7 +46,7 @@ export default function ProjectHero({ project }: ProjectHeroProps) {
             </div>
 
             <div className="glass-card overflow-hidden rounded-[2rem] p-1">
-                <div className="relative h-80 w-full overflow-hidden rounded-[1.75rem] bg-slate-900/90">
+                <div className="relative h-64 w-full overflow-hidden rounded-[1.75rem] bg-slate-900/90 sm:h-72 lg:h-80">
                     <Image
                         src={project.screenshot}
                         alt={`${project.title} screenshot`}

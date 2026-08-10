@@ -16,7 +16,7 @@ export default function RoboticsSection() {
                 <p className="section-lead">A place for build logs, photos, videos, source code, and event results.</p>
             </div>
 
-            <div className="mt-10 grid gap-6 lg:grid-cols-3">
+            <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
                 {roboticsProjects.map((project) => (
                     <article key={project.title} className="interactive-card glass-card rounded-3xl p-6 ui-transition hover:-translate-y-1 hover:border-cyan-400/30">
                         <p className="text-[11px] uppercase tracking-[0.28em] text-cyan-200">{project.type}</p>
@@ -29,7 +29,7 @@ export default function RoboticsSection() {
                 ))}
             </div>
 
-            <div className="mt-8 flex flex-wrap gap-3">
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
                 <Link href="#contact" className="rounded-full border border-white/15 bg-white/5 px-5 py-3 text-sm font-semibold text-white backdrop-blur ui-transition hover:border-cyan-400/30 hover:bg-cyan-400/10 hover:text-cyan-100">Collaborate</Link>
                 <a href="https://github.com/Sac-da-ROOK" target="_blank" rel="noreferrer" className="rounded-full border border-white/15 bg-slate-900/80 px-5 py-3 text-sm font-semibold text-slate-200 backdrop-blur ui-transition hover:border-cyan-400/30 hover:text-white">Code Repository</a>
             </div>

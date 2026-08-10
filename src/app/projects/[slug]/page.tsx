@@ -8,17 +8,19 @@ import ProjectSummary from "@/components/projects/ProjectSummary";
 import { getProjectBySlug, getProjectSlugs, metadataForProject } from "@/lib/projects";
 
 type ProjectPageProps = {
-    params: {
+    params: Promise<{
         slug: string;
-    };
+    }>;
 };
 
 export function generateStaticParams() {
     return getProjectSlugs().map((slug) => ({ slug }));
 }
 
-export function generateMetadata({ params }: ProjectPageProps) {
-    const project = getProjectBySlug(params.slug);
+export async function generateMetadata({ params }: ProjectPageProps) {
+    const { slug } = await params;
+    const project = getProjectBySlug(slug);
+
     if (!project) {
         return {
             title: "Project not found | Portfolio",
@@ -29,8 +31,9 @@ export function generateMetadata({ params }: ProjectPageProps) {
     return metadataForProject(project);
 }
 
-export default function ProjectDetailPage({ params }: ProjectPageProps) {
-    const project = getProjectBySlug(params.slug);
+export default async function ProjectDetailPage({ params }: ProjectPageProps) {
+    const { slug } = await params;
+    const project = getProjectBySlug(slug);
 
     if (!project) {
         notFound();

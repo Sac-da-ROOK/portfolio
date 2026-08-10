@@ -7,7 +7,7 @@ type ProjectSummaryProps = {
 
 export default function ProjectSummary({ project }: ProjectSummaryProps) {
     return (
-        <aside className="glass-card space-y-10 rounded-[2rem] p-8">
+        <aside className="glass-card space-y-8 rounded-[2rem] p-6 sm:p-8">
             <div>
                 <h3 className="text-xl font-semibold text-white">Project details</h3>
                 <dl className="mt-6 grid gap-4 text-sm leading-7 text-slate-300">
@@ -46,11 +46,11 @@ export default function ProjectSummary({ project }: ProjectSummaryProps) {
                 </ul>
             </div>
 
-            <div className="flex flex-wrap gap-3">
-                <Link href={project.href} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center rounded-full bg-cyan-400/10 px-5 py-3 text-sm font-semibold text-cyan-200 transition duration-300 hover:bg-cyan-400/20 hover:text-white">
+            <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+                <Link href={project.href} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center justify-center rounded-full bg-cyan-400/10 px-5 py-3 text-sm font-semibold text-cyan-200 transition duration-300 hover:bg-cyan-400/20 hover:text-white">
                     Live Demo
                 </Link>
-                <Link href={project.repo} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center rounded-full border border-white/10 bg-white/5 px-5 py-3 text-sm font-semibold text-white transition duration-300 hover:border-cyan-400/30 hover:bg-slate-900/80 hover:text-cyan-200">
+                <Link href={project.repo} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center justify-center rounded-full border border-white/10 bg-white/5 px-5 py-3 text-sm font-semibold text-white transition duration-300 hover:border-cyan-400/30 hover:bg-slate-900/80 hover:text-cyan-200">
                     GitHub
                 </Link>
             </div>

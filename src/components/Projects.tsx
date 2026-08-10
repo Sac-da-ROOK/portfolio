@@ -10,7 +10,7 @@ export default function Projects() {
                 <h2 id="projects-heading" className="mt-3 text-3xl font-semibold text-white sm:text-4xl">Selected work built with intention.</h2>
             </div>
 
-            <div className="mt-10 grid gap-6 md:grid-cols-3">
+            <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
                 {featuredProjects.map((project, index) => (
                     <ProjectCard
                         key={project.slug}

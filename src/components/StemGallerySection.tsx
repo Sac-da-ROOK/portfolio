@@ -17,7 +17,7 @@ export default function StemGallerySection() {
                 <p className="section-lead">This gallery will host project media, science fair artifacts, and event presentations as the portfolio grows.</p>
             </div>
 
-            <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
+            <div className="mt-10 grid gap-5 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5">
                 {galleryCategories.map((category) => (
                     <article key={category} className="interactive-card glass-card rounded-2xl p-4 text-center ui-transition hover:-translate-y-1 hover:border-cyan-400/30">
                         <p className="text-sm font-semibold uppercase tracking-[0.24em] text-cyan-200">{category}</p>

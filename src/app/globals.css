@@ -31,6 +31,7 @@
 
 body {
   margin: 0;
+  overflow-x: hidden;
   background:
     radial-gradient(circle at 10% 0%, rgba(251, 191, 36, 0.2), transparent 34%),
     radial-gradient(circle at 90% 0%, rgba(250, 204, 21, 0.24), transparent 40%),
@@ -46,6 +47,7 @@ body {
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: clamp(5.5rem, 8vw, 7rem);
 }
 
 .ui-transition {
@@ -278,6 +280,22 @@ select,
 
 .animate-page-in {
   animation: pageIn 420ms var(--ui-ease) both;
+}
+
+@keyframes timelineCardEnter {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 1.25rem, 0) scale(0.985);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+.timeline-card-enter {
+  animation: timelineCardEnter 700ms var(--ui-ease) both;
 }
 
 @media (prefers-reduced-motion: reduce) {

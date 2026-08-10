@@ -139,7 +139,12 @@ export default function Journey() {
     const sectionRef = useRef<HTMLElement | null>(null);
     const [visibleCards, setVisibleCards] = useState<boolean[]>(journeyEntries.map(() => false));
     const [fillProgress, setFillProgress] = useState(0);
+    const [isMounted, setIsMounted] = useState(false);
     const prefersReducedMotion = usePrefersReducedMotion();
+
+    useEffect(() => {
+        setIsMounted(true);
+    }, []);
 
     useEffect(() => {
         if (prefersReducedMotion) return;
@@ -212,47 +217,74 @@ export default function Journey() {
                 </div>
 
                 <div className="relative mt-8 sm:mt-10">
-                    <div className="pointer-events-none absolute left-0 top-0 h-full w-full rounded-[2rem] border border-dashed border-slate-900/10 bg-[linear-gradient(90deg,rgba(255,255,255,0.35)_1px,transparent_1px),linear-gradient(rgba(255,255,255,0.35)_1px,transparent_1px)] bg-[length:24px_24px] opacity-40" aria-hidden="true" />
+                    <div
+                        className="pointer-events-none absolute left-4 top-0 hidden h-full w-px rounded-full bg-slate-900/15 md:left-1/2 md:block md:-translate-x-1/2"
+                        aria-hidden="true"
+                    />
+                    <div
+                        className="pointer-events-none absolute left-4 top-0 h-full w-px rounded-full bg-gradient-to-b from-amber-300 via-amber-400 to-amber-500 transition-[height] duration-700 ease-out sm:left-5 md:left-1/2 md:-translate-x-1/2"
+                        style={{ height: prefersReducedMotion ? "100%" : `${fillProgress}%` }}
+                        aria-hidden="true"
+                    />
 
-                    <div className="relative grid gap-6 sm:gap-8 md:grid-cols-2">
+                    <div className="space-y-8 sm:space-y-10 md:space-y-12">
                         {journeyEntries.map((entry, index) => {
                             const visible = prefersReducedMotion || visibleCards[index];
+                            const isLeft = index % 2 === 0;
+                            const shouldAnimate = isMounted && !prefersReducedMotion && visible;
+
                             return (
                                 <article
                                     key={entry.title}
                                     data-index={index}
-                                    className={`interactive-card glass-card timeline-card relative rounded-[2rem] p-5 sm:p-6 transition duration-700 ease-out ui-transition ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+                                    className="relative grid grid-cols-[2rem_1fr] items-start gap-4 sm:grid-cols-[2.5rem_1fr] md:grid-cols-[minmax(0,1fr)_4.5rem_minmax(0,1fr)] md:items-center md:gap-0"
                                     aria-labelledby={`journey-title-${index}`}
                                 >
-                                    <div className="flex items-center gap-4">
-                                        <div className="glass-card-soft flex h-14 w-14 items-center justify-center rounded-3xl text-cyan-300 transition group-hover:bg-cyan-400/10">
-                                            {journeyIconMap[entry.icon]}
-                                        </div>
-                                        <div>
-                                            <p className="text-sm uppercase tracking-[0.35em] text-slate-400">{entry.year}</p>
-                                            <h3 id={`journey-title-${index}`} className="mt-2 text-xl font-semibold text-white">
-                                                {entry.title}
-                                            </h3>
-                                        </div>
+                                    <div className="relative col-start-1 row-start-1 flex justify-center md:col-start-2 md:pt-6">
+                                        <span
+                                            className={`timeline-node mt-6 h-4 w-4 rounded-full border-2 border-amber-300 bg-white shadow-[0_0_0_6px_rgba(250,204,21,0.16)] transition duration-700 ease-out ${visible ? "scale-100 opacity-100" : "scale-75 opacity-70"}`}
+                                        />
                                     </div>
 
-                                    <p className="mt-4 text-sm leading-7 text-slate-300">{entry.description}</p>
+                                    <div
+                                        className={`timeline-card group relative col-start-2 row-start-1 w-full max-w-none rounded-[2rem] p-5 sm:p-6 transition duration-700 ease-out ui-transition opacity-100 translate-y-0 ${shouldAnimate ? "timeline-card-enter" : ""} ${isLeft ? "md:col-start-1 md:justify-self-end md:pr-10 md:max-w-[34rem]" : "md:col-start-3 md:justify-self-start md:pl-10 md:max-w-[34rem]"}`}
+                                        style={{ transitionDelay: `${index * 60}ms` }}
+                                    >
+                                        <div className="interactive-card glass-card relative overflow-hidden rounded-[2rem] p-5 sm:p-6">
+                                            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(250,204,21,0.1),_transparent_35%),radial-gradient(circle_at_bottom_right,_rgba(14,165,233,0.08),_transparent_30%)] opacity-0 transition duration-500 group-hover:opacity-100" aria-hidden="true" />
+                                            <div className="relative z-10">
+                                                <div className="flex items-center gap-4">
+                                                    <div className="glass-card-soft flex h-14 w-14 shrink-0 items-center justify-center rounded-3xl text-cyan-300 transition group-hover:bg-cyan-400/10">
+                                                        {journeyIconMap[entry.icon]}
+                                                    </div>
+                                                    <div>
+                                                        <p className="text-sm uppercase tracking-[0.35em] text-slate-400">{entry.year}</p>
+                                                        <h3 id={`journey-title-${index}`} className="mt-2 text-xl font-semibold text-white">
+                                                            {entry.title}
+                                                        </h3>
+                                                    </div>
+                                                </div>
 
-                                    <div className="mt-4 flex flex-wrap gap-2">
-                                        {entry.technologies.map((tech) => (
-                                            <span key={tech} className="glass-chip rounded-full px-3 py-1 text-xs font-medium uppercase tracking-[0.22em] text-slate-300">
-                                                {tech}
-                                            </span>
-                                        ))}
-                                    </div>
+                                                <p className="mt-4 text-sm leading-7 text-slate-300">{entry.description}</p>
 
-                                    {entry.image ? (
-                                        <div className="mt-5 overflow-hidden rounded-[1.5rem] border border-white/10 bg-slate-950/70 p-4 shadow-inner shadow-black/20">
-                                            <div className="flex h-28 items-center justify-center rounded-3xl border border-dashed border-slate-700 bg-slate-900/80 text-sm uppercase tracking-[0.3em] text-slate-500">
-                                                image preview
+                                                <div className="mt-4 flex flex-wrap gap-2">
+                                                    {entry.technologies.map((tech) => (
+                                                        <span key={tech} className="glass-chip rounded-full px-3 py-1 text-xs font-medium uppercase tracking-[0.22em] text-slate-300">
+                                                            {tech}
+                                                        </span>
+                                                    ))}
+                                                </div>
+
+                                                {entry.image ? (
+                                                    <div className="mt-5 overflow-hidden rounded-[1.5rem] border border-white/10 bg-slate-950/70 p-4 shadow-inner shadow-black/20">
+                                                        <div className="flex h-28 items-center justify-center rounded-3xl border border-dashed border-slate-700 bg-slate-900/80 text-sm uppercase tracking-[0.3em] text-slate-500">
+                                                            image preview
+                                                        </div>
+                                                    </div>
+                                                ) : null}
                                             </div>
                                         </div>
-                                    ) : null}
+                                    </div>
                                 </article>
                             );
                         })}

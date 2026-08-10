@@ -9,11 +9,11 @@ const socials = [
 export default function ContactSection() {
     return (
         <Section id="contact" aria-labelledby="contact-heading">
-            <div className="grid gap-12 lg:grid-cols-[1.2fr_1fr] lg:items-start">
-                <div className="interactive-card glass-card relative overflow-hidden rounded-[2.5rem] p-10 ui-transition hover:border-cyan-400/30">
+            <div className="grid gap-8 lg:grid-cols-[1.2fr_1fr] lg:items-start">
+                <div className="interactive-card glass-card relative overflow-hidden rounded-[2.5rem] p-6 sm:p-8 lg:p-10 ui-transition hover:border-cyan-400/30">
                     <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-cyan-400/10 to-transparent" />
                     <p className="text-xs font-semibold uppercase tracking-[0.35em] text-cyan-200">Get in touch</p>
-                    <h2 id="contact-heading" className="mt-4 text-4xl font-semibold text-white sm:text-5xl">Let’s connect on STEM ideas and opportunities.</h2>
+                    <h2 id="contact-heading" className="mt-4 text-3xl font-semibold text-white sm:text-4xl lg:text-5xl">Let’s connect on STEM ideas and opportunities.</h2>
                     <p className="mt-6 text-base leading-8 text-slate-300 sm:text-lg">
                         I welcome conversations about competitions, projects, robotics, and collaborative STEM initiatives. I usually respond quickly with thoughtful follow-up.
                     </p>
@@ -58,11 +58,11 @@ export default function ContactSection() {
                     </div>
                 </div>
 
-                <div className="interactive-card glass-card relative overflow-hidden rounded-[2.5rem] p-8 ui-transition hover:border-cyan-400/30 sm:p-10">
+                <div className="interactive-card glass-card relative overflow-hidden rounded-[2.5rem] p-6 ui-transition hover:border-cyan-400/30 sm:p-8 lg:p-10">
                     <div className="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-cyan-400/10 to-transparent" />
                     <div className="relative">
                         <p className="text-xs font-semibold uppercase tracking-[0.35em] text-cyan-200">Contact form</p>
-                        <h3 className="mt-3 text-3xl font-semibold text-white">Send a message</h3>
+                        <h3 className="mt-3 text-2xl font-semibold text-white sm:text-3xl">Send a message</h3>
                         <p className="mt-4 text-sm leading-7 text-slate-300">
                             Use the form to share your question, event, collaboration idea, or feedback about the portfolio.
                         </p>

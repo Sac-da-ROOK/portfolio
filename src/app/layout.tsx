@@ -109,14 +109,13 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${geistSans.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
+      <body className="min-h-full flex flex-col overflow-x-hidden">
         <PerformanceMonitor />
         <SeoStructuredData />
         <ScrollProgressBar />
         <BackToTopButton />
         <InteractiveCursor />
         <AmbientBackground />
-        {/* Easter eggs controller (hidden by default) */}
         <EasterEggs />
         <a href="#main-content" className="skip-link sr-only focus:not-sr-only fixed left-4 top-4 z-50 rounded-md bg-white/5 px-3 py-2 text-sm text-white">Skip to main content</a>
         <PageTransitionProvider>{children}</PageTransitionProvider>

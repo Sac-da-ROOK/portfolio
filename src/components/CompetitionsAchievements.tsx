@@ -81,7 +81,7 @@ export default function CompetitionsAchievements() {
                 </p>
             </div>
 
-            <div className="mt-10 grid gap-5 md:grid-cols-4">
+            <div className="mt-10 grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
                 {timeline.map((item) => (
                     <article key={item.year} className="interactive-card glass-card-soft rounded-2xl p-4 ui-transition hover:-translate-y-1 hover:border-cyan-400/30">
                         <p className="text-[11px] font-semibold uppercase tracking-[0.3em] text-cyan-200">{item.year}</p>
@@ -91,7 +91,7 @@ export default function CompetitionsAchievements() {
                 ))}
             </div>
 
-            <div className="mt-10 grid gap-6 lg:grid-cols-2">
+            <div className="mt-10 grid gap-6 xl:grid-cols-2">
                 {tracks.map((track) => (
                     <article key={track.name} className="interactive-card glass-card rounded-3xl p-6 ui-transition hover:-translate-y-1 hover:border-cyan-400/30">
                         <h3 className="text-xl font-semibold text-white">{track.name}</h3>

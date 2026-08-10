@@ -15,10 +15,10 @@ export default function ProjectGallery({ project }: ProjectGalleryProps) {
                 </p>
             </div>
 
-            <div className="grid gap-6 sm:grid-cols-2">
+            <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
                 {project.gallery.map((image) => (
-                    <div key={image} className="glass-card relative h-64 overflow-hidden rounded-[1.75rem]">
-                        <Image src={image} alt={`${project.title} screenshot`} fill className="object-cover" sizes="(max-width: 640px) 100vw, 50vw" />
+                    <div key={image} className="glass-card relative h-48 overflow-hidden rounded-[1.75rem] sm:h-56 lg:h-64">
+                        <Image src={image} alt={`${project.title} screenshot`} fill className="object-cover" sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 33vw" />
                     </div>
                 ))}
             </div>

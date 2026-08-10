@@ -201,7 +201,7 @@ export default function Journey() {
     }, []);
 
     return (
-        <section id="journey" ref={sectionRef} className="section-shell px-6 py-12 sm:px-8 sm:py-16 lg:px-12 lg:py-20" aria-labelledby="journey-heading">
+        <section id="journey" ref={sectionRef} className="section-shell px-6 py-10 sm:px-8 sm:py-14 lg:px-12 lg:py-16" aria-labelledby="journey-heading">
             <div className="mx-auto max-w-6xl">
                 <div className="max-w-2xl">
                     <p className="section-kicker text-amber-200">Journey Timeline</p>
@@ -211,26 +211,19 @@ export default function Journey() {
                     </p>
                 </div>
 
-                <div className="relative mt-14">
-                    <div className="pointer-events-none absolute left-1/2 top-0 h-full w-1 -translate-x-1/2 bg-white/10" aria-hidden="true" />
-                    <div className="pointer-events-none absolute left-1/2 top-0 h-full w-1 -translate-x-1/2 bg-cyan-400/70 origin-top transition-all duration-500" style={{ height: `${prefersReducedMotion ? 100 : fillProgress}%` }} aria-hidden="true" />
+                <div className="relative mt-8 sm:mt-10">
+                    <div className="pointer-events-none absolute left-0 top-0 h-full w-full rounded-[2rem] border border-dashed border-slate-900/10 bg-[linear-gradient(90deg,rgba(255,255,255,0.35)_1px,transparent_1px),linear-gradient(rgba(255,255,255,0.35)_1px,transparent_1px)] bg-[length:24px_24px] opacity-40" aria-hidden="true" />
 
-                    <div className="grid gap-10">
+                    <div className="relative grid gap-6 sm:gap-8 md:grid-cols-2">
                         {journeyEntries.map((entry, index) => {
-                            const isLeft = index % 2 === 0;
                             const visible = prefersReducedMotion || visibleCards[index];
                             return (
                                 <article
                                     key={entry.title}
                                     data-index={index}
-                                    className={`interactive-card glass-card timeline-card relative rounded-[2rem] p-6 transition duration-700 ease-out ui-transition ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-                                        } ${isLeft ? "lg:ml-auto lg:max-w-[45%]" : "lg:mr-auto lg:max-w-[45%]"}`}
+                                    className={`interactive-card glass-card timeline-card relative rounded-[2rem] p-5 sm:p-6 transition duration-700 ease-out ui-transition ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
                                     aria-labelledby={`journey-title-${index}`}
                                 >
-                                    <div className="absolute left-1/2 top-8 hidden h-6 w-6 -translate-x-1/2 rounded-full border-2 border-white/20 bg-slate-950 shadow-lg shadow-cyan-500/10 lg:block">
-                                        <span className={`absolute inset-0 m-1 rounded-full bg-cyan-400 transition-transform duration-700 ${visible ? "scale-100" : "scale-0"}`} />
-                                    </div>
-
                                     <div className="flex items-center gap-4">
                                         <div className="glass-card-soft flex h-14 w-14 items-center justify-center rounded-3xl text-cyan-300 transition group-hover:bg-cyan-400/10">
                                             {journeyIconMap[entry.icon]}
@@ -243,9 +236,9 @@ export default function Journey() {
                                         </div>
                                     </div>
 
-                                    <p className="mt-5 text-sm leading-7 text-slate-300">{entry.description}</p>
+                                    <p className="mt-4 text-sm leading-7 text-slate-300">{entry.description}</p>
 
-                                    <div className="mt-5 flex flex-wrap gap-2">
+                                    <div className="mt-4 flex flex-wrap gap-2">
                                         {entry.technologies.map((tech) => (
                                             <span key={tech} className="glass-chip rounded-full px-3 py-1 text-xs font-medium uppercase tracking-[0.22em] text-slate-300">
                                                 {tech}
@@ -254,8 +247,8 @@ export default function Journey() {
                                     </div>
 
                                     {entry.image ? (
-                                        <div className="mt-6 overflow-hidden rounded-[1.5rem] border border-white/10 bg-slate-950/70 p-5 shadow-inner shadow-black/20">
-                                            <div className="flex h-40 items-center justify-center rounded-3xl border border-dashed border-slate-700 bg-slate-900/80 text-sm uppercase tracking-[0.3em] text-slate-500">
+                                        <div className="mt-5 overflow-hidden rounded-[1.5rem] border border-white/10 bg-slate-950/70 p-4 shadow-inner shadow-black/20">
+                                            <div className="flex h-28 items-center justify-center rounded-3xl border border-dashed border-slate-700 bg-slate-900/80 text-sm uppercase tracking-[0.3em] text-slate-500">
                                                 image preview
                                             </div>
                                         </div>

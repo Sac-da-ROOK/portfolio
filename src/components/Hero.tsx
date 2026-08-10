@@ -1,5 +1,6 @@
 import Link from "next/link";
 import AnimatedSection from "@/components/AnimatedSection";
+import CurrentChessRating from "@/components/CurrentChessRating";
 
 const highlights = ["Mathematics", "Robotics", "Computer Science", "Chess"];
 
@@ -58,6 +59,7 @@ export default function Hero() {
                                 <p className="mt-1 text-2xl font-semibold text-slate-900">{stat.value}</p>
                             </div>
                         ))}
+                        <CurrentChessRating variant="hero" />
                     </div>
 
                     <div className="mt-10 flex flex-wrap gap-4">

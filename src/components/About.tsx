@@ -44,7 +44,7 @@ export default function About() {
                                     rel="noopener noreferrer"
                                     className="glass-card-soft block rounded-2xl px-4 py-3 text-sm font-medium text-slate-200 ui-transition hover:border-cyan-400/30"
                                 >
-                                    Favorite Subject: {interest}
+                                    Computer Science - click to go to GitHub
                                 </a>
                             ) : (
                                 <div key={interest} className="glass-card-soft rounded-2xl px-4 py-3 text-sm font-medium text-slate-200 ui-transition hover:border-cyan-400/30">

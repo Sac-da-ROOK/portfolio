@@ -7,28 +7,28 @@ const books = [
         href: "https://www.amazon.com/dp/0805062998"
     },
     {
-        title: "How Not to Be Wrong",
-        takeaway: "Mathematical thinking helps evaluate claims, uncertainty, and real-world decisions.",
-        href: "https://www.amazon.com/dp/REPLACE_BOOK_LINK_2"
+        title: "The Joy of x",
+        takeaway: "Mathematical ideas are powerful tools for understanding everyday life, from simple equations to complex systems.",
+        href: "https://www.amazon.com/dp/0544105850"
     },
     {
-        title: "The Pragmatic Programmer",
-        takeaway: "Systems improve when small, consistent quality habits are maintained.",
-        href: "https://www.amazon.com/dp/REPLACE_BOOK_LINK_3"
+        title: "How Not to Be Wrong",
+        takeaway: "Mathematical thinking helps make better decisions by encouraging logical reasoning, probability, and evidence-based conclusions.",
+        href: "https://www.amazon.com/dp/0143127535"
     }
 ];
 
 const courses = [
-    { title: "Course placeholder: Advanced Algebra", href: "https://example.com/course-placeholder-advanced-algebra" },
-    { title: "Course placeholder: Intro to Robotics Systems", href: "https://example.com/course-placeholder-robotics" },
-    { title: "Course placeholder: Data Analysis for Science", href: "https://example.com/course-placeholder-data-analysis" },
-    { title: "Course placeholder: Foundations of AI", href: "https://example.com/course-placeholder-ai" }
+    { title: "Algebra: Elementary to Advanced — Johns Hopkins University", href: "https://www.coursera.org/learn/algebra-i" },
+    { title: "How to Get Into Robotics — Coursera", href: "https://www.coursera.org/learn/how-to-get-into-robotics" },
+    { title: "Google Data Analytics Professional Certificate — Google", href: "https://www.coursera.org/professional-certificates/google-data-analytics" },
+    { title: "AI For Everyone — Andrew Ng / DeepLearning.AI", href: "https://www.coursera.org/learn/ai-for-everyone" }
 ];
 
 const goals = [
-    { title: "Publish weekly STEM learning notes.", href: "https://example.com/goal-placeholder-weekly-notes" },
-    { title: "Complete a deeper calculus problem set track.", href: "https://example.com/goal-placeholder-calculus-track" },
-    { title: "Build one simulation-backed science mini-project each month.", href: "https://example.com/goal-placeholder-simulation-project" }
+    { title: "Publish weekly STEM learning notes.", href: "#blog" },
+    { title: "Complete a deeper calculus problem set track.", href: "#competitions" },
+    { title: "Build one simulation-backed science mini-project each month.", href: "#robotics" }
 ];
 
 export default function LearningSection() {
@@ -47,17 +47,19 @@ export default function LearningSection() {
                     <h3 className="text-xl font-semibold text-white">Books Read & Favorite Ideas</h3>
                     <div className="mt-5 grid gap-4">
                         {books.map((book) => (
-                            <div key={book.title} className="glass-card-soft rounded-2xl p-4">
-                                <a
-                                    href={book.href}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="text-sm font-semibold uppercase tracking-[0.2em] text-cyan-200 ui-transition hover:text-cyan-100"
-                                >
+                            <a
+                                key={book.title}
+                                href={book.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label={`${book.title} on Amazon (opens in a new tab)`}
+                                className="glass-card-soft block rounded-2xl p-4 ui-transition hover:-translate-y-0.5 hover:border-cyan-400/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400/80"
+                            >
+                                <span className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-900 ui-transition hover:text-amber-700">
                                     {book.title}
-                                </a>
-                                <p className="mt-2 text-sm leading-7 text-slate-300">{book.takeaway}</p>
-                            </div>
+                                </span>
+                                <p className="mt-2 text-sm leading-7 text-slate-700">{book.takeaway}</p>
+                            </a>
                         ))}
                     </div>
                 </article>
@@ -66,12 +68,13 @@ export default function LearningSection() {
                     <h3 className="text-xl font-semibold text-white">Courses & Current Goals</h3>
                     <ul className="mt-5 grid gap-3">
                         {courses.map((course) => (
-                            <li key={course.title} className="glass-card-soft rounded-xl px-3 py-2 text-sm text-slate-200">
+                            <li key={course.title} className="glass-card-soft rounded-xl px-3 py-2 text-sm text-slate-800">
                                 <a
                                     href={course.href}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="ui-transition hover:text-white"
+                                    aria-label={`${course.title} (opens in a new tab)`}
+                                    className="block font-medium ui-transition hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-400/80"
                                 >
                                     {course.title}
                                 </a>

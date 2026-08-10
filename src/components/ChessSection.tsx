@@ -1,4 +1,5 @@
 import Section from "@/components/Section";
+import CurrentChessRating from "@/components/CurrentChessRating";
 
 const tournaments = [
     { season: "2026 Spring", event: "Local Scholastic Open", result: "Result placeholder", lesson: "Preparation quality matters as much as opening prep." },
@@ -14,19 +15,7 @@ export default function ChessSection() {
                     <p className="section-kicker">Chess</p>
                     <h2 id="chess-heading" className="section-title">Rating growth, tournament discipline, and strategic thinking.</h2>
                     <div className="glass-card mt-6 rounded-3xl p-6">
-                        <p className="text-xs uppercase tracking-[0.28em] text-slate-400">Current Rating</p>
-                        <p className="mt-2 text-4xl font-semibold text-white">
-                            <a
-                                href="https://example.com/chess-rating-placeholder"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="ui-transition hover:text-cyan-200"
-                            >
-                                0000
-                            </a>{" "}
-                            <span className="text-sm text-slate-400">(placeholder)</span>
-                        </p>
-                        <p className="mt-4 text-sm leading-7 text-slate-300">I track calculation accuracy, opening quality, and endgame conversion after each event.</p>
+                        <CurrentChessRating variant="section" />
                     </div>
                 </div>
 

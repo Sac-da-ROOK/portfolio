@@ -1,0 +1,13 @@
+var R=require("../chunks/ssr/[turbopack]_runtime.js")("server/app/page.js")
+R.c("server/chunks/ssr/[root-of-the-server]__0ylea74._.js")
+R.c("server/chunks/ssr/0kuh_next_dist_1l6xdrd._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__1s6rk1v._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__1lmgs4p._.js")
+R.c("server/chunks/ssr/lab-journal-cms_src_app_layout_tsx_0wktk2f._.js")
+R.c("server/chunks/ssr/0kuh_next_dist_client_components_1x1_0o0._.js")
+R.c("server/chunks/ssr/0kuh_next_dist_client_components_builtin_forbidden_0o-1afo.js")
+R.c("server/chunks/ssr/0kuh_next_dist_client_components_builtin_unauthorized_1vci3_i.js")
+R.c("server/chunks/ssr/0kuh_next_dist_client_components_builtin_global-error_1q38zk6.js")
+R.c("server/chunks/ssr/lab-journal-cms__next-internal_server_app_page_actions_0jfsjwu.js")
+R.m(89531)
+module.exports=R.m(89531).exports

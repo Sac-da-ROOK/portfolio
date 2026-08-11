@@ -1,0 +1,245 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #07111f;
+    color: #f7f7f2;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+main {
+    min-height: 100vh;
+}
+
+.container {
+    width: min(1120px, calc(100% - 2rem));
+    margin: 0 auto;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 20px;
+    padding: 1.25rem;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+.editor-shell {
+    display: grid;
+    gap: 1rem;
+    padding: 1.5rem;
+}
+
+.editor-header {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.editor-eyebrow {
+    margin: 0 0 0.35rem;
+    text-transform: uppercase;
+    letter-spacing: 0.28em;
+    font-size: 0.75rem;
+    color: #8fb3ff;
+}
+
+.editor-title {
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+.editor-subtitle {
+    margin: 0.35rem 0 0;
+    color: #cbd5e1;
+}
+
+.editor-actions {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.editor-select,
+.editor-title-input {
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    background: #0f172a;
+    color: white;
+    border-radius: 12px;
+    padding: 0.75rem 0.9rem;
+}
+
+.editor-primary-button {
+    background: #8fb3ff;
+    color: #07111f;
+    font-weight: 700;
+    border: none;
+    border-radius: 999px;
+    padding: 0.8rem 1rem;
+    cursor: pointer;
+}
+
+.editor-form {
+    display: grid;
+    gap: 1rem;
+}
+
+.editor-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    padding: 0.75rem;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.editor-title-input {
+    min-width: min(260px, 100%);
+}
+
+.toolbar-group {
+    display: flex;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+}
+
+.toolbar-button {
+    width: 2.3rem;
+    height: 2.3rem;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    background: rgba(255, 255, 255, 0.04);
+    color: #f7f7f2;
+    cursor: pointer;
+}
+
+.editor-surface {
+    min-height: 320px;
+    border-radius: 18px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    padding: 1.1rem 1.2rem;
+    background: #fdfcf8;
+    color: #111827;
+    line-height: 1.7;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45);
+}
+
+.editor-surface:focus {
+    outline: none;
+}
+
+.editor-surface h3 {
+    margin: 0 0 0.5rem;
+}
+
+.editor-surface p {
+    margin: 0 0 0.75rem;
+}
+
+.editor-surface blockquote {
+    margin: 0.75rem 0;
+    padding-left: 1rem;
+    border-left: 3px solid #8fb3ff;
+    color: #475569;
+}
+
+.attachment-panel {
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 18px;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.attachment-header h2 {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.attachment-header p {
+    margin: 0.25rem 0 0;
+    color: #cbd5e1;
+}
+
+.attachment-list {
+    display: grid;
+    gap: 0.75rem;
+    margin-top: 0.8rem;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.attachment-card {
+    display: flex;
+    gap: 0.8rem;
+    align-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 14px;
+    padding: 0.7rem;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.attachment-preview {
+    width: 54px;
+    height: 54px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.attachment-placeholder {
+    width: 54px;
+    height: 54px;
+    display: grid;
+    place-items: center;
+    border-radius: 10px;
+    background: rgba(143, 179, 255, 0.2);
+    font-size: 1.4rem;
+}
+
+.attachment-name {
+    font-weight: 700;
+}
+
+.attachment-kind {
+    font-size: 0.8rem;
+    color: #cbd5e1;
+    text-transform: capitalize;
+}
+
+.attachment-empty {
+    color: #cbd5e1;
+    border: 1px dashed rgba(255, 255, 255, 0.16);
+    border-radius: 14px;
+    padding: 1rem;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}

@@ -1,0 +1,12 @@
+var R=require("../../chunks/ssr/[turbopack]_runtime.js")("server/app/_not-found/page.js")
+R.c("server/chunks/ssr/[root-of-the-server]__1y9bc-a._.js")
+R.c("server/chunks/ssr/0kuh_next_dist_1l6xdrd._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__1s6rk1v._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__1lmgs4p._.js")
+R.c("server/chunks/ssr/lab-journal-cms_src_app_layout_tsx_0wktk2f._.js")
+R.c("server/chunks/ssr/0kuh_next_dist_client_components_1x1_0o0._.js")
+R.c("server/chunks/ssr/0kuh_next_dist_client_components_builtin_forbidden_0o-1afo.js")
+R.c("server/chunks/ssr/0kuh_next_dist_client_components_builtin_unauthorized_1vci3_i.js")
+R.c("server/chunks/ssr/lab-journal-cms__next-internal_server_app__not-found_page_actions_1d07zs4.js")
+R.m(53032)
+module.exports=R.m(53032).exports

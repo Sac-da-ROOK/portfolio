@@ -1,15 +1,8 @@
 import Link from "next/link";
 import AnimatedSection from "@/components/AnimatedSection";
 import Navbar from "@/components/Navbar";
-
-type JournalEntry = {
-    category: string;
-    title: string;
-    description: string;
-    format: string;
-    accent: string;
-    notes: string[];
-};
+import { createEntryHref } from "@/lib/journal-reader";
+import { getPublishedJournalEntries, type JournalEntry } from "@/lib/journal";
 
 const journalCategories = [
     "Math",
@@ -20,57 +13,6 @@ const journalCategories = [
     "Competitions",
     "Projects",
     "Learning"
-];
-
-const journalEntries: JournalEntry[] = [
-    {
-        category: "Math",
-        title: "A cleaner way to think about hard problem sets",
-        description: "A notebook-style write-up on the strategies that helped me move from guessing to structured reasoning during timed rounds.",
-        format: "Article",
-        accent: "from-amber-300/20 to-transparent",
-        notes: ["Problem solving", "Patterns", "Timed practice"]
-    },
-    {
-        category: "Science",
-        title: "Testing a school-lab experiment with better measurements",
-        description: "An experiment recap that records the setup, the variables I tracked, and the small changes that improved the result.",
-        format: "Experiment",
-        accent: "from-cyan-300/18 to-transparent",
-        notes: ["Lab notes", "Variables", "Observations"]
-    },
-    {
-        category: "Computer Science",
-        title: "Debugging a project until the logic matched the idea",
-        description: "A project write-up that focuses on what broke, how I tested the fix, and the lessons that carried into the next version.",
-        format: "Project Write-up",
-        accent: "from-slate-200/20 to-transparent",
-        notes: ["Code review", "Testing", "Iteration"]
-    },
-    {
-        category: "Robotics",
-        title: "The adjustments that made the robot drive straighter",
-        description: "A build log about tuning sensors, refining control, and documenting what changed between one round and the next.",
-        format: "Build Log",
-        accent: "from-amber-200/18 to-transparent",
-        notes: ["Sensors", "Control", "Reliability"]
-    },
-    {
-        category: "Chess",
-        title: "What one endgame taught me about patience",
-        description: "A competition reflection that turns a game into a study note about planning, calculation, and mental discipline.",
-        format: "Competition Reflection",
-        accent: "from-cyan-200/16 to-transparent",
-        notes: ["Endgame", "Analysis", "Decision making"]
-    },
-    {
-        category: "Competitions",
-        title: "How I organize prep so the final week feels calmer",
-        description: "A practical learning entry that combines schoolwork, event prep, and the habits that keep me focused under pressure.",
-        format: "Learning Journal",
-        accent: "from-slate-100/18 to-transparent",
-        notes: ["Revision", "Planning", "Reflection"]
-    }
 ];
 
 const mediaPanels = [
@@ -96,7 +38,15 @@ export const metadata = {
     description: "A polished student STEM journal for projects, experiments, competitions, ideas, and lessons learned."
 };
 
-export default function LabJournalPage() {
+async function getJournalEntries(): Promise<JournalEntry[]> {
+    return getPublishedJournalEntries();
+}
+
+export const dynamic = 'force-dynamic';
+
+export default async function LabJournalPage() {
+    const journalEntries = await getJournalEntries();
+
     return (
         <main id="main-content" className="min-h-screen">
             <Navbar />
@@ -195,49 +145,6 @@ export default function LabJournalPage() {
                 </div>
             </section>
 
-            <AnimatedSection delay={60}>
-                <section id="entries" className="section-shell px-6 py-12 sm:px-8 sm:py-16 lg:px-12 lg:py-20" aria-labelledby="entries-heading">
-                    <div className="mx-auto max-w-6xl">
-                        <div className="max-w-3xl">
-                            <p className="section-kicker">Entries</p>
-                            <h2 id="entries-heading" className="section-title">Articles and write-ups arranged like a clean STEM notebook.</h2>
-                            <p className="section-lead">
-                                This journal is built for articles, photos, videos, project write-ups, experiments, competition experiences, and short reflections on what I learned.
-                            </p>
-                        </div>
-
-                        <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-                            {journalEntries.map((entry) => (
-                                <article key={entry.title} className="interactive-card glass-card group relative overflow-hidden rounded-[2rem] p-6 ui-transition hover:-translate-y-1 hover:border-cyan-400/30">
-                                    <div className={`absolute inset-0 bg-gradient-to-br ${entry.accent} opacity-90`} aria-hidden="true" />
-                                    <div className="relative z-10">
-                                        <div className="flex items-center justify-between gap-4">
-                                            <span className="glass-chip rounded-full px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-700">
-                                                {entry.category}
-                                            </span>
-                                            <span className="text-[11px] uppercase tracking-[0.22em] text-slate-500">{entry.format}</span>
-                                        </div>
-
-                                        <h3 className="mt-4 text-2xl font-semibold tracking-[-0.02em] text-slate-900">{entry.title}</h3>
-                                        <p className="mt-4 text-sm leading-7 text-slate-700">{entry.description}</p>
-
-                                        <div className="mt-5 flex flex-wrap gap-2">
-                                            {entry.notes.map((note) => (
-                                                <span key={note} className="glass-chip rounded-full px-3 py-1 text-xs font-medium uppercase tracking-[0.18em] text-slate-700">
-                                                    {note}
-                                                </span>
-                                            ))}
-                                        </div>
-
-                                        <p className="mt-6 text-xs uppercase tracking-[0.24em] text-slate-500">Writing in progress</p>
-                                    </div>
-                                </article>
-                            ))}
-                        </div>
-                    </div>
-                </section>
-            </AnimatedSection>
-
             <AnimatedSection delay={100}>
                 <section className="section-shell px-6 py-12 sm:px-8 sm:py-16 lg:px-12 lg:py-20" aria-labelledby="media-heading">
                     <div className="mx-auto max-w-6xl">
@@ -285,6 +192,57 @@ export default function LabJournalPage() {
                                 ))}
                             </div>
                         </div>
+                    </div>
+                </section>
+            </AnimatedSection>
+
+            <AnimatedSection delay={140}>
+                <section id="entries" className="section-shell px-6 py-12 sm:px-8 sm:py-16 lg:px-12 lg:py-20" aria-labelledby="entries-heading">
+                    <div className="mx-auto max-w-6xl">
+                        <div className="max-w-3xl">
+                            <p className="section-kicker">Entries</p>
+                            <h2 id="entries-heading" className="section-title">Articles and write-ups arranged like a clean STEM notebook.</h2>
+                            <p className="section-lead">
+                                This journal is built for articles, photos, videos, project write-ups, experiments, competition experiences, and short reflections on what I learned.
+                            </p>
+                        </div>
+
+                        {journalEntries.length === 0 ? (
+                            <div className="mt-10 rounded-[2rem] border border-slate-900/10 bg-white/70 p-8 text-sm leading-7 text-slate-700">
+                                No published entries have been synced from the Lab Journal CMS yet.
+                            </div>
+                        ) : (
+                            <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+                                {journalEntries.map((entry) => (
+                                    <Link key={entry.title} href={createEntryHref(entry.title)} target="_blank" rel="noopener noreferrer" className="block">
+                                        <article className="interactive-card glass-card group relative overflow-hidden rounded-[2rem] p-6 ui-transition hover:-translate-y-1 hover:border-cyan-400/30">
+                                            <div className={`absolute inset-0 bg-gradient-to-br ${entry.accent} opacity-90`} aria-hidden="true" />
+                                            <div className="relative z-10">
+                                                <div className="flex items-center justify-between gap-4">
+                                                    <span className="glass-chip rounded-full px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-700">
+                                                        {entry.category}
+                                                    </span>
+                                                    <span className="text-[11px] uppercase tracking-[0.22em] text-slate-500">{entry.format}</span>
+                                                </div>
+
+                                                <h3 className="mt-4 text-2xl font-semibold tracking-[-0.02em] text-slate-900">{entry.title}</h3>
+                                                <p className="mt-4 text-sm leading-7 text-slate-700">{entry.description}</p>
+
+                                                <div className="mt-5 flex flex-wrap gap-2">
+                                                    {entry.notes.map((note) => (
+                                                        <span key={note} className="glass-chip rounded-full px-3 py-1 text-xs font-medium uppercase tracking-[0.18em] text-slate-700">
+                                                            {note}
+                                                        </span>
+                                                    ))}
+                                                </div>
+
+                                                <p className="mt-6 text-xs uppercase tracking-[0.24em] text-slate-500">Open in reader</p>
+                                            </div>
+                                        </article>
+                                    </Link>
+                                ))}
+                            </div>
+                        )}
                     </div>
                 </section>
             </AnimatedSection>

@@ -1,0 +1,10 @@
+{
+  "/(dashboard)/dashboard/new/page": "app/(dashboard)/dashboard/new/page.js",
+  "/(dashboard)/dashboard/page": "app/(dashboard)/dashboard/page.js",
+  "/_global-error/page": "app/_global-error/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/api/notify/route": "app/api/notify/route.js",
+  "/api/posts/[id]/route": "app/api/posts/[id]/route.js",
+  "/api/posts/route": "app/api/posts/route.js",
+  "/page": "app/page.js"
+}

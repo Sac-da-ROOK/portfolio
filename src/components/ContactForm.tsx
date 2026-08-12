@@ -4,17 +4,19 @@ import { useMemo, useState } from "react";
 import { MAX_MESSAGE_LENGTH, ContactFormValues, validateContactValues } from "@/lib/contact";
 
 type SubmissionState = "idle" | "loading" | "success" | "error";
+type ContactTrack = "stem" | "cs";
 
-const createInitialValues = (): ContactFormValues => ({
+const createInitialValues = (track: ContactTrack): ContactFormValues => ({
     name: "",
     email: "",
-    subject: "",
+    subject: track === "stem" ? "STEM collaboration inquiry" : "CS project inquiry",
     message: "",
     botField: "",
     timestamp: String(Date.now()),
+    track,
 });
 
-const fieldLabels: Record<keyof Omit<ContactFormValues, "botField" | "timestamp">, string> = {
+const fieldLabels: Record<keyof Omit<ContactFormValues, "botField" | "timestamp" | "track">, string> = {
     name: "Name",
     email: "Email",
     subject: "Subject",
@@ -22,19 +24,34 @@ const fieldLabels: Record<keyof Omit<ContactFormValues, "botField" | "timestamp"
 };
 
 export default function ContactForm() {
-    const [values, setValues] = useState<ContactFormValues>(() => createInitialValues());
+    const [activeTrack, setActiveTrack] = useState<ContactTrack>("stem");
+    const [forms, setForms] = useState<Record<ContactTrack, ContactFormValues>>({
+        stem: createInitialValues("stem"),
+        cs: createInitialValues("cs"),
+    });
     const [errors, setErrors] = useState<Record<string, string>>({});
     const [state, setState] = useState<SubmissionState>("idle");
     const [serverError, setServerError] = useState<string | null>(null);
+    const values = forms[activeTrack];
 
     const messageLength = useMemo(() => values.message.length, [values.message]);
     const remaining = Math.max(0, MAX_MESSAGE_LENGTH - messageLength);
 
     const handleChange = (name: keyof ContactFormValues) => (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const value = event.target.value;
-        setValues((prev) => ({ ...prev, [name]: value }));
+        setForms((prev) => ({
+            ...prev,
+            [activeTrack]: { ...prev[activeTrack], [name]: value },
+        }));
         setErrors((prev) => ({ ...prev, [name]: "" }));
         setServerError(null);
+    };
+
+    const switchTrack = (track: ContactTrack) => {
+        setActiveTrack(track);
+        setErrors({});
+        setServerError(null);
+        setState("idle");
     };
 
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
@@ -53,7 +70,10 @@ export default function ContactForm() {
             const response = await fetch("/api/contact", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(values),
+                body: JSON.stringify({
+                    ...values,
+                    track: activeTrack,
+                }),
             });
 
             const result = await response.json();
@@ -62,7 +82,10 @@ export default function ContactForm() {
             }
 
             setState("success");
-            setValues(createInitialValues());
+            setForms((prev) => ({
+                ...prev,
+                [activeTrack]: createInitialValues(activeTrack),
+            }));
             setTimeout(() => setState("idle"), 4200);
         } catch (error) {
             setState("error");
@@ -72,6 +95,29 @@ export default function ContactForm() {
 
     return (
         <form className="grid gap-6" onSubmit={handleSubmit} noValidate>
+            <div className="grid gap-3 sm:grid-cols-2">
+                <button
+                    type="button"
+                    onClick={() => switchTrack("stem")}
+                    className={`rounded-full border px-4 py-2 text-xs font-semibold uppercase tracking-[0.28em] ui-transition ${activeTrack === "stem" ? "border-cyan-300/60 bg-cyan-300/20 text-cyan-100" : "border-white/12 bg-slate-900/70 text-slate-300 hover:border-cyan-400/40 hover:text-white"}`}
+                    aria-pressed={activeTrack === "stem"}
+                >
+                    STEM
+                </button>
+                <button
+                    type="button"
+                    onClick={() => switchTrack("cs")}
+                    className={`rounded-full border px-4 py-2 text-xs font-semibold uppercase tracking-[0.28em] ui-transition ${activeTrack === "cs" ? "border-cyan-300/60 bg-cyan-300/20 text-cyan-100" : "border-white/12 bg-slate-900/70 text-slate-300 hover:border-cyan-400/40 hover:text-white"}`}
+                    aria-pressed={activeTrack === "cs"}
+                >
+                    CS
+                </button>
+            </div>
+
+            <div className="rounded-3xl border border-white/10 bg-slate-950/70 px-4 py-3 text-xs uppercase tracking-[0.24em] text-slate-300">
+                {activeTrack === "stem" ? "STEM form selected" : "Computer science form selected"}
+            </div>
+
             <div className="grid gap-6 md:grid-cols-2">
                 {(["name", "email", "subject"] as const).map((field) => (
                     <label key={field} className="group relative block overflow-hidden rounded-3xl border border-white/10 bg-slate-950/80 p-4 ui-transition focus-within:border-cyan-400/50 focus-within:ring-2 focus-within:ring-cyan-400/20">
@@ -111,7 +157,7 @@ export default function ContactForm() {
                     maxLength={MAX_MESSAGE_LENGTH}
                 />
                 <div className="mt-3 flex items-center justify-between text-xs text-slate-500">
-                    {errors.message ? <span id="message-error" className="text-rose-300">{errors.message}</span> : <span className="text-slate-500">Share details about your project or collaboration.</span>}
+                    {errors.message ? <span id="message-error" className="text-rose-300">{errors.message}</span> : <span className="text-slate-500">{activeTrack === "stem" ? "Share details about your STEM event, challenge, or project." : "Share details about your CS app, algorithm, or coding collaboration."}</span>}
                     <span>{remaining} characters left</span>
                 </div>
             </label>

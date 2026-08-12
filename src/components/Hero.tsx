@@ -81,8 +81,14 @@ export default function Hero() {
                 <div className="mt-10 grid gap-4 lg:grid-cols-[0.9fr_1.1fr]">
                     <AnimatedSection className="interactive-card glass-card rounded-3xl p-5 ui-transition hover:-translate-y-1 hover:border-cyan-400/30" delay={70}>
                         <p className="text-xs uppercase tracking-[0.22em] text-slate-600">Profile</p>
-                        <div className="mt-3 flex h-36 items-center justify-center rounded-2xl border-2 border-dashed border-slate-900/35 bg-amber-50 text-center text-xs uppercase tracking-[0.24em] text-slate-600 sm:h-40 lg:h-44">
-                            Profile photo placeholder
+                        <div className="relative mt-3 h-56 overflow-hidden rounded-2xl border-2 border-slate-900/20 bg-amber-50 sm:h-64 lg:h-72">
+                            <img
+                                src="/images/profile/aarush-headshot.png"
+                                alt="Portrait of Aarush Srivastava"
+                                className="h-full w-full object-cover object-[50%_18%]"
+                                loading="eager"
+                                decoding="async"
+                            />
                         </div>
                     </AnimatedSection>
 

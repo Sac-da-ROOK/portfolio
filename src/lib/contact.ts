@@ -3,6 +3,7 @@ export type ContactFormValues = {
     email: string;
     subject: string;
     message: string;
+    track?: "stem" | "cs";
     botField?: string;
     timestamp?: string;
 };
@@ -54,11 +55,11 @@ export function validateContactValues(values: ContactFormValues) {
 }
 
 export async function sendContactMessage(values: ContactFormValues) {
-    const emailTo = process.env.CONTACT_EMAIL_TO;
+    const emailTo = "aarushsrivastava@gmail.com";
     const emailFrom = process.env.CONTACT_EMAIL_FROM ?? "no-reply@portfolio.example";
     const resendApiKey = process.env.RESEND_API_KEY;
 
-    if (!resendApiKey || !emailTo) {
+    if (!resendApiKey) {
         return {
             sent: true,
             message: "Contact form submitted successfully. Configure RESEND_API_KEY and CONTACT_EMAIL_TO for real email delivery.",
@@ -70,6 +71,7 @@ export async function sendContactMessage(values: ContactFormValues) {
       <h1>New portfolio contact</h1>
       <p><strong>Name:</strong> ${values.name}</p>
       <p><strong>Email:</strong> ${values.email}</p>
+            <p><strong>Track:</strong> ${(values.track ?? "stem").toUpperCase()}</p>
       <p><strong>Subject:</strong> ${values.subject}</p>
       <p><strong>Message:</strong></p>
       <p>${values.message.replace(/\n/g, "<br />")}</p>

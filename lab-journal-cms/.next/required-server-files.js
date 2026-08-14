@@ -105,7 +105,7 @@ self.__SERVER_FILES_MANIFEST={
         "transform": "lodash/{{member}}"
       }
     },
-    "outputFileTracingRoot": "C:\\Users\\aarus\\Desktop\\portfolio",
+    "outputFileTracingRoot": "C:\\Users\\aarus\\Desktop\\portfolio\\lab-journal-cms",
     "enablePrerenderSourceMaps": true,
     "cacheComponents": false,
     "cacheLife": {
@@ -320,14 +320,14 @@ self.__SERVER_FILES_MANIFEST={
     "htmlLimitedBots": "[\\w-]+-Google|Google-[\\w-]+|Chrome-Lighthouse|Slurp|DuckDuckBot|baiduspider|yandex|sogou|bitlybot|tumblr|vkShare|quora link preview|redditbot|ia_archiver|Bingbot|BingPreview|applebot|facebookexternalhit|facebookcatalog|Twitterbot|LinkedInBot|Slackbot|Discordbot|WhatsApp|SkypeUriPreview|Yeti|googleweblight",
     "bundlePagesRouterDependencies": false,
     "configFileName": "next.config.ts",
-    "repoRoot": "C:\\Users\\aarus\\Desktop\\portfolio",
+    "repoRoot": "C:\\Users\\aarus\\Desktop\\portfolio\\lab-journal-cms",
     "turbopack": {
-      "root": "C:\\Users\\aarus\\Desktop\\portfolio"
+      "root": "C:\\Users\\aarus\\Desktop\\portfolio\\lab-journal-cms"
     },
     "distDirRoot": ".next"
   },
   "appDir": "C:\\Users\\aarus\\Desktop\\portfolio\\lab-journal-cms",
-  "relativeAppDir": "lab-journal-cms",
+  "relativeAppDir": "",
   "files": [
     ".next\\package.json",
     ".next\\routes-manifest.json",

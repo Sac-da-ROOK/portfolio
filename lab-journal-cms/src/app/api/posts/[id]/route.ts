@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { getPosts, updatePost, updatePostStatus, recallPost } from '../../../../lib/posts';
+import { deletePost, getPosts, recallPost, updatePost, updatePostStatus } from '../../../../lib/posts';
 
 export async function GET(request: Request, { params }: { params: Promise<{ id: string }> }) {
     const { id } = await params;
@@ -32,6 +32,15 @@ export async function PATCH(request: Request, { params }: { params: Promise<{ id
         return NextResponse.json(post ?? { error: 'Not found' }, post ? { status: 200 } : { status: 404 });
     }
 
+    if (body.action === 'delete') {
+        const post = deletePost(id);
+        if (!post) {
+            return NextResponse.json({ error: 'Not found' }, { status: 404 });
+        }
+
+        return NextResponse.json({ success: true, deletedPost: post });
+    }
+
     if (body.action === 'recall') {
         try {
             const post = await recallPost(id, body.code);
@@ -42,4 +51,15 @@ export async function PATCH(request: Request, { params }: { params: Promise<{ id
     }
 
     return NextResponse.json({ error: 'Unknown action' }, { status: 400 });
+}
+
+export async function DELETE(request: Request, { params }: { params: Promise<{ id: string }> }) {
+    const { id } = await params;
+    const post = deletePost(id);
+
+    if (!post) {
+        return NextResponse.json({ error: 'Not found' }, { status: 404 });
+    }
+
+    return NextResponse.json({ success: true, deletedPost: post });
 }

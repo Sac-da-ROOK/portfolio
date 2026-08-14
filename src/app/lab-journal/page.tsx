@@ -46,6 +46,7 @@ export const dynamic = 'force-dynamic';
 
 export default async function LabJournalPage() {
     const journalEntries = await getJournalEntries();
+    const latestArticleLabel = journalEntries[0]?.title ?? "No published articles yet";
 
     return (
         <main id="main-content" className="min-h-screen">
@@ -115,7 +116,7 @@ export default async function LabJournalPage() {
 
                             <div className="mt-8 grid gap-4 sm:grid-cols-3">
                                 {[
-                                    { label: "Latest article", value: "Proofs and practice" },
+                                    { label: "Latest article", value: latestArticleLabel },
                                     { label: "Media ready", value: "Photos and videos" },
                                     { label: "Tone", value: "Academic and personal" }
                                 ].map((item) => (

@@ -38,8 +38,8 @@ export function createEntryHref(title: string) {
 export function readCmsPosts(): CmsPost[] {
     const candidates = [
         path.resolve(process.cwd(), "data", "posts.json"),
-        path.resolve(process.cwd(), "lab-journal-cms", "data", "posts.json"),
         path.resolve(process.cwd(), "..", "data", "posts.json"),
+        path.resolve(process.cwd(), "..", "..", "data", "posts.json"),
     ];
 
     for (const filePath of candidates) {

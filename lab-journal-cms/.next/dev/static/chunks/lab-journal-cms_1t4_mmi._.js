@@ -1269,6 +1269,25 @@ function DashboardPage() {
             setFeedback(error.error || 'Unable to recall article.');
         }
     };
+    const deletePost = async (postId)=>{
+        const confirmed = window.confirm('Delete this article? This action cannot be undone.');
+        if (!confirmed) {
+            return;
+        }
+        const response = await fetch(`/api/posts/${postId}`, {
+            method: 'DELETE'
+        });
+        if (response.ok) {
+            await loadPosts();
+            setActivePostId(null);
+            setFeedback('Article deleted successfully.');
+        } else {
+            const error = await response.json().catch(()=>({
+                    error: 'Unable to delete article.'
+                }));
+            setFeedback(error.error || 'Unable to delete article.');
+        }
+    };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$lab$2d$journal$2d$cms$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
         className: "container",
         style: {
@@ -1297,7 +1316,7 @@ function DashboardPage() {
                                 children: "Dashboard"
                             }, void 0, false, {
                                 fileName: "[project]/lab-journal-cms/src/app/(dashboard)/dashboard/page.tsx",
-                                lineNumber: 79,
+                                lineNumber: 99,
                                 columnNumber: 21
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$lab$2d$journal$2d$cms$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
@@ -1308,13 +1327,13 @@ function DashboardPage() {
                                 children: "Manage journal content"
                             }, void 0, false, {
                                 fileName: "[project]/lab-journal-cms/src/app/(dashboard)/dashboard/page.tsx",
-                                lineNumber: 80,
+                                lineNumber: 100,
                                 columnNumber: 21
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/lab-journal-cms/src/app/(dashboard)/dashboard/page.tsx",
-                        lineNumber: 78,
+                        lineNumber: 98,
                         columnNumber: 17
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$lab$2d$journal$2d$cms$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$lab$2d$journal$2d$cms$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1329,13 +1348,13 @@ function DashboardPage() {
                         children: "New post"
                     }, void 0, false, {
                         fileName: "[project]/lab-journal-cms/src/app/(dashboard)/dashboard/page.tsx",
-                        lineNumber: 82,
+                        lineNumber: 102,
                         columnNumber: 17
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/lab-journal-cms/src/app/(dashboard)/dashboard/page.tsx",
-                lineNumber: 77,
+                lineNumber: 97,
                 columnNumber: 13
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$lab$2d$journal$2d$cms$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -1358,7 +1377,7 @@ function DashboardPage() {
                         }
                     }, void 0, false, {
                         fileName: "[project]/lab-journal-cms/src/app/(dashboard)/dashboard/page.tsx",
-                        lineNumber: 88,
+                        lineNumber: 108,
                         columnNumber: 17
                     }, this),
                     feedback ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$lab$2d$journal$2d$cms$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1368,7 +1387,7 @@ function DashboardPage() {
                         children: feedback
                     }, void 0, false, {
                         fileName: "[project]/lab-journal-cms/src/app/(dashboard)/dashboard/page.tsx",
-                        lineNumber: 95,
+                        lineNumber: 115,
                         columnNumber: 29
                     }, this) : null,
                     filteredPosts.length === 0 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$lab$2d$journal$2d$cms$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1381,7 +1400,7 @@ function DashboardPage() {
                         children: "No journal entries yet. Save a draft and it will appear here instantly."
                     }, void 0, false, {
                         fileName: "[project]/lab-journal-cms/src/app/(dashboard)/dashboard/page.tsx",
-                        lineNumber: 98,
+                        lineNumber: 118,
                         columnNumber: 21
                     }, this) : filteredPosts.map((post)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$lab$2d$journal$2d$cms$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             style: {
@@ -1410,7 +1429,7 @@ function DashboardPage() {
                                                     children: post.title
                                                 }, void 0, false, {
                                                     fileName: "[project]/lab-journal-cms/src/app/(dashboard)/dashboard/page.tsx",
-                                                    lineNumber: 106,
+                                                    lineNumber: 126,
                                                     columnNumber: 37
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$lab$2d$journal$2d$cms$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1421,13 +1440,13 @@ function DashboardPage() {
                                                     children: post.createdAt
                                                 }, void 0, false, {
                                                     fileName: "[project]/lab-journal-cms/src/app/(dashboard)/dashboard/page.tsx",
-                                                    lineNumber: 107,
+                                                    lineNumber: 127,
                                                     columnNumber: 37
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/lab-journal-cms/src/app/(dashboard)/dashboard/page.tsx",
-                                            lineNumber: 105,
+                                            lineNumber: 125,
                                             columnNumber: 33
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$lab$2d$journal$2d$cms$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1440,13 +1459,13 @@ function DashboardPage() {
                                             children: post.status
                                         }, void 0, false, {
                                             fileName: "[project]/lab-journal-cms/src/app/(dashboard)/dashboard/page.tsx",
-                                            lineNumber: 109,
+                                            lineNumber: 129,
                                             columnNumber: 33
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/lab-journal-cms/src/app/(dashboard)/dashboard/page.tsx",
-                                    lineNumber: 104,
+                                    lineNumber: 124,
                                     columnNumber: 29
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$lab$2d$journal$2d$cms$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1469,12 +1488,12 @@ function DashboardPage() {
                                         children: "Manage"
                                     }, void 0, false, {
                                         fileName: "[project]/lab-journal-cms/src/app/(dashboard)/dashboard/page.tsx",
-                                        lineNumber: 113,
+                                        lineNumber: 133,
                                         columnNumber: 33
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/lab-journal-cms/src/app/(dashboard)/dashboard/page.tsx",
-                                    lineNumber: 112,
+                                    lineNumber: 132,
                                     columnNumber: 29
                                 }, this),
                                 activePostId === post.id ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$lab$2d$journal$2d$cms$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1503,7 +1522,7 @@ function DashboardPage() {
                                                 children: "Open in editor"
                                             }, void 0, false, {
                                                 fileName: "[project]/lab-journal-cms/src/app/(dashboard)/dashboard/page.tsx",
-                                                lineNumber: 121,
+                                                lineNumber: 141,
                                                 columnNumber: 41
                                             }, this),
                                             post.status === 'Published' ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$lab$2d$journal$2d$cms$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1525,7 +1544,7 @@ function DashboardPage() {
                                                         }
                                                     }, void 0, false, {
                                                         fileName: "[project]/lab-journal-cms/src/app/(dashboard)/dashboard/page.tsx",
-                                                        lineNumber: 126,
+                                                        lineNumber: 146,
                                                         columnNumber: 49
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$lab$2d$journal$2d$cms$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1543,13 +1562,13 @@ function DashboardPage() {
                                                         children: "Recall article"
                                                     }, void 0, false, {
                                                         fileName: "[project]/lab-journal-cms/src/app/(dashboard)/dashboard/page.tsx",
-                                                        lineNumber: 127,
+                                                        lineNumber: 147,
                                                         columnNumber: 49
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/lab-journal-cms/src/app/(dashboard)/dashboard/page.tsx",
-                                                lineNumber: 125,
+                                                lineNumber: 145,
                                                 columnNumber: 45
                                             }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$lab$2d$journal$2d$cms$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                                 type: "button",
@@ -1566,36 +1585,54 @@ function DashboardPage() {
                                                 children: "Publish"
                                             }, void 0, false, {
                                                 fileName: "[project]/lab-journal-cms/src/app/(dashboard)/dashboard/page.tsx",
-                                                lineNumber: 132,
+                                                lineNumber: 152,
                                                 columnNumber: 45
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$lab$2d$journal$2d$cms$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                type: "button",
+                                                onClick: ()=>deletePost(post.id),
+                                                style: {
+                                                    padding: '0.65rem 0.9rem',
+                                                    borderRadius: 999,
+                                                    background: '#ef4444',
+                                                    color: 'white',
+                                                    fontWeight: 700,
+                                                    border: 'none',
+                                                    cursor: 'pointer'
+                                                },
+                                                children: "Delete article"
+                                            }, void 0, false, {
+                                                fileName: "[project]/lab-journal-cms/src/app/(dashboard)/dashboard/page.tsx",
+                                                lineNumber: 156,
+                                                columnNumber: 41
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/lab-journal-cms/src/app/(dashboard)/dashboard/page.tsx",
-                                        lineNumber: 120,
+                                        lineNumber: 140,
                                         columnNumber: 37
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/lab-journal-cms/src/app/(dashboard)/dashboard/page.tsx",
-                                    lineNumber: 119,
+                                    lineNumber: 139,
                                     columnNumber: 33
                                 }, this) : null
                             ]
                         }, post.id, true, {
                             fileName: "[project]/lab-journal-cms/src/app/(dashboard)/dashboard/page.tsx",
-                            lineNumber: 103,
+                            lineNumber: 123,
                             columnNumber: 25
                         }, this))
                 ]
             }, void 0, true, {
                 fileName: "[project]/lab-journal-cms/src/app/(dashboard)/dashboard/page.tsx",
-                lineNumber: 87,
+                lineNumber: 107,
                 columnNumber: 13
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/lab-journal-cms/src/app/(dashboard)/dashboard/page.tsx",
-        lineNumber: 76,
+        lineNumber: 96,
         columnNumber: 9
     }, this);
 }

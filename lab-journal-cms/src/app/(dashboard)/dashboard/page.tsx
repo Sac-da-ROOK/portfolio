@@ -72,6 +72,26 @@ export default function DashboardPage() {
         }
     };
 
+    const deletePost = async (postId: string) => {
+        const confirmed = window.confirm('Delete this article? This action cannot be undone.');
+        if (!confirmed) {
+            return;
+        }
+
+        const response = await fetch(`/api/posts/${postId}`, {
+            method: 'DELETE',
+        });
+
+        if (response.ok) {
+            await loadPosts();
+            setActivePostId(null);
+            setFeedback('Article deleted successfully.');
+        } else {
+            const error = await response.json().catch(() => ({ error: 'Unable to delete article.' }));
+            setFeedback(error.error || 'Unable to delete article.');
+        }
+    };
+
     return (
         <main className="container" style={{ padding: '3rem 0 5rem' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem', flexWrap: 'wrap' }}>
@@ -133,6 +153,9 @@ export default function DashboardPage() {
                                                 Publish
                                             </button>
                                         )}
+                                        <button type="button" onClick={() => deletePost(post.id)} style={{ padding: '0.65rem 0.9rem', borderRadius: 999, background: '#ef4444', color: 'white', fontWeight: 700, border: 'none', cursor: 'pointer' }}>
+                                            Delete article
+                                        </button>
                                     </div>
                                 </div>
                             ) : null}

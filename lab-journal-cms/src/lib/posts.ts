@@ -12,8 +12,25 @@ export interface JournalPost {
     attachments?: Array<{ id: string; name: string; kind: string; preview?: string }>;
 }
 
-const storageDir = path.resolve(process.cwd(), '..', 'data');
-const storageFile = path.join(storageDir, 'posts.json');
+function resolveSharedPostsFile() {
+    const candidates = [
+        path.resolve(process.cwd(), 'data', 'posts.json'),
+        path.resolve(process.cwd(), '..', 'data', 'posts.json'),
+        path.resolve(process.cwd(), '..', '..', 'data', 'posts.json'),
+    ];
+
+    for (const filePath of candidates) {
+        if (existsSync(filePath)) {
+            return filePath;
+        }
+    }
+
+    // Default to the nearest parent data folder when bootstrapping fresh storage.
+    return path.resolve(process.cwd(), '..', 'data', 'posts.json');
+}
+
+const storageFile = resolveSharedPostsFile();
+const storageDir = path.dirname(storageFile);
 
 let posts: JournalPost[] = loadPostsFromFile();
 
@@ -87,6 +104,17 @@ export function updatePostStatus(id: string, status: PostStatus) {
     const nextPosts = getPosts().map((post) => (post.id === id ? { ...post, status } : post)) as JournalPost[];
     syncPosts(nextPosts);
     return nextPosts.find((post) => post.id === id);
+}
+
+export function deletePost(id: string) {
+    const existing = getPosts().find((post) => post.id === id);
+    if (!existing) {
+        return null;
+    }
+
+    const nextPosts = getPosts().filter((post) => post.id !== id);
+    syncPosts(nextPosts);
+    return existing;
 }
 
 export async function recallPost(id: string, code: string) {

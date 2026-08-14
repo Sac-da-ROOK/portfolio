@@ -1,3 +1,16 @@
 {"timestamp":"00:00:19.621","source":"Server","level":"LOG","message":""}
 {"timestamp":"00:00:19.639","source":"Server","level":"LOG","message":"✓ Generated AGENTS.md and CLAUDE.md for AI agents. Set `agentRules: false` in next.config to disable."}
 {"timestamp":"00:00:48.473","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"00:16:08.827","source":"Server","level":"LOG","message":"Recall email not sent because SMTP credentials are not configured. {}"}
+{"timestamp":"00:16:08.827","source":"Server","level":"LOG","message":"Recall notification queued {}"}
+{"timestamp":"00:16:50.652","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"00:17:42.087","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"00:30:08.563","source":"Server","level":"LOG","message":"✓ Compiled in 504ms"}
+{"timestamp":"01:06:02.779","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"01:07:48.719","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"01:08:55.991","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"01:10:11.173","source":"Server","level":"LOG","message":"Recall email not sent because SMTP credentials are not configured. {}"}
+{"timestamp":"01:10:11.174","source":"Server","level":"LOG","message":"Recall notification queued {}"}
+{"timestamp":"01:11:50.127","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"01:13:10.374","source":"Server","level":"LOG","message":"Recall email not sent because SMTP credentials are not configured. {}"}
+{"timestamp":"01:13:10.374","source":"Server","level":"LOG","message":"Recall notification queued {}"}

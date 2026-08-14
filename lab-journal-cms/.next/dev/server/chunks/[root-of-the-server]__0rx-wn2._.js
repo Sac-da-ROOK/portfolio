@@ -106,6 +106,8 @@ async function POST(request) {
 __turbopack_context__.s([
     "createPost",
     ()=>createPost,
+    "deletePost",
+    ()=>deletePost,
     "getPosts",
     ()=>getPosts,
     "recallPost",
@@ -119,8 +121,22 @@ var __TURBOPACK__imported__module__$5b$externals$5d2f$fs__$5b$external$5d$__$28$
 var __TURBOPACK__imported__module__$5b$externals$5d2f$path__$5b$external$5d$__$28$path$2c$__cjs$29$__ = __turbopack_context__.i("[externals]/path [external] (path, cjs)");
 ;
 ;
-const storageDir = __TURBOPACK__imported__module__$5b$externals$5d2f$path__$5b$external$5d$__$28$path$2c$__cjs$29$__["default"].resolve(process.cwd(), '..', 'data');
-const storageFile = __TURBOPACK__imported__module__$5b$externals$5d2f$path__$5b$external$5d$__$28$path$2c$__cjs$29$__["default"].join(storageDir, 'posts.json');
+function resolveSharedPostsFile() {
+    const candidates = [
+        __TURBOPACK__imported__module__$5b$externals$5d2f$path__$5b$external$5d$__$28$path$2c$__cjs$29$__["default"].resolve(process.cwd(), 'data', 'posts.json'),
+        __TURBOPACK__imported__module__$5b$externals$5d2f$path__$5b$external$5d$__$28$path$2c$__cjs$29$__["default"].resolve(process.cwd(), '..', 'data', 'posts.json'),
+        __TURBOPACK__imported__module__$5b$externals$5d2f$path__$5b$external$5d$__$28$path$2c$__cjs$29$__["default"].resolve(process.cwd(), '..', '..', 'data', 'posts.json')
+    ];
+    for (const filePath of candidates){
+        if ((0, __TURBOPACK__imported__module__$5b$externals$5d2f$fs__$5b$external$5d$__$28$fs$2c$__cjs$29$__["existsSync"])(filePath)) {
+            return filePath;
+        }
+    }
+    // Default to the nearest parent data folder when bootstrapping fresh storage.
+    return __TURBOPACK__imported__module__$5b$externals$5d2f$path__$5b$external$5d$__$28$path$2c$__cjs$29$__["default"].resolve(process.cwd(), '..', 'data', 'posts.json');
+}
+const storageFile = resolveSharedPostsFile();
+const storageDir = __TURBOPACK__imported__module__$5b$externals$5d2f$path__$5b$external$5d$__$28$path$2c$__cjs$29$__["default"].dirname(storageFile);
 let posts = loadPostsFromFile();
 function loadPostsFromFile() {
     if (!(0, __TURBOPACK__imported__module__$5b$externals$5d2f$fs__$5b$external$5d$__$28$fs$2c$__cjs$29$__["existsSync"])(storageFile)) {
@@ -189,6 +205,15 @@ function updatePostStatus(id, status) {
         } : post);
     syncPosts(nextPosts);
     return nextPosts.find((post)=>post.id === id);
+}
+function deletePost(id) {
+    const existing = getPosts().find((post)=>post.id === id);
+    if (!existing) {
+        return null;
+    }
+    const nextPosts = getPosts().filter((post)=>post.id !== id);
+    syncPosts(nextPosts);
+    return existing;
 }
 async function recallPost(id, code) {
     const configuredCode = process.env.RECALL_CODE?.trim();

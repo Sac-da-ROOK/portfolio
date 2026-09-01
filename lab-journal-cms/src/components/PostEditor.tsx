@@ -32,11 +32,11 @@ type PostEditorProps = {
 };
 
 export default function PostEditor({
-    initialTitle = 'Untitled document',
-    initialContent = '<h3>Start writing your lab note</h3><p>Capture the experiment, the insight, and the next step.</p>',
+    initialTitle = 'Untitled article',
+    initialContent = '<h3>Start writing</h3><p>Capture the idea, the experiment, and the next step.</p>',
     initialStatus = 'Draft',
     initialAttachments = [],
-    submitLabel = 'Save to draft',
+    submitLabel = 'Save draft',
     onSave,
 }: PostEditorProps) {
     const [title, setTitle] = useState(initialTitle);
@@ -50,8 +50,19 @@ export default function PostEditor({
     const documentInputRef = useRef<HTMLInputElement | null>(null);
 
     const applyFormat = (command: string, value?: string) => {
+        const selection = window.getSelection();
+        const range = selection && selection.rangeCount > 0 ? selection.getRangeAt(0).cloneRange() : null;
+
         editorRef.current?.focus();
         document.execCommand(command, false, value);
+
+        if (editorRef.current && range) {
+            editorRef.current.focus();
+            const nextSelection = window.getSelection();
+            nextSelection?.removeAllRanges();
+            nextSelection?.addRange(range);
+        }
+
         setEditorHtml(editorRef.current?.innerHTML ?? '');
     };
 
@@ -93,9 +104,9 @@ export default function PostEditor({
             <section className="editor-shell card">
                 <div className="editor-header">
                     <div>
-                        <p className="editor-eyebrow">Google Docs-style editor</p>
-                        <h1 className="editor-title">Create a new journal entry</h1>
-                        <p className="editor-subtitle">Write, style, and attach media in one place before publishing.</p>
+                        <p className="editor-eyebrow">Writing editor</p>
+                        <h1 className="editor-title">Write a new article</h1>
+                        <p className="editor-subtitle">Write, format, and add media before publishing.</p>
                     </div>
                     <div className="editor-actions">
                         <select value={status} onChange={(event) => setStatus(event.target.value as PostStatus)} className="editor-select">
@@ -112,7 +123,7 @@ export default function PostEditor({
 
                 <form id="editor-form" onSubmit={handleSubmit} className="editor-form">
                     <div className="editor-toolbar">
-                        <input value={title} onChange={(event) => setTitle(event.target.value)} className="editor-title-input" placeholder="Document title" />
+                        <input value={title} onChange={(event) => setTitle(event.target.value)} className="editor-title-input" placeholder="Article title" />
                         <div className="toolbar-group">
                             {toolbarActions.map((action) => (
                                 <button key={action.label} type="button" className="toolbar-button" onClick={() => applyFormat(action.command, action.value)} title={action.label}>
@@ -127,16 +138,16 @@ export default function PostEditor({
                         </div>
                     </div>
 
-                    <div className="editor-surface" contentEditable suppressContentEditableWarning ref={editorRef} dangerouslySetInnerHTML={{ __html: editorHtml }} onInput={(event) => setEditorHtml((event.target as HTMLDivElement).innerHTML)} />
+                    <div className="editor-surface" dir="ltr" contentEditable suppressContentEditableWarning ref={editorRef} dangerouslySetInnerHTML={{ __html: editorHtml }} onInput={(event) => setEditorHtml((event.target as HTMLDivElement).innerHTML)} />
 
                     <div className="attachment-panel">
                         <div className="attachment-header">
-                            <h2>Attached media</h2>
-                            <p>Photos, videos, and documents stay right alongside the draft.</p>
+                            <h2>Media</h2>
+                            <p>Images, video, and documents stay with the article.</p>
                         </div>
                         <div className="attachment-list">
                             {attachments.length === 0 ? (
-                                <div className="attachment-empty">Add a photo, video, or document to enrich the entry.</div>
+                                <div className="attachment-empty">Add a photo, video, or document to enrich the article.</div>
                             ) : (
                                 attachments.map((item) => (
                                     <div key={item.id} className="attachment-card">

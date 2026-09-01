@@ -50,7 +50,7 @@ export default function DashboardPage() {
         if (response.ok) {
             await loadPosts();
             setActivePostId(null);
-            setFeedback('Article published successfully.');
+            setFeedback('Your article has been published.');
         }
     };
 
@@ -65,15 +65,15 @@ export default function DashboardPage() {
             await loadPosts();
             setActivePostId(null);
             setRecallCode('');
-            setFeedback('Article recalled and subscribers notified.');
+            setFeedback('Your article has been unpublished.');
         } else {
-            const error = await response.json().catch(() => ({ error: 'Unable to recall article.' }));
-            setFeedback(error.error || 'Unable to recall article.');
+            const error = await response.json().catch(() => ({ error: 'Unable to unpublish this article.' }));
+            setFeedback(error.error || 'Unable to unpublish this article.');
         }
     };
 
     const deletePost = async (postId: string) => {
-        const confirmed = window.confirm('Delete this article? This action cannot be undone.');
+        const confirmed = window.confirm('Delete this article? This cannot be undone.');
         if (!confirmed) {
             return;
         }
@@ -85,10 +85,10 @@ export default function DashboardPage() {
         if (response.ok) {
             await loadPosts();
             setActivePostId(null);
-            setFeedback('Article deleted successfully.');
+            setFeedback('Article deleted.');
         } else {
-            const error = await response.json().catch(() => ({ error: 'Unable to delete article.' }));
-            setFeedback(error.error || 'Unable to delete article.');
+            const error = await response.json().catch(() => ({ error: 'Unable to delete this article.' }));
+            setFeedback(error.error || 'Unable to delete this article.');
         }
     };
 
@@ -97,10 +97,10 @@ export default function DashboardPage() {
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '1rem', marginBottom: '1.5rem', flexWrap: 'wrap' }}>
                 <div>
                     <p style={{ margin: 0, textTransform: 'uppercase', letterSpacing: '0.25em', color: '#8fb3ff' }}>Dashboard</p>
-                    <h1 style={{ margin: '0.3rem 0 0', fontSize: '2rem' }}>Manage journal content</h1>
+                    <h1 style={{ margin: '0.3rem 0 0', fontSize: '2rem' }}>Journal articles</h1>
                 </div>
                 <Link href="/dashboard/new" style={{ padding: '0.8rem 1rem', borderRadius: 999, background: '#22c55e', color: '#07111f', fontWeight: 700 }}>
-                    New post
+                    New article
                 </Link>
             </div>
 
@@ -108,7 +108,7 @@ export default function DashboardPage() {
                 <input
                     value={query}
                     onChange={(event) => setQuery(event.target.value)}
-                    placeholder="Search titles, content, or status"
+                    placeholder="Search articles"
                     style={{ padding: '0.8rem 1rem', borderRadius: 12, border: '1px solid rgba(255,255,255,0.12)', background: '#0f172a', color: 'white' }}
                 />
 
@@ -116,51 +116,55 @@ export default function DashboardPage() {
 
                 {filteredPosts.length === 0 ? (
                     <div style={{ border: '1px dashed rgba(255,255,255,0.16)', borderRadius: 16, padding: '1.2rem', color: '#cbd5e1' }}>
-                        No journal entries yet. Save a draft and it will appear here instantly.
+                        No articles yet. Save a draft to get started.
                     </div>
                 ) : (
-                    filteredPosts.map((post) => (
-                        <div key={post.id} style={{ border: '1px solid rgba(255,255,255,0.12)', borderRadius: 16, padding: '1rem', display: 'grid', gap: '0.8rem' }}>
-                            <div style={{ display: 'flex', justifyContent: 'space-between', gap: '1rem', alignItems: 'center', flexWrap: 'wrap' }}>
-                                <div>
-                                    <div style={{ fontWeight: 700 }}>{post.title}</div>
-                                    <div style={{ color: '#cbd5e1', marginTop: '0.25rem' }}>{post.createdAt}</div>
-                                </div>
-                                <span style={{ padding: '0.35rem 0.7rem', borderRadius: 999, background: 'rgba(255,255,255,0.1)', color: '#f7f7f2' }}>{post.status}</span>
-                            </div>
+                    filteredPosts.map((post) => {
+                        const statusLabel = post.status === 'Recalled' ? 'Unpublished' : post.status;
 
-                            <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
-                                <button type="button" onClick={() => openPostOptions(post.id)} style={{ padding: '0.65rem 0.9rem', borderRadius: 999, background: 'rgba(255,255,255,0.1)', color: 'white', border: '1px solid rgba(255,255,255,0.12)', cursor: 'pointer' }}>
-                                    Manage
-                                </button>
-                            </div>
-
-                            {activePostId === post.id ? (
-                                <div style={{ display: 'grid', gap: '0.75rem', borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '0.8rem' }}>
-                                    <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
-                                        <Link href={`/dashboard/new?postId=${post.id}`} style={{ padding: '0.65rem 0.9rem', borderRadius: 999, background: '#8fb3ff', color: '#07111f', fontWeight: 700 }}>
-                                            Open in editor
-                                        </Link>
-                                        {post.status === 'Published' ? (
-                                            <div style={{ display: 'grid', gap: '0.5rem' }}>
-                                                <input value={recallCode} onChange={(event) => setRecallCode(event.target.value)} placeholder="Demo code: 123456" style={{ padding: '0.7rem 0.9rem', borderRadius: 12, border: '1px solid rgba(255,255,255,0.12)', background: '#0f172a', color: 'white' }} />
-                                                <button type="button" onClick={() => recallPost(post.id)} style={{ padding: '0.65rem 0.9rem', borderRadius: 999, background: '#f59e0b', color: '#07111f', fontWeight: 700, border: 'none', cursor: 'pointer' }}>
-                                                    Recall article
-                                                </button>
-                                            </div>
-                                        ) : (
-                                            <button type="button" onClick={() => publishPost(post.id)} style={{ padding: '0.65rem 0.9rem', borderRadius: 999, background: '#22c55e', color: '#07111f', fontWeight: 700, border: 'none', cursor: 'pointer' }}>
-                                                Publish
-                                            </button>
-                                        )}
-                                        <button type="button" onClick={() => deletePost(post.id)} style={{ padding: '0.65rem 0.9rem', borderRadius: 999, background: '#ef4444', color: 'white', fontWeight: 700, border: 'none', cursor: 'pointer' }}>
-                                            Delete article
-                                        </button>
+                        return (
+                            <div key={post.id} style={{ border: '1px solid rgba(255,255,255,0.12)', borderRadius: 16, padding: '1rem', display: 'grid', gap: '0.8rem' }}>
+                                <div style={{ display: 'flex', justifyContent: 'space-between', gap: '1rem', alignItems: 'center', flexWrap: 'wrap' }}>
+                                    <div>
+                                        <div style={{ fontWeight: 700 }}>{post.title}</div>
+                                        <div style={{ color: '#cbd5e1', marginTop: '0.25rem' }}>{post.createdAt}</div>
                                     </div>
+                                    <span style={{ padding: '0.35rem 0.7rem', borderRadius: 999, background: 'rgba(255,255,255,0.1)', color: '#f7f7f2' }}>{statusLabel}</span>
                                 </div>
-                            ) : null}
-                        </div>
-                    ))
+
+                                <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
+                                    <button type="button" onClick={() => openPostOptions(post.id)} style={{ padding: '0.65rem 0.9rem', borderRadius: 999, background: 'rgba(255,255,255,0.1)', color: 'white', border: '1px solid rgba(255,255,255,0.12)', cursor: 'pointer' }}>
+                                        Edit
+                                    </button>
+                                </div>
+
+                                {activePostId === post.id ? (
+                                    <div style={{ display: 'grid', gap: '0.75rem', borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '0.8rem' }}>
+                                        <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
+                                            <Link href={`/dashboard/new?postId=${post.id}`} style={{ padding: '0.65rem 0.9rem', borderRadius: 999, background: '#8fb3ff', color: '#07111f', fontWeight: 700 }}>
+                                                Edit article
+                                            </Link>
+                                            {post.status === 'Published' ? (
+                                                <div style={{ display: 'grid', gap: '0.5rem' }}>
+                                                    <input value={recallCode} onChange={(event) => setRecallCode(event.target.value)} placeholder="Verification code" style={{ padding: '0.7rem 0.9rem', borderRadius: 12, border: '1px solid rgba(255,255,255,0.12)', background: '#0f172a', color: 'white' }} />
+                                                    <button type="button" onClick={() => recallPost(post.id)} style={{ padding: '0.65rem 0.9rem', borderRadius: 999, background: '#f59e0b', color: '#07111f', fontWeight: 700, border: 'none', cursor: 'pointer' }}>
+                                                        Unpublish article
+                                                    </button>
+                                                </div>
+                                            ) : (
+                                                <button type="button" onClick={() => publishPost(post.id)} style={{ padding: '0.65rem 0.9rem', borderRadius: 999, background: '#22c55e', color: '#07111f', fontWeight: 700, border: 'none', cursor: 'pointer' }}>
+                                                    Publish article
+                                                </button>
+                                            )}
+                                            <button type="button" onClick={() => deletePost(post.id)} style={{ padding: '0.65rem 0.9rem', borderRadius: 999, background: '#ef4444', color: 'white', fontWeight: 700, border: 'none', cursor: 'pointer' }}>
+                                                Delete article
+                                            </button>
+                                        </div>
+                                    </div>
+                                ) : null}
+                            </div>
+                        );
+                    })
                 )}
             </section>
         </main>

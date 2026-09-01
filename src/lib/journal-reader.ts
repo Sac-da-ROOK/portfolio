@@ -1,4 +1,6 @@
 export type JournalEntry = {
+    id: string;
+    slug: string;
     category: string;
     title: string;
     description: string;
@@ -10,6 +12,7 @@ export type JournalEntry = {
 
 export type CmsPost = {
     id?: string;
+    slug?: string;
     title?: string;
     content?: string;
     status?: string;

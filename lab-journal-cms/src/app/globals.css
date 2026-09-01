@@ -5,6 +5,9 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     background: #07111f;
     color: #f7f7f2;
+    direction: ltr;
+    unicode-bidi: plaintext;
+    text-align: left;
 }
 
 * {
@@ -37,6 +40,8 @@ input,
 textarea,
 select {
     font: inherit;
+    direction: ltr;
+    text-align: left;
 }
 
 .editor-shell {
@@ -108,10 +113,11 @@ select {
     align-items: center;
     gap: 0.75rem;
     flex-wrap: wrap;
-    padding: 0.75rem;
+    padding: 0.85rem;
     border-radius: 16px;
     background: rgba(255, 255, 255, 0.06);
     border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
 }
 
 .editor-title-input {
@@ -120,18 +126,85 @@ select {
 
 .toolbar-group {
     display: flex;
-    gap: 0.4rem;
+    gap: 0.45rem;
     flex-wrap: wrap;
+    align-items: center;
+}
+
+.toolbar-group-inline {
+    padding: 0.28rem 0.5rem;
+    border-radius: 12px;
+    background: rgba(15, 23, 42, 0.34);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.toolbar-link-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.18rem 0.35rem;
+    border-radius: 12px;
+    background: rgba(15, 23, 42, 0.32);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    min-width: min(420px, 100%);
+}
+
+.toolbar-link-input {
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: #0f172a;
+    color: white;
+    border-radius: 8px;
+    padding: 0.45rem 0.6rem;
+    min-width: 155px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.toolbar-link-input:focus {
+    outline: none;
+    border-color: rgba(143, 179, 255, 0.9);
+    box-shadow: 0 0 0 3px rgba(143, 179, 255, 0.2);
+}
+
+.toolbar-link-label {
+    min-width: 100px;
+}
+
+.toolbar-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #cbd5e1;
+    margin-right: 0.1rem;
+}
+
+.toolbar-button,
+.toolbar-color-swatch {
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    cursor: pointer;
+    transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
 }
 
 .toolbar-button {
     width: 2.3rem;
     height: 2.3rem;
     border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.14);
     background: rgba(255, 255, 255, 0.04);
     color: #f7f7f2;
-    cursor: pointer;
+}
+
+.toolbar-button:hover,
+.toolbar-color-swatch:hover {
+    transform: translateY(-1px);
+    border-color: rgba(143, 179, 255, 0.6);
+    background: rgba(143, 179, 255, 0.12);
+}
+
+.toolbar-color-swatch {
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: 999px;
+    box-shadow: inset 0 0 0 1px rgba(15, 23, 42, 0.35);
+    padding: 0;
 }
 
 .editor-surface {
@@ -142,6 +215,8 @@ select {
     background: #fdfcf8;
     color: #111827;
     line-height: 1.7;
+    direction: ltr;
+    text-align: left;
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45);
 }
 
@@ -155,6 +230,12 @@ select {
 
 .editor-surface p {
     margin: 0 0 0.75rem;
+}
+
+.editor-surface a {
+    color: #2563eb;
+    text-decoration: underline;
+    text-underline-offset: 0.15em;
 }
 
 .editor-surface blockquote {

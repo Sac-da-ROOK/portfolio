@@ -12,8 +12,8 @@ export default function HomePage() {
             <section className="card" style={{ display: 'grid', gap: '1.5rem' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '1rem', flexWrap: 'wrap' }}>
                     <div>
-                        <p style={{ margin: 0, textTransform: 'uppercase', letterSpacing: '0.25em', color: '#8fb3ff' }}>Lab Journal CMS</p>
-                        <h1 style={{ margin: '0.3rem 0 0', fontSize: '2rem' }}>Private publishing workspace</h1>
+                        <p style={{ margin: 0, textTransform: 'uppercase', letterSpacing: '0.25em', color: '#8fb3ff' }}>The Lab Journal</p>
+                        <h1 style={{ margin: '0.3rem 0 0', fontSize: '2rem' }}>Writing workspace</h1>
                     </div>
                     <Link href="/dashboard" style={{ padding: '0.8rem 1rem', borderRadius: 999, background: '#8fb3ff', color: '#07111f', fontWeight: 700 }}>
                         Open dashboard

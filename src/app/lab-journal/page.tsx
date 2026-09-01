@@ -1,5 +1,6 @@
 import Link from "next/link";
 import AnimatedSection from "@/components/AnimatedSection";
+import JournalSubscriber from "@/components/JournalSubscriber";
 import Navbar from "@/components/Navbar";
 import { createEntryHref } from "@/lib/journal-reader";
 import { getPublishedJournalEntries, type JournalEntry } from "@/lib/journal";
@@ -91,6 +92,7 @@ export default async function LabJournalPage() {
                             >
                                 View journal method
                             </Link>
+                            <JournalSubscriber />
                         </div>
                     </AnimatedSection>
 

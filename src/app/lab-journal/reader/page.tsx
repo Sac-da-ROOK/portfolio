@@ -9,7 +9,7 @@ export const dynamic = "force-dynamic";
 export default async function ReaderPage({ searchParams }: { searchParams?: Promise<{ entry?: string }> }) {
     const params = searchParams ? await searchParams : {};
     const entryTitle = params.entry ? decodeURIComponent(params.entry) : "";
-    const entries = getPublishedJournalEntries();
+    const entries = await getPublishedJournalEntries();
     const entry = entries.find((item) => item.title === entryTitle) ?? entries[0];
 
     if (!entry) {

@@ -2,6 +2,8 @@
 
 import Link from "next/link";
 import { useRef } from "react";
+import JournalArticleInteractions from "@/components/JournalArticleInteractions";
+import JournalComments from "@/components/JournalComments";
 import { createEntryHref, type JournalEntry } from "@/lib/journal-reader";
 
 type JournalReaderProps = {
@@ -85,6 +87,9 @@ export default function JournalReader({ entries, entryTitle }: JournalReaderProp
                         <div ref={bodyRef} className="mt-8 max-h-[70vh] overflow-y-auto rounded-[1.5rem] border border-slate-900/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.95),rgba(255,250,215,0.92))] p-6 text-base leading-8 text-slate-800 shadow-inner">
                             <p>{content}</p>
                         </div>
+
+                        <JournalArticleInteractions articleId={entry.slug || entry.title} initialLikes={0} initialDislikes={0} />
+                        <JournalComments articleId={entry.slug || entry.title} />
                     </article>
 
                     <aside className="flex w-full max-w-[5rem] flex-col items-center gap-3 self-start rounded-[1.75rem] border border-slate-900/15 bg-slate-50/90 p-3 lg:sticky lg:top-28">

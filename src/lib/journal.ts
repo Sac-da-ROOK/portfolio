@@ -66,6 +66,45 @@ export function formatJournalDateTime(date?: string, time?: string) {
     return displayDate || displayTime;
 }
 
+export function getReadingTime(content?: string) {
+    const text = stripHtml(content ?? "").replace(/\s+/g, " ").trim();
+    if (!text) {
+        return "1 min read";
+    }
+
+    const wordCount = text.split(/\s+/).length;
+    const minutes = Math.max(1, Math.ceil(wordCount / 200));
+    return `${minutes} min read`;
+}
+
+export function formatJournalMeta(date?: string, time?: string, content?: string) {
+    const dateTime = formatJournalDateTime(date, time);
+    const readingTime = getReadingTime(content);
+
+    if (!dateTime) {
+        return readingTime;
+    }
+
+    return `${dateTime} • ${readingTime}`;
+}
+
+export function isNewJournalEntry(date?: string, time?: string) {
+    const cleanDate = typeof date === "string" && date.trim() ? date.trim() : "";
+    if (!cleanDate || !/^\d{4}-\d{2}-\d{2}$/.test(cleanDate)) {
+        return false;
+    }
+
+    const [year, month, day] = cleanDate.split("-").map(Number);
+    const cleanTime = typeof time === "string" && time.trim() ? time.trim() : "00:00";
+    const [hour = 0, minute = 0] = cleanTime.split(":").map(Number);
+
+    const publishedAt = new Date(Date.UTC(year, month - 1, day, hour, minute, 0, 0)).getTime();
+    const ageMs = Date.now() - publishedAt;
+    const sevenDaysMs = 7 * 24 * 60 * 60 * 1000;
+
+    return ageMs >= 0 && ageMs <= sevenDaysMs;
+}
+
 export function stripHtml(value: string) {
     return value.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
 }

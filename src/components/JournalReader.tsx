@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useRef } from "react";
 import JournalArticleInteractions from "@/components/JournalArticleInteractions";
 import JournalComments from "@/components/JournalComments";
-import { formatJournalDateTime, renderMarkdownToHtml, type JournalEntry } from "@/lib/journal";
+import { formatJournalMeta, isNewJournalEntry, renderMarkdownToHtml, type JournalEntry } from "@/lib/journal";
 import { createEntryHref } from "@/lib/journal-reader";
 
 type JournalReaderProps = {
@@ -24,7 +24,8 @@ export default function JournalReader({ entries, entryTitle }: JournalReaderProp
     const prevEntry = index > 0 ? entries[index - 1] : null;
     const nextEntry = index >= 0 && index < entries.length - 1 ? entries[index + 1] : null;
     const content = renderMarkdownToHtml(entry.content ?? entry.description);
-    const articleDateTime = formatJournalDateTime(entry.date, entry.time);
+    const articleDateTime = formatJournalMeta(entry.date, entry.time, entry.content ?? entry.description);
+    const isNew = isNewJournalEntry(entry.date, entry.time);
 
     const scrollBody = (direction: "up" | "down") => {
         bodyRef.current?.scrollBy({ top: direction === "up" ? -260 : 260, behavior: "smooth" });
@@ -64,6 +65,11 @@ export default function JournalReader({ entries, entryTitle }: JournalReaderProp
                                 {entry.category}
                             </span>
                             <span className="text-[11px] uppercase tracking-[0.24em] text-slate-500">{entry.format}</span>
+                            {isNew ? (
+                                <span className="rounded-full border border-emerald-500/30 bg-emerald-100 px-3 py-1 text-[10px] font-bold uppercase tracking-[0.24em] text-emerald-700">
+                                    New
+                                </span>
+                            ) : null}
                         </div>
 
                         <h1 className="mt-6 text-3xl font-semibold tracking-[-0.02em] text-slate-900 sm:text-4xl">
@@ -94,6 +100,21 @@ export default function JournalReader({ entries, entryTitle }: JournalReaderProp
                             className="journal-markdown mt-8 max-h-[70vh] overflow-y-auto rounded-[1.5rem] border border-slate-900/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.95),rgba(255,250,215,0.92))] p-6 text-base leading-8 text-slate-800 shadow-inner"
                             dangerouslySetInnerHTML={{ __html: content }}
                         />
+
+                        <div className="mt-8 flex flex-col gap-4 rounded-[1.75rem] border border-slate-900/10 bg-slate-50/80 p-4 sm:flex-row sm:items-center sm:justify-between">
+                            <Link
+                                href={prevEntry ? createEntryHref(prevEntry.title) : "/lab-journal"}
+                                className={`inline-flex items-center justify-center rounded-full border px-4 py-2 text-sm font-semibold transition-transform hover:-translate-y-0.5 ${prevEntry ? "border-slate-900/15 bg-white text-slate-900" : "border-slate-200 bg-slate-100 text-slate-400"}`}
+                            >
+                                ← Previous article
+                            </Link>
+                            <Link
+                                href={nextEntry ? createEntryHref(nextEntry.title) : "/lab-journal"}
+                                className={`inline-flex items-center justify-center rounded-full border px-4 py-2 text-sm font-semibold transition-transform hover:-translate-y-0.5 ${nextEntry ? "border-slate-900/15 bg-white text-slate-900" : "border-slate-200 bg-slate-100 text-slate-400"}`}
+                            >
+                                Next article →
+                            </Link>
+                        </div>
 
                         <JournalArticleInteractions articleId={entry.slug || entry.title} initialLikes={0} initialDislikes={0} />
                         <JournalComments articleId={entry.slug || entry.title} />

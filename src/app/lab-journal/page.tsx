@@ -48,6 +48,7 @@ export const dynamic = 'force-dynamic';
 export default async function LabJournalPage() {
     const journalEntries = await getJournalEntries();
     const latestArticleLabel = journalEntries[0]?.title ?? "No published articles yet";
+    const latestEntry = journalEntries[0] ?? null;
 
     return (
         <main id="main-content" className="min-h-screen">

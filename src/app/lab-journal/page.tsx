@@ -3,7 +3,7 @@ import AnimatedSection from "@/components/AnimatedSection";
 import Navbar from "@/components/Navbar";
 import { createEntryHref } from "@/lib/journal-reader";
 import { getPublishedJournalEntries } from "@/lib/journal-data";
-import type { JournalEntry } from "@/lib/journal";
+import { formatJournalDateTime, type JournalEntry } from "@/lib/journal";
 
 const journalCategories = [
     "Math",
@@ -215,34 +215,45 @@ export default async function LabJournalPage() {
                             </div>
                         ) : (
                             <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-                                {journalEntries.map((entry) => (
-                                    <Link key={entry.slug} href={createEntryHref(entry.slug)} className="block">
-                                        <article className="interactive-card glass-card group relative overflow-hidden rounded-[2rem] p-6 ui-transition hover:-translate-y-1 hover:border-cyan-400/30">
-                                            <div className={`absolute inset-0 bg-gradient-to-br ${entry.accent} opacity-90`} aria-hidden="true" />
-                                            <div className="relative z-10">
-                                                <div className="flex items-center justify-between gap-4">
-                                                    <span className="glass-chip rounded-full px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-700">
-                                                        {entry.category}
-                                                    </span>
-                                                    <span className="text-[11px] uppercase tracking-[0.22em] text-slate-500">{entry.format}</span>
-                                                </div>
+                                {journalEntries.map((entry) => {
+                                    const articleDateTime = formatJournalDateTime(entry.date, entry.time);
 
-                                                <h3 className="mt-4 text-2xl font-semibold tracking-[-0.02em] text-slate-900">{entry.title}</h3>
-                                                <p className="mt-4 text-sm leading-7 text-slate-700">{entry.description}</p>
-
-                                                <div className="mt-5 flex flex-wrap gap-2">
-                                                    {entry.notes.map((note) => (
-                                                        <span key={note} className="glass-chip rounded-full px-3 py-1 text-xs font-medium uppercase tracking-[0.18em] text-slate-700">
-                                                            {note}
+                                    return (
+                                        <Link key={entry.slug} href={createEntryHref(entry.slug)} className="block">
+                                            <article className="interactive-card glass-card group relative overflow-hidden rounded-[2rem] p-6 ui-transition hover:-translate-y-1 hover:border-cyan-400/30">
+                                                <div className={`absolute inset-0 bg-gradient-to-br ${entry.accent} opacity-90`} aria-hidden="true" />
+                                                <div className="relative z-10">
+                                                    <div className="flex items-center justify-between gap-4">
+                                                        <span className="glass-chip rounded-full px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-700">
+                                                            {entry.category}
                                                         </span>
-                                                    ))}
-                                                </div>
+                                                        <span className="text-[11px] uppercase tracking-[0.22em] text-slate-500">{entry.format}</span>
+                                                    </div>
 
-                                                <p className="mt-6 text-xs uppercase tracking-[0.24em] text-slate-500">Open in reader</p>
-                                            </div>
-                                        </article>
-                                    </Link>
-                                ))}
+                                                    <h3 className="mt-4 text-2xl font-semibold tracking-[-0.02em] text-slate-900">{entry.title}</h3>
+                                                    <p className="mt-4 text-sm leading-7 text-slate-700">{entry.description}</p>
+
+                                                    {articleDateTime ? (
+                                                        <div className="mt-4">
+                                                            <p className="text-sm font-medium text-slate-800">{articleDateTime}</p>
+                                                            <p className="mt-1 text-[10px] uppercase tracking-[0.18em] text-slate-500">All dates and times are in CT</p>
+                                                        </div>
+                                                    ) : null}
+
+                                                    <div className="mt-5 flex flex-wrap gap-2">
+                                                        {entry.notes.map((note) => (
+                                                            <span key={note} className="glass-chip rounded-full px-3 py-1 text-xs font-medium uppercase tracking-[0.18em] text-slate-700">
+                                                                {note}
+                                                            </span>
+                                                        ))}
+                                                    </div>
+
+                                                    <p className="mt-6 text-xs uppercase tracking-[0.24em] text-slate-500">Open in reader</p>
+                                                </div>
+                                            </article>
+                                        </Link>
+                                    );
+                                })}
                             </div>
                         )}
                     </div>

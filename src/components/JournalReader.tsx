@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useRef } from "react";
 import JournalArticleInteractions from "@/components/JournalArticleInteractions";
 import JournalComments from "@/components/JournalComments";
-import { renderMarkdownToHtml, type JournalEntry } from "@/lib/journal";
+import { formatJournalDateTime, renderMarkdownToHtml, type JournalEntry } from "@/lib/journal";
 import { createEntryHref } from "@/lib/journal-reader";
 
 type JournalReaderProps = {
@@ -24,6 +24,7 @@ export default function JournalReader({ entries, entryTitle }: JournalReaderProp
     const prevEntry = index > 0 ? entries[index - 1] : null;
     const nextEntry = index >= 0 && index < entries.length - 1 ? entries[index + 1] : null;
     const content = renderMarkdownToHtml(entry.content ?? entry.description);
+    const articleDateTime = formatJournalDateTime(entry.date, entry.time);
 
     const scrollBody = (direction: "up" | "down") => {
         bodyRef.current?.scrollBy({ top: direction === "up" ? -260 : 260, behavior: "smooth" });
@@ -72,6 +73,13 @@ export default function JournalReader({ entries, entryTitle }: JournalReaderProp
                         <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-700">
                             {entry.description}
                         </p>
+
+                        {articleDateTime ? (
+                            <div className="mt-5">
+                                <p className="text-base font-semibold text-slate-800">{articleDateTime}</p>
+                                <p className="mt-1 text-[11px] uppercase tracking-[0.18em] text-slate-500">All dates and times are in CT</p>
+                            </div>
+                        ) : null}
 
                         <div className="mt-6 flex flex-wrap gap-2">
                             {entry.notes.map((note) => (

@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
 const navItems = [
@@ -98,9 +99,9 @@ export default function Navbar() {
         <header ref={headerRef} className="fixed inset-x-0 top-0 z-50 px-3 pt-3 sm:px-4 sm:pt-4 lg:px-8">
             <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-3 rounded-2xl border-2 border-slate-900/25 bg-white/92 px-4 py-3 shadow-[8px_8px_0_rgba(17,24,39,0.18)] sm:px-6">
                 <div className="flex min-w-0 items-center gap-3">
-                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border-2 border-slate-900/25 bg-amber-200 text-sm font-semibold text-slate-900 shadow-[4px_4px_0_rgba(17,24,39,0.16)]">
+                    <Link href="/" aria-label="Go to the homepage" className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl border-2 border-slate-900/25 bg-amber-200 text-sm font-semibold text-slate-900 shadow-[4px_4px_0_rgba(17,24,39,0.16)] transition-transform duration-200 hover:-translate-y-0.5">
                         AS
-                    </div>
+                    </Link>
                     <div className="min-w-0">
                         <p className="truncate text-[11px] font-semibold uppercase tracking-[0.32em] text-slate-600">Aarush Srivastava</p>
                         <p className="truncate text-sm font-semibold text-slate-900">Personal STEM Portfolio</p>

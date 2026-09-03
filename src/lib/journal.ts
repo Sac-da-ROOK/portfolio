@@ -9,8 +9,62 @@ export type JournalEntry = {
     notes: string[];
     content?: string;
     date?: string;
+    time?: string;
     published?: boolean;
 };
+
+export function formatJournalDateTime(date?: string, time?: string) {
+    const cleanDate = typeof date === "string" && date.trim() ? date.trim() : "";
+    const cleanTime = typeof time === "string" && time.trim() ? time.trim() : "";
+
+    const displayDate = (() => {
+        if (!cleanDate) {
+            return "";
+        }
+
+        const match = cleanDate.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+        if (!match) {
+            return cleanDate;
+        }
+
+        const [, year, month, day] = match;
+        const parsed = new Date(Number(year), Number(month) - 1, Number(day));
+        return new Intl.DateTimeFormat("en-US", {
+            month: "short",
+            day: "numeric",
+            year: "numeric",
+            timeZone: "UTC"
+        }).format(parsed);
+    })();
+
+    const displayTime = (() => {
+        if (!cleanTime) {
+            return "";
+        }
+
+        const match = cleanTime.match(/^(\d{1,2}):(\d{2})$/);
+        if (!match) {
+            return cleanTime;
+        }
+
+        const [, rawHour, rawMinute] = match;
+        const hour = Number(rawHour);
+        const minute = Number(rawMinute);
+        const normalizedHour = hour % 12 === 0 ? 12 : hour % 12;
+        const suffix = hour >= 12 ? "PM" : "AM";
+        return `${normalizedHour}:${String(minute).padStart(2, "0")} ${suffix}`;
+    })();
+
+    if (!displayDate && !displayTime) {
+        return "";
+    }
+
+    if (displayDate && displayTime) {
+        return `${displayDate} • ${displayTime}`;
+    }
+
+    return displayDate || displayTime;
+}
 
 export function stripHtml(value: string) {
     return value.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();

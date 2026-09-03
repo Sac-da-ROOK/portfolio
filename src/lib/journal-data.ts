@@ -7,6 +7,7 @@ export type FrontmatterEntry = {
     description?: string;
     category?: string;
     date?: string;
+    time?: string;
     format?: string;
     accent?: string;
     published?: boolean;
@@ -124,6 +125,7 @@ async function parseJournalFile(filePath: string): Promise<JournalEntry | null> 
         const category = typeof attributes.category === "string" && attributes.category.trim() ? attributes.category.trim() : "General";
         const description = typeof attributes.description === "string" && attributes.description.trim() ? attributes.description.trim() : stripHtml(body) || "A Lab Journal article.";
         const date = typeof attributes.date === "string" && attributes.date.trim() ? attributes.date.trim() : new Date().toISOString().slice(0, 10);
+        const time = typeof attributes.time === "string" && attributes.time.trim() ? attributes.time.trim() : "";
         const format = typeof attributes.format === "string" && attributes.format.trim() ? attributes.format.trim() : "Article";
         const accent = typeof attributes.accent === "string" && attributes.accent.trim() ? attributes.accent.trim() : "from-amber-200 to-yellow-100";
         const published = Boolean(attributes.published);
@@ -141,6 +143,7 @@ async function parseJournalFile(filePath: string): Promise<JournalEntry | null> 
             notes,
             content: body,
             date,
+            time,
             published,
         };
     } catch {

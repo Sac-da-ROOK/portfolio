@@ -3,6 +3,7 @@ title: "My Chess Tournament"
 description: "A reflection on my latest tournament and the lessons I carried away from the final rounds."
 category: "Chess"
 date: "2026-09-02"
+time: "20:08"
 format: "Article"
 accent: "from-amber-200 to-yellow-100"
 published: false

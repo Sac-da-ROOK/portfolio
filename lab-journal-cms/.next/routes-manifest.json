@@ -51,6 +51,18 @@
       "namedRegex": "^/_not\\-found(?:/)?$"
     },
     {
+      "page": "/api/comments",
+      "regex": "^/api/comments(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/comments(?:/)?$"
+    },
+    {
+      "page": "/api/journal",
+      "regex": "^/api/journal(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/journal(?:/)?$"
+    },
+    {
       "page": "/api/notify",
       "regex": "^/api/notify(?:/)?$",
       "routeKeys": {},
@@ -61,6 +73,18 @@
       "regex": "^/api/posts(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/api/posts(?:/)?$"
+    },
+    {
+      "page": "/api/subscribers",
+      "regex": "^/api/subscribers(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/subscribers(?:/)?$"
+    },
+    {
+      "page": "/api/votes",
+      "regex": "^/api/votes(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/votes(?:/)?$"
     },
     {
       "page": "/dashboard",

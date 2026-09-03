@@ -8,15 +8,8 @@ export type JournalEntry = {
     accent: string;
     notes: string[];
     content?: string;
-};
-
-export type CmsPost = {
-    id?: string;
-    slug?: string;
-    title?: string;
-    content?: string;
-    status?: string;
-    createdAt?: string;
+    date?: string;
+    published?: boolean;
 };
 
 export function stripHtml(value: string) {
@@ -31,6 +24,6 @@ export function slugify(value: string) {
         .replace(/(^-|-$)/g, "") || "entry";
 }
 
-export function createEntryHref(title: string) {
-    return `/lab-journal/reader?entry=${encodeURIComponent(title)}`;
+export function createEntryHref(titleOrSlug: string) {
+    return `/lab-journal/${slugify(titleOrSlug)}`;
 }

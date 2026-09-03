@@ -1,16 +1,48 @@
-{"timestamp":"00:00:19.621","source":"Server","level":"LOG","message":""}
-{"timestamp":"00:00:19.639","source":"Server","level":"LOG","message":"✓ Generated AGENTS.md and CLAUDE.md for AI agents. Set `agentRules: false` in next.config to disable."}
-{"timestamp":"00:00:48.473","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
-{"timestamp":"00:16:08.827","source":"Server","level":"LOG","message":"Recall email not sent because SMTP credentials are not configured. {}"}
-{"timestamp":"00:16:08.827","source":"Server","level":"LOG","message":"Recall notification queued {}"}
-{"timestamp":"00:16:50.652","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
-{"timestamp":"00:17:42.087","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
-{"timestamp":"00:30:08.563","source":"Server","level":"LOG","message":"✓ Compiled in 504ms"}
-{"timestamp":"01:06:02.779","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
-{"timestamp":"01:07:48.719","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
-{"timestamp":"01:08:55.991","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
-{"timestamp":"01:10:11.173","source":"Server","level":"LOG","message":"Recall email not sent because SMTP credentials are not configured. {}"}
-{"timestamp":"01:10:11.174","source":"Server","level":"LOG","message":"Recall notification queued {}"}
-{"timestamp":"01:11:50.127","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
-{"timestamp":"01:13:10.374","source":"Server","level":"LOG","message":"Recall email not sent because SMTP credentials are not configured. {}"}
-{"timestamp":"01:13:10.374","source":"Server","level":"LOG","message":"Recall notification queued {}"}
+{"timestamp":"00:00:04.219","source":"Server","level":"LOG","message":""}
+{"timestamp":"00:00:07.374","source":"Server","level":"LOG","message":"○ Compiling /dashboard/new ..."}
+{"timestamp":"00:00:12.708","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"00:01:00.965","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"00:01:06.159","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"00:03:07.370","source":"Server","level":"LOG","message":"✓ Compiled in 195ms"}
+{"timestamp":"00:04:07.716","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"00:04:37.974","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"00:07:34.927","source":"Server","level":"LOG","message":"✓ Compiled in 330ms"}
+{"timestamp":"00:10:57.732","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"00:16:02.977","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"00:16:04.054","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"00:16:05.035","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"00:17:45.076","source":"Server","level":"LOG","message":"✓ Compiled in 76ms"}
+{"timestamp":"00:18:51.414","source":"Server","level":"LOG","message":"✓ Compiled in 149ms"}
+{"timestamp":"00:19:37.122","source":"Server","level":"LOG","message":"✓ Compiled in 112ms"}
+{"timestamp":"00:19:39.190","source":"Server","level":"LOG","message":"✓ Compiled in 72ms"}
+{"timestamp":"00:19:43.549","source":"Server","level":"LOG","message":"✓ Compiled in 63ms"}
+{"timestamp":"00:19:44.748","source":"Server","level":"LOG","message":"✓ Compiled in 42ms"}
+{"timestamp":"00:22:33.192","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"00:22:37.754","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"00:24:55.129","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"00:31:21.234","source":"Server","level":"LOG","message":"✓ Compiled in 271ms"}
+{"timestamp":"00:32:25.598","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"00:32:29.546","source":"Browser","level":"ERROR","message":"Uncaught Error: prompt() is not supported.\n    at applyLink (src/app/(dashboard)/dashboard/new/page.tsx:119:33)\n    at eval (file://:303:30)\n    at UtilityScript.evaluate (<anonymous>:305:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)\n    at button (<anonymous>)\n    at NewPostPageContent (src/app/(dashboard)/dashboard/new/page.tsx:247:29)\n    at NewPostPage (src/app/(dashboard)/dashboard/new/page.tsx:337:13)\n  \u001b[90m117 |\u001b[0m         \u001b[36mconst\u001b[0m selection = window.getSelection();\n  \u001b[90m118 |\u001b[0m         \u001b[36mconst\u001b[0m selectedText = selection?.toString().trim() ?? \u001b[32m''\u001b[0m;\n\u001b[31m\u001b[1m>\u001b[0m \u001b[90m119 |\u001b[0m         \u001b[36mconst\u001b[0m urlValue = window.prompt(\u001b[32m'Paste the link URL'\u001b[0m, \u001b[32m'https:/..\u001b[0m.\n  \u001b[90m    |\u001b[0m                                 \u001b[31m\u001b[1m^\u001b[0m\n  \u001b[90m120 |\u001b[0m         \u001b[36mif\u001b[0m (!urlValue) {\n  \u001b[90m121 |\u001b[0m             \u001b[36mreturn\u001b[0m;\n  \u001b[90m122 |\u001b[0m         }"}
+{"timestamp":"00:32:29.548","source":"Server","level":"ERROR","message":"[browser] \"\\u001b[31mUncaught Error: prompt() is not supported.\\u001b[39m\\n\\u001b[31m    at applyLink (src/app/(dashboard)/dashboard/new/page.tsx:119:33)\\n    at eval (file://:303:30)\\n    at UtilityScript.evaluate (<anonymous>:305:16)\\n    at UtilityScript.<anonymous> (<anonymous>:1:44)\\n    at button (<anonymous>)\\n    at NewPostPageContent (src/app/(dashboard)/dashboard/new/page.tsx:247:29)\\n    at NewPostPage (src/app/(dashboard)/dashboard/new/page.tsx:337:13)\\u001b[39m\\n  \\u001b[90m117 |\\u001b[0m         \\u001b[36mconst\\u001b[0m selection = window.getSelection();\\n  \\u001b[90m118 |\\u001b[0m         \\u001b[36mconst\\u001b[0m selectedText = selection?.toString().trim() ?? \\u001b[32m''\\u001b[0m;\\n\\u001b[31m\\u001b[1m>\\u001b[0m \\u001b[90m119 |\\u001b[0m         \\u001b[36mconst\\u001b[0m urlValue = window.prompt(\\u001b[32m'Paste the link URL'\\u001b[0m, \\u001b[32m'https:/..\\u001b[0m.\\n  \\u001b[90m    |\\u001b[0m                                 \\u001b[31m\\u001b[1m^\\u001b[0m\\n  \\u001b[90m120 |\\u001b[0m         \\u001b[36mif\\u001b[0m (!urlValue) {\\n  \\u001b[90m121 |\\u001b[0m             \\u001b[36mreturn\\u001b[0m;\\n  \\u001b[90m122 |\\u001b[0m         }\""}
+{"timestamp":"00:33:01.996","source":"Server","level":"LOG","message":"✓ Compiled in 192ms"}
+{"timestamp":"00:34:03.990","source":"Server","level":"LOG","message":"✓ Compiled in 103ms"}
+{"timestamp":"00:37:32.828","source":"Server","level":"LOG","message":"✓ Compiled in 34ms"}
+{"timestamp":"00:40:55.922","source":"Server","level":"LOG","message":"✓ Compiled in 576ms"}
+{"timestamp":"01:04:38.861","source":"Server","level":"LOG","message":"  Reload env: .env.local"}
+{"timestamp":"01:04:39.485","source":"Server","level":"LOG","message":"  Reload env: .env.local"}
+{"timestamp":"01:07:23.689","source":"Server","level":"LOG","message":"  Reload env: .env.local"}
+{"timestamp":"01:07:33.513","source":"Server","level":"LOG","message":"  Reload env: .env.local"}
+{"timestamp":"01:07:53.015","source":"Server","level":"LOG","message":"  Reload env: .env.local"}
+{"timestamp":"01:07:56.773","source":"Server","level":"LOG","message":"  Reload env: .env.local"}
+{"timestamp":"01:08:00.169","source":"Server","level":"LOG","message":"  Reload env: .env.local"}
+{"timestamp":"01:08:06.992","source":"Server","level":"LOG","message":"  Reload env: .env.local"}
+{"timestamp":"01:08:10.971","source":"Server","level":"LOG","message":"  Reload env: .env.local"}
+{"timestamp":"01:33:22.294","source":"Server","level":"LOG","message":"  Reload env: .env.local"}
+{"timestamp":"01:33:27.652","source":"Server","level":"LOG","message":"  Reload env: .env.local"}
+{"timestamp":"01:33:31.438","source":"Server","level":"LOG","message":"  Reload env: .env.local"}
+{"timestamp":"01:33:37.880","source":"Server","level":"LOG","message":"  Reload env: .env.local"}
+{"timestamp":"01:33:40.064","source":"Server","level":"LOG","message":"  Reload env: .env.local"}
+{"timestamp":"01:33:41.925","source":"Server","level":"LOG","message":"  Reload env: .env.local"}
+{"timestamp":"01:33:48.145","source":"Server","level":"LOG","message":"  Reload env: .env.local"}
+{"timestamp":"01:33:51.347","source":"Server","level":"LOG","message":"  Reload env: .env.local"}
+{"timestamp":"01:33:54.961","source":"Server","level":"LOG","message":"  Reload env: .env.local"}

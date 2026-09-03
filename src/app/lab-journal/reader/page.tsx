@@ -1,27 +1,20 @@
-import { notFound } from "next/navigation";
-import Navbar from "@/components/Navbar";
-import AnimatedSection from "@/components/AnimatedSection";
-import JournalReader from "@/components/JournalReader";
-import { getPublishedJournalEntries } from "@/lib/journal";
-
-export const dynamic = "force-dynamic";
+import { redirect } from "next/navigation";
+import { getPublishedJournalEntries } from "@/lib/journal-data";
+import { slugify } from "@/lib/journal";
 
 export default async function ReaderPage({ searchParams }: { searchParams?: Promise<{ entry?: string }> }) {
     const params = searchParams ? await searchParams : {};
-    const entryTitle = params.entry ? decodeURIComponent(params.entry) : "";
+    const entryValue = params.entry ? decodeURIComponent(params.entry) : "";
     const entries = await getPublishedJournalEntries();
-    const entry = entries.find((item) => item.title === entryTitle) ?? entries[0];
 
-    if (!entry) {
-        notFound();
+    if (!entryValue) {
+        redirect("/lab-journal");
     }
 
-    return (
-        <main className="min-h-screen bg-[radial-gradient(circle_at_top_left,_rgba(250,204,21,0.16),_transparent_30%),linear-gradient(180deg,#fffef7_0%,#fff9db_100%)]">
-            <Navbar />
-            <AnimatedSection delay={20} className="px-0">
-                <JournalReader entries={entries} entryTitle={entry.title} />
-            </AnimatedSection>
-        </main>
-    );
+    const match = entries.find((item) => item.title === entryValue || item.slug === entryValue || slugify(item.title) === slugify(entryValue));
+    if (!match) {
+        redirect("/lab-journal");
+    }
+
+    redirect(`/lab-journal/${match.slug}`);
 }

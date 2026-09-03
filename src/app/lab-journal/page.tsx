@@ -1,9 +1,9 @@
 import Link from "next/link";
 import AnimatedSection from "@/components/AnimatedSection";
-import JournalSubscriber from "@/components/JournalSubscriber";
 import Navbar from "@/components/Navbar";
 import { createEntryHref } from "@/lib/journal-reader";
-import { getPublishedJournalEntries, type JournalEntry } from "@/lib/journal";
+import { getPublishedJournalEntries } from "@/lib/journal-data";
+import type { JournalEntry } from "@/lib/journal";
 
 const journalCategories = [
     "Math",
@@ -92,7 +92,6 @@ export default async function LabJournalPage() {
                             >
                                 View journal method
                             </Link>
-                            <JournalSubscriber />
                         </div>
                     </AnimatedSection>
 
@@ -212,12 +211,12 @@ export default async function LabJournalPage() {
 
                         {journalEntries.length === 0 ? (
                             <div className="mt-10 rounded-[2rem] border border-slate-900/10 bg-white/70 p-8 text-sm leading-7 text-slate-700">
-                                No published entries have been synced from the Lab Journal CMS yet.
+                                No published journal articles yet.
                             </div>
                         ) : (
                             <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
                                 {journalEntries.map((entry) => (
-                                    <Link key={entry.title} href={createEntryHref(entry.title)} target="_blank" rel="noopener noreferrer" className="block">
+                                    <Link key={entry.slug} href={createEntryHref(entry.slug)} className="block">
                                         <article className="interactive-card glass-card group relative overflow-hidden rounded-[2rem] p-6 ui-transition hover:-translate-y-1 hover:border-cyan-400/30">
                                             <div className={`absolute inset-0 bg-gradient-to-br ${entry.accent} opacity-90`} aria-hidden="true" />
                                             <div className="relative z-10">

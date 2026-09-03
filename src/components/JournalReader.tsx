@@ -4,29 +4,26 @@ import Link from "next/link";
 import { useRef } from "react";
 import JournalArticleInteractions from "@/components/JournalArticleInteractions";
 import JournalComments from "@/components/JournalComments";
-import { createEntryHref, type JournalEntry } from "@/lib/journal-reader";
+import { renderMarkdownToHtml, type JournalEntry } from "@/lib/journal";
+import { createEntryHref } from "@/lib/journal-reader";
 
 type JournalReaderProps = {
     entries: JournalEntry[];
     entryTitle: string;
 };
 
-function normalizeText(value: string) {
-    return value.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
-}
-
 export default function JournalReader({ entries, entryTitle }: JournalReaderProps) {
     const bodyRef = useRef<HTMLDivElement>(null);
-    const entry = entries.find((item) => item.title === entryTitle) ?? entries[0];
+    const entry = entries.find((item) => item.title === entryTitle || item.slug === entryTitle) ?? entries[0];
 
     if (!entry) {
         return null;
     }
 
-    const index = entries.findIndex((item) => item.title === entry.title);
+    const index = entries.findIndex((item) => item.title === entry.title || item.slug === entry.slug);
     const prevEntry = index > 0 ? entries[index - 1] : null;
     const nextEntry = index >= 0 && index < entries.length - 1 ? entries[index + 1] : null;
-    const content = normalizeText(entry.content ?? entry.description);
+    const content = renderMarkdownToHtml(entry.content ?? entry.description);
 
     const scrollBody = (direction: "up" | "down") => {
         bodyRef.current?.scrollBy({ top: direction === "up" ? -260 : 260, behavior: "smooth" });
@@ -84,9 +81,11 @@ export default function JournalReader({ entries, entryTitle }: JournalReaderProp
                             ))}
                         </div>
 
-                        <div ref={bodyRef} className="mt-8 max-h-[70vh] overflow-y-auto rounded-[1.5rem] border border-slate-900/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.95),rgba(255,250,215,0.92))] p-6 text-base leading-8 text-slate-800 shadow-inner">
-                            <p>{content}</p>
-                        </div>
+                        <div
+                            ref={bodyRef}
+                            className="journal-markdown mt-8 max-h-[70vh] overflow-y-auto rounded-[1.5rem] border border-slate-900/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.95),rgba(255,250,215,0.92))] p-6 text-base leading-8 text-slate-800 shadow-inner"
+                            dangerouslySetInnerHTML={{ __html: content }}
+                        />
 
                         <JournalArticleInteractions articleId={entry.slug || entry.title} initialLikes={0} initialDislikes={0} />
                         <JournalComments articleId={entry.slug || entry.title} />

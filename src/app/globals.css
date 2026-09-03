@@ -206,6 +206,86 @@ select,
   z-index: 9999;
 }
 
+.journal-markdown {
+  color: #1f2937;
+}
+
+.journal-markdown h1,
+.journal-markdown h2,
+.journal-markdown h3,
+.journal-markdown h4 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.8rem;
+  color: #111827;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.journal-markdown h1 {
+  font-size: 2.1rem;
+}
+
+.journal-markdown h2 {
+  font-size: 1.7rem;
+}
+
+.journal-markdown h3 {
+  font-size: 1.3rem;
+}
+
+.journal-markdown p,
+.journal-markdown li,
+.journal-markdown blockquote {
+  color: #374151;
+  line-height: 1.9;
+}
+
+.journal-markdown p+p {
+  margin-top: 1rem;
+}
+
+.journal-markdown ul,
+.journal-markdown ol {
+  margin: 1rem 0 1rem 1.25rem;
+  padding-left: 1rem;
+}
+
+.journal-markdown blockquote {
+  margin: 1.25rem 0;
+  padding: 0.75rem 1rem;
+  border-left: 4px solid rgba(234, 179, 8, 0.7);
+  background: rgba(254, 252, 232, 0.9);
+  border-radius: 0.75rem;
+}
+
+.journal-markdown a {
+  color: #1d4ed8;
+  text-decoration: underline;
+}
+
+.journal-markdown img {
+  display: block;
+  max-width: 100%;
+  margin: 1.25rem auto;
+  border-radius: 1rem;
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.1);
+}
+
+.journal-markdown pre {
+  margin: 1.25rem 0;
+  overflow-x: auto;
+  border-radius: 0.9rem;
+  background: rgba(15, 23, 42, 0.92);
+  color: #f8fafc;
+  padding: 1rem;
+}
+
+.journal-markdown code {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.9em;
+}
+
 .ambient-orb {
   position: absolute;
   border-radius: 9999px;

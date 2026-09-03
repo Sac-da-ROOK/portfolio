@@ -1,6 +1,7 @@
 var R=require("../../../chunks/[turbopack]_runtime.js")("server/app/api/posts/route.js")
-R.c("server/chunks/0kuh_next_0xjvrrj._.js")
-R.c("server/chunks/[root-of-the-server]__0rx-wn2._.js")
-R.c("server/chunks/lab-journal-cms__next-internal_server_app_api_posts_route_actions_16vzljf.js")
-R.m("[project]/lab-journal-cms/node_modules/next/dist/esm/build/templates/app-route.js { INNER_APP_ROUTE => \"[project]/lab-journal-cms/src/app/api/posts/route.ts [app-route] (ecmascript)\" } [app-route] (ecmascript)")
-module.exports=R.m("[project]/lab-journal-cms/node_modules/next/dist/esm/build/templates/app-route.js { INNER_APP_ROUTE => \"[project]/lab-journal-cms/src/app/api/posts/route.ts [app-route] (ecmascript)\" } [app-route] (ecmascript)").exports
+R.c("server/chunks/src_lib_mail_ts_12ewxoi._.js")
+R.c("server/chunks/node_modules_next_10f19bq._.js")
+R.c("server/chunks/[root-of-the-server]__0rlnag3._.js")
+R.c("server/chunks/_next-internal_server_app_api_posts_route_actions_0vssbav.js")
+R.m("[project]/node_modules/next/dist/esm/build/templates/app-route.js { INNER_APP_ROUTE => \"[project]/src/app/api/posts/route.ts [app-route] (ecmascript)\" } [app-route] (ecmascript)")
+module.exports=R.m("[project]/node_modules/next/dist/esm/build/templates/app-route.js { INNER_APP_ROUTE => \"[project]/src/app/api/posts/route.ts [app-route] (ecmascript)\" } [app-route] (ecmascript)").exports

@@ -8,18 +8,9 @@ export type JournalEntry = {
     accent: string;
     notes: string[];
     content?: string;
+    date?: string;
+    published?: boolean;
 };
-
-export type CmsPost = {
-    id?: string;
-    slug?: string;
-    title?: string;
-    content?: string;
-    status?: string;
-    createdAt?: string;
-};
-
-const DEFAULT_CMS_BASE_URL = "http://localhost:3001";
 
 export function stripHtml(value: string) {
     return value.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
@@ -33,57 +24,84 @@ export function slugify(value: string) {
         .replace(/(^-|-$)/g, "") || "entry";
 }
 
-export function createEntryHref(title: string) {
-    return `/lab-journal/reader?entry=${encodeURIComponent(title)}`;
+export function createEntryHref(titleOrSlug: string) {
+    return `/lab-journal/${slugify(titleOrSlug)}`;
 }
 
-function getCmsBaseUrl() {
-    const configuredUrl = process.env.LAB_JOURNAL_CMS_URL ?? process.env.NEXT_PUBLIC_LAB_JOURNAL_CMS_URL;
-    if (!configuredUrl) {
-        return DEFAULT_CMS_BASE_URL;
-    }
-
-    return configuredUrl.replace(/\/$/, "");
+function escapeHtml(value: string) {
+    return value
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/\"/g, "&quot;")
+        .replace(/'/g, "&#39;");
 }
 
-async function fetchPublishedCmsPosts(): Promise<CmsPost[]> {
-    const cmsBaseUrl = getCmsBaseUrl();
-    const response = await fetch(`${cmsBaseUrl}/api/journal`, {
-        cache: "no-store",
-        headers: {
-            Accept: "application/json",
-        },
-    }).catch(() => null);
-
-    if (!response || !response.ok) {
-        return [];
-    }
-
-    const payload = await response.json().catch(() => null);
-    if (!Array.isArray(payload)) {
-        return [];
-    }
-
-    return payload.filter((post) => post && typeof post === "object");
+function renderInlineMarkdown(value: string) {
+    let html = escapeHtml(value);
+    html = html.replace(/!\[([^\]]*)\]\(([^)]+)\)/g, '<img alt="$1" src="$2" class="journal-inline-image" />');
+    html = html.replace(/\[([^\]]+)\]\((https?:\/\/[^)]+|\/[^)]+)\)/g, '<a href="$2" target="_blank" rel="noreferrer">$1</a>');
+    html = html.replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>");
+    html = html.replace(/\*([^*]+)\*/g, "<em>$1</em>");
+    html = html.replace(/_([^_]+)_/g, "<em>$1</em>");
+    return html;
 }
 
-export async function getPublishedJournalEntries(): Promise<JournalEntry[]> {
-    const posts = await fetchPublishedCmsPosts();
-    const publishedPosts = posts.filter((post) => post.status === "Published");
+export function renderMarkdownToHtml(markdown: string) {
+    const blocks = (markdown || "").trim().split(/\n\s*\n/);
+    const htmlBlocks: string[] = [];
 
-    if (!publishedPosts.length) {
-        return [];
+    for (const block of blocks) {
+        const trimmed = block.trim();
+        if (!trimmed) {
+            continue;
+        }
+
+        if (trimmed.startsWith("### ")) {
+            htmlBlocks.push(`<h3>${renderInlineMarkdown(trimmed.slice(4))}</h3>`);
+            continue;
+        }
+
+        if (trimmed.startsWith("## ")) {
+            htmlBlocks.push(`<h2>${renderInlineMarkdown(trimmed.slice(3))}</h2>`);
+            continue;
+        }
+
+        if (trimmed.startsWith("# ")) {
+            htmlBlocks.push(`<h1>${renderInlineMarkdown(trimmed.slice(2))}</h1>`);
+            continue;
+        }
+
+        if (trimmed.startsWith("> ")) {
+            htmlBlocks.push(`<blockquote>${renderInlineMarkdown(trimmed.slice(2))}</blockquote>`);
+            continue;
+        }
+
+        if (trimmed.startsWith("- ")) {
+            const items = block
+                .split(/\n/)
+                .map((line) => line.trim())
+                .filter((line) => line.startsWith("- "))
+                .map((line) => `<li>${renderInlineMarkdown(line.slice(2))}</li>`)
+                .join("");
+            htmlBlocks.push(`<ul>${items}</ul>`);
+            continue;
+        }
+
+        if (trimmed.startsWith("```")) {
+            const code = trimmed.replace(/^```[a-zA-Z]*\n?|```$/g, "").trim();
+            htmlBlocks.push(`<pre><code>${escapeHtml(code)}</code></pre>`);
+            continue;
+        }
+
+        const paragraphs = trimmed
+            .split(/\n/)
+            .filter((line) => line.trim())
+            .map((line) => renderInlineMarkdown(line.trim()))
+            .join("<br />");
+
+        htmlBlocks.push(`<p>${paragraphs}</p>`);
     }
 
-    return publishedPosts.map((post) => ({
-        id: post.id ?? `post-${Math.random().toString(36).slice(2)}`,
-        slug: post.slug ?? (post.title ? post.title.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "") || "entry" : "entry"),
-        category: "Published entry",
-        title: post.title ?? "Untitled entry",
-        description: stripHtml(post.content ?? "A published journal entry from the CMS.") || "A published journal entry from the CMS.",
-        format: "Article",
-        accent: "from-amber-300/20 to-transparent",
-        notes: [post.createdAt ? `Published ${post.createdAt}` : "Published", "CMS"],
-        content: post.content ?? "",
-    }));
+    return htmlBlocks.join("\n");
 }

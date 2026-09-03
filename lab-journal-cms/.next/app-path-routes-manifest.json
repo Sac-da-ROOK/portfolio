@@ -3,8 +3,12 @@
   "/(dashboard)/dashboard/page": "/dashboard",
   "/_global-error/page": "/_global-error",
   "/_not-found/page": "/_not-found",
+  "/api/comments/route": "/api/comments",
+  "/api/journal/route": "/api/journal",
   "/api/notify/route": "/api/notify",
   "/api/posts/[id]/route": "/api/posts/[id]",
   "/api/posts/route": "/api/posts",
+  "/api/subscribers/route": "/api/subscribers",
+  "/api/votes/route": "/api/votes",
   "/page": "/"
 }

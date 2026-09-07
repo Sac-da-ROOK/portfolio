@@ -8,6 +8,7 @@ export type GalleryLightboxItem = {
     src: string;
     type: "photo" | "video";
     title: string;
+    caption?: string;
     articleSlug?: string;
     articleTitle?: string;
 };
@@ -16,9 +17,11 @@ type GalleryLightboxProps = {
     items: GalleryLightboxItem[];
     initialIndex: number;
     onClose: () => void;
+    canEditCaption?: boolean;
+    onEditCaption?: (item: GalleryLightboxItem) => void;
 };
 
-export default function GalleryLightbox({ items, initialIndex, onClose }: GalleryLightboxProps) {
+export default function GalleryLightbox({ items, initialIndex, onClose, canEditCaption = false, onEditCaption }: GalleryLightboxProps) {
     const [index, setIndex] = useState(initialIndex);
 
     useEffect(() => {
@@ -64,6 +67,11 @@ export default function GalleryLightbox({ items, initialIndex, onClose }: Galler
                     </div>
 
                     <div className="flex items-center gap-2">
+                        {canEditCaption && onEditCaption ? (
+                            <button type="button" onClick={() => onEditCaption(item)} className="hidden rounded-full border border-amber-300/60 bg-amber-400/10 px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-amber-200 transition hover:bg-amber-400/20 sm:inline-flex">
+                                Edit Caption
+                            </button>
+                        ) : null}
                         {item.articleSlug && item.articleTitle ? (
                             <Link href={`/lab-journal/${item.articleSlug}`} className="hidden rounded-full border border-white/15 bg-white/5 px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-white transition hover:bg-white/10 sm:inline-flex">
                                 From the Lab Journal
@@ -94,6 +102,12 @@ export default function GalleryLightbox({ items, initialIndex, onClose }: Galler
                         ›
                     </button>
                 </div>
+
+                {item.caption ? (
+                    <div className="border-t border-white/10 bg-slate-950/80 px-4 py-4 sm:px-6">
+                        <p className="max-w-4xl text-sm leading-7 text-slate-200 sm:text-base">{item.caption}</p>
+                    </div>
+                ) : null}
 
                 <div className="flex items-center justify-between border-t border-white/10 px-4 py-3 sm:px-6">
                     <div className="flex items-center gap-2 text-[10px] uppercase tracking-[0.2em] text-slate-300">

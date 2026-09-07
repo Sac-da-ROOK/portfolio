@@ -13,7 +13,7 @@ type GalleryFilter = "ALL" | "PHOTOS" | "VIDEOS";
 export default async function GalleryPage({
     searchParams,
 }: {
-    searchParams?: Promise<{ filter?: string }>;
+    searchParams?: Promise<{ filter?: string; search?: string }>;
 }) {
     const params = (await searchParams) ?? {};
     const activeFilter: GalleryFilter = (() => {

@@ -17,11 +17,9 @@ type GalleryLightboxProps = {
     items: GalleryLightboxItem[];
     initialIndex: number;
     onClose: () => void;
-    canEditCaption?: boolean;
-    onEditCaption?: (item: GalleryLightboxItem) => void;
 };
 
-export default function GalleryLightbox({ items, initialIndex, onClose, canEditCaption = false, onEditCaption }: GalleryLightboxProps) {
+export default function GalleryLightbox({ items, initialIndex, onClose }: GalleryLightboxProps) {
     const [index, setIndex] = useState(initialIndex);
 
     useEffect(() => {
@@ -67,11 +65,6 @@ export default function GalleryLightbox({ items, initialIndex, onClose, canEditC
                     </div>
 
                     <div className="flex items-center gap-2">
-                        {canEditCaption && onEditCaption ? (
-                            <button type="button" onClick={() => onEditCaption(item)} className="hidden rounded-full border border-amber-300/60 bg-amber-400/10 px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-amber-200 transition hover:bg-amber-400/20 sm:inline-flex">
-                                Edit Caption
-                            </button>
-                        ) : null}
                         {item.articleSlug && item.articleTitle ? (
                             <Link href={`/lab-journal/${item.articleSlug}`} className="hidden rounded-full border border-white/15 bg-white/5 px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-white transition hover:bg-white/10 sm:inline-flex">
                                 From the Lab Journal

@@ -106,46 +106,9 @@ async function getGalleryMetadataMap() {
     return metadataMap;
 }
 
-async function getGallerySidecarMetadataMap() {
-    const galleryDir = path.join(process.cwd(), "public", "gallery");
-    const metadataMap = new Map<string, GalleryMetadataEntry>();
-
-    try {
-        const files = await readdir(galleryDir, { withFileTypes: true });
-        const sidecars = files
-            .filter((entry) => entry.isFile() && entry.name.endsWith(".caption.json"))
-            .map((entry) => entry.name);
-
-        for (const fileName of sidecars) {
-            try {
-                const filePath = path.join(galleryDir, fileName);
-                const raw = await readFile(filePath, "utf8");
-                const parsed = JSON.parse(raw) as Partial<GalleryMetadataEntry>;
-                if (!parsed || typeof parsed !== "object" || typeof parsed.src !== "string") {
-                    continue;
-                }
-
-                metadataMap.set(normalizeMetadataSource(parsed.src), {
-                    src: normalizeMetadataSource(parsed.src),
-                    type: parsed.type === "video" ? "video" : "photo",
-                    caption: typeof parsed.caption === "string" ? parsed.caption.trim() || undefined : undefined,
-                    article: typeof parsed.article === "string" ? parsed.article.trim() || null : null,
-                });
-            } catch {
-                continue;
-            }
-        }
-    } catch {
-        return metadataMap;
-    }
-
-    return metadataMap;
-}
-
 export async function getGalleryItems(): Promise<GalleryItem[]> {
     const galleryDir = path.join(process.cwd(), "public", "gallery");
     const metadataMap = await getGalleryMetadataMap();
-    const sidecarMap = await getGallerySidecarMetadataMap();
 
     try {
         const files = await readdir(galleryDir, { withFileTypes: true });
@@ -161,7 +124,7 @@ export async function getGalleryItems(): Promise<GalleryItem[]> {
         return mediaFiles.map((fileName) => {
             const extension = path.extname(fileName).toLowerCase();
             const src = normalizeMediaPath(fileName);
-            const metadata = metadataMap.get(src) ?? sidecarMap.get(src) ?? metadataMap.get(normalizeMetadataSource(fileName)) ?? sidecarMap.get(normalizeMetadataSource(fileName));
+            const metadata = metadataMap.get(src) ?? metadataMap.get(normalizeMetadataSource(fileName));
             const title = fileName.replace(/\.[^/.]+$/, "").replace(/[-_]+/g, " ").replace(/\b\w/g, (char) => char.toUpperCase());
 
             return {

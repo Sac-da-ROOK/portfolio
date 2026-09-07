@@ -4,15 +4,16 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
 const navItems = [
-    { id: "home", label: "Home" },
-    { id: "about", label: "About" },
-    { id: "competitions", label: "Competitions & Achievements" },
-    { id: "learning", label: "Learning" },
-    { id: "chess", label: "Chess" },
-    { id: "robotics", label: "Robotics" },
-    { id: "stem-gallery", label: "STEM Gallery" },
-    { id: "blog", label: "Blog" },
-    { id: "contact", label: "Contact" }
+    { id: "home", label: "Home", href: "#home" },
+    { id: "about", label: "About", href: "#about" },
+    { id: "competitions", label: "Competitions & Achievements", href: "#competitions" },
+    { id: "learning", label: "Learning", href: "#learning" },
+    { id: "chess", label: "Chess", href: "#chess" },
+    { id: "robotics", label: "Robotics", href: "#robotics" },
+    { id: "stem-gallery", label: "STEM Gallery", href: "#stem-gallery" },
+    { id: "gallery", label: "Gallery", href: "/gallery" },
+    { id: "blog", label: "Blog", href: "#blog" },
+    { id: "contact", label: "Contact", href: "#contact" }
 ];
 
 export default function Navbar() {
@@ -112,7 +113,7 @@ export default function Navbar() {
                     {navItems.map((item) => (
                         <a
                             key={item.id}
-                            href={`#${item.id}`}
+                            href={item.href}
                             aria-current={activeSection === item.id ? "page" : undefined}
                             className={`group relative text-sm font-semibold tracking-[0.02em] ui-transition ${activeSection === item.id ? "text-slate-900" : "text-slate-600 hover:text-slate-900"}`}
                             onClick={() => closeMenu(false)}
@@ -153,7 +154,7 @@ export default function Navbar() {
                             <a
                                 key={item.id}
                                 ref={index === 0 ? firstMenuLinkRef : undefined}
-                                href={`#${item.id}`}
+                                href={item.href}
                                 aria-current={activeSection === item.id ? "page" : undefined}
                                 className={`rounded-2xl border-2 px-4 py-3 text-sm font-semibold ui-transition ${activeSection === item.id ? "border-amber-300 bg-amber-100 text-slate-900" : "border-slate-900/20 text-slate-700 hover:bg-amber-50 hover:text-slate-900"}`}
                                 onClick={() => closeMenu(false)}

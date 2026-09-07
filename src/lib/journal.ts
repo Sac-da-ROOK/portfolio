@@ -10,6 +10,7 @@ export type JournalEntry = {
     content?: string;
     date?: string;
     time?: string;
+    media?: string[];
     published?: boolean;
 };
 

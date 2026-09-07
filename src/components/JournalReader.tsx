@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useRef } from "react";
 import JournalArticleInteractions from "@/components/JournalArticleInteractions";
@@ -100,6 +101,32 @@ export default function JournalReader({ entries, entryTitle }: JournalReaderProp
                             className="journal-markdown mt-8 max-h-[70vh] overflow-y-auto rounded-[1.5rem] border border-slate-900/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.95),rgba(255,250,215,0.92))] p-6 text-base leading-8 text-slate-800 shadow-inner"
                             dangerouslySetInnerHTML={{ __html: content }}
                         />
+
+                        {entry.media && entry.media.length > 0 ? (
+                            <div className="mt-8">
+                                <p className="text-[11px] uppercase tracking-[0.24em] text-slate-600">Media</p>
+                                <div className="mt-4 grid gap-4 md:grid-cols-2">
+                                    {entry.media.map((media) => {
+                                        const isVideo = /\.(mp4|webm|mov|m4v)$/i.test(media);
+                                        if (isVideo) {
+                                            return (
+                                                <div key={media} className="overflow-hidden rounded-[1.5rem] border border-slate-900/10 bg-slate-900/95 shadow-[8px_8px_0_rgba(15,23,42,0.08)]">
+                                                    <video className="h-72 w-full object-cover" controls preload="metadata">
+                                                        <source src={media} />
+                                                    </video>
+                                                </div>
+                                            );
+                                        }
+
+                                        return (
+                                            <div key={media} className="overflow-hidden rounded-[1.5rem] border border-slate-900/10 bg-white shadow-[8px_8px_0_rgba(15,23,42,0.08)]">
+                                                <Image src={media} alt={entry.title} width={1200} height={900} className="h-72 w-full object-cover" />
+                                            </div>
+                                        );
+                                    })}
+                                </div>
+                            </div>
+                        ) : null}
 
                         <div className="mt-8 flex flex-col gap-4 rounded-[1.75rem] border border-slate-900/10 bg-slate-50/80 p-4 sm:flex-row sm:items-center sm:justify-between">
                             <Link

@@ -12,6 +12,7 @@ export type FrontmatterEntry = {
     accent?: string;
     published?: boolean;
     notes?: string[];
+    media?: string[];
     slug?: string;
 };
 
@@ -108,7 +109,7 @@ async function getJournalFiles() {
     try {
         const entries = await readdir(directory, { withFileTypes: true });
         return entries
-            .filter((entry) => entry.isFile() && entry.name.endsWith(".md"))
+            .filter((entry) => entry.isFile() && entry.name.endsWith(".md") && !entry.name.startsWith("_"))
             .map((entry) => path.join(directory, entry.name))
             .sort();
     } catch {
@@ -121,15 +122,17 @@ async function parseJournalFile(filePath: string): Promise<JournalEntry | null> 
         const raw = await readFile(filePath, "utf8");
         const { attributes, body } = parseFrontmatter(raw);
 
+        const now = new Date();
         const title = typeof attributes.title === "string" && attributes.title.trim() ? attributes.title.trim() : path.basename(filePath, ".md");
         const category = typeof attributes.category === "string" && attributes.category.trim() ? attributes.category.trim() : "General";
         const description = typeof attributes.description === "string" && attributes.description.trim() ? attributes.description.trim() : stripHtml(body) || "A Lab Journal article.";
-        const date = typeof attributes.date === "string" && attributes.date.trim() ? attributes.date.trim() : new Date().toISOString().slice(0, 10);
-        const time = typeof attributes.time === "string" && attributes.time.trim() ? attributes.time.trim() : "";
+        const date = typeof attributes.date === "string" && attributes.date.trim() ? attributes.date.trim() : now.toISOString().slice(0, 10);
+        const time = typeof attributes.time === "string" && attributes.time.trim() ? attributes.time.trim() : now.toLocaleTimeString("en-GB", { hour: "2-digit", minute: "2-digit", hour12: false, timeZone: "America/Chicago" });
         const format = typeof attributes.format === "string" && attributes.format.trim() ? attributes.format.trim() : "Article";
         const accent = typeof attributes.accent === "string" && attributes.accent.trim() ? attributes.accent.trim() : "from-amber-200 to-yellow-100";
-        const published = Boolean(attributes.published);
+        const published = attributes.published === undefined ? true : Boolean(attributes.published);
         const notes = Array.isArray(attributes.notes) ? attributes.notes.map((note) => String(note).trim()).filter(Boolean) : [];
+        const media = Array.isArray(attributes.media) ? attributes.media.map((item) => String(item).trim()).filter(Boolean) : [];
         const slugValue = typeof attributes.slug === "string" && attributes.slug.trim() ? attributes.slug.trim() : slugify(title);
 
         return {
@@ -144,6 +147,7 @@ async function parseJournalFile(filePath: string): Promise<JournalEntry | null> 
             content: body,
             date,
             time,
+            media,
             published,
         };
     } catch {

@@ -11,6 +11,7 @@ const navItems = [
     { id: "chess", label: "Chess", href: "#chess" },
     { id: "robotics", label: "Robotics", href: "#robotics" },
     { id: "stem-gallery", label: "STEM Gallery", href: "#stem-gallery" },
+    { id: "computer-science", label: "Computer Science", href: "/cs" },
     { id: "gallery", label: "Gallery", href: "/gallery" },
     { id: "blog", label: "Blog", href: "#blog" },
     { id: "contact", label: "Contact", href: "#contact" }
@@ -111,18 +112,38 @@ export default function Navbar() {
 
                 <nav className="hidden min-w-0 flex-1 items-center justify-center md:flex" aria-label="Primary navigation">
                     <div className="flex items-center justify-center gap-2 whitespace-nowrap lg:gap-3 xl:gap-4">
-                        {navItems.map((item) => (
-                            <a
-                                key={item.id}
-                                href={item.href}
-                                aria-current={activeSection === item.id ? "page" : undefined}
-                                className={`group relative flex items-center justify-center whitespace-nowrap px-1 py-1.5 text-[11px] font-semibold leading-none tracking-[-0.01em] ui-transition sm:text-[11.5px] lg:text-[12px] ${activeSection === item.id ? "text-slate-900" : "text-slate-600 hover:text-slate-900"}`}
-                                onClick={() => closeMenu(false)}
-                            >
-                                {item.label}
-                                <span className={`absolute inset-x-0 -bottom-1 h-[2px] rounded-full bg-gradient-to-r from-amber-400 to-yellow-300 ui-transition ${activeSection === item.id ? "opacity-100" : "opacity-0 group-hover:opacity-100"}`} />
-                            </a>
-                        ))}
+                        {navItems.map((item) => {
+                            const isRouteLink = item.href.startsWith("/");
+                            const linkClasses = `group relative flex items-center justify-center whitespace-nowrap px-1 py-1.5 text-[11px] font-semibold leading-none tracking-[-0.01em] ui-transition sm:text-[11.5px] lg:text-[12px] ${activeSection === item.id ? "text-slate-900" : "text-slate-600 hover:text-slate-900"}`;
+
+                            if (isRouteLink) {
+                                return (
+                                    <Link
+                                        key={item.id}
+                                        href={item.href}
+                                        aria-current={activeSection === item.id ? "page" : undefined}
+                                        className={linkClasses}
+                                        onClick={() => closeMenu(false)}
+                                    >
+                                        {item.label}
+                                        <span className={`absolute inset-x-0 -bottom-1 h-[2px] rounded-full bg-gradient-to-r from-amber-400 to-yellow-300 ui-transition ${activeSection === item.id ? "opacity-100" : "opacity-0 group-hover:opacity-100"}`} />
+                                    </Link>
+                                );
+                            }
+
+                            return (
+                                <a
+                                    key={item.id}
+                                    href={item.href}
+                                    aria-current={activeSection === item.id ? "page" : undefined}
+                                    className={linkClasses}
+                                    onClick={() => closeMenu(false)}
+                                >
+                                    {item.label}
+                                    <span className={`absolute inset-x-0 -bottom-1 h-[2px] rounded-full bg-gradient-to-r from-amber-400 to-yellow-300 ui-transition ${activeSection === item.id ? "opacity-100" : "opacity-0 group-hover:opacity-100"}`} />
+                                </a>
+                            );
+                        })}
                     </div>
                 </nav>
 
@@ -152,18 +173,38 @@ export default function Navbar() {
                     className="rounded-[1.35rem] border border-slate-900/20 bg-white/96 px-4 py-4 shadow-[0_10px_28px_rgba(15,23,42,0.08)] backdrop-blur-sm"
                 >
                     <div className="flex max-h-[calc(100vh-9rem)] flex-col gap-2 overflow-y-auto pr-1">
-                        {navItems.map((item, index) => (
-                            <a
-                                key={item.id}
-                                ref={index === 0 ? firstMenuLinkRef : undefined}
-                                href={item.href}
-                                aria-current={activeSection === item.id ? "page" : undefined}
-                                className={`rounded-2xl border px-4 py-3 text-sm font-semibold ui-transition ${activeSection === item.id ? "border-amber-300 bg-amber-100 text-slate-900" : "border-slate-900/20 text-slate-700 hover:bg-amber-50 hover:text-slate-900"}`}
-                                onClick={() => closeMenu(false)}
-                            >
-                                {item.label}
-                            </a>
-                        ))}
+                        {navItems.map((item, index) => {
+                            const isRouteLink = item.href.startsWith("/");
+                            const className = `rounded-2xl border px-4 py-3 text-sm font-semibold ui-transition ${activeSection === item.id ? "border-amber-300 bg-amber-100 text-slate-900" : "border-slate-900/20 text-slate-700 hover:bg-amber-50 hover:text-slate-900"}`;
+
+                            if (isRouteLink) {
+                                return (
+                                    <Link
+                                        key={item.id}
+                                        ref={index === 0 ? firstMenuLinkRef : undefined}
+                                        href={item.href}
+                                        aria-current={activeSection === item.id ? "page" : undefined}
+                                        className={className}
+                                        onClick={() => closeMenu(false)}
+                                    >
+                                        {item.label}
+                                    </Link>
+                                );
+                            }
+
+                            return (
+                                <a
+                                    key={item.id}
+                                    ref={index === 0 ? firstMenuLinkRef : undefined}
+                                    href={item.href}
+                                    aria-current={activeSection === item.id ? "page" : undefined}
+                                    className={className}
+                                    onClick={() => closeMenu(false)}
+                                >
+                                    {item.label}
+                                </a>
+                            );
+                        })}
                     </div>
                 </nav>
             </div>

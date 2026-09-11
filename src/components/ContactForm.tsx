@@ -78,18 +78,19 @@ export default function ContactForm() {
 
             const result = await response.json();
             if (!response.ok) {
-                throw new Error(result.error || "Submission failed.");
+                throw new Error(result.error || "Unable to send your message right now.");
             }
 
             setState("success");
+            setErrors({});
             setForms((prev) => ({
                 ...prev,
                 [activeTrack]: createInitialValues(activeTrack),
             }));
-            setTimeout(() => setState("idle"), 4200);
+            window.setTimeout(() => setState("idle"), 4200);
         } catch (error) {
             setState("error");
-            setServerError(error instanceof Error ? error.message : "Submission failed.");
+            setServerError(error instanceof Error ? error.message : "Unable to send your message right now.");
         }
     };
 
@@ -167,20 +168,20 @@ export default function ContactForm() {
                 <input id="bot-field" name="botField" type="text" value={values.botField} onChange={handleChange("botField")} autoComplete="off" />
             </div>
 
-            <button type="submit" disabled={state === "loading"} className="inline-flex items-center justify-center rounded-full bg-cyan-400 px-6 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-slate-950 ui-transition hover:-translate-y-0.5 hover:bg-cyan-300 disabled:cursor-not-allowed disabled:opacity-60">
+            <button type="submit" disabled={state === "loading"} aria-live="polite" className="inline-flex items-center justify-center rounded-full bg-cyan-400 px-6 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-slate-950 ui-transition hover:-translate-y-0.5 hover:bg-cyan-300 disabled:cursor-not-allowed disabled:opacity-60">
                 {state === "loading" ? "Sending..." : state === "success" ? "Sent" : "Send Message"}
             </button>
 
             {serverError ? (
-                <div className="rounded-3xl border border-rose-300/20 bg-rose-300/5 p-4 text-sm text-rose-100">
+                <div role="alert" aria-live="assertive" className="rounded-3xl border border-rose-300/20 bg-rose-300/5 p-4 text-sm text-rose-100">
                     {serverError}
                 </div>
             ) : null}
 
             {state === "success" ? (
-                <div className="rounded-3xl border border-emerald-300/20 bg-emerald-300/5 p-4 text-sm text-emerald-100">
-                    <p className="font-semibold">Message sent successfully.</p>
-                    <p className="mt-1 text-slate-300">I’ll respond within 1–2 business days.</p>
+                <div role="status" aria-live="polite" className="rounded-3xl border border-emerald-300/20 bg-emerald-300/5 p-4 text-sm text-emerald-100">
+                    <p className="font-semibold">Message sent successfully!</p>
+                    <p className="mt-1 text-slate-300">Your message was received and I’ll be in touch soon.</p>
                 </div>
             ) : null}
         </form>

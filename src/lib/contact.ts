@@ -55,15 +55,16 @@ export function validateContactValues(values: ContactFormValues) {
 }
 
 export async function sendContactMessage(values: ContactFormValues) {
-    const emailTo = "aarushsrivastava@gmail.com";
-    const emailFrom = process.env.CONTACT_EMAIL_FROM ?? "no-reply@portfolio.example";
-    const resendApiKey = process.env.RESEND_API_KEY;
+    const emailTo = (process.env.CONTACT_EMAIL_TO ?? "aarushsrivastava04@gmail.com").trim();
+    const emailFrom = (process.env.CONTACT_EMAIL_FROM ?? "no-reply@portfolio.example").trim();
+    const resendApiKey = process.env.RESEND_API_KEY?.trim();
 
     if (!resendApiKey) {
-        return {
-            sent: true,
-            message: "Contact form submitted successfully. Configure RESEND_API_KEY and CONTACT_EMAIL_TO for real email delivery.",
-        };
+        throw new Error("Email delivery is not configured. Set RESEND_API_KEY in the environment before submitting the contact form.");
+    }
+
+    if (!emailTo) {
+        throw new Error("The contact recipient is not configured. Set CONTACT_EMAIL_TO to dmrzzlr@gmail.com.");
     }
 
     const html = `
@@ -71,7 +72,7 @@ export async function sendContactMessage(values: ContactFormValues) {
       <h1>New portfolio contact</h1>
       <p><strong>Name:</strong> ${values.name}</p>
       <p><strong>Email:</strong> ${values.email}</p>
-            <p><strong>Track:</strong> ${(values.track ?? "stem").toUpperCase()}</p>
+      <p><strong>Track:</strong> ${(values.track ?? "stem").toUpperCase()}</p>
       <p><strong>Subject:</strong> ${values.subject}</p>
       <p><strong>Message:</strong></p>
       <p>${values.message.replace(/\n/g, "<br />")}</p>
@@ -86,7 +87,7 @@ export async function sendContactMessage(values: ContactFormValues) {
         },
         body: JSON.stringify({
             from: emailFrom,
-            to: emailTo,
+            to: [emailTo],
             subject: `Portfolio contact from ${values.name}`,
             html,
         }),

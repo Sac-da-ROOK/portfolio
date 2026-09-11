@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Navbar from "@/components/Navbar";
 import { featuredProjects } from "@/lib/projects";
 
 export const metadata: Metadata = {
@@ -49,15 +50,63 @@ const currentWork = [
     }
 ];
 
+// Placeholder timeline data only. Replace with verified dates and details later.
+const timelineEntries = [
+    {
+        year: "2020",
+        title: "First Interest",
+        description: "Placeholder entry describing the beginning of my interest in technology, logic, and creative problem-solving.",
+        technologies: ["Curiosity", "Problem Solving"]
+    },
+    {
+        year: "2021",
+        title: "Started Exploring Technology",
+        description: "Placeholder entry describing my first technical experiments, learning resources, and early exploration of software and systems.",
+        technologies: ["Learning", "Software Basics"]
+    },
+    {
+        year: "2022",
+        title: "First Programming Projects",
+        description: "Placeholder entry describing the first projects I built to learn coding patterns, structure, and project thinking.",
+        technologies: ["JavaScript", "HTML", "CSS"]
+    },
+    {
+        year: "2023",
+        title: "Web Development",
+        description: "Placeholder entry describing my growth in building interfaces and understanding how design and code work together.",
+        technologies: ["React", "Next.js", "Tailwind CSS"]
+    },
+    {
+        year: "2024",
+        title: "Bigger Projects",
+        description: "Placeholder entry describing larger problem-solving work and a stronger focus on building projects with deeper purpose.",
+        technologies: ["TypeScript", "GitHub", "Vercel"]
+    },
+    {
+        year: "2025",
+        title: "Expanding My Skills",
+        description: "Placeholder entry describing my continued practice in software thinking, research, and building more polished systems.",
+        technologies: ["Python", "Research", "Systems Thinking"]
+    },
+    {
+        year: "2026",
+        title: "Building My Portfolio",
+        description: "Placeholder entry describing my ongoing effort to create a clearer, more professional body of work and technical identity.",
+        technologies: ["Portfolio", "Design", "Iteration"]
+    }
+];
+
 export default function ComputerSciencePage() {
     return (
-        <main className="min-h-screen bg-[#050b16] text-slate-100">
-            <div className="relative overflow-hidden">
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(34,211,238,0.18),_transparent_25%),radial-gradient(circle_at_80%_10%,_rgba(16,185,129,0.18),_transparent_28%),linear-gradient(180deg,_#050b16_0%,_#0a1325_42%,_#071421_100%)]" />
+        <main id="main-content" className="min-h-screen bg-[#050b16] text-slate-100">
+            <Navbar theme="cs" />
+
+            <div className="relative overflow-hidden pt-24 sm:pt-28">
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(34,211,238,0.16),_transparent_24%),radial-gradient(circle_at_80%_10%,_rgba(16,185,129,0.18),_transparent_28%),linear-gradient(180deg,_#050b16_0%,_#0a1325_42%,_#071421_100%)]" />
 
                 <div className="relative z-10">
-                    <header className="pt-24 sm:pt-28">
-                        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+                    <header className="px-4 sm:px-6 lg:px-8">
+                        <div className="mx-auto max-w-6xl">
                             <div className="rounded-[2rem] border border-cyan-400/20 bg-slate-950/45 p-5 shadow-[0_0_50px_rgba(14,116,144,0.16)] backdrop-blur-sm sm:p-7 lg:p-10">
                                 <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
                                     <div className="max-w-3xl">
@@ -73,15 +122,15 @@ export default function ComputerSciencePage() {
                                     <div className="flex flex-wrap gap-3">
                                         <Link
                                             href="/"
-                                            className="inline-flex items-center justify-center rounded-full border border-cyan-300/30 bg-cyan-500/10 px-5 py-3 text-sm font-semibold text-cyan-100 transition hover:-translate-y-0.5 hover:border-cyan-200/60 hover:bg-cyan-500/20"
+                                            className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-cyan-400 via-sky-400 to-emerald-400 px-5 py-3 text-sm font-semibold text-slate-950 shadow-[0_12px_30px_rgba(14,165,233,0.22)] transition hover:-translate-y-0.5 hover:shadow-[0_16px_34px_rgba(16,185,129,0.28)]"
                                         >
-                                            Back to Home
+                                            See how far I've come
                                         </Link>
                                         <Link
                                             href="https://github.com/Sac-da-ROOK"
                                             target="_blank"
                                             rel="noreferrer"
-                                            className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-cyan-400 to-emerald-400 px-5 py-3 text-sm font-semibold text-slate-950 transition hover:-translate-y-0.5 hover:shadow-[0_12px_30px_rgba(16,185,129,0.28)]"
+                                            className="inline-flex items-center justify-center rounded-full border border-cyan-300/30 bg-cyan-500/10 px-5 py-3 text-sm font-semibold text-cyan-100 transition hover:-translate-y-0.5 hover:border-cyan-200/60 hover:bg-cyan-500/20"
                                         >
                                             View GitHub
                                         </Link>
@@ -199,6 +248,54 @@ export default function ComputerSciencePage() {
                     </section>
 
                     <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+                        <div className="mb-8 max-w-2xl">
+                            <p className="text-xs font-semibold uppercase tracking-[0.32em] text-cyan-300">My Computer Science Journey</p>
+                            <h2 className="mt-4 text-3xl font-semibold tracking-[-0.03em] text-white sm:text-4xl">
+                                A timeline of how my interest in computer science continues to evolve.
+                            </h2>
+                        </div>
+
+                        <div className="relative mt-10">
+                            <div className="absolute left-4 top-0 bottom-0 w-px bg-gradient-to-b from-cyan-400 via-emerald-400 to-cyan-500/30 sm:left-1/2 sm:-translate-x-1/2" aria-hidden="true" />
+
+                            <div className="space-y-8">
+                                {timelineEntries.map((entry, index) => (
+                                    <div
+                                        key={`${entry.year}-${entry.title}`}
+                                        className="relative sm:grid sm:grid-cols-[1fr_56px_1fr] sm:items-center"
+                                    >
+                                        <div className={`sm:col-start-${index % 2 === 0 ? "1" : "3"} ${index % 2 === 0 ? "sm:pr-8 sm:text-right" : "sm:col-start-3 sm:pl-8"}`}>
+                                            <article className="ml-10 rounded-[1.7rem] border border-cyan-400/20 bg-gradient-to-br from-[#0d2135] to-[#0b1e2f] p-5 shadow-[0_14px_28px_rgba(8,47,73,0.16)] transition hover:-translate-y-1 hover:border-emerald-400/35 sm:ml-0">
+                                                <div className="mb-3 flex flex-wrap items-center gap-3 sm:justify-between">
+                                                    <span className="inline-flex rounded-full border border-cyan-300/30 bg-cyan-500/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.28em] text-cyan-200">
+                                                        {entry.year}
+                                                    </span>
+                                                    <span className="text-xs font-medium uppercase tracking-[0.2em] text-emerald-300">Placeholder</span>
+                                                </div>
+                                                <h3 className="text-xl font-semibold text-white">{entry.title}</h3>
+                                                <p className="mt-3 text-sm leading-7 text-slate-300">{entry.description}</p>
+                                                <div className="mt-4 flex flex-wrap gap-2">
+                                                    {entry.technologies.map((tech) => (
+                                                        <span key={tech} className="rounded-full border border-emerald-400/20 bg-emerald-500/10 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-emerald-100">
+                                                            {tech}
+                                                        </span>
+                                                    ))}
+                                                </div>
+                                            </article>
+                                        </div>
+
+                                        <div className="absolute left-1 top-5 flex items-center justify-center sm:col-start-2 sm:relative sm:left-0 sm:top-0">
+                                            <span className="flex h-6 w-6 items-center justify-center rounded-full border border-cyan-200/40 bg-gradient-to-br from-cyan-400 to-emerald-400 shadow-[0_0_20px_rgba(34,211,238,0.25)]" aria-hidden="true">
+                                                <span className="h-2.5 w-2.5 rounded-full bg-slate-950" />
+                                            </span>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </section>
+
+                    <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
                         <div className="grid gap-8 lg:grid-cols-2">
                             <div className="rounded-[2rem] border border-cyan-500/20 bg-[#0b1d2f] p-7 sm:p-8">
                                 <p className="text-xs font-semibold uppercase tracking-[0.32em] text-cyan-300">Currently Learning</p>
@@ -246,6 +343,15 @@ export default function ComputerSciencePage() {
                                             <p className="mt-3 text-sm leading-7 text-slate-300">{item.description}</p>
                                         </div>
                                     ))}
+                                </div>
+
+                                <div className="mt-8 flex justify-center">
+                                    <Link
+                                        href="/"
+                                        className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-cyan-400 via-sky-400 to-emerald-400 px-6 py-3 text-sm font-semibold text-slate-950 shadow-[0_12px_30px_rgba(14,165,233,0.22)] transition hover:-translate-y-0.5 hover:shadow-[0_16px_36px_rgba(16,185,129,0.28)]"
+                                    >
+                                        See how far I've come
+                                    </Link>
                                 </div>
                             </div>
                         </div>

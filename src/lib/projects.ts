@@ -10,16 +10,21 @@ export type ProjectData = {
     tags: string[];
     href: string;
     repo: string;
+    githubUrl: string;
     screenshot: string;
     gallery: string[];
     featured?: boolean;
+    overview: string;
     problem: string;
     why: string;
+    approach: string;
+    result: string;
     techStack: string[];
     features: string[];
     challenges: string[];
     learnings: string[];
     nextSteps: string[];
+    screenshots?: string[];
 };
 
 export const projects: ProjectData[] = [
@@ -35,6 +40,7 @@ export const projects: ProjectData[] = [
         tags: ["React", "TypeScript", "Vercel"],
         href: "https://ultimate-type.vercel.app",
         repo: "https://github.com/Sac-da-ROOK",
+        githubUrl: "https://github.com/Sac-da-ROOK",
         screenshot: "/images/featured/ultimate-type-1.svg",
         gallery: [
             "/images/featured/ultimate-type-1.svg",
@@ -42,10 +48,16 @@ export const projects: ProjectData[] = [
             "/images/featured/ultimate-type-3.svg"
         ],
         featured: true,
+        overview:
+            "UltimateType is a focused typing practice app designed to make improvement feel clear, measurable, and motivating. The project was built to help learners practice with intention rather than repetition alone.",
         problem:
             "Many typing tools focus on arbitrary exercises without clear feedback, making it hard to track progress or build muscle memory with purpose.",
         why:
             "UltimateType was created to give learners precise speed and accuracy feedback while keeping each practice session focused, engaging, and measurable.",
+        approach:
+            "I designed the app around a clean, distraction-free interface and a straightforward feedback loop: users type, review real-time metrics, and then build consistency over time through repeated practice.",
+        result:
+            "The project is a live typing-focused experience with a polished interface and a strong focus on practical improvement, making it useful as both a practice tool and a portfolio project.",
         techStack: ["React", "TypeScript", "Tailwind CSS", "Vercel"],
         features: [
             "Live speed and accuracy metrics for every input session.",
@@ -81,16 +93,23 @@ export const projects: ProjectData[] = [
         tags: ["Next.js", "React", "Education"],
         href: "https://omnimath-rho.vercel.app",
         repo: "https://github.com/Sac-da-ROOK",
+        githubUrl: "https://github.com/Sac-da-ROOK",
         screenshot: "/images/featured/placeholder.svg",
         gallery: [
             "/images/featured/placeholder.svg",
             "/images/featured/placeholder.svg"
         ],
         featured: true,
+        overview:
+            "OmniMath is a math learning project created to make abstract ideas easier to understand through guided structure and interactive practice. The goal is to make problem-solving feel more approachable and less intimidating.",
         problem:
             "Students often struggle to connect math concepts when practice is abstract or presented without discovery-based interaction.",
         why:
             "OmniMath was built to make math feel less intimidating by layering explanation, practice, and interactive reinforcement in one experience.",
+        approach:
+            "I focused on a structured study flow with concept explanations, interactive practice, and a layout that reduces distraction so the learner can stay centered on the material.",
+        result:
+            "The project functions as an interactive education experience with a clear interface and a strong emphasis on making math learning more approachable.",
         techStack: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
         features: [
             "Concept cards that break topics into approachable steps.",
@@ -126,6 +145,7 @@ export const projects: ProjectData[] = [
         tags: ["JavaScript", "Game", "Web"],
         href: "https://math-sprint-arena.vercel.app",
         repo: "https://github.com/Sac-da-ROOK",
+        githubUrl: "https://github.com/Sac-da-ROOK",
         screenshot: "/images/featured/math-sprint-arena-1.svg",
         gallery: [
             "/images/featured/math-sprint-arena-1.svg",
@@ -133,10 +153,16 @@ export const projects: ProjectData[] = [
             "/images/featured/math-sprint-arena-3.svg"
         ],
         featured: true,
+        overview:
+            "MathSprint Arena is a fast-paced math practice project created to bring energy, rhythm, and immediate feedback to learning. The idea was to turn practice into a motivating challenge rather than a passive drill.",
         problem:
             "Standard drills can feel repetitive and fail to motivate learners who need energy and reward built into practice.",
         why:
             "MathSprint was created to bring momentum, clear feedback, and meaningful goals to everyday math work.",
+        approach:
+            "I focused on the feel of the experience: clear controls, fast feedback, and a pacing approach that keeps the exercise energetic but still readable and fair.",
+        result:
+            "The project works as an engaging web-based math challenge that emphasizes speed, clarity, and momentum while still being approachable for regular practice.",
         techStack: ["JavaScript", "HTML", "CSS", "Web Audio API"],
         features: [
             "Timed math rounds with score-based progression.",

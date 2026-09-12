@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
-import CSGithubProjects from "@/components/CSGithubProjects";
 import CSJourneyTimeline from "@/components/CSJourneyTimeline";
 import { featuredProjects } from "@/lib/projects";
 
@@ -259,71 +258,61 @@ export default function ComputerSciencePage() {
                         </div>
                     </section>
 
-                    <CSJourneyTimeline entries={timelineEntries} />
-
                     <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
-                        <div className="grid gap-8 lg:grid-cols-2">
-                            <div className="rounded-[2rem] border border-cyan-500/20 bg-[#0b1d2f] p-7 sm:p-8">
-                                <p className="text-xs font-semibold uppercase tracking-[0.32em] text-cyan-300">Currently Learning</p>
-                                <h2 className="mt-4 text-3xl font-semibold tracking-[-0.03em] text-white sm:text-4xl">
-                                    Deepening the ideas behind the systems I build.
-                                </h2>
-                                <ul className="mt-6 space-y-4">
-                                    {learningFocus.map((item) => (
-                                        <li key={item} className="flex gap-3 rounded-2xl border border-emerald-400/15 bg-[#0f2438] px-4 py-3 text-base leading-7 text-slate-200">
-                                            <span className="mt-1.5 h-2.5 w-2.5 shrink-0 rounded-full bg-gradient-to-r from-cyan-400 to-emerald-400" aria-hidden="true" />
-                                            <span>{item}</span>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
+                        <div className="mb-8 max-w-2xl">
+                            <p className="text-xs font-semibold uppercase tracking-[0.32em] text-cyan-300">Learning Focus</p>
+                            <h2 className="mt-4 text-3xl font-semibold tracking-[-0.03em] text-white sm:text-4xl">
+                                The ideas and disciplines I want to keep growing in.
+                            </h2>
+                        </div>
 
-                            <div className="rounded-[2rem] border border-emerald-400/20 bg-gradient-to-br from-[#0d2030] to-[#0b1c29] p-7 sm:p-8">
+                        <div className="grid gap-4 md:grid-cols-2">
+                            {learningFocus.map((item) => (
+                                <div key={item} className="rounded-[1.5rem] border border-cyan-400/15 bg-[#0b1c2d] p-5 text-base leading-8 text-slate-200">
+                                    {item}
+                                </div>
+                            ))}
+                        </div>
+                    </section>
+
+                    <section className="border-t border-cyan-500/10 bg-[#071521]">
+                        <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+                            <div className="mb-8 max-w-2xl">
                                 <p className="text-xs font-semibold uppercase tracking-[0.32em] text-emerald-300">Goals</p>
                                 <h2 className="mt-4 text-3xl font-semibold tracking-[-0.03em] text-white sm:text-4xl">
-                                    Building toward a stronger future in technology.
+                                    Where I want my learning and building to go next.
                                 </h2>
-                                <ul className="mt-6 space-y-4">
-                                    {goals.map((goal) => (
-                                        <li key={goal} className="rounded-2xl border border-cyan-400/15 bg-slate-950/25 px-4 py-3 text-base leading-7 text-slate-200">
-                                            {goal}
-                                        </li>
-                                    ))}
-                                </ul>
+                            </div>
+
+                            <div className="grid gap-4 md:grid-cols-2">
+                                {goals.map((goal) => (
+                                    <div key={goal} className="rounded-[1.5rem] border border-cyan-400/15 bg-[#0b1c2d] p-5 text-base leading-8 text-slate-200">
+                                        {goal}
+                                    </div>
+                                ))}
                             </div>
                         </div>
                     </section>
 
-                    <CSGithubProjects />
+                    <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+                        <div className="mb-8 max-w-2xl">
+                            <p className="text-xs font-semibold uppercase tracking-[0.32em] text-cyan-300">Current Work</p>
+                            <h2 className="mt-4 text-3xl font-semibold tracking-[-0.03em] text-white sm:text-4xl">
+                                The kinds of problems and systems I am exploring right now.
+                            </h2>
+                        </div>
 
-                    <section className="border-t border-cyan-500/10 bg-[#071a2a]">
-                        <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
-                            <div className="mx-auto max-w-3xl rounded-[2rem] border border-emerald-400/20 bg-gradient-to-r from-[#0d2235] via-[#0a1a2a] to-[#0d2235] p-7 sm:p-8 lg:p-10">
-                                <p className="text-xs font-semibold uppercase tracking-[0.32em] text-emerald-300">Current Project</p>
-                                <h2 className="mt-4 text-3xl font-semibold tracking-[-0.03em] text-white sm:text-4xl">
-                                    What I am working on right now.
-                                </h2>
-
-                                <div className="mt-7 grid gap-4 md:grid-cols-3">
-                                    {currentWork.map((item) => (
-                                        <div key={item.title} className="rounded-[1.5rem] border border-cyan-400/15 bg-[#102235] p-4">
-                                            <h3 className="text-lg font-semibold text-white">{item.title}</h3>
-                                            <p className="mt-3 text-sm leading-7 text-slate-300">{item.description}</p>
-                                        </div>
-                                    ))}
+                        <div className="grid gap-6 md:grid-cols-3">
+                            {currentWork.map((work) => (
+                                <div key={work.title} className="rounded-[1.75rem] border border-cyan-400/15 bg-[#0b1c2d] p-6">
+                                    <h3 className="text-xl font-semibold text-white">{work.title}</h3>
+                                    <p className="mt-4 text-base leading-8 text-slate-300">{work.description}</p>
                                 </div>
-
-                                <div className="mt-8 flex justify-center">
-                                    <Link
-                                        href="/"
-                                        className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-cyan-400 via-sky-400 to-emerald-400 px-6 py-3 text-sm font-semibold text-slate-950 shadow-[0_12px_30px_rgba(14,165,233,0.22)] transition hover:-translate-y-0.5 hover:shadow-[0_16px_36px_rgba(16,185,129,0.28)]"
-                                    >
-                                        See how far I've come
-                                    </Link>
-                                </div>
-                            </div>
+                            ))}
                         </div>
                     </section>
+
+                    <CSJourneyTimeline entries={timelineEntries} />
                 </div>
             </div>
         </main>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
+import CSGithubProjects from "@/components/CSGithubProjects";
 import CSJourneyTimeline from "@/components/CSJourneyTimeline";
 import { featuredProjects } from "@/lib/projects";
 
@@ -292,6 +293,8 @@ export default function ComputerSciencePage() {
                             </div>
                         </div>
                     </section>
+
+                    <CSGithubProjects />
 
                     <section className="border-t border-cyan-500/10 bg-[#071a2a]">
                         <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">

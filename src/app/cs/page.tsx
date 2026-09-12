@@ -230,6 +230,35 @@ export default function ComputerSciencePage() {
                                     </div>
                                 </article>
                             ))}
+
+                            <Link href="/projects" className="group block rounded-[2rem] border border-cyan-400/20 bg-[#0c1e2f] p-5 text-left shadow-[0_16px_34px_rgba(8,47,73,0.18)] transition hover:-translate-y-1 hover:border-emerald-300/40">
+                                <div className="mb-4 rounded-[1.5rem] border border-cyan-400/15 bg-gradient-to-br from-cyan-500/15 via-slate-900/60 to-emerald-400/10 p-4">
+                                    <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-emerald-300">Collection</p>
+                                    <h3 className="mt-3 text-2xl font-semibold text-white">Explore All Projects</h3>
+                                </div>
+
+                                <p className="text-sm leading-7 text-slate-300">
+                                    Browse everything I&apos;ve built, experimented with, and worked on.
+                                </p>
+
+                                <div className="mt-5 flex flex-wrap gap-2">
+                                    {[
+                                        "Full archive",
+                                        "Project timeline",
+                                        "Case studies"
+                                    ].map((item) => (
+                                        <span key={item} className="rounded-full border border-cyan-400/20 bg-cyan-500/8 px-3 py-1 text-[11px] font-semibold text-cyan-100">
+                                            {item}
+                                        </span>
+                                    ))}
+                                </div>
+
+                                <div className="mt-6">
+                                    <span className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-emerald-400 to-cyan-400 px-4 py-2 text-sm font-semibold text-slate-950 transition group-hover:shadow-[0_12px_28px_rgba(16,185,129,0.2)]">
+                                        View All Projects →
+                                    </span>
+                                </div>
+                            </Link>
                         </div>
                     </section>
 

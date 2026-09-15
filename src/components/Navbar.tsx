@@ -197,11 +197,11 @@ export default function Navbar({ theme = "default" }: { theme?: NavbarTheme }) {
                 </button>
             </div>
 
-            <div className="absolute right-3 top-0 hidden md:block sm:right-4 md:right-5 lg:right-8">
+            <div className="absolute right-3 top-3 hidden md:block sm:right-4 sm:top-4 md:right-5 md:top-5 lg:right-8">
                 <Link
                     href="/cs"
                     aria-current={isCsTheme ? "page" : undefined}
-                    className={`inline-flex items-center justify-center whitespace-nowrap rounded-full border px-4 py-2.5 text-[11px] font-bold leading-none transition duration-200 lg:px-5 lg:text-xs ${csButtonClasses}`}
+                    className={`inline-flex min-w-max shrink-0 items-center justify-center whitespace-nowrap rounded-full border px-4 py-2.5 text-[11px] font-bold leading-none transition duration-200 lg:px-5 lg:text-xs ${csButtonClasses}`}
                 >
                     Computer Science Page
                 </Link>

@@ -12,7 +12,6 @@ const navItems = [
     { id: "learning", label: "Learning", href: "#learning" },
     { id: "chess", label: "Chess", href: "#chess" },
     { id: "robotics", label: "Robotics", href: "#robotics" },
-    { id: "computer-science", label: "Computer Science", href: "/cs" },
     { id: "gallery", label: "Gallery", href: "/gallery" },
     { id: "blog", label: "Blog", href: "#blog" },
     { id: "contact", label: "Contact", href: "#contact" }
@@ -124,30 +123,46 @@ export default function Navbar({ theme = "default" }: { theme?: NavbarTheme }) {
     const menuButtonClasses = isCsTheme
         ? "border border-cyan-300/30 bg-gradient-to-r from-cyan-500/20 to-emerald-500/15 text-cyan-50 hover:bg-cyan-500/20"
         : "border border-slate-900/20 bg-amber-100 text-slate-900 hover:bg-amber-200";
+    const csButtonClasses = "shrink-0 whitespace-nowrap inline-flex items-center justify-center rounded-full border border-emerald-300/50 bg-gradient-to-r from-emerald-400 via-emerald-300 to-cyan-400 px-3.5 py-2 text-[11px] font-semibold tracking-[-0.01em] text-slate-950 shadow-[0_10px_24px_rgba(16,185,129,0.22)] transition-all duration-200 hover:-translate-y-0.5 hover:border-cyan-300/60 hover:shadow-[0_12px_28px_rgba(34,211,238,0.22)] sm:px-4 sm:text-[12px] lg:px-5";
 
     return (
-        <header ref={headerRef} className="fixed inset-x-0 top-0 z-50 px-3 pt-3 sm:px-4 sm:pt-4 md:px-5 lg:px-8">
-            <div className={`mx-auto flex w-full max-w-6xl items-center justify-between gap-1.5 rounded-[1.35rem] px-3 py-2.5 sm:gap-2 sm:px-4 lg:px-5 ${shellClasses}`}>
-                <div className="flex min-w-0 shrink-0 items-center gap-2 sm:gap-2.5">
-                    <Link href="/" aria-label="Go to the homepage" className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl text-sm font-semibold transition-transform duration-200 hover:-translate-y-0.5 sm:h-11 sm:w-11 ${brandClasses}`}>
-                        AS
-                    </Link>
-                    <div className="min-w-0">
-                        <p className={`truncate text-[9px] font-semibold uppercase tracking-[0.24em] sm:text-[10px] ${isCsTheme ? "text-cyan-200" : "text-slate-600"}`}>Aarush Srivastava</p>
-                        <p className={`truncate text-[11px] font-semibold sm:text-xs ${isCsTheme ? "text-white" : "text-slate-900"}`}>Personal STEM Portfolio</p>
+        <header ref={headerRef} className="fixed inset-x-0 top-0 z-[100] px-3 pt-3 sm:px-4 sm:pt-4 md:px-5 lg:px-8">
+            <div className="mx-auto flex max-w-[1600px] items-center justify-end gap-3 lg:gap-4">
+                <div className={`ml-2 flex w-full max-w-6xl items-center justify-between gap-1.5 rounded-[1.35rem] px-3 py-2.5 sm:gap-2 sm:px-4 lg:px-5 ${shellClasses}`}>
+                    <div className="flex min-w-0 shrink-0 items-center gap-2 sm:gap-2.5">
+                        <Link href="/" aria-label="Go to the homepage" className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl text-sm font-semibold transition-transform duration-200 hover:-translate-y-0.5 sm:h-11 sm:w-11 ${brandClasses}`}>
+                            AS
+                        </Link>
+                        <div className="min-w-0">
+                            <p className={`truncate text-[9px] font-semibold uppercase tracking-[0.24em] sm:text-[10px] ${isCsTheme ? "text-cyan-200" : "text-slate-600"}`}>Aarush Srivastava</p>
+                            <p className={`truncate text-[11px] font-semibold sm:text-xs ${isCsTheme ? "text-white" : "text-slate-900"}`}>Personal STEM Portfolio</p>
+                        </div>
                     </div>
-                </div>
 
-                <nav className="hidden min-w-0 flex-1 items-center justify-center md:flex" aria-label="Primary navigation">
-                    <div className="flex items-center justify-center gap-1.5 whitespace-nowrap sm:gap-2 lg:gap-2.5 xl:gap-3">
-                        {navItems.map((item) => {
-                            const isRouteLink = item.href.startsWith("/");
-                            const isActive = activeSection === item.id;
-                            const linkClasses = `group relative flex items-center justify-center whitespace-nowrap px-2.5 py-1.5 text-[11px] font-semibold leading-none tracking-[-0.01em] ui-transition sm:text-[11.5px] lg:text-[12px] ${isActive ? activeTextClasses : textClasses} ${isCsTheme ? "hover:text-white" : "hover:text-slate-900"}`;
+                    <nav className="hidden min-w-0 flex-1 items-center justify-center md:flex" aria-label="Primary navigation">
+                        <div className="flex items-center justify-center gap-1.5 whitespace-nowrap sm:gap-2 lg:gap-2.5 xl:gap-3">
+                            {navItems.map((item) => {
+                                const isRouteLink = item.href.startsWith("/");
+                                const isActive = activeSection === item.id;
+                                const linkClasses = `group relative flex items-center justify-center whitespace-nowrap px-2.5 py-1.5 text-[11px] font-semibold leading-none tracking-[-0.01em] ui-transition sm:text-[11.5px] lg:text-[12px] ${isActive ? activeTextClasses : textClasses} ${isCsTheme ? "hover:text-white" : "hover:text-slate-900"}`;
 
-                            if (isRouteLink) {
+                                if (isRouteLink) {
+                                    return (
+                                        <Link
+                                            key={item.id}
+                                            href={item.href}
+                                            aria-current={isActive ? "page" : undefined}
+                                            className={linkClasses}
+                                            onClick={() => closeMenu(false)}
+                                        >
+                                            {item.label}
+                                            <span className={`absolute inset-x-0 -bottom-1 h-[2px] rounded-full bg-gradient-to-r ${activeBarClasses} ui-transition ${isActive ? "opacity-100" : "opacity-0 group-hover:opacity-100"}`} />
+                                        </Link>
+                                    );
+                                }
+
                                 return (
-                                    <Link
+                                    <a
                                         key={item.id}
                                         href={item.href}
                                         aria-current={isActive ? "page" : undefined}
@@ -156,42 +171,33 @@ export default function Navbar({ theme = "default" }: { theme?: NavbarTheme }) {
                                     >
                                         {item.label}
                                         <span className={`absolute inset-x-0 -bottom-1 h-[2px] rounded-full bg-gradient-to-r ${activeBarClasses} ui-transition ${isActive ? "opacity-100" : "opacity-0 group-hover:opacity-100"}`} />
-                                    </Link>
+                                    </a>
                                 );
-                            }
+                            })}
+                        </div>
+                    </nav>
 
-                            return (
-                                <a
-                                    key={item.id}
-                                    href={item.href}
-                                    aria-current={isActive ? "page" : undefined}
-                                    className={linkClasses}
-                                    onClick={() => closeMenu(false)}
-                                >
-                                    {item.label}
-                                    <span className={`absolute inset-x-0 -bottom-1 h-[2px] rounded-full bg-gradient-to-r ${activeBarClasses} ui-transition ${isActive ? "opacity-100" : "opacity-0 group-hover:opacity-100"}`} />
-                                </a>
-                            );
-                        })}
-                    </div>
-                </nav>
+                    <button
+                        type="button"
+                        ref={buttonRef}
+                        className={`inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl ui-transition hover:-translate-y-0.5 md:hidden ${menuButtonClasses}`}
+                        onClick={() => setIsOpen((prev) => !prev)}
+                        aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
+                        aria-expanded={isOpen}
+                        aria-controls="mobile-navigation"
+                        aria-haspopup="menu"
+                    >
+                        <span className="flex h-5 w-5 flex-col justify-between">
+                            <span className="h-[2px] w-full rounded-full bg-current" />
+                            <span className="h-[2px] w-full rounded-full bg-current" />
+                            <span className="h-[2px] w-full rounded-full bg-current" />
+                        </span>
+                    </button>
+                </div>
 
-                <button
-                    type="button"
-                    ref={buttonRef}
-                    className={`inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl ui-transition hover:-translate-y-0.5 md:hidden ${menuButtonClasses}`}
-                    onClick={() => setIsOpen((prev) => !prev)}
-                    aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
-                    aria-expanded={isOpen}
-                    aria-controls="mobile-navigation"
-                    aria-haspopup="menu"
-                >
-                    <span className="flex h-5 w-5 flex-col justify-between">
-                        <span className="h-[2px] w-full rounded-full bg-current" />
-                        <span className="h-[2px] w-full rounded-full bg-current" />
-                        <span className="h-[2px] w-full rounded-full bg-current" />
-                    </span>
-                </button>
+                <Link href="/cs" className={`${csButtonClasses} hidden shrink-0 whitespace-nowrap md:inline-flex`} onClick={() => closeMenu(false)}>
+                    Computer Science Page
+                </Link>
             </div>
 
             <div className={`mx-auto w-full max-w-6xl overflow-hidden px-3 transition-[max-height,opacity,transform] duration-300 ease-out md:hidden sm:px-4 ${isOpen ? "pointer-events-auto mt-3 max-h-[calc(100vh-6rem)] translate-y-0 opacity-100" : "pointer-events-none max-h-0 -translate-y-2 opacity-0"}`}>
@@ -235,6 +241,14 @@ export default function Navbar({ theme = "default" }: { theme?: NavbarTheme }) {
                                 </a>
                             );
                         })}
+
+                        <Link
+                            href="/cs"
+                            className="rounded-2xl border border-emerald-300/50 bg-gradient-to-r from-emerald-400 via-emerald-300 to-cyan-400 px-4 py-3 text-sm font-semibold text-slate-950 shadow-[0_10px_24px_rgba(16,185,129,0.22)] transition hover:-translate-y-0.5 hover:border-cyan-300/60 hover:shadow-[0_12px_28px_rgba(34,211,238,0.22)]"
+                            onClick={() => closeMenu(false)}
+                        >
+                            Computer Science Page
+                        </Link>
                     </div>
                 </nav>
             </div>

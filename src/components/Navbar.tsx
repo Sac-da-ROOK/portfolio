@@ -130,7 +130,7 @@ export default function Navbar({ theme = "default" }: { theme?: NavbarTheme }) {
 
     return (
         <header ref={headerRef} className="fixed inset-x-0 top-0 z-50 px-3 pt-3 sm:px-4 sm:pt-4 md:px-5 lg:px-8">
-            <div className={`mx-auto flex w-full max-w-7xl items-center gap-3 rounded-[1.35rem] px-3 py-2.5 sm:px-4 lg:px-5 ${shellClasses}`}>
+            <div className={`flex w-full max-w-7xl items-center gap-3 rounded-[1.35rem] px-3 py-2.5 sm:px-4 lg:px-5 md:mr-[190px] ${shellClasses}`}>
                 <div className="flex min-w-0 shrink-0 items-center gap-2 sm:gap-2.5">
                     <Link href="/" aria-label="Go to the homepage" className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl text-sm font-semibold transition-transform duration-200 hover:-translate-y-0.5 sm:h-11 sm:w-11 ${brandClasses}`}>
                         AS
@@ -179,16 +179,6 @@ export default function Navbar({ theme = "default" }: { theme?: NavbarTheme }) {
                     </div>
                 </nav>
 
-                <div className="ml-auto hidden shrink-0 md:block">
-                    <Link
-                        href="/cs"
-                        aria-current={isCsTheme ? "page" : undefined}
-                        className={`inline-flex items-center justify-center whitespace-nowrap rounded-full border px-4 py-2.5 text-[11px] font-bold leading-none transition duration-200 lg:px-5 lg:text-xs ${csButtonClasses}`}
-                    >
-                        Computer Science Page
-                    </Link>
-                </div>
-
                 <button
                     type="button"
                     ref={buttonRef}
@@ -205,6 +195,16 @@ export default function Navbar({ theme = "default" }: { theme?: NavbarTheme }) {
                         <span className="h-[2px] w-full rounded-full bg-current" />
                     </span>
                 </button>
+            </div>
+
+            <div className="absolute right-3 top-0 hidden md:block sm:right-4 md:right-5 lg:right-8">
+                <Link
+                    href="/cs"
+                    aria-current={isCsTheme ? "page" : undefined}
+                    className={`inline-flex items-center justify-center whitespace-nowrap rounded-full border px-4 py-2.5 text-[11px] font-bold leading-none transition duration-200 lg:px-5 lg:text-xs ${csButtonClasses}`}
+                >
+                    Computer Science Page
+                </Link>
             </div>
 
             <div className={`mx-auto w-full max-w-7xl overflow-hidden px-3 transition-[max-height,opacity,transform] duration-300 ease-out md:hidden sm:px-4 ${isOpen ? "pointer-events-auto mt-3 max-h-[calc(100vh-6rem)] translate-y-0 opacity-100" : "pointer-events-none max-h-0 -translate-y-2 opacity-0"}`}>

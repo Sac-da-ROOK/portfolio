@@ -123,46 +123,34 @@ export default function Navbar({ theme = "default" }: { theme?: NavbarTheme }) {
     const menuButtonClasses = isCsTheme
         ? "border border-cyan-300/30 bg-gradient-to-r from-cyan-500/20 to-emerald-500/15 text-cyan-50 hover:bg-cyan-500/20"
         : "border border-slate-900/20 bg-amber-100 text-slate-900 hover:bg-amber-200";
-    const csButtonClasses = "shrink-0 whitespace-nowrap inline-flex items-center justify-center rounded-full border border-emerald-300/50 bg-gradient-to-r from-emerald-400 via-emerald-300 to-cyan-400 px-3.5 py-2 text-[11px] font-semibold tracking-[-0.01em] text-slate-950 shadow-[0_10px_24px_rgba(16,185,129,0.22)] transition-all duration-200 hover:-translate-y-0.5 hover:border-cyan-300/60 hover:shadow-[0_12px_28px_rgba(34,211,238,0.22)] sm:px-4 sm:text-[12px] lg:px-5";
+
+    const csButtonClasses = isCsTheme
+        ? "border border-cyan-300/30 bg-gradient-to-r from-cyan-500/20 via-sky-500/15 to-emerald-500/20 text-cyan-50 hover:border-cyan-200/50 hover:from-cyan-500/30 hover:to-emerald-500/30"
+        : "border border-emerald-400/30 bg-gradient-to-r from-cyan-400 via-sky-400 to-emerald-400 text-slate-950 shadow-[0_8px_22px_rgba(16,185,129,0.18)] hover:-translate-y-0.5 hover:shadow-[0_12px_28px_rgba(16,185,129,0.25)]";
 
     return (
-        <header ref={headerRef} className="fixed inset-x-0 top-0 z-[100] px-3 pt-3 sm:px-4 sm:pt-4 md:px-5 lg:px-8">
-            <div className="mx-auto flex max-w-[1600px] items-center justify-end gap-3 lg:gap-4">
-                <div className={`ml-2 flex w-full max-w-6xl items-center justify-between gap-1.5 rounded-[1.35rem] px-3 py-2.5 sm:gap-2 sm:px-4 lg:px-5 ${shellClasses}`}>
-                    <div className="flex min-w-0 shrink-0 items-center gap-2 sm:gap-2.5">
-                        <Link href="/" aria-label="Go to the homepage" className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl text-sm font-semibold transition-transform duration-200 hover:-translate-y-0.5 sm:h-11 sm:w-11 ${brandClasses}`}>
-                            AS
-                        </Link>
-                        <div className="min-w-0">
-                            <p className={`truncate text-[9px] font-semibold uppercase tracking-[0.24em] sm:text-[10px] ${isCsTheme ? "text-cyan-200" : "text-slate-600"}`}>Aarush Srivastava</p>
-                            <p className={`truncate text-[11px] font-semibold sm:text-xs ${isCsTheme ? "text-white" : "text-slate-900"}`}>Personal STEM Portfolio</p>
-                        </div>
+        <header ref={headerRef} className="fixed inset-x-0 top-0 z-50 px-3 pt-3 sm:px-4 sm:pt-4 md:px-5 lg:px-8">
+            <div className={`flex w-full max-w-7xl items-center gap-3 rounded-[1.35rem] px-3 py-2.5 sm:px-4 lg:px-5 md:mr-[190px] ${shellClasses}`}>
+                <div className="flex min-w-0 shrink-0 items-center gap-2 sm:gap-2.5">
+                    <Link href="/" aria-label="Go to the homepage" className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl text-sm font-semibold transition-transform duration-200 hover:-translate-y-0.5 sm:h-11 sm:w-11 ${brandClasses}`}>
+                        AS
+                    </Link>
+                    <div className="hidden min-w-0 sm:block">
+                        <p className={`truncate text-[9px] font-semibold uppercase tracking-[0.24em] sm:text-[10px] ${isCsTheme ? "text-cyan-200" : "text-slate-600"}`}>Aarush Srivastava</p>
+                        <p className={`truncate text-[11px] font-semibold sm:text-xs ${isCsTheme ? "text-white" : "text-slate-900"}`}>Personal STEM Portfolio</p>
                     </div>
+                </div>
 
-                    <nav className="hidden min-w-0 flex-1 items-center justify-center md:flex" aria-label="Primary navigation">
-                        <div className="flex items-center justify-center gap-1.5 whitespace-nowrap sm:gap-2 lg:gap-2.5 xl:gap-3">
-                            {navItems.map((item) => {
-                                const isRouteLink = item.href.startsWith("/");
-                                const isActive = activeSection === item.id;
-                                const linkClasses = `group relative flex items-center justify-center whitespace-nowrap px-2.5 py-1.5 text-[11px] font-semibold leading-none tracking-[-0.01em] ui-transition sm:text-[11.5px] lg:text-[12px] ${isActive ? activeTextClasses : textClasses} ${isCsTheme ? "hover:text-white" : "hover:text-slate-900"}`;
+                <nav className="hidden min-w-0 flex-1 items-center justify-center md:flex" aria-label="Primary navigation">
+                    <div className="flex min-w-0 items-center justify-center gap-2 whitespace-nowrap lg:gap-3 xl:gap-4">
+                        {navItems.map((item) => {
+                            const isRouteLink = item.href.startsWith("/");
+                            const isActive = activeSection === item.id;
+                            const linkClasses = `group relative flex items-center justify-center whitespace-nowrap px-2.5 py-2 text-[11px] font-semibold leading-none tracking-[-0.01em] ui-transition sm:text-[11.5px] lg:px-3 lg:text-[12px] ${isActive ? activeTextClasses : textClasses} ${isCsTheme ? "hover:text-white" : "hover:text-slate-900"}`;
 
-                                if (isRouteLink) {
-                                    return (
-                                        <Link
-                                            key={item.id}
-                                            href={item.href}
-                                            aria-current={isActive ? "page" : undefined}
-                                            className={linkClasses}
-                                            onClick={() => closeMenu(false)}
-                                        >
-                                            {item.label}
-                                            <span className={`absolute inset-x-0 -bottom-1 h-[2px] rounded-full bg-gradient-to-r ${activeBarClasses} ui-transition ${isActive ? "opacity-100" : "opacity-0 group-hover:opacity-100"}`} />
-                                        </Link>
-                                    );
-                                }
-
+                            if (isRouteLink) {
                                 return (
-                                    <a
+                                    <Link
                                         key={item.id}
                                         href={item.href}
                                         aria-current={isActive ? "page" : undefined}
@@ -170,37 +158,56 @@ export default function Navbar({ theme = "default" }: { theme?: NavbarTheme }) {
                                         onClick={() => closeMenu(false)}
                                     >
                                         {item.label}
-                                        <span className={`absolute inset-x-0 -bottom-1 h-[2px] rounded-full bg-gradient-to-r ${activeBarClasses} ui-transition ${isActive ? "opacity-100" : "opacity-0 group-hover:opacity-100"}`} />
-                                    </a>
+                                        <span className={`absolute inset-x-1 -bottom-1 h-[2px] rounded-full bg-gradient-to-r ${activeBarClasses} ui-transition ${isActive ? "opacity-100" : "opacity-0 group-hover:opacity-100"}`} />
+                                    </Link>
                                 );
-                            })}
-                        </div>
-                    </nav>
+                            }
 
-                    <button
-                        type="button"
-                        ref={buttonRef}
-                        className={`inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl ui-transition hover:-translate-y-0.5 md:hidden ${menuButtonClasses}`}
-                        onClick={() => setIsOpen((prev) => !prev)}
-                        aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
-                        aria-expanded={isOpen}
-                        aria-controls="mobile-navigation"
-                        aria-haspopup="menu"
-                    >
-                        <span className="flex h-5 w-5 flex-col justify-between">
-                            <span className="h-[2px] w-full rounded-full bg-current" />
-                            <span className="h-[2px] w-full rounded-full bg-current" />
-                            <span className="h-[2px] w-full rounded-full bg-current" />
-                        </span>
-                    </button>
-                </div>
+                            return (
+                                <a
+                                    key={item.id}
+                                    href={item.href}
+                                    aria-current={isActive ? "page" : undefined}
+                                    className={linkClasses}
+                                    onClick={() => closeMenu(false)}
+                                >
+                                    {item.label}
+                                    <span className={`absolute inset-x-1 -bottom-1 h-[2px] rounded-full bg-gradient-to-r ${activeBarClasses} ui-transition ${isActive ? "opacity-100" : "opacity-0 group-hover:opacity-100"}`} />
+                                </a>
+                            );
+                        })}
+                    </div>
+                </nav>
 
-                <Link href="/cs" className={`${csButtonClasses} hidden shrink-0 whitespace-nowrap md:inline-flex`} onClick={() => closeMenu(false)}>
+                <button
+                    type="button"
+                    ref={buttonRef}
+                    className={`ml-auto inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl ui-transition hover:-translate-y-0.5 md:hidden ${menuButtonClasses}`}
+                    onClick={() => setIsOpen((prev) => !prev)}
+                    aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
+                    aria-expanded={isOpen}
+                    aria-controls="mobile-navigation"
+                    aria-haspopup="menu"
+                >
+                    <span className="flex h-5 w-5 flex-col justify-between">
+                        <span className="h-[2px] w-full rounded-full bg-current" />
+                        <span className="h-[2px] w-full rounded-full bg-current" />
+                        <span className="h-[2px] w-full rounded-full bg-current" />
+                    </span>
+                </button>
+            </div>
+
+            <div className="absolute right-3 top-0 hidden md:block sm:right-4 md:right-5 lg:right-8">
+                <Link
+                    href="/cs"
+                    aria-current={isCsTheme ? "page" : undefined}
+                    className={`inline-flex items-center justify-center whitespace-nowrap rounded-full border px-4 py-2.5 text-[11px] font-bold leading-none transition duration-200 lg:px-5 lg:text-xs ${csButtonClasses}`}
+                >
                     Computer Science Page
                 </Link>
             </div>
 
-            <div className={`mx-auto w-full max-w-6xl overflow-hidden px-3 transition-[max-height,opacity,transform] duration-300 ease-out md:hidden sm:px-4 ${isOpen ? "pointer-events-auto mt-3 max-h-[calc(100vh-6rem)] translate-y-0 opacity-100" : "pointer-events-none max-h-0 -translate-y-2 opacity-0"}`}>
+            <div className={`mx-auto w-full max-w-7xl overflow-hidden px-3 transition-[max-height,opacity,transform] duration-300 ease-out md:hidden sm:px-4 ${isOpen ? "pointer-events-auto mt-3 max-h-[calc(100vh-6rem)] translate-y-0 opacity-100" : "pointer-events-none max-h-0 -translate-y-2 opacity-0"}`}>
                 <nav
                     id="mobile-navigation"
                     ref={menuRef}
@@ -244,7 +251,8 @@ export default function Navbar({ theme = "default" }: { theme?: NavbarTheme }) {
 
                         <Link
                             href="/cs"
-                            className="rounded-2xl border border-emerald-300/50 bg-gradient-to-r from-emerald-400 via-emerald-300 to-cyan-400 px-4 py-3 text-sm font-semibold text-slate-950 shadow-[0_10px_24px_rgba(16,185,129,0.22)] transition hover:-translate-y-0.5 hover:border-cyan-300/60 hover:shadow-[0_12px_28px_rgba(34,211,238,0.22)]"
+                            aria-current={isCsTheme ? "page" : undefined}
+                            className={`rounded-2xl px-4 py-3 text-sm font-bold ui-transition ${isCsTheme ? mobileActiveItemClasses : "border border-emerald-400/30 bg-gradient-to-r from-cyan-400 via-sky-400 to-emerald-400 text-slate-950"}`}
                             onClick={() => closeMenu(false)}
                         >
                             Computer Science Page

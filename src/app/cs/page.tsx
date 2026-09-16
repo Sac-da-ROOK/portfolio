@@ -342,6 +342,23 @@ export default function ComputerSciencePage() {
                     </section>
 
                     <CSJourneyTimeline entries={timelineEntries} />
+
+                    <section className="mx-auto max-w-6xl px-4 pb-20 pt-8 sm:px-6 lg:px-8 lg:pb-24">
+                        <div className="rounded-[2rem] border border-cyan-400/20 bg-gradient-to-br from-[#0b1c2d] via-[#071521] to-[#0b1c2d] p-8 text-center shadow-[0_0_50px_rgba(14,116,144,0.16)] sm:p-10 lg:p-12">
+                            <h2 className="text-balance text-2xl font-semibold tracking-[-0.03em] text-white sm:text-3xl lg:text-4xl">
+                                Done exploring Computer Science? Head back to STEM!
+                            </h2>
+
+                            <div className="mt-8 flex justify-center">
+                                <Link
+                                    href="/"
+                                    className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-cyan-400 via-sky-400 to-emerald-400 px-6 py-3.5 text-sm font-semibold text-slate-950 shadow-[0_12px_30px_rgba(14,165,233,0.22)] transition hover:-translate-y-0.5 hover:shadow-[0_16px_34px_rgba(16,185,129,0.28)]"
+                                >
+                                    ← Back to STEM
+                                </Link>
+                            </div>
+                        </div>
+                    </section>
                 </div>
             </div>
         </main>

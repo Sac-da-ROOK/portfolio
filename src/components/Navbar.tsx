@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 
 type NavbarTheme = "default" | "cs";
@@ -24,7 +25,11 @@ export default function Navbar({ theme = "default" }: { theme?: NavbarTheme }) {
     const menuRef = useRef<HTMLDivElement | null>(null);
     const buttonRef = useRef<HTMLButtonElement | null>(null);
     const firstMenuLinkRef = useRef<HTMLAnchorElement | null>(null);
+    const pathname = usePathname();
     const isCsTheme = theme === "cs";
+    const isCsRoute = pathname === "/cs";
+    const ctaHref = isCsRoute ? "/" : "/cs";
+    const ctaLabel = isCsRoute ? "← Back to STEM" : "Computer Science Page";
 
     const closeMenu = (restoreFocus = true) => {
         setIsOpen(false);
@@ -181,11 +186,11 @@ export default function Navbar({ theme = "default" }: { theme?: NavbarTheme }) {
 
                 <div className="ml-auto hidden shrink-0 md:block">
                     <Link
-                        href="/cs"
-                        aria-current={isCsTheme ? "page" : undefined}
+                        href={ctaHref}
+                        aria-current={pathname === "/cs" ? "page" : undefined}
                         className={`inline-flex items-center justify-center whitespace-nowrap rounded-full border px-4 py-2.5 text-[11px] font-bold leading-none transition duration-200 lg:px-5 lg:text-xs ${csButtonClasses}`}
                     >
-                        Computer Science Page
+                        {ctaLabel}
                     </Link>
                 </div>
 
@@ -250,12 +255,12 @@ export default function Navbar({ theme = "default" }: { theme?: NavbarTheme }) {
                         })}
 
                         <Link
-                            href="/cs"
-                            aria-current={isCsTheme ? "page" : undefined}
+                            href={ctaHref}
+                            aria-current={pathname === "/cs" ? "page" : undefined}
                             className={`rounded-2xl px-4 py-3 text-sm font-bold ui-transition ${isCsTheme ? mobileActiveItemClasses : "border border-emerald-400/30 bg-gradient-to-r from-cyan-400 via-sky-400 to-emerald-400 text-slate-950"}`}
                             onClick={() => closeMenu(false)}
                         >
-                            Computer Science Page
+                            {ctaLabel}
                         </Link>
                     </div>
                 </nav>

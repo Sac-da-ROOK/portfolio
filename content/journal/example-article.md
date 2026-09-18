@@ -6,10 +6,10 @@ date: "2026-09-02"
 time: "20:08"
 format: "Article"
 accent: "from-amber-200 to-yellow-100"
-published: false
+published: true
 notes:
-  - "Tournament"
-  - "Reflection"
+  - Tournament
+  - Reflection
 ---
 
 I spent the weekend preparing for my latest tournament and, as always, the emotional side of competition mattered as much as the calculation.

@@ -6,8 +6,8 @@ format: "Article"
 accent: "from-amber-200 to-yellow-100"
 published: true
 notes:
-  - "Research"
-  - "Learning"
+  - Research
+  - Learning
 ---
 
 # Your Article Title

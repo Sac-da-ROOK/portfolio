@@ -7,10 +7,10 @@ format: "Welcome"
 accent: "from-amber-200 to-cyan-100"
 published: true
 notes:
-  - "About Me"
-  - "Portfolio"
-  - "Projects"
-  - "STEM"
+  - About Me
+  - Portfolio
+  - Projects
+  - STEM
 ---
 
 # Welcome to My Lab Journal

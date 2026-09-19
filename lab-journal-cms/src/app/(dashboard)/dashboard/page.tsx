@@ -13,14 +13,34 @@ export default function DashboardPage() {
 
     const loadPosts = async () => {
         const response = await fetch('/api/posts');
-        if (response.ok) {
-            const data = await response.json();
-            setPosts(data);
+        if (!response.ok) {
+            return;
         }
+
+        const data = await response.json();
+        setPosts(data);
     };
 
     useEffect(() => {
-        loadPosts();
+        let isMounted = true;
+
+        const fetchPosts = async () => {
+            const response = await fetch('/api/posts');
+            if (!response.ok) {
+                return;
+            }
+
+            const data = await response.json();
+            if (isMounted) {
+                setPosts(data);
+            }
+        };
+
+        void fetchPosts();
+
+        return () => {
+            isMounted = false;
+        };
     }, []);
 
     const filteredPosts = useMemo(() => {

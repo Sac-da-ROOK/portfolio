@@ -139,12 +139,7 @@ export default function Journey() {
     const sectionRef = useRef<HTMLElement | null>(null);
     const [visibleCards, setVisibleCards] = useState<boolean[]>(journeyEntries.map(() => false));
     const [fillProgress, setFillProgress] = useState(0);
-    const [isMounted, setIsMounted] = useState(false);
     const prefersReducedMotion = usePrefersReducedMotion();
-
-    useEffect(() => {
-        setIsMounted(true);
-    }, []);
 
     useEffect(() => {
         if (prefersReducedMotion) return;
@@ -231,7 +226,7 @@ export default function Journey() {
                         {journeyEntries.map((entry, index) => {
                             const visible = prefersReducedMotion || visibleCards[index];
                             const isLeft = index % 2 === 0;
-                            const shouldAnimate = isMounted && !prefersReducedMotion && visible;
+                            const shouldAnimate = !prefersReducedMotion && visible;
 
                             return (
                                 <article

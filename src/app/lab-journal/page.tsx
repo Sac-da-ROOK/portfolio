@@ -209,7 +209,7 @@ export default async function LabJournalPage() {
                             </p>
                         </div>
 
-                        <LabJournalExplorer entries={journalEntries} />
+                        <LabJournalExplorer entries={journalEntries} featuredOnly />
                     </div>
                 </section>
             </AnimatedSection>

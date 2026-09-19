@@ -13,12 +13,13 @@ export default function CSJourneyTimeline({ entries }: { entries: TimelineEntry[
     const timelineSectionRef = useRef<HTMLElement | null>(null);
     const [fillProgress, setFillProgress] = useState(0);
     const [visibleCards, setVisibleCards] = useState<boolean[]>(Array(entries.length).fill(false));
-    const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
-    const [isMounted, setIsMounted] = useState(false);
+    const [prefersReducedMotion, setPrefersReducedMotion] = useState(() => {
+        if (typeof window === "undefined") {
+            return false;
+        }
 
-    useEffect(() => {
-        setIsMounted(true);
-    }, []);
+        return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    });
 
     useEffect(() => {
         const mediaQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -107,7 +108,7 @@ export default function CSJourneyTimeline({ entries }: { entries: TimelineEntry[
                     {entries.map((entry, index) => {
                         const visible = prefersReducedMotion || visibleCards[index];
                         const isLeft = index % 2 === 0;
-                        const shouldAnimate = isMounted && !prefersReducedMotion && visible;
+                        const shouldAnimate = !prefersReducedMotion && visible;
 
                         return (
                             <article

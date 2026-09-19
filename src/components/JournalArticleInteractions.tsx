@@ -12,14 +12,14 @@ export default function JournalArticleInteractions({ articleId, initialLikes, in
     const [error, setError] = useState<string | null>(null);
     const [likes, setLikes] = useState(initialLikes);
     const [dislikes, setDislikes] = useState(initialDislikes);
-    const [currentVote, setCurrentVote] = useState<VoteValue | null>(null);
-
-    useEffect(() => {
-        const storedVote = window.sessionStorage.getItem(SESSION_STORAGE_KEY);
-        if (storedVote === "like" || storedVote === "dislike") {
-            setCurrentVote(storedVote);
+    const [currentVote, setCurrentVote] = useState<VoteValue | null>(() => {
+        if (typeof window === "undefined") {
+            return null;
         }
-    }, []);
+
+        const storedVote = window.sessionStorage.getItem(SESSION_STORAGE_KEY);
+        return storedVote === "like" || storedVote === "dislike" ? storedVote : null;
+    });
 
     async function handleVote(value: VoteValue) {
         setError(null);

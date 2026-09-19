@@ -132,7 +132,7 @@ export default function ComputerSciencePage() {
                                             href="#cs-timeline"
                                             className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-cyan-400 via-sky-400 to-emerald-400 px-5 py-3 text-sm font-semibold text-slate-950 shadow-[0_12px_30px_rgba(14,165,233,0.22)] transition hover:-translate-y-0.5 hover:shadow-[0_16px_34px_rgba(16,185,129,0.28)]"
                                         >
-                                            See how far I've come
+                                            See how far I have come
                                         </Link>
                                         <Link
                                             href="https://github.com/Sac-da-ROOK"

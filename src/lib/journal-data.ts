@@ -155,17 +155,49 @@ async function parseJournalFile(filePath: string): Promise<JournalEntry | null> 
     }
 }
 
+function getEntryTimestamp(entry: JournalEntry) {
+    const date = typeof entry.date === "string" && entry.date.trim() ? entry.date.trim() : "";
+    const time = typeof entry.time === "string" && entry.time.trim() ? entry.time.trim() : "00:00";
+
+    const dateMatch = date.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+    if (!dateMatch) {
+        return Number.NEGATIVE_INFINITY;
+    }
+
+    const [, year, month, day] = dateMatch;
+    const timeMatch = time.match(/^(\d{1,2}):(\d{2})$/);
+    const hour = timeMatch ? Number(timeMatch[1]) : 0;
+    const minute = timeMatch ? Number(timeMatch[2]) : 0;
+    const timestamp = Date.UTC(Number(year), Number(month) - 1, Number(day), hour, minute, 0, 0);
+
+    return Number.isNaN(timestamp) ? Number.NEGATIVE_INFINITY : timestamp;
+}
+
 export async function getPublishedJournalEntries(): Promise<JournalEntry[]> {
     const files = await getJournalFiles();
     const entries = await Promise.all(files.map((filePath) => parseJournalFile(filePath)));
 
-    return entries
+    const sortedEntries = entries
         .filter((entry): entry is JournalEntry => Boolean(entry && entry.published))
         .sort((a, b) => {
-            const aDate = new Date(a.date ?? "1970-01-01").getTime();
-            const bDate = new Date(b.date ?? "1970-01-01").getTime();
-            return bDate - aDate;
+            const aTimestamp = getEntryTimestamp(a);
+            const bTimestamp = getEntryTimestamp(b);
+
+            if (aTimestamp === bTimestamp) {
+                return a.title.localeCompare(b.title);
+            }
+
+            return bTimestamp - aTimestamp;
         });
+
+    const uniqueEntries = new Map<string, JournalEntry>();
+    for (const entry of sortedEntries) {
+        if (!uniqueEntries.has(entry.slug)) {
+            uniqueEntries.set(entry.slug, entry);
+        }
+    }
+
+    return Array.from(uniqueEntries.values());
 }
 
 export async function getJournalEntryBySlug(slug: string): Promise<JournalEntry | null> {

@@ -1,6 +1,5 @@
 ---
-title: "What Happens When a Robot Fails?"
-
+title: "🤖 What Happens When a Robot Fails?"
 description: "A reflection and explanation of what happens when a robot fails based on the way I think about science, engineering, and learning in practice."
 
 category: "Robotics & Engineering"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**What Happens When a Robot Fails?**
+**🤖 What Happens When a Robot Fails?**
 
 What Happens When a Robot Fails is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

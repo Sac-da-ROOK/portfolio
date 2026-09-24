@@ -1,6 +1,5 @@
 ---
-title: "How Image Recognition Works"
-
+title: "🧠 How Image Recognition Works"
 description: "A reflection and explanation of how image recognition works based on the way I think about science, engineering, and learning in practice."
 
 category: "AI & Emerging Technology"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**How Image Recognition Works**
+**🧠 How Image Recognition Works**
 
 How Image Recognition Works is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

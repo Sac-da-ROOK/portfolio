@@ -1,6 +1,5 @@
 ---
-title: "Why Loops Are So Powerful"
-
+title: "✨ Why Loops Are So Powerful"
 description: "How loops let programs repeat instructions efficiently and why learning to use them changed the way I approach programming."
 
 category: "Projects"

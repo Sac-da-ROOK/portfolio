@@ -1,7 +1,6 @@
 ---
 
-title: "What Does += Actually Do?"
-
+title: "✨ What Does += Actually Do?"
 description: "Understanding Python's += operator and how it makes updating variables simpler and easier to read."
 
 category: "Projects"

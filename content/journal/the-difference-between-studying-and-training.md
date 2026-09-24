@@ -1,6 +1,5 @@
 ---
-title: "The Difference Between Studying and Training"
-
+title: "🏆 The Difference Between Studying and Training"
 description: "A reflection and explanation of the difference between studying and training based on the way I think about science, engineering, and learning in practice."
 
 category: "Competitions & STEM Journey"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**The Difference Between Studying and Training**
+**🏆 The Difference Between Studying and Training**
 
 The Difference Between Studying and Training is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

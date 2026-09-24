@@ -1,6 +1,5 @@
 ---
-title: "How Chess Improves Pattern Recognition"
-
+title: "♟️ How Chess Improves Pattern Recognition"
 description: "A reflection and explanation of how chess improves pattern recognition based on the way I think about science, engineering, and learning in practice."
 
 category: "Chess + STEM"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**How Chess Improves Pattern Recognition**
+**♟️ How Chess Improves Pattern Recognition**
 
 How Chess Improves Pattern Recognition is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

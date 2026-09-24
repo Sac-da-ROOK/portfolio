@@ -1,6 +1,5 @@
 ---
-title: "Predator vs. Prey: A Balance of Nature"
-
+title: "🔭 Predator vs. Prey: A Balance of Nature"
 description: "Exploring how predator and prey populations interact and help maintain balance within an ecosystem."
 
 category: "Science"

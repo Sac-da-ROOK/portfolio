@@ -1,6 +1,5 @@
 ---
-title: "My STEM Goals for This Year"
-
+title: "📚 My STEM Goals for This Year"
 description: "A reflection and explanation of my stem goals for this year based on the way I think about science, engineering, and learning in practice."
 
 category: "Learning, School & Student Life"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**My STEM Goals for This Year**
+**📚 My STEM Goals for This Year**
 
 My STEM Goals for This Year is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

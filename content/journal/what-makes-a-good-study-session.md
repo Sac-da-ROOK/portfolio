@@ -1,6 +1,5 @@
 ---
-title: "What Makes a Good Study Session?"
-
+title: "📚 What Makes a Good Study Session?"
 description: "A reflection and explanation of what makes a good study session based on the way I think about science, engineering, and learning in practice."
 
 category: "Learning, School & Student Life"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**What Makes a Good Study Session?**
+**📚 What Makes a Good Study Session?**
 
 What Makes a Good Study Session is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

@@ -1,6 +1,5 @@
 ---
-title: "How Robots Sort Objects"
-
+title: "🤖 How Robots Sort Objects"
 description: "A reflection and explanation of how robots sort objects based on the way I think about science, engineering, and learning in practice."
 
 category: "Robotics & Engineering"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**How Robots Sort Objects**
+**🤖 How Robots Sort Objects**
 
 How Robots Sort Objects is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

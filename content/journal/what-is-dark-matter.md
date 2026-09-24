@@ -1,6 +1,5 @@
 ---
-title: "What Is Dark Matter?"
-
+title: "🔭 What Is Dark Matter?"
 description: "A reflection and explanation of what is dark matter based on the way I think about science, engineering, and learning in practice."
 
 category: "Science"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**What Is Dark Matter?**
+**🔭 What Is Dark Matter?**
 
 What Is Dark Matter is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

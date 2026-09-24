@@ -1,6 +1,5 @@
 ---
-title: "My Favorite Scientist and Why"
-
+title: "🏆 My Favorite Scientist and Why"
 description: "A reflection and explanation of my favorite scientist and why based on the way I think about science, engineering, and learning in practice."
 
 category: "Competitions & STEM Journey"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**My Favorite Scientist and Why**
+**🏆 My Favorite Scientist and Why**
 
 My Favorite Scientist and Why is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

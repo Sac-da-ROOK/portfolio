@@ -1,6 +1,5 @@
 ---
-title: "What Happens Before Competition Day?"
-
+title: "🏆 What Happens Before Competition Day?"
 description: "A reflection and explanation of what happens before competition day based on the way I think about science, engineering, and learning in practice."
 
 category: "Competitions & STEM Journey"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**What Happens Before Competition Day?**
+**🏆 What Happens Before Competition Day?**
 
 What Happens Before Competition Day is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

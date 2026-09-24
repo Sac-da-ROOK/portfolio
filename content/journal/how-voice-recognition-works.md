@@ -1,6 +1,5 @@
 ---
-title: "How Voice Recognition Works"
-
+title: "🧠 How Voice Recognition Works"
 description: "A reflection and explanation of how voice recognition works based on the way I think about science, engineering, and learning in practice."
 
 category: "AI & Emerging Technology"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**How Voice Recognition Works**
+**🧠 How Voice Recognition Works**
 
 How Voice Recognition Works is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

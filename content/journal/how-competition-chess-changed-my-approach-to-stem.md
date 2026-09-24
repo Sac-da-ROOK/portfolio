@@ -1,6 +1,5 @@
 ---
-title: "How Competition Chess Changed My Approach to STEM"
-
+title: "♟️ How Competition Chess Changed My Approach to STEM"
 description: "A reflection and explanation of how competition chess changed my approach to stem based on the way I think about science, engineering, and learning in practice."
 
 category: "Chess + STEM"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**How Competition Chess Changed My Approach to STEM**
+**♟️ How Competition Chess Changed My Approach to STEM**
 
 How Competition Chess Changed My Approach to STEM is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

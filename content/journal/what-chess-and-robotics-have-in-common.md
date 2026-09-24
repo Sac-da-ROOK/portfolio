@@ -1,6 +1,5 @@
 ---
-title: "What Chess and Robotics Have in Common"
-
+title: "♟️ What Chess and Robotics Have in Common"
 description: "A reflection and explanation of what chess and robotics have in common based on the way I think about science, engineering, and learning in practice."
 
 category: "Chess + STEM"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**What Chess and Robotics Have in Common**
+**♟️ What Chess and Robotics Have in Common**
 
 What Chess and Robotics Have in Common is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

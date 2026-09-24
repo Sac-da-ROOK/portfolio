@@ -1,6 +1,5 @@
 ---
-title: "How Do Food Webs Compare With Food Chains?"
-
+title: "🔭 How Do Food Webs Compare With Food Chains?"
 description: "Exploring the differences between food chains and food webs and how they show relationships between organisms in an ecosystem."
 
 category: "Science"

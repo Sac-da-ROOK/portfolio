@@ -1,6 +1,5 @@
 ---
-title: "My Biggest Experimental Failure—and What It Taught Me"
-
+title: "🔭 My Biggest Experimental Failure—and What It Taught Me"
 description: "Looking at how an experiment that did not go as planned can still teach valuable lessons about planning, testing, and improving."
 
 category: "Science"

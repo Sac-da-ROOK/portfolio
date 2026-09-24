@@ -1,6 +1,5 @@
 ---
-title: "How Does Machine Learning Learn?"
-
+title: "🧠 How Does Machine Learning Learn?"
 description: "A reflection and explanation of how does machine learning learn based on the way I think about science, engineering, and learning in practice."
 
 category: "AI & Emerging Technology"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**How Does Machine Learning Learn?**
+**🧠 How Does Machine Learning Learn?**
 
 How Does Machine Learning Learn is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

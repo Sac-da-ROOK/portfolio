@@ -1,6 +1,5 @@
 ---
-title: "Why Competition Mistakes Are Valuable"
-
+title: "🏆 Why Competition Mistakes Are Valuable"
 description: "A reflection and explanation of why competition mistakes are valuable based on the way I think about science, engineering, and learning in practice."
 
 category: "Competitions & STEM Journey"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**Why Competition Mistakes Are Valuable**
+**🏆 Why Competition Mistakes Are Valuable**
 
 Why Competition Mistakes Are Valuable is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

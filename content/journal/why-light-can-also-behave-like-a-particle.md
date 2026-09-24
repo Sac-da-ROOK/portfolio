@@ -1,6 +1,5 @@
 ---
-title: "Why Light Can Also Behave Like a Particle"
-
+title: "🔭 Why Light Can Also Behave Like a Particle"
 description: "How experiments showed that light can behave like individual packets of energy called photons."
 
 category: "Science"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**Why Light Can Also Behave Like a Particle**
+**🔭 Why Light Can Also Behave Like a Particle**
 
 In my last article, I looked at how light can behave like a wave.
 

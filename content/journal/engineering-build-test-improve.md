@@ -1,6 +1,5 @@
 ---
-title: "Engineering: Build, Test, Improve"
-
+title: "🤖 Engineering: Build, Test, Improve"
 description: "A reflection and explanation of engineering: build, test, improve based on the way I think about science, engineering, and learning in practice."
 
 category: "Robotics & Engineering"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**Engineering: Build, Test, Improve**
+**🤖 Engineering: Build, Test, Improve**
 
 Engineering: Build, Test, Improve is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

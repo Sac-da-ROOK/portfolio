@@ -1,6 +1,5 @@
 ---
-title: "Frontend vs. Backend"
-
+title: "💻 Frontend vs. Backend"
 description: "A reflection and explanation of frontend vs. backend based on the way I think about science, engineering, and learning in practice."
 
 category: "Coding & Computer Science"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**Frontend vs. Backend**
+**💻 Frontend vs. Backend**
 
 Frontend vs. Backend is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

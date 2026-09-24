@@ -1,6 +1,5 @@
 ---
-title: "Is Chess a STEM Skill?"
-
+title: "♟️ Is Chess a STEM Skill?"
 description: "A reflection and explanation of is chess a stem skill based on the way I think about science, engineering, and learning in practice."
 
 category: "Chess + STEM"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**Is Chess a STEM Skill?**
+**♟️ Is Chess a STEM Skill?**
 
 Is Chess a STEM Skill is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

@@ -1,5 +1,5 @@
 ---
-title: "Welcome to My Lab Journal"
+title: "✨ Welcome to My Lab Journal"
 description: "An introduction to Aarush, my interests, projects, competitions, and the portfolio behind this Lab Journal."
 category: "Projects"
 date: "2026-09-02"

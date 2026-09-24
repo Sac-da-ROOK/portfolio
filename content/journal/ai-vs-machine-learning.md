@@ -1,6 +1,5 @@
 ---
-title: "AI vs. Machine Learning"
-
+title: "🧠 AI vs. Machine Learning"
 description: "A reflection and explanation of ai vs. machine learning based on the way I think about science, engineering, and learning in practice."
 
 category: "AI & Emerging Technology"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**AI vs. Machine Learning**
+**🧠 AI vs. Machine Learning**
 
 AI vs. Machine Learning is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

@@ -1,6 +1,5 @@
 ---
-title: "Why We Have Seasons"
-
+title: "🔭 Why We Have Seasons"
 description: "A reflection and explanation of why we have seasons based on the way I think about science, engineering, and learning in practice."
 
 category: "Science"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**Why We Have Seasons**
+**🔭 Why We Have Seasons**
 
 Why We Have Seasons is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

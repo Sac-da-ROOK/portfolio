@@ -1,6 +1,5 @@
 ---
-title: "Why Robots Need Sensors"
-
+title: "🤖 Why Robots Need Sensors"
 description: "A reflection and explanation of why robots need sensors based on the way I think about science, engineering, and learning in practice."
 
 category: "Robotics & Engineering"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**Why Robots Need Sensors**
+**🤖 Why Robots Need Sensors**
 
 Why Robots Need Sensors is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

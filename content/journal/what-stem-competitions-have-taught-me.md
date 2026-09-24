@@ -1,6 +1,5 @@
 ---
-title: "What STEM Competitions Have Taught Me"
-
+title: "🏆 What STEM Competitions Have Taught Me"
 description: "A reflection and explanation of what stem competitions have taught me based on the way I think about science, engineering, and learning in practice."
 
 category: "Competitions & STEM Journey"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**What STEM Competitions Have Taught Me**
+**🏆 What STEM Competitions Have Taught Me**
 
 What STEM Competitions Have Taught Me is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

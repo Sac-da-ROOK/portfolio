@@ -1,6 +1,5 @@
 ---
-title: "How I Take Better Science Notes"
-
+title: "🔭 How I Take Better Science Notes"
 description: "The strategies I use to make my science notes clearer, more organized, and more useful when I study later."
 
 category: "Science"

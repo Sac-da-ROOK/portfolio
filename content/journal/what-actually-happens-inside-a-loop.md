@@ -1,7 +1,6 @@
 ---
 
-title: "What Actually Happens Inside a Loop?"
-
+title: "✨ What Actually Happens Inside a Loop?"
 description: "A closer look at what Python does each time a loop runs and how iterations, conditions, and variables work together."
 
 category: "Projects"

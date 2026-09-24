@@ -1,6 +1,5 @@
 ---
-title: "How I Memorize Scientists and Discoveries"
-
+title: "🏆 How I Memorize Scientists and Discoveries"
 description: "A reflection and explanation of how i memorize scientists and discoveries based on the way I think about science, engineering, and learning in practice."
 
 category: "Competitions & STEM Journey"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**How I Memorize Scientists and Discoveries**
+**🏆 How I Memorize Scientists and Discoveries**
 
 How I Memorize Scientists and Discoveries is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

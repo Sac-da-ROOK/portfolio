@@ -1,7 +1,6 @@
 ---
 
-title: "For Loops vs. While Loops"
-
+title: "✨ For Loops vs. While Loops"
 description: "Understanding the difference between for loops and while loops and when each type of loop can be useful."
 
 category: "Projects"

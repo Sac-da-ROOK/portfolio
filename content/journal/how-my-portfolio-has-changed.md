@@ -1,6 +1,5 @@
 ---
-title: "How My Portfolio Has Changed"
-
+title: "💻 How My Portfolio Has Changed"
 description: "A reflection and explanation of how my portfolio has changed based on the way I think about science, engineering, and learning in practice."
 
 category: "Coding & Computer Science"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**How My Portfolio Has Changed**
+**💻 How My Portfolio Has Changed**
 
 How My Portfolio Has Changed is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

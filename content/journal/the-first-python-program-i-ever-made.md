@@ -1,6 +1,5 @@
 ---
-title: "The First Python Program I Ever Made"
-
+title: "💻 The First Python Program I Ever Made"
 description: "A reflection and explanation of the first python program i ever made based on the way I think about science, engineering, and learning in practice."
 
 category: "Coding & Computer Science"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**The First Python Program I Ever Made**
+**💻 The First Python Program I Ever Made**
 
 The First Python Program I Ever Made is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

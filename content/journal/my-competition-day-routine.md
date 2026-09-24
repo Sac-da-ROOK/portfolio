@@ -1,6 +1,5 @@
 ---
-title: "My Competition-Day Routine"
-
+title: "🏆 My Competition-Day Routine"
 description: "A reflection and explanation of my competition-day routine based on the way I think about science, engineering, and learning in practice."
 
 category: "Competitions & STEM Journey"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**My Competition-Day Routine**
+**🏆 My Competition-Day Routine**
 
 My Competition-Day Routine is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

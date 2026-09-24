@@ -1,6 +1,5 @@
 ---
-title: "How Robots Use Feedback"
-
+title: "🤖 How Robots Use Feedback"
 description: "A reflection and explanation of how robots use feedback based on the way I think about science, engineering, and learning in practice."
 
 category: "Robotics & Engineering"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**How Robots Use Feedback**
+**🤖 How Robots Use Feedback**
 
 How Robots Use Feedback is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

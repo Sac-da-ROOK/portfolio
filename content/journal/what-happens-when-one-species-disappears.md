@@ -1,6 +1,5 @@
 ---
-title: "What Happens When One Species Disappears?"
-
+title: "🔭 What Happens When One Species Disappears?"
 description: "Exploring how the loss of one species can affect an entire ecosystem and change relationships between organisms."
 
 category: "Science"

@@ -1,6 +1,5 @@
 ---
-title: "The Engineering Behind a Competition Robot"
-
+title: "🤖 The Engineering Behind a Competition Robot"
 description: "A reflection and explanation of the engineering behind a competition robot based on the way I think about science, engineering, and learning in practice."
 
 category: "Robotics & Engineering"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**The Engineering Behind a Competition Robot**
+**🤖 The Engineering Behind a Competition Robot**
 
 The Engineering Behind a Competition Robot is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

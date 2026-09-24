@@ -1,6 +1,5 @@
 ---
-title: "Can Different Types of Soil Change Plant Growth?"
-
+title: "🔭 Can Different Types of Soil Change Plant Growth?"
 description: "Exploring how different soil types can affect water, nutrients, drainage, and the growth of plants."
 
 category: "Science"

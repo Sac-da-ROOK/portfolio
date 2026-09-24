@@ -1,6 +1,5 @@
 ---
-title: "Why Some Sounds Are Higher-Pitched"
-
+title: "🔭 Why Some Sounds Are Higher-Pitched"
 description: "How frequency determines pitch and why faster vibrations create higher-pitched sounds."
 
 category: "Science"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**Why Some Sounds Are Higher-Pitched**
+**🔭 Why Some Sounds Are Higher-Pitched**
 
 Have you ever noticed how a whistle sounds much higher than a bass drum?
 

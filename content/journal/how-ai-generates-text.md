@@ -1,6 +1,5 @@
 ---
-title: "How AI Generates Text"
-
+title: "🧠 How AI Generates Text"
 description: "A reflection and explanation of how ai generates text based on the way I think about science, engineering, and learning in practice."
 
 category: "AI & Emerging Technology"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**How AI Generates Text**
+**🧠 How AI Generates Text**
 
 How AI Generates Text is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

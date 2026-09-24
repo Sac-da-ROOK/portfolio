@@ -1,6 +1,5 @@
 ---
-title: "How I Analyze My Own Chess Games"
-
+title: "♟️ How I Analyze My Own Chess Games"
 description: "A reflection and explanation of how i analyze my own chess games based on the way I think about science, engineering, and learning in practice."
 
 category: "Chess + STEM"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**How I Analyze My Own Chess Games**
+**♟️ How I Analyze My Own Chess Games**
 
 How I Analyze My Own Chess Games is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

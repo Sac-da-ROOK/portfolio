@@ -1,7 +1,6 @@
 ---
 
-title: "Understanding % Without the Confusion"
-
+title: "✨ Understanding % Without the Confusion"
 description: "How Python's modulo operator works, why it gives remainders, and how I use it to solve programming problems."
 
 category: "Projects"

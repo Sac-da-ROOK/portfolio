@@ -1,6 +1,5 @@
 ---
-title: "Why Are There Only a Few Trophic Levels?"
-
+title: "🔭 Why Are There Only a Few Trophic Levels?"
 description: "Exploring why food chains usually have only a few trophic levels and how energy is lost as it moves through an ecosystem."
 
 category: "Science"

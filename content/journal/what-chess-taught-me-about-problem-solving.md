@@ -1,6 +1,5 @@
 ---
-title: "What Chess Taught Me About Problem Solving"
-
+title: "♟️ What Chess Taught Me About Problem Solving"
 description: "A reflection and explanation of what chess taught me about problem solving based on the way I think about science, engineering, and learning in practice."
 
 category: "Chess + STEM"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**What Chess Taught Me About Problem Solving**
+**♟️ What Chess Taught Me About Problem Solving**
 
 What Chess Taught Me About Problem Solving is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

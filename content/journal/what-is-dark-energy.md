@@ -1,6 +1,5 @@
 ---
-title: "What Is Dark Energy?"
-
+title: "🔭 What Is Dark Energy?"
 description: "A reflection and explanation of what is dark energy based on the way I think about science, engineering, and learning in practice."
 
 category: "Science"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**What Is Dark Energy?**
+**🔭 What Is Dark Energy?**
 
 What Is Dark Energy is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

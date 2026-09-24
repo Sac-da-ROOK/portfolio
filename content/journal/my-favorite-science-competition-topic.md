@@ -1,6 +1,5 @@
 ---
-title: "My Favorite Science Competition Topic"
-
+title: "🏆 My Favorite Science Competition Topic"
 description: "A reflection and explanation of my favorite science competition topic based on the way I think about science, engineering, and learning in practice."
 
 category: "Competitions & STEM Journey"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**My Favorite Science Competition Topic**
+**🏆 My Favorite Science Competition Topic**
 
 My Favorite Science Competition Topic is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

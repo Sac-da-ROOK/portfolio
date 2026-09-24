@@ -1,6 +1,5 @@
 ---
-title: "Torque vs. Speed in Robotics"
-
+title: "🤖 Torque vs. Speed in Robotics"
 description: "A reflection and explanation of torque vs. speed in robotics based on the way I think about science, engineering, and learning in practice."
 
 category: "Robotics & Engineering"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**Torque vs. Speed in Robotics**
+**🤖 Torque vs. Speed in Robotics**
 
 Torque vs. Speed in Robotics is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

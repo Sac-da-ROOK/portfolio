@@ -1,6 +1,5 @@
 ---
-title: "What Is a Dataset?"
-
+title: "🧠 What Is a Dataset?"
 description: "A reflection and explanation of what is a dataset based on the way I think about science, engineering, and learning in practice."
 
 category: "AI & Emerging Technology"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**What Is a Dataset?**
+**🧠 What Is a Dataset?**
 
 What Is a Dataset is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

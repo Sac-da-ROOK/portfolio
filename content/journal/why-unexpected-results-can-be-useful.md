@@ -1,6 +1,5 @@
 ---
-title: "Why Unexpected Results Can Be Useful"
-
+title: "🔭 Why Unexpected Results Can Be Useful"
 description: "Why unexpected results can teach scientists new things, reveal problems, and lead to better questions and experiments."
 
 category: "Science"

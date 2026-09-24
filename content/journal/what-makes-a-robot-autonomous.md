@@ -1,6 +1,5 @@
 ---
-title: "What Makes a Robot Autonomous?"
-
+title: "🤖 What Makes a Robot Autonomous?"
 description: "A reflection and explanation of what makes a robot autonomous based on the way I think about science, engineering, and learning in practice."
 
 category: "Robotics & Engineering"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**What Makes a Robot Autonomous?**
+**🤖 What Makes a Robot Autonomous?**
 
 What Makes a Robot Autonomous is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

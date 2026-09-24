@@ -1,6 +1,5 @@
 ---
-title: "What Happens When You Type a Website URL?"
-
+title: "💻 What Happens When You Type a Website URL?"
 description: "A reflection and explanation of what happens when you type a website url based on the way I think about science, engineering, and learning in practice."
 
 category: "Coding & Computer Science"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**What Happens When You Type a Website URL?**
+**💻 What Happens When You Type a Website URL?**
 
 What Happens When You Type a Website URL is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

@@ -1,6 +1,5 @@
 ---
-title: "Correlation vs. Causation"
-
+title: "🔭 Correlation vs. Causation"
 description: "Understanding the difference between correlation and causation and why scientists need more than a pattern to show that one thing causes another."
 
 category: "Science"

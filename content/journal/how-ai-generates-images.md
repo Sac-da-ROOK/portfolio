@@ -1,6 +1,5 @@
 ---
-title: "How AI Generates Images"
-
+title: "🧠 How AI Generates Images"
 description: "A reflection and explanation of how ai generates images based on the way I think about science, engineering, and learning in practice."
 
 category: "AI & Emerging Technology"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**How AI Generates Images**
+**🧠 How AI Generates Images**
 
 How AI Generates Images is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

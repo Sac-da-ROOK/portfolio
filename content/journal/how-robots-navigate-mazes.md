@@ -1,6 +1,5 @@
 ---
-title: "How Robots Navigate Mazes"
-
+title: "🤖 How Robots Navigate Mazes"
 description: "A reflection and explanation of how robots navigate mazes based on the way I think about science, engineering, and learning in practice."
 
 category: "Robotics & Engineering"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**How Robots Navigate Mazes**
+**🤖 How Robots Navigate Mazes**
 
 How Robots Navigate Mazes is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

@@ -1,6 +1,5 @@
 ---
-title: "How Does Soil Affect Plant Growth?"
-
+title: "🔭 How Does Soil Affect Plant Growth?"
 description: "Exploring how soil provides plants with water, nutrients, air, and support and why different soil conditions affect plant growth."
 
 category: "Science"

@@ -1,6 +1,5 @@
 ---
-title: "How Stars Are Born"
-
+title: "🔭 How Stars Are Born"
 description: "A reflection and explanation of how stars are born based on the way I think about science, engineering, and learning in practice."
 
 category: "Science"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**How Stars Are Born**
+**🔭 How Stars Are Born**
 
 How Stars Are Born is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

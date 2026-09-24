@@ -1,6 +1,5 @@
 ---
-title: "Why Developers Use Version Control"
-
+title: "💻 Why Developers Use Version Control"
 description: "A reflection and explanation of why developers use version control based on the way I think about science, engineering, and learning in practice."
 
 category: "Coding & Computer Science"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**Why Developers Use Version Control**
+**💻 Why Developers Use Version Control**
 
 Why Developers Use Version Control is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

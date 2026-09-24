@@ -1,6 +1,5 @@
 ---
-title: "How I Started Learning Python"
-
+title: "✨ How I Started Learning Python"
 description: "How I got started with Python, what I struggled with at first, and what learning programming has taught me so far."
 
 category: "Projects"

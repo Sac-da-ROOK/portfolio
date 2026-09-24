@@ -1,6 +1,5 @@
 ---
-title: "The Hardest Python Problem I?ve Solved"
-
+title: "💻 The Hardest Python Problem I?ve Solved"
 description: "A reflection and explanation of the hardest python problem i?ve solved based on the way I think about science, engineering, and learning in practice."
 
 category: "Coding & Computer Science"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**The Hardest Python Problem I?ve Solved**
+**💻 The Hardest Python Problem I?ve Solved**
 
 The Hardest Python Problem I?ve Solved is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

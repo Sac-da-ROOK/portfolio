@@ -1,6 +1,5 @@
 ---
-title: "My Chess Tournament Routine"
-
+title: "♟️ My Chess Tournament Routine"
 description: "A reflection and explanation of my chess tournament routine based on the way I think about science, engineering, and learning in practice."
 
 category: "Chess + STEM"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**My Chess Tournament Routine**
+**♟️ My Chess Tournament Routine**
 
 My Chess Tournament Routine is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

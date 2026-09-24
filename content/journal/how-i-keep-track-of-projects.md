@@ -1,6 +1,5 @@
 ---
-title: "How I Keep Track of Projects"
-
+title: "📚 How I Keep Track of Projects"
 description: "A reflection and explanation of how i keep track of projects based on the way I think about science, engineering, and learning in practice."
 
 category: "Learning, School & Student Life"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**How I Keep Track of Projects**
+**📚 How I Keep Track of Projects**
 
 How I Keep Track of Projects is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

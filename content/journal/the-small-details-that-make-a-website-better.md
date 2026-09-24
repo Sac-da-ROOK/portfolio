@@ -1,6 +1,5 @@
 ---
-title: "The Small Details That Make a Website Better"
-
+title: "💻 The Small Details That Make a Website Better"
 description: "A reflection and explanation of the small details that make a website better based on the way I think about science, engineering, and learning in practice."
 
 category: "Coding & Computer Science"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**The Small Details That Make a Website Better**
+**💻 The Small Details That Make a Website Better**
 
 The Small Details That Make a Website Better is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

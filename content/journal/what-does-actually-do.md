@@ -1,6 +1,5 @@
 ---
-title: "What Does += Actually Do?"
-
+title: "💻 What Does += Actually Do?"
 description: "A reflection and explanation of what does += actually do based on the way I think about science, engineering, and learning in practice."
 
 category: "Coding & Computer Science"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**What Does += Actually Do?**
+**💻 What Does += Actually Do?**
 
 What Does += Actually Do is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

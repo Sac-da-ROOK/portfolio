@@ -1,7 +1,6 @@
 ---
 
-title: "Why range() Is So Useful"
-
+title: "✨ Why range() Is So Useful"
 description: "How Python's range() function makes loops easier to control and why it has become one of the most useful tools I've learned."
 
 category: "Projects"

@@ -1,6 +1,5 @@
 ---
-title: "How Contact Forms Actually Work"
-
+title: "💻 How Contact Forms Actually Work"
 description: "A reflection and explanation of how contact forms actually work based on the way I think about science, engineering, and learning in practice."
 
 category: "Coding & Computer Science"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**How Contact Forms Actually Work**
+**💻 How Contact Forms Actually Work**
 
 How Contact Forms Actually Work is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

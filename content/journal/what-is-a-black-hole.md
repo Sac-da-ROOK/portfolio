@@ -1,6 +1,5 @@
 ---
-title: "What Is a Black Hole?"
-
+title: "🔭 What Is a Black Hole?"
 description: "What black holes are, how they form, and how scientists can study objects that cannot be seen directly."
 
 category: "Science"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**What Is a Black Hole?**
+**🔭 What Is a Black Hole?**
 
 Black holes are some of the strangest objects in the universe.
 

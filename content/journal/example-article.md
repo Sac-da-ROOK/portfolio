@@ -1,5 +1,5 @@
 ---
-title: "My Chess Tournament"
+title: "✨ My Chess Tournament"
 description: "A reflection on my latest tournament and the lessons I carried away from the final rounds."
 category: "Chess"
 date: "2026-09-02"

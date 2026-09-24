@@ -1,6 +1,5 @@
 ---
-title: "Why AI Isn?t Magic"
-
+title: "🧠 Why AI Isn?t Magic"
 description: "A reflection and explanation of why ai isn?t magic based on the way I think about science, engineering, and learning in practice."
 
 category: "AI & Emerging Technology"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**Why AI Isn?t Magic**
+**🧠 Why AI Isn?t Magic**
 
 Why AI Isn?t Magic is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

@@ -1,6 +1,5 @@
 ---
-title: "The Science Behind Batteries"
-
+title: "🔭 The Science Behind Batteries"
 description: "How batteries use chemical reactions to produce the electrical energy that powers everyday devices."
 
 category: "Science"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**The Science Behind Batteries**
+**🔭 The Science Behind Batteries**
 
 Batteries are everywhere. Phones, laptops, flashlights, cars, toys, and even some medical devices depend on them.
 

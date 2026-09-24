@@ -1,6 +1,5 @@
 ---
-title: "How Mechanical and Software Engineering Connect"
-
+title: "🤖 How Mechanical and Software Engineering Connect"
 description: "A reflection and explanation of how mechanical and software engineering connect based on the way I think about science, engineering, and learning in practice."
 
 category: "Robotics & Engineering"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**How Mechanical and Software Engineering Connect**
+**🤖 How Mechanical and Software Engineering Connect**
 
 How Mechanical and Software Engineering Connect is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

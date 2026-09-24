@@ -1,6 +1,5 @@
 ---
-title: "What Would Happen Near a Black Hole?"
-
+title: "🔭 What Would Happen Near a Black Hole?"
 description: "What scientists predict would happen to matter, light, and time as something gets closer to a black hole."
 
 category: "Science"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**What Would Happen Near a Black Hole?**
+**🔭 What Would Happen Near a Black Hole?**
 
 Black holes are already strange, but getting close to one would make things even stranger.
 

@@ -1,6 +1,5 @@
 ---
-title: "What I Wish I Knew When I Started STEM Competitions"
-
+title: "📚 What I Wish I Knew When I Started STEM Competitions"
 description: "A reflection and explanation of what i wish i knew when i started stem competitions based on the way I think about science, engineering, and learning in practice."
 
 category: "Learning, School & Student Life"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**What I Wish I Knew When I Started STEM Competitions**
+**📚 What I Wish I Knew When I Started STEM Competitions**
 
 What I Wish I Knew When I Started STEM Competitions is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

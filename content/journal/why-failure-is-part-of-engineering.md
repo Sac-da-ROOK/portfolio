@@ -1,6 +1,5 @@
 ---
-title: "Why Failure Is Part of Engineering"
-
+title: "🤖 Why Failure Is Part of Engineering"
 description: "A reflection and explanation of why failure is part of engineering based on the way I think about science, engineering, and learning in practice."
 
 category: "Robotics & Engineering"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**Why Failure Is Part of Engineering**
+**🤖 Why Failure Is Part of Engineering**
 
 Why Failure Is Part of Engineering is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

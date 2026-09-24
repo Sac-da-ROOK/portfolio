@@ -1,6 +1,5 @@
 ---
-title: "How Chatbots Work"
-
+title: "🧠 How Chatbots Work"
 description: "A reflection and explanation of how chatbots work based on the way I think about science, engineering, and learning in practice."
 
 category: "AI & Emerging Technology"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**How Chatbots Work**
+**🧠 How Chatbots Work**
 
 How Chatbots Work is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

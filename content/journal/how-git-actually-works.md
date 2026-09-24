@@ -1,6 +1,5 @@
 ---
-title: "How Git Actually Works"
-
+title: "💻 How Git Actually Works"
 description: "A reflection and explanation of how git actually works based on the way I think about science, engineering, and learning in practice."
 
 category: "Coding & Computer Science"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**How Git Actually Works**
+**💻 How Git Actually Works**
 
 How Git Actually Works is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

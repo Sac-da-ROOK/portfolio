@@ -1,6 +1,5 @@
 ---
-title: "How I Balance Coding and Science"
-
+title: "🏆 How I Balance Coding and Science"
 description: "A reflection and explanation of how i balance coding and science based on the way I think about science, engineering, and learning in practice."
 
 category: "Competitions & STEM Journey"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**How I Balance Coding and Science**
+**🏆 How I Balance Coding and Science**
 
 How I Balance Coding and Science is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

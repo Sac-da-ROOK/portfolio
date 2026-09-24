@@ -1,6 +1,5 @@
 ---
-title: "How Stars Die"
-
+title: "🔭 How Stars Die"
 description: "A reflection and explanation of how stars die based on the way I think about science, engineering, and learning in practice."
 
 category: "Science"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**How Stars Die**
+**🔭 How Stars Die**
 
 How Stars Die is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

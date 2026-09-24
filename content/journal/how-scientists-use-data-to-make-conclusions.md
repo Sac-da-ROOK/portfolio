@@ -1,6 +1,5 @@
 ---
-title: "How Scientists Use Data to Make Conclusions"
-
+title: "🔭 How Scientists Use Data to Make Conclusions"
 description: "How scientists analyze data from experiments to identify patterns, evaluate predictions, and make evidence-based conclusions."
 
 category: "Science"

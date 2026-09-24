@@ -1,6 +1,5 @@
 ---
-title: "Why Light Behaves Like a Wave"
-
+title: "🔭 Why Light Behaves Like a Wave"
 description: "How interference, diffraction, and other experiments show that light has wave-like behavior."
 
 category: "Science"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**Why Light Behaves Like a Wave**
+**🔭 Why Light Behaves Like a Wave**
 
 Light seems pretty straightforward. It lets me see things, travels incredibly fast, and can make rainbows.
 

@@ -1,6 +1,5 @@
 ---
-title: "Could Life Exist Somewhere Else?"
-
+title: "🔭 Could Life Exist Somewhere Else?"
 description: "A reflection and explanation of could life exist somewhere else based on the way I think about science, engineering, and learning in practice."
 
 category: "Science"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**Could Life Exist Somewhere Else?**
+**🔭 Could Life Exist Somewhere Else?**
 
 Could Life Exist Somewhere Else is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

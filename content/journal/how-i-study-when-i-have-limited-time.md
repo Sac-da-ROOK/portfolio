@@ -1,6 +1,5 @@
 ---
-title: "How I Study When I Have Limited Time"
-
+title: "🏆 How I Study When I Have Limited Time"
 description: "A reflection and explanation of how i study when i have limited time based on the way I think about science, engineering, and learning in practice."
 
 category: "Competitions & STEM Journey"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**How I Study When I Have Limited Time**
+**🏆 How I Study When I Have Limited Time**
 
 How I Study When I Have Limited Time is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

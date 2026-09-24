@@ -1,6 +1,5 @@
 ---
-title: "How len() Works"
-
+title: "💻 How len() Works"
 description: "A reflection and explanation of how len() works based on the way I think about science, engineering, and learning in practice."
 
 category: "Coding & Computer Science"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**How len() Works**
+**💻 How len() Works**
 
 How len() Works is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

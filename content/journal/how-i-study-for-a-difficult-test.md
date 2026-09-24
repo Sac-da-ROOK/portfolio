@@ -1,6 +1,5 @@
 ---
-title: "How I Study for a Difficult Test"
-
+title: "📚 How I Study for a Difficult Test"
 description: "A reflection and explanation of how i study for a difficult test based on the way I think about science, engineering, and learning in practice."
 
 category: "Learning, School & Student Life"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**How I Study for a Difficult Test**
+**📚 How I Study for a Difficult Test**
 
 How I Study for a Difficult Test is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

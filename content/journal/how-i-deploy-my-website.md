@@ -1,6 +1,5 @@
 ---
-title: "How I Deploy My Website"
-
+title: "💻 How I Deploy My Website"
 description: "A reflection and explanation of how i deploy my website based on the way I think about science, engineering, and learning in practice."
 
 category: "Coding & Computer Science"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**How I Deploy My Website**
+**💻 How I Deploy My Website**
 
 How I Deploy My Website is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

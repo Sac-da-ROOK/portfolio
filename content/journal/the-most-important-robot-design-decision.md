@@ -1,6 +1,5 @@
 ---
-title: "The Most Important Robot Design Decision"
-
+title: "🤖 The Most Important Robot Design Decision"
 description: "A reflection and explanation of the most important robot design decision based on the way I think about science, engineering, and learning in practice."
 
 category: "Robotics & Engineering"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**The Most Important Robot Design Decision**
+**🤖 The Most Important Robot Design Decision**
 
 The Most Important Robot Design Decision is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

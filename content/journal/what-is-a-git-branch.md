@@ -1,6 +1,5 @@
 ---
-title: "What Is a Git Branch?"
-
+title: "💻 What Is a Git Branch?"
 description: "A reflection and explanation of what is a git branch based on the way I think about science, engineering, and learning in practice."
 
 category: "Coding & Computer Science"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**What Is a Git Branch?**
+**💻 What Is a Git Branch?**
 
 What Is a Git Branch is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

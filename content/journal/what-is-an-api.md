@@ -1,6 +1,5 @@
 ---
-title: "What Is an API?"
-
+title: "💻 What Is an API?"
 description: "A reflection and explanation of what is an api based on the way I think about science, engineering, and learning in practice."
 
 category: "Coding & Computer Science"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**What Is an API?**
+**💻 What Is an API?**
 
 What Is an API is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

@@ -1,6 +1,5 @@
 ---
-title: "AI in Space Exploration"
-
+title: "🧠 AI in Space Exploration"
 description: "A reflection and explanation of ai in space exploration based on the way I think about science, engineering, and learning in practice."
 
 category: "AI & Emerging Technology"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**AI in Space Exploration**
+**🧠 AI in Space Exploration**
 
 AI in Space Exploration is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

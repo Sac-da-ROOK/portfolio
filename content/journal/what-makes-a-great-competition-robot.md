@@ -1,6 +1,5 @@
 ---
-title: "What Makes a Great Competition Robot?"
-
+title: "🤖 What Makes a Great Competition Robot?"
 description: "A reflection and explanation of what makes a great competition robot based on the way I think about science, engineering, and learning in practice."
 
 category: "Robotics & Engineering"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**What Makes a Great Competition Robot?**
+**🤖 What Makes a Great Competition Robot?**
 
 What Makes a Great Competition Robot is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

@@ -1,6 +1,5 @@
 ---
-title: "How Websites Talk to Servers"
-
+title: "💻 How Websites Talk to Servers"
 description: "A reflection and explanation of how websites talk to servers based on the way I think about science, engineering, and learning in practice."
 
 category: "Coding & Computer Science"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**How Websites Talk to Servers**
+**💻 How Websites Talk to Servers**
 
 How Websites Talk to Servers is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

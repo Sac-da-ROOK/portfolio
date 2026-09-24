@@ -1,6 +1,5 @@
 ---
-title: "My Favorite Python Trick"
-
+title: "💻 My Favorite Python Trick"
 description: "A reflection and explanation of my favorite python trick based on the way I think about science, engineering, and learning in practice."
 
 category: "Coding & Computer Science"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**My Favorite Python Trick**
+**💻 My Favorite Python Trick**
 
 My Favorite Python Trick is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

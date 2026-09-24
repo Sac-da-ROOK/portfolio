@@ -1,6 +1,5 @@
 ---
-title: "Why I Like STEM Competitions"
-
+title: "🏆 Why I Like STEM Competitions"
 description: "A reflection and explanation of why i like stem competitions based on the way I think about science, engineering, and learning in practice."
 
 category: "Competitions & STEM Journey"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**Why I Like STEM Competitions**
+**🏆 Why I Like STEM Competitions**
 
 Why I Like STEM Competitions is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

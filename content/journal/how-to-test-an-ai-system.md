@@ -1,6 +1,5 @@
 ---
-title: "How to Test an AI System"
-
+title: "🧠 How to Test an AI System"
 description: "A reflection and explanation of how to test an ai system based on the way I think about science, engineering, and learning in practice."
 
 category: "AI & Emerging Technology"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**How to Test an AI System**
+**🧠 How to Test an AI System**
 
 How to Test an AI System is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

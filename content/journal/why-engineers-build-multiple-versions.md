@@ -1,6 +1,5 @@
 ---
-title: "Why Engineers Build Multiple Versions"
-
+title: "🤖 Why Engineers Build Multiple Versions"
 description: "A reflection and explanation of why engineers build multiple versions based on the way I think about science, engineering, and learning in practice."
 
 category: "Robotics & Engineering"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**Why Engineers Build Multiple Versions**
+**🤖 Why Engineers Build Multiple Versions**
 
 Why Engineers Build Multiple Versions is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

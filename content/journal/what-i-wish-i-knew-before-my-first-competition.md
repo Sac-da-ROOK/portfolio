@@ -1,6 +1,5 @@
 ---
-title: "What I Wish I Knew Before My First Competition"
-
+title: "🏆 What I Wish I Knew Before My First Competition"
 description: "A reflection and explanation of what i wish i knew before my first competition based on the way I think about science, engineering, and learning in practice."
 
 category: "Competitions & STEM Journey"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**What I Wish I Knew Before My First Competition**
+**🏆 What I Wish I Knew Before My First Competition**
 
 What I Wish I Knew Before My First Competition is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

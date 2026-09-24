@@ -1,6 +1,5 @@
 ---
-title: "What Is an AI Hallucination?"
-
+title: "🧠 What Is an AI Hallucination?"
 description: "A reflection and explanation of what is an ai hallucination based on the way I think about science, engineering, and learning in practice."
 
 category: "AI & Emerging Technology"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**What Is an AI Hallucination?**
+**🧠 What Is an AI Hallucination?**
 
 What Is an AI Hallucination is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

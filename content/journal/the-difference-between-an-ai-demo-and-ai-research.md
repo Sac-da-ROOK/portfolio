@@ -1,6 +1,5 @@
 ---
-title: "The Difference Between an AI Demo and AI Research"
-
+title: "🧠 The Difference Between an AI Demo and AI Research"
 description: "A reflection and explanation of the difference between an ai demo and ai research based on the way I think about science, engineering, and learning in practice."
 
 category: "AI & Emerging Technology"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**The Difference Between an AI Demo and AI Research**
+**🧠 The Difference Between an AI Demo and AI Research**
 
 The Difference Between an AI Demo and AI Research is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

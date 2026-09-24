@@ -1,6 +1,5 @@
 ---
-title: "How I Learned to Actually Enjoy Studying"
-
+title: "📚 How I Learned to Actually Enjoy Studying"
 description: "A reflection and explanation of how i learned to actually enjoy studying based on the way I think about science, engineering, and learning in practice."
 
 category: "Learning, School & Student Life"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**How I Learned to Actually Enjoy Studying**
+**📚 How I Learned to Actually Enjoy Studying**
 
 How I Learned to Actually Enjoy Studying is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

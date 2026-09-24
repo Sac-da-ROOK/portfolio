@@ -1,6 +1,5 @@
 ---
-title: "How I Prepare for a Chess Tournament"
-
+title: "♟️ How I Prepare for a Chess Tournament"
 description: "A reflection and explanation of how i prepare for a chess tournament based on the way I think about science, engineering, and learning in practice."
 
 category: "Chess + STEM"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**How I Prepare for a Chess Tournament**
+**♟️ How I Prepare for a Chess Tournament**
 
 How I Prepare for a Chess Tournament is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

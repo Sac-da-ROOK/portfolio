@@ -1,6 +1,5 @@
 ---
-title: "How Chess Players Calculate Variations"
-
+title: "♟️ How Chess Players Calculate Variations"
 description: "A reflection and explanation of how chess players calculate variations based on the way I think about science, engineering, and learning in practice."
 
 category: "Chess + STEM"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**How Chess Players Calculate Variations**
+**♟️ How Chess Players Calculate Variations**
 
 How Chess Players Calculate Variations is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

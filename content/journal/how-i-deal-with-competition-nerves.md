@@ -1,6 +1,5 @@
 ---
-title: "How I Deal With Competition Nerves"
-
+title: "🏆 How I Deal With Competition Nerves"
 description: "A reflection and explanation of how i deal with competition nerves based on the way I think about science, engineering, and learning in practice."
 
 category: "Competitions & STEM Journey"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**How I Deal With Competition Nerves**
+**🏆 How I Deal With Competition Nerves**
 
 How I Deal With Competition Nerves is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

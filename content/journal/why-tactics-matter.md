@@ -1,6 +1,5 @@
 ---
-title: "Why Tactics Matter"
-
+title: "♟️ Why Tactics Matter"
 description: "A reflection and explanation of why tactics matter based on the way I think about science, engineering, and learning in practice."
 
 category: "Chess + STEM"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**Why Tactics Matter**
+**♟️ Why Tactics Matter**
 
 Why Tactics Matter is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

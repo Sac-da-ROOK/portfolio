@@ -1,6 +1,5 @@
 ---
-title: "How Scientists Know the Universe Is Expanding"
-
+title: "🔭 How Scientists Know the Universe Is Expanding"
 description: "A reflection and explanation of how scientists know the universe is expanding based on the way I think about science, engineering, and learning in practice."
 
 category: "Science"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**How Scientists Know the Universe Is Expanding**
+**🔭 How Scientists Know the Universe Is Expanding**
 
 How Scientists Know the Universe Is Expanding is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

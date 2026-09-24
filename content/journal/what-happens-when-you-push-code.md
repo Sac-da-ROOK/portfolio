@@ -1,6 +1,5 @@
 ---
-title: "What Happens When You Push Code?"
-
+title: "💻 What Happens When You Push Code?"
 description: "A reflection and explanation of what happens when you push code based on the way I think about science, engineering, and learning in practice."
 
 category: "Coding & Computer Science"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**What Happens When You Push Code?**
+**💻 What Happens When You Push Code?**
 
 What Happens When You Push Code is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

@@ -1,6 +1,5 @@
 ---
-title: "What Is Generative AI?"
-
+title: "🧠 What Is Generative AI?"
 description: "A reflection and explanation of what is generative ai based on the way I think about science, engineering, and learning in practice."
 
 category: "AI & Emerging Technology"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**What Is Generative AI?**
+**🧠 What Is Generative AI?**
 
 What Is Generative AI is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

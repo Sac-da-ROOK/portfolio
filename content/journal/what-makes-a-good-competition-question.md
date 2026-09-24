@@ -1,6 +1,5 @@
 ---
-title: "What Makes a Good Competition Question?"
-
+title: "🏆 What Makes a Good Competition Question?"
 description: "A reflection and explanation of what makes a good competition question based on the way I think about science, engineering, and learning in practice."
 
 category: "Competitions & STEM Journey"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**What Makes a Good Competition Question?**
+**🏆 What Makes a Good Competition Question?**
 
 What Makes a Good Competition Question is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

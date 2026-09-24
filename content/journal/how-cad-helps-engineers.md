@@ -1,6 +1,5 @@
 ---
-title: "How CAD Helps Engineers"
-
+title: "🤖 How CAD Helps Engineers"
 description: "A reflection and explanation of how cad helps engineers based on the way I think about science, engineering, and learning in practice."
 
 category: "Robotics & Engineering"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**How CAD Helps Engineers**
+**🤖 How CAD Helps Engineers**
 
 How CAD Helps Engineers is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

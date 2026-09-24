@@ -1,6 +1,5 @@
 ---
-title: "Can AI Really "Think"?"
-
+title: "🧠 "?? Can AI Really "Think"?""
 description: "A reflection and explanation of can ai really think based on the way I think about science, engineering, and learning in practice."
 
 category: "AI & Emerging Technology"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**Can AI Really "Think"?**
+**?? Can AI Really "Think"?**
 
 Can AI Really "Think" is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

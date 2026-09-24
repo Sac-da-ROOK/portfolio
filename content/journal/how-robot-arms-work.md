@@ -1,6 +1,5 @@
 ---
-title: "How Robot Arms Work"
-
+title: "🤖 How Robot Arms Work"
 description: "A reflection and explanation of how robot arms work based on the way I think about science, engineering, and learning in practice."
 
 category: "Robotics & Engineering"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**How Robot Arms Work**
+**🤖 How Robot Arms Work**
 
 How Robot Arms Work is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

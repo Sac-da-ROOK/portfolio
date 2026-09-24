@@ -1,6 +1,5 @@
 ---
-title: "How Satellites Stay in Orbit"
-
+title: "🔭 How Satellites Stay in Orbit"
 description: "A reflection and explanation of how satellites stay in orbit based on the way I think about science, engineering, and learning in practice."
 
 category: "Science"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**How Satellites Stay in Orbit**
+**🔭 How Satellites Stay in Orbit**
 
 How Satellites Stay in Orbit is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

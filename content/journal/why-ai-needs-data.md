@@ -1,6 +1,5 @@
 ---
-title: "Why AI Needs Data"
-
+title: "🧠 Why AI Needs Data"
 description: "A reflection and explanation of why ai needs data based on the way I think about science, engineering, and learning in practice."
 
 category: "AI & Emerging Technology"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**Why AI Needs Data**
+**🧠 Why AI Needs Data**
 
 Why AI Needs Data is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

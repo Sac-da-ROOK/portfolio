@@ -1,6 +1,5 @@
 ---
-title: "What Is a PID Controller?"
-
+title: "🤖 What Is a PID Controller?"
 description: "A reflection and explanation of what is a pid controller based on the way I think about science, engineering, and learning in practice."
 
 category: "Robotics & Engineering"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**What Is a PID Controller?**
+**🤖 What Is a PID Controller?**
 
 What Is a PID Controller is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

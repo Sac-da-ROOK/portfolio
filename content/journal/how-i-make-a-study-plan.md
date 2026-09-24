@@ -1,6 +1,5 @@
 ---
-title: "How I Make a Study Plan"
-
+title: "🏆 How I Make a Study Plan"
 description: "A reflection and explanation of how i make a study plan based on the way I think about science, engineering, and learning in practice."
 
 category: "Competitions & STEM Journey"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**How I Make a Study Plan**
+**🏆 How I Make a Study Plan**
 
 How I Make a Study Plan is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

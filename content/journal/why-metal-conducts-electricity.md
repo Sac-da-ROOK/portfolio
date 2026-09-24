@@ -1,6 +1,5 @@
 ---
-title: "Why Metal Conducts Electricity"
-
+title: "🔭 Why Metal Conducts Electricity"
 description: "Why metals are good electrical conductors and how moving electrons help electricity travel through wires."
 
 category: "Science"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**Why Metal Conducts Electricity**
+**🔭 Why Metal Conducts Electricity**
 
 When you plug in a device, electricity usually travels through metal wires. Copper is commonly used in electrical wiring because it allows electric charge to move through it easily.
 

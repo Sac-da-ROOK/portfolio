@@ -1,6 +1,5 @@
 ---
-title: "How to Turn a Question Into an Experiment"
-
+title: "🔭 How to Turn a Question Into an Experiment"
 description: "How scientists turn questions into testable experiments by identifying variables, making predictions, and planning how to collect data."
 
 category: "Science"

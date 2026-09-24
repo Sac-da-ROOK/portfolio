@@ -1,6 +1,5 @@
 ---
-title: "Why Eclipses Don?t Happen Every Month"
-
+title: "🔭 Why Eclipses Don?t Happen Every Month"
 description: "A reflection and explanation of why eclipses don?t happen every month based on the way I think about science, engineering, and learning in practice."
 
 category: "Science"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**Why Eclipses Don?t Happen Every Month**
+**🔭 Why Eclipses Don?t Happen Every Month**
 
 Why Eclipses Don?t Happen Every Month is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

@@ -1,6 +1,5 @@
 ---
-title: "How I Review After a Competition"
-
+title: "🏆 How I Review After a Competition"
 description: "A reflection and explanation of how i review after a competition based on the way I think about science, engineering, and learning in practice."
 
 category: "Competitions & STEM Journey"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**How I Review After a Competition**
+**🏆 How I Review After a Competition**
 
 How I Review After a Competition is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

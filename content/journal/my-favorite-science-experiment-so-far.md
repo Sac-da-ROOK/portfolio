@@ -1,6 +1,5 @@
 ---
-title: "My Favorite Science Experiment So Far"
-
+title: "🔭 My Favorite Science Experiment So Far"
 description: "A look at the kind of science experiment I enjoy most and what experiments have taught me about testing ideas, collecting data, and learning from results."
 
 category: "Science"

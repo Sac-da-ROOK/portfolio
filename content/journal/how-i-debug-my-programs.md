@@ -1,6 +1,5 @@
 ---
-title: "How I Debug My Programs"
-
+title: "💻 How I Debug My Programs"
 description: "A reflection and explanation of how i debug my programs based on the way I think about science, engineering, and learning in practice."
 
 category: "Coding & Computer Science"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**How I Debug My Programs**
+**💻 How I Debug My Programs**
 
 How I Debug My Programs is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

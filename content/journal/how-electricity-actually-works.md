@@ -1,6 +1,5 @@
 ---
-title: "How Electricity Actually Works"
-
+title: "🔭 How Electricity Actually Works"
 description: "A simple look at electric charge, electrons, circuits, and how electricity moves through the devices we use every day."
 
 category: "Science"

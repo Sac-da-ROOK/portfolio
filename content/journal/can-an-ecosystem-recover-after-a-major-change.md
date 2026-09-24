@@ -1,6 +1,5 @@
 ---
-title: "Can an Ecosystem Recover After a Major Change?"
-
+title: "🔭 Can an Ecosystem Recover After a Major Change?"
 description: "Exploring how ecosystems recover after major disturbances and how succession helps new life return."
 
 category: "Science"

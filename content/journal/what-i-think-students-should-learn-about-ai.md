@@ -1,6 +1,5 @@
 ---
-title: "What I Think Students Should Learn About AI"
-
+title: "🧠 What I Think Students Should Learn About AI"
 description: "A reflection and explanation of what i think students should learn about ai based on the way I think about science, engineering, and learning in practice."
 
 category: "AI & Emerging Technology"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**What I Think Students Should Learn About AI**
+**🧠 What I Think Students Should Learn About AI**
 
 What I Think Students Should Learn About AI is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

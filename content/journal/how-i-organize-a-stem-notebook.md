@@ -1,6 +1,5 @@
 ---
-title: "How I Organize a STEM Notebook"
-
+title: "📚 How I Organize a STEM Notebook"
 description: "A reflection and explanation of how i organize a stem notebook based on the way I think about science, engineering, and learning in practice."
 
 category: "Learning, School & Student Life"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**How I Organize a STEM Notebook**
+**📚 How I Organize a STEM Notebook**
 
 How I Organize a STEM Notebook is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

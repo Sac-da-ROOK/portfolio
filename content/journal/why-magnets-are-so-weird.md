@@ -1,6 +1,5 @@
 ---
-title: "Why Magnets Are So Weird"
-
+title: "🔭 Why Magnets Are So Weird"
 description: "A look at magnetic poles, magnetic fields, and why some materials become magnets."
 
 category: "Science"

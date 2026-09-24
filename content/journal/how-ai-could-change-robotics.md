@@ -1,6 +1,5 @@
 ---
-title: "How AI Could Change Robotics"
-
+title: "🧠 How AI Could Change Robotics"
 description: "A reflection and explanation of how ai could change robotics based on the way I think about science, engineering, and learning in practice."
 
 category: "AI & Emerging Technology"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**How AI Could Change Robotics**
+**🧠 How AI Could Change Robotics**
 
 How AI Could Change Robotics is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

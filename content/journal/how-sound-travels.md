@@ -1,6 +1,5 @@
 ---
-title: "How Sound Travels"
-
+title: "🔭 How Sound Travels"
 description: "How vibrations move through matter to create the sound waves we hear."
 
 category: "Science"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**How Sound Travels**
+**🔭 How Sound Travels**
 
 Sound is something I experience basically every second I'm awake. I can hear people talking, music playing, doors closing, and random noises around me.
 

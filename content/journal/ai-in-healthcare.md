@@ -1,6 +1,5 @@
 ---
-title: "AI in Healthcare"
-
+title: "🧠 AI in Healthcare"
 description: "A reflection and explanation of ai in healthcare based on the way I think about science, engineering, and learning in practice."
 
 category: "AI & Emerging Technology"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**AI in Healthcare**
+**🧠 AI in Healthcare**
 
 AI in Healthcare is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

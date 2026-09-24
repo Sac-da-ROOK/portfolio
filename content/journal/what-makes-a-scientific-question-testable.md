@@ -1,6 +1,5 @@
 ---
-title: "What Makes a Scientific Question Testable?"
-
+title: "🔭 What Makes a Scientific Question Testable?"
 description: "Exploring what makes a science question testable and how scientists turn curiosity into questions that can be investigated with evidence."
 
 category: "Science"

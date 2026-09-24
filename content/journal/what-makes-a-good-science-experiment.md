@@ -1,6 +1,5 @@
 ---
-title: "What Makes a Good Science Experiment?"
-
+title: "🔭 What Makes a Good Science Experiment?"
 description: "Exploring what makes a science experiment fair, testable, and useful for answering a scientific question."
 
 category: "Science"

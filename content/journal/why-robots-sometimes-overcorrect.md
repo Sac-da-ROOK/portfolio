@@ -1,6 +1,5 @@
 ---
-title: "Why Robots Sometimes Overcorrect"
-
+title: "🤖 Why Robots Sometimes Overcorrect"
 description: "A reflection and explanation of why robots sometimes overcorrect based on the way I think about science, engineering, and learning in practice."
 
 category: "Robotics & Engineering"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**Why Robots Sometimes Overcorrect**
+**🤖 Why Robots Sometimes Overcorrect**
 
 Why Robots Sometimes Overcorrect is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

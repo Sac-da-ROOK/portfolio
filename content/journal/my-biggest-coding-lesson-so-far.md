@@ -1,6 +1,5 @@
 ---
-title: "My Biggest Coding Lesson So Far"
-
+title: "💻 My Biggest Coding Lesson So Far"
 description: "A reflection and explanation of my biggest coding lesson so far based on the way I think about science, engineering, and learning in practice."
 
 category: "Coding & Computer Science"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**My Biggest Coding Lesson So Far**
+**💻 My Biggest Coding Lesson So Far**
 
 My Biggest Coding Lesson So Far is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

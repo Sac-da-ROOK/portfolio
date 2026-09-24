@@ -1,6 +1,5 @@
 ---
-title: "Why Good Code Is More Than Code That Works"
-
+title: "✨ Why Good Code Is More Than Code That Works"
 description: "Why writing code that works is only the beginning, and how clean, understandable code makes projects easier to build, debug, and improve."
 
 category: "Projects"

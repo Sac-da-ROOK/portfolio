@@ -1,6 +1,5 @@
 ---
-title: "How I Prepare for Robotics Competitions"
-
+title: "🤖 How I Prepare for Robotics Competitions"
 description: "A reflection and explanation of how i prepare for robotics competitions based on the way I think about science, engineering, and learning in practice."
 
 category: "Robotics & Engineering"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**How I Prepare for Robotics Competitions**
+**🤖 How I Prepare for Robotics Competitions**
 
 How I Prepare for Robotics Competitions is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

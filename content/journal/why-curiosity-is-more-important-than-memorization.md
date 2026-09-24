@@ -1,6 +1,5 @@
 ---
-title: "Why Curiosity Is More Important Than Memorization"
-
+title: "📚 Why Curiosity Is More Important Than Memorization"
 description: "A reflection and explanation of why curiosity is more important than memorization based on the way I think about science, engineering, and learning in practice."
 
 category: "Learning, School & Student Life"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**Why Curiosity Is More Important Than Memorization**
+**📚 Why Curiosity Is More Important Than Memorization**
 
 Why Curiosity Is More Important Than Memorization is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

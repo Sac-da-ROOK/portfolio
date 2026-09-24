@@ -1,6 +1,5 @@
 ---
-title: "How I Prepare for a Science Competition"
-
+title: "🏆 How I Prepare for a Science Competition"
 description: "A reflection and explanation of how i prepare for a science competition based on the way I think about science, engineering, and learning in practice."
 
 category: "Competitions & STEM Journey"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**How I Prepare for a Science Competition**
+**🏆 How I Prepare for a Science Competition**
 
 How I Prepare for a Science Competition is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

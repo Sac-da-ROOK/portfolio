@@ -1,6 +1,5 @@
 ---
-title: "What I Learned From Keeping a Science Journal"
-
+title: "🔭 What I Learned From Keeping a Science Journal"
 description: "How keeping a science journal helps organize questions, observations, data, mistakes, and ideas throughout the scientific process."
 
 category: "Science"

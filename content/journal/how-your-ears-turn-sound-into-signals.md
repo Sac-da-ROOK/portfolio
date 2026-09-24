@@ -1,6 +1,5 @@
 ---
-title: "How Your Ears Turn Sound Into Signals"
-
+title: "🔭 How Your Ears Turn Sound Into Signals"
 description: "How the ear transforms sound waves into electrical signals that the brain can understand."
 
 category: "Science"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**How Your Ears Turn Sound Into Signals**
+**🔭 How Your Ears Turn Sound Into Signals**
 
 When I hear someone talking, it feels like the sound simply enters my ears and my brain understands it.
 

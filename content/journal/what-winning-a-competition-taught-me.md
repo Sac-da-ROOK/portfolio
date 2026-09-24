@@ -1,6 +1,5 @@
 ---
-title: "What Winning a Competition Taught Me"
-
+title: "🏆 What Winning a Competition Taught Me"
 description: "A reflection and explanation of what winning a competition taught me based on the way I think about science, engineering, and learning in practice."
 
 category: "Competitions & STEM Journey"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**What Winning a Competition Taught Me**
+**🏆 What Winning a Competition Taught Me**
 
 What Winning a Competition Taught Me is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

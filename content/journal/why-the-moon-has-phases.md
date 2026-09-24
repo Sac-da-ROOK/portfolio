@@ -1,6 +1,5 @@
 ---
-title: "Why the Moon Has Phases"
-
+title: "🔭 Why the Moon Has Phases"
 description: "A reflection and explanation of why the moon has phases based on the way I think about science, engineering, and learning in practice."
 
 category: "Science"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**Why the Moon Has Phases**
+**🔭 Why the Moon Has Phases**
 
 Why the Moon Has Phases is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

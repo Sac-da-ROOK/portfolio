@@ -1,6 +1,5 @@
 ---
-title: "Why Robot Design Is Full of Tradeoffs"
-
+title: "🤖 Why Robot Design Is Full of Tradeoffs"
 description: "A reflection and explanation of why robot design is full of tradeoffs based on the way I think about science, engineering, and learning in practice."
 
 category: "Robotics & Engineering"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**Why Robot Design Is Full of Tradeoffs**
+**🤖 Why Robot Design Is Full of Tradeoffs**
 
 Why Robot Design Is Full of Tradeoffs is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

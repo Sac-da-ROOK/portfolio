@@ -1,6 +1,5 @@
 ---
-title: "Why I Use GitHub"
-
+title: "💻 Why I Use GitHub"
 description: "A reflection and explanation of why i use github based on the way I think about science, engineering, and learning in practice."
 
 category: "Coding & Computer Science"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**Why I Use GitHub**
+**💻 Why I Use GitHub**
 
 Why I Use GitHub is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

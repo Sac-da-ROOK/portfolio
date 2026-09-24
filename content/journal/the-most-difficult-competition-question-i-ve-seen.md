@@ -1,6 +1,5 @@
 ---
-title: "The Most Difficult Competition Question I?ve Seen"
-
+title: "🏆 The Most Difficult Competition Question I?ve Seen"
 description: "A reflection and explanation of the most difficult competition question i?ve seen based on the way I think about science, engineering, and learning in practice."
 
 category: "Competitions & STEM Journey"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**The Most Difficult Competition Question I?ve Seen**
+**🏆 The Most Difficult Competition Question I?ve Seen**
 
 The Most Difficult Competition Question I?ve Seen is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

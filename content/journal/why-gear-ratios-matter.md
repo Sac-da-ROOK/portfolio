@@ -1,6 +1,5 @@
 ---
-title: "Why Gear Ratios Matter"
-
+title: "🤖 Why Gear Ratios Matter"
 description: "A reflection and explanation of why gear ratios matter based on the way I think about science, engineering, and learning in practice."
 
 category: "Robotics & Engineering"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**Why Gear Ratios Matter**
+**🤖 Why Gear Ratios Matter**
 
 Why Gear Ratios Matter is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

@@ -1,7 +1,6 @@
 ---
 
-title: "Why Strings Are More Powerful Than They Look"
-
+title: "✨ Why Strings Are More Powerful Than They Look"
 description: "How Python strings let programs work with text and why they are much more useful than simply storing words."
 
 category: "Projects"

@@ -1,6 +1,5 @@
 ---
-title: "What Makes a Website Feel "Premium"?"
-
+title: "💻 "?? What Makes a Website Feel "Premium"?""
 description: "A reflection and explanation of what makes a website feel "premium" based on the way I think about science, engineering, and learning in practice."
 
 category: "Coding & Computer Science"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**What Makes a Website Feel "Premium"?**
+**?? What Makes a Website Feel "Premium"?**
 
 What Makes a Website Feel "Premium" is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

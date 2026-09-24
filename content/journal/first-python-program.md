@@ -1,6 +1,5 @@
 ---
-title: "The First Python Program I Ever Made"
-
+title: "✨ The First Python Program I Ever Made"
 description: "Looking back at my first Python program and how a simple program became the beginning of my programming journey."
 
 category: "Projects"

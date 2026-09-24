@@ -1,6 +1,5 @@
 ---
-title: "Why Scientists Need Control Groups"
-
+title: "🔭 Why Scientists Need Control Groups"
 description: "Exploring how control groups give scientists a comparison point and help them understand whether a variable actually caused a change."
 
 category: "Science"

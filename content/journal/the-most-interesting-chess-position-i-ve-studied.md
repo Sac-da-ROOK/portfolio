@@ -1,6 +1,5 @@
 ---
-title: "The Most Interesting Chess Position I?ve Studied"
-
+title: "♟️ The Most Interesting Chess Position I?ve Studied"
 description: "A reflection and explanation of the most interesting chess position i?ve studied based on the way I think about science, engineering, and learning in practice."
 
 category: "Chess + STEM"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**The Most Interesting Chess Position I?ve Studied**
+**♟️ The Most Interesting Chess Position I?ve Studied**
 
 The Most Interesting Chess Position I?ve Studied is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

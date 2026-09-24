@@ -1,6 +1,5 @@
 ---
-title: "My Best Study Techniques"
-
+title: "📚 My Best Study Techniques"
 description: "A reflection and explanation of my best study techniques based on the way I think about science, engineering, and learning in practice."
 
 category: "Learning, School & Student Life"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**My Best Study Techniques**
+**📚 My Best Study Techniques**
 
 My Best Study Techniques is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

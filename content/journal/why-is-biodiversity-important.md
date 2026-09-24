@@ -1,6 +1,5 @@
 ---
-title: "Why Is Biodiversity Important?"
-
+title: "🔭 Why Is Biodiversity Important?"
 description: "Exploring why having many different species is important for healthy and resilient ecosystems."
 
 category: "Science"

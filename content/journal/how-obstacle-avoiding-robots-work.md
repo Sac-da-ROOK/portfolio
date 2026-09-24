@@ -1,6 +1,5 @@
 ---
-title: "How Obstacle-Avoiding Robots Work"
-
+title: "🤖 How Obstacle-Avoiding Robots Work"
 description: "A reflection and explanation of how obstacle-avoiding robots work based on the way I think about science, engineering, and learning in practice."
 
 category: "Robotics & Engineering"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**How Obstacle-Avoiding Robots Work**
+**🤖 How Obstacle-Avoiding Robots Work**
 
 How Obstacle-Avoiding Robots Work is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

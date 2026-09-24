@@ -1,6 +1,5 @@
 ---
-title: "My STEM Journey So Far: What I?ve Built, Learned, and Failed At"
-
+title: "📚 My STEM Journey So Far: What I?ve Built, Learned, and Failed At"
 description: "A reflection and explanation of my stem journey so far: what i?ve built, learned, and failed at based on the way I think about science, engineering, and learning in practice."
 
 category: "Learning, School & Student Life"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**My STEM Journey So Far: What I?ve Built, Learned, and Failed At**
+**📚 My STEM Journey So Far: What I?ve Built, Learned, and Failed At**
 
 My STEM Journey So Far: What I?ve Built, Learned, and Failed At is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

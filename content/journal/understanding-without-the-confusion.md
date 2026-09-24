@@ -1,6 +1,5 @@
 ---
-title: "Understanding % Without the Confusion"
-
+title: "💻 Understanding % Without the Confusion"
 description: "A reflection and explanation of understanding % without the confusion based on the way I think about science, engineering, and learning in practice."
 
 category: "Coding & Computer Science"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**Understanding % Without the Confusion**
+**💻 Understanding % Without the Confusion**
 
 Understanding % Without the Confusion is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

@@ -1,6 +1,5 @@
 ---
-title: "AI in Science"
-
+title: "🧠 AI in Science"
 description: "A reflection and explanation of ai in science based on the way I think about science, engineering, and learning in practice."
 
 category: "AI & Emerging Technology"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**AI in Science**
+**🧠 AI in Science**
 
 AI in Science is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

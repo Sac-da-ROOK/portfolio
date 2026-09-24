@@ -1,6 +1,5 @@
 ---
-title: "10 Scientists Who Changed How We Understand the World"
-
+title: "🏆 10 Scientists Who Changed How We Understand the World"
 description: "A reflection and explanation of 10 scientists who changed how we understand the world based on the way I think about science, engineering, and learning in practice."
 
 category: "Competitions & STEM Journey"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**10 Scientists Who Changed How We Understand the World**
+**🏆 10 Scientists Who Changed How We Understand the World**
 
 10 Scientists Who Changed How We Understand the World is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

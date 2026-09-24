@@ -1,6 +1,5 @@
 ---
-title: "How a Line-Following Robot Works"
-
+title: "🤖 How a Line-Following Robot Works"
 description: "A reflection and explanation of how a line-following robot works based on the way I think about science, engineering, and learning in practice."
 
 category: "Robotics & Engineering"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**How a Line-Following Robot Works**
+**🤖 How a Line-Following Robot Works**
 
 How a Line-Following Robot Works is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

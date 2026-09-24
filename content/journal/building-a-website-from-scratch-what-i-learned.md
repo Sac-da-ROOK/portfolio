@@ -1,6 +1,5 @@
 ---
-title: "Building a Website From Scratch: What I Learned"
-
+title: "💻 Building a Website From Scratch: What I Learned"
 description: "A reflection and explanation of building a website from scratch: what i learned based on the way I think about science, engineering, and learning in practice."
 
 category: "Coding & Computer Science"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**Building a Website From Scratch: What I Learned**
+**💻 Building a Website From Scratch: What I Learned**
 
 Building a Website From Scratch: What I Learned is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

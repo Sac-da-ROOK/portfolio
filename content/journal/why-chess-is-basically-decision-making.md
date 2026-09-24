@@ -1,6 +1,5 @@
 ---
-title: "Why Chess Is Basically Decision-Making"
-
+title: "♟️ Why Chess Is Basically Decision-Making"
 description: "A reflection and explanation of why chess is basically decision-making based on the way I think about science, engineering, and learning in practice."
 
 category: "Chess + STEM"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**Why Chess Is Basically Decision-Making**
+**♟️ Why Chess Is Basically Decision-Making**
 
 Why Chess Is Basically Decision-Making is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

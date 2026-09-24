@@ -1,6 +1,5 @@
 ---
-title: "How I Balance School, Coding, Chess, and STEM"
-
+title: "📚 How I Balance School, Coding, Chess, and STEM"
 description: "A reflection and explanation of how i balance school, coding, chess, and stem based on the way I think about science, engineering, and learning in practice."
 
 category: "Learning, School & Student Life"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**How I Balance School, Coding, Chess, and STEM**
+**📚 How I Balance School, Coding, Chess, and STEM**
 
 How I Balance School, Coding, Chess, and STEM is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

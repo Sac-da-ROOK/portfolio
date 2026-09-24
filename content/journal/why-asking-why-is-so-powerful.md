@@ -1,6 +1,5 @@
 ---
-title: "Why Asking "Why?" Is So Powerful"
-
+title: "📚 "?? Why Asking "Why?" Is So Powerful""
 description: "A reflection and explanation of why asking "why?" is so powerful based on the way I think about science, engineering, and learning in practice."
 
 category: "Learning, School & Student Life"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**Why Asking "Why?" Is So Powerful**
+**?? Why Asking "Why?" Is So Powerful**
 
 Why Asking "Why?" Is So Powerful is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

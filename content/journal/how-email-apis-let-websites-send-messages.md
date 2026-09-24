@@ -1,6 +1,5 @@
 ---
-title: "How Email APIs Let Websites Send Messages"
-
+title: "💻 How Email APIs Let Websites Send Messages"
 description: "A reflection and explanation of how email apis let websites send messages based on the way I think about science, engineering, and learning in practice."
 
 category: "Coding & Computer Science"
@@ -19,7 +18,7 @@ notes:
 
 ---
 
-**How Email APIs Let Websites Send Messages**
+**💻 How Email APIs Let Websites Send Messages**
 
 How Email APIs Let Websites Send Messages is one of those ideas that feels simple at first, but gets more interesting the deeper you think about it.
 

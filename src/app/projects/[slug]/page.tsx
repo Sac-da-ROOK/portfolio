@@ -41,11 +41,18 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
 
     const overview = project.overview || "This project is still being documented. I will add a clearer overview here as I refine the project and its purpose.";
     const problem = project.problem || "This project is still being documented. I will add a clearer description of the problem or idea behind it later.";
-    const approach = project.approach || "This project is still being documented. I will add the technical approach and key decisions here as the project develops.";
+    const whyChosen = project.whyChosen || project.why || "This section is still being documented. I will explain what made the problem interesting and worth exploring.";
+    const hypothesisGoal = project.hypothesisGoal || "I approached this project with a testable goal: to turn an idea into a working system and learn from the outcome.";
+    const design = project.design || project.approach || "This project is still being documented. I will add the technical approach and key decisions here as the project develops.";
+    const tools = project.tools && project.tools.length > 0 ? project.tools : project.techStack;
+    const experiment = project.experiment || "I ran the build and testing process iteratively, adjusting the system based on actual results and observations.";
     const challenges = project.challenges && project.challenges.length > 0 ? project.challenges : ["This section is still being documented. I will add the main challenges I faced and how I addressed them later."];
+    const results = project.results && project.results.length > 0 ? project.results : [project.result || "This project is still being documented. I will add the final outcome and impact here as the work evolves."];
+    const failure = project.failure || "Every design process includes mistakes. I recorded what did not work as carefully as what did, because those failures shaped the final version.";
+    const whatChanged = project.whatChanged && project.whatChanged.length > 0 ? project.whatChanged : ["The first version exposed useful issues, and I revised the design based on testing and reflection."];
     const learnings = project.learnings && project.learnings.length > 0 ? project.learnings : ["This section is still being documented. I will add what I learned from building this project later."];
-    const result = project.result || "This project is still being documented. I will add the final outcome and impact here as the work evolves.";
-    const nextSteps = project.nextSteps && project.nextSteps.length > 0 ? project.nextSteps : ["I will add future improvements and ideas for this project later."];
+    const nextVersion = project.nextSteps && project.nextSteps.length > 0 ? project.nextSteps : ["I will add future improvements and ideas for this project later."];
+    const sourceCode = project.sourceCode || project.githubUrl || project.repo || "https://github.com/Sac-da-ROOK";
 
     return (
         <main className="min-h-screen bg-[#050b16] text-slate-100">
@@ -92,19 +99,62 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
                                     </section>
 
                                     <section className="rounded-[1.5rem] border border-cyan-400/15 bg-[#0d1f32] p-5 sm:p-6">
-                                        <h2 className="text-2xl font-semibold tracking-[-0.03em] !text-cyan-100 sm:text-3xl">The problem</h2>
+                                        <h2 className="text-2xl font-semibold tracking-[-0.03em] !text-cyan-100 sm:text-3xl">Problem</h2>
                                         <p className="mt-4 max-w-3xl text-base leading-8 !text-slate-100 sm:text-lg">{problem}</p>
                                     </section>
 
+                                    <section className="rounded-[1.5rem] border border-cyan-400/15 bg-[#0d2236] p-5 sm:p-6">
+                                        <h2 className="text-2xl font-semibold tracking-[-0.03em] !text-cyan-100 sm:text-3xl">Why I chose it</h2>
+                                        <p className="mt-4 max-w-3xl text-base leading-8 !text-slate-100 sm:text-lg">{whyChosen}</p>
+                                    </section>
+
+                                    <section className="rounded-[1.5rem] border border-cyan-400/15 bg-[#112731] p-5 sm:p-6">
+                                        <h2 className="text-2xl font-semibold tracking-[-0.03em] !text-cyan-100 sm:text-3xl">Hypothesis / Goal</h2>
+                                        <p className="mt-4 max-w-3xl text-base leading-8 !text-slate-100 sm:text-lg">{hypothesisGoal}</p>
+                                    </section>
+
                                     <section className="rounded-[1.5rem] border border-cyan-400/15 bg-[#0e2237] p-5 sm:p-6">
-                                        <h2 className="text-2xl font-semibold tracking-[-0.03em] !text-cyan-100 sm:text-3xl">How I built it</h2>
-                                        <p className="mt-4 max-w-3xl text-base leading-8 !text-slate-100 sm:text-lg">{approach}</p>
+                                        <h2 className="text-2xl font-semibold tracking-[-0.03em] !text-cyan-100 sm:text-3xl">Design</h2>
+                                        <p className="mt-4 max-w-3xl text-base leading-8 !text-slate-100 sm:text-lg">{design}</p>
+                                    </section>
+
+                                    <section className="rounded-[1.5rem] border border-cyan-400/15 bg-[#0f2534] p-5 sm:p-6">
+                                        <h2 className="text-2xl font-semibold tracking-[-0.03em] !text-cyan-100 sm:text-3xl">Tools</h2>
+                                        <div className="mt-5 flex flex-wrap gap-3">
+                                            {tools.map((tool) => (
+                                                <span key={tool} className="rounded-full border border-emerald-400/25 bg-[#102a26] px-3 py-1.5 text-sm font-medium !text-emerald-100">{tool}</span>
+                                            ))}
+                                        </div>
+                                    </section>
+
+                                    <section className="rounded-[1.5rem] border border-cyan-400/15 bg-[#0d1f2d] p-5 sm:p-6">
+                                        <h2 className="text-2xl font-semibold tracking-[-0.03em] !text-cyan-100 sm:text-3xl">Experiment / Build</h2>
+                                        <p className="mt-4 max-w-3xl text-base leading-8 !text-slate-100 sm:text-lg">{experiment}</p>
                                     </section>
 
                                     <section className="rounded-[1.5rem] border border-cyan-400/15 bg-[#0d2236] p-5 sm:p-6">
-                                        <h2 className="text-2xl font-semibold tracking-[-0.03em] !text-cyan-100 sm:text-3xl">Challenges and solutions</h2>
+                                        <h2 className="text-2xl font-semibold tracking-[-0.03em] !text-cyan-100 sm:text-3xl">Results</h2>
+                                        <ul className="mt-4 max-w-3xl list-disc space-y-3 pl-6 text-base leading-8 !text-slate-100 sm:text-lg">
+                                            {results.map((item) => (
+                                                <li key={item}>{item}</li>
+                                            ))}
+                                        </ul>
+                                    </section>
+
+                                    <section className="rounded-[1.5rem] border border-cyan-400/15 bg-[#0d2431] p-5 sm:p-6">
+                                        <h2 className="text-2xl font-semibold tracking-[-0.03em] !text-cyan-100 sm:text-3xl">What Failed</h2>
+                                        <p className="mt-4 max-w-3xl text-base leading-8 !text-slate-100 sm:text-lg">{failure}</p>
                                         <ul className="mt-4 max-w-3xl list-disc space-y-3 pl-6 text-base leading-8 !text-slate-100 sm:text-lg">
                                             {challenges.map((item) => (
+                                                <li key={item}>{item}</li>
+                                            ))}
+                                        </ul>
+                                    </section>
+
+                                    <section className="rounded-[1.5rem] border border-cyan-400/15 bg-[#112d39] p-5 sm:p-6">
+                                        <h2 className="text-2xl font-semibold tracking-[-0.03em] !text-cyan-100 sm:text-3xl">What I Changed</h2>
+                                        <ul className="mt-4 max-w-3xl list-disc space-y-3 pl-6 text-base leading-8 !text-slate-100 sm:text-lg">
+                                            {whatChanged.map((item) => (
                                                 <li key={item}>{item}</li>
                                             ))}
                                         </ul>
@@ -119,18 +169,22 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
                                         </ul>
                                     </section>
 
-                                    <section className="rounded-[1.5rem] border border-cyan-400/15 bg-[#112731] p-5 sm:p-6">
-                                        <h2 className="text-2xl font-semibold tracking-[-0.03em] !text-cyan-100 sm:text-3xl">The result</h2>
-                                        <p className="mt-4 max-w-3xl text-base leading-8 !text-slate-100 sm:text-lg">{result}</p>
-                                    </section>
-
                                     <section className="rounded-[1.5rem] border border-cyan-400/15 bg-[#0f2534] p-5 sm:p-6">
-                                        <h2 className="text-2xl font-semibold tracking-[-0.03em] !text-cyan-100 sm:text-3xl">What I would do next</h2>
+                                        <h2 className="text-2xl font-semibold tracking-[-0.03em] !text-cyan-100 sm:text-3xl">Next version</h2>
                                         <ul className="mt-4 max-w-3xl list-disc space-y-3 pl-6 text-base leading-8 !text-slate-100 sm:text-lg">
-                                            {nextSteps.map((item) => (
+                                            {nextVersion.map((item) => (
                                                 <li key={item}>{item}</li>
                                             ))}
                                         </ul>
+                                    </section>
+
+                                    <section className="rounded-[1.5rem] border border-cyan-400/15 bg-[#0d2431] p-5 sm:p-6">
+                                        <h2 className="text-2xl font-semibold tracking-[-0.03em] !text-cyan-100 sm:text-3xl">Source Code</h2>
+                                        <div className="mt-4 flex flex-wrap items-center gap-3">
+                                            <a href={sourceCode} target="_blank" rel="noreferrer" className="inline-flex items-center justify-center rounded-full border border-cyan-300/30 bg-gradient-to-r from-cyan-500/20 via-sky-500/15 to-emerald-500/20 px-4 py-2.5 text-sm font-semibold text-cyan-50 transition hover:border-cyan-200/50 hover:from-cyan-500/30 hover:to-emerald-500/30">
+                                                View GitHub Repository
+                                            </a>
+                                        </div>
                                     </section>
 
                                     <section className="rounded-[1.5rem] border border-cyan-400/15 bg-[#0d2431] p-5 sm:p-6">

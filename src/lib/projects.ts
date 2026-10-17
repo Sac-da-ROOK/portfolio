@@ -17,13 +17,22 @@ export type ProjectData = {
     overview: string;
     problem: string;
     why: string;
+    whyChosen?: string;
+    hypothesisGoal?: string;
+    design?: string;
+    tools?: string[];
+    experiment?: string;
     approach: string;
     result: string;
+    results?: string[];
+    failure?: string;
+    whatChanged?: string[];
     techStack: string[];
     features: string[];
     challenges: string[];
     learnings: string[];
     nextSteps: string[];
+    sourceCode?: string;
     screenshots?: string[];
 };
 

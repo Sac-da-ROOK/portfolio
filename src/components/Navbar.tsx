@@ -148,11 +148,11 @@ export default function Navbar({ theme = "default" }: { theme?: NavbarTheme }) {
                 </div>
 
                 <nav className="hidden min-w-0 flex-1 items-center justify-center md:flex" aria-label="Primary navigation">
-                    <div className="flex min-w-0 items-center justify-center gap-2 whitespace-nowrap lg:gap-3 xl:gap-4">
+                    <div className="flex min-w-0 items-center justify-center gap-1.5 whitespace-nowrap lg:gap-2">
                         {navItems.map((item) => {
                             const isRouteLink = item.href.startsWith("/");
                             const isActive = activeSection === item.id;
-                            const linkClasses = `group relative flex items-center justify-center whitespace-nowrap px-2.5 py-2 text-[11px] font-semibold leading-none tracking-[-0.01em] ui-transition sm:text-[11.5px] lg:px-3 lg:text-[12px] ${isActive ? activeTextClasses : textClasses} ${isCsTheme ? "hover:text-white" : "hover:text-slate-900"}`;
+                            const linkClasses = `group relative flex items-center justify-center whitespace-nowrap px-2 py-2 text-[10px] font-semibold leading-none tracking-[-0.01em] ui-transition sm:text-[10.5px] lg:px-2.5 lg:text-[11px] ${isActive ? activeTextClasses : textClasses} ${isCsTheme ? "hover:text-white" : "hover:text-slate-900"}`;
 
                             if (isRouteLink) {
                                 return (

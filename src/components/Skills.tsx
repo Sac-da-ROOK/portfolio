@@ -8,7 +8,6 @@ import { usePrefersReducedMotion } from "@/hooks/usePrefersReducedMotion";
 
 type Skill = {
     name: string;
-    level: number;
     icon: string;
     detail: string;
 };
@@ -22,48 +21,47 @@ type SkillCategory = {
 const skillCategories: SkillCategory[] = [
     {
         title: "Mathematical Thinking",
-        description: "Core reasoning skills used in competitions and projects.",
+        description: "Reasoning patterns I use in coursework and competition work.",
         skills: [
-            { name: "Problem Solving", level: 93, icon: "chartjs", detail: "Breaking complex problems into solvable steps with clear logic." },
-            { name: "Algebra & Number Theory", level: 90, icon: "chartjs", detail: "Comfort with patterns, transformations, and competition-style techniques." },
-            { name: "Geometry", level: 86, icon: "chartjs", detail: "Visual reasoning and proof-style thinking for spatial challenges." },
-            { name: "Data Interpretation", level: 84, icon: "chartjs", detail: "Reading trends and evidence from graphs, tables, and experiments." }
+            { name: "Algebra 1", icon: "chartjs", detail: "Current Coursework" },
+            { name: "Problem Solving", icon: "chartjs", detail: "Competition-style reasoning and careful breakdowns" },
+            { name: "Patterns & Logic", icon: "chartjs", detail: "Multiple-step reasoning in math and puzzles" }
         ]
     },
     {
         title: "Scientific Inquiry",
-        description: "Methods for observation, testing, and analysis.",
+        description: "Evidence, testing, and reflective analysis in experiments.",
         skills: [
-            { name: "Experiment Design", level: 87, icon: "education", detail: "Forming hypotheses and designing repeatable tests." },
-            { name: "Observation & Documentation", level: 89, icon: "education", detail: "Recording evidence clearly for reflection and reporting." },
-            { name: "Evidence-Based Conclusions", level: 85, icon: "chartjs", detail: "Using data to support conclusions and improve future trials." }
+            { name: "Scientific Method", icon: "education", detail: "Applied through experiments and lab notes" },
+            { name: "Observation", icon: "education", detail: "Careful recording of results and variables" },
+            { name: "Data Review", icon: "chartjs", detail: "Comparing what changed and what stayed consistent" }
         ]
     },
     {
         title: "Engineering & Robotics",
-        description: "Hands-on design and iterative build skills.",
+        description: "Hands-on building, iteration, and systems thinking.",
         skills: [
-            { name: "Prototype Iteration", level: 88, icon: "game", detail: "Testing, revising, and improving builds based on performance." },
-            { name: "Systems Thinking", level: 86, icon: "ai", detail: "Understanding how mechanical, electrical, and strategic choices interact." },
-            { name: "Competition Execution", level: 83, icon: "game", detail: "Performing under constraints with preparation and adaptability." }
+            { name: "Robotics", icon: "game", detail: "Projects involving hardware, testing, and iteration" },
+            { name: "Systems Thinking", icon: "ai", detail: "Understanding how mechanical and software choices connect" },
+            { name: "Prototype Iteration", icon: "game", detail: "Improving a design after testing and feedback" }
         ]
     },
     {
         title: "Communication & Reflection",
-        description: "Turning learning into clear explanations and growth.",
+        description: "Turning learning into clear explanations and strong documentation.",
         skills: [
-            { name: "Technical Writing", level: 84, icon: "education", detail: "Writing clear notes, summaries, and competition reflections." },
-            { name: "Presentation Skills", level: 82, icon: "education", detail: "Explaining ideas effectively in class and event settings." },
-            { name: "Self-Assessment", level: 88, icon: "ai", detail: "Reviewing outcomes honestly to improve future performance." }
+            { name: "Technical Writing", icon: "education", detail: "Project reports and learning journal writing" },
+            { name: "Presentation", icon: "education", detail: "Explaining ideas clearly in class and project settings" },
+            { name: "Self-Reflection", icon: "ai", detail: "Reviewing mistakes and improving next steps" }
         ]
     },
     {
-        title: "Currently Learning",
-        description: "Emerging skills I'm adding to the toolkit.",
+        title: "Current Focus",
+        description: "Skills I am actively developing through real practice.",
         skills: [
-            { name: "Physics Modeling", level: 68, icon: "chartjs", detail: "Applying math to represent motion, force, and real systems." },
-            { name: "Research Methods", level: 70, icon: "education", detail: "Improving citation, synthesis, and evidence quality in projects." },
-            { name: "Advanced Competition Strategy", level: 66, icon: "game", detail: "Building smarter preparation systems across STEM events." }
+            { name: "Python", icon: "chartjs", detail: "Learning through projects and problem solving" },
+            { name: "Chess", icon: "game", detail: "Tournament experience and strategic practice" },
+            { name: "Research Practices", icon: "education", detail: "Developing clearer documentation and evidence-based thinking" }
         ]
     }
 ];
@@ -106,7 +104,7 @@ export default function Skills() {
                     <p className="section-kicker">Skills</p>
                     <h2 id="skills-heading" className="section-title">STEM strengths built through curiosity and practice.</h2>
                     <p className="section-lead">
-                        These categories capture the STEM skills I apply across mathematics, robotics, competitions, and long-term learning. Each area reflects both current strengths and focused growth goals.
+                        These categories capture how I am building skills across mathematics, robotics, competitions, and long-term learning. They reflect current work and evidence from projects and coursework rather than abstract ratings.
                     </p>
                 </div>
 
@@ -118,7 +116,6 @@ export default function Skills() {
                                     key={skill.name}
                                     name={skill.name}
                                     detail={skill.detail}
-                                    level={skill.level}
                                     icon={skillIcons[skill.icon] ?? skillIcons.education}
                                 />
                             ))}

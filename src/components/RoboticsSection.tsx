@@ -2,9 +2,9 @@ import Link from "next/link";
 import Section from "@/components/Section";
 
 const roboticsProjects = [
-    { title: "Autonomous Line Follower", type: "Control Systems", note: "Sensors + PID tuning placeholder." },
-    { title: "Object Sorting Bot", type: "Computer Vision", note: "Classification and servo actuation placeholder." },
-    { title: "Robotics Dashboard", type: "Telemetry", note: "Live metrics and test run analytics placeholder." }
+    { title: "Autonomous Line Follower", type: "Control Systems", note: "Sensor-driven navigation and tuning for reliable motion on a track." },
+    { title: "Object Sorting Bot", type: "Computer Vision", note: "Classification and actuator logic for sorting items by a repeatable rule." },
+    { title: "Robotics Dashboard", type: "Telemetry", note: "Testing logs and motor data used to improve reliability and debugging." }
 ];
 
 export default function RoboticsSection() {
@@ -13,7 +13,7 @@ export default function RoboticsSection() {
             <div className="max-w-3xl">
                 <p className="section-kicker">Robotics</p>
                 <h2 id="robotics-heading" className="section-title">Hardware + software projects with competition-ready iteration.</h2>
-                <p className="section-lead">A place for build logs, photos, videos, source code, and event results.</p>
+                <p className="section-lead">Recent work in control systems, sensing, and technical testing.</p>
             </div>
 
             <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
@@ -22,8 +22,8 @@ export default function RoboticsSection() {
                         <p className="text-[11px] uppercase tracking-[0.28em] text-cyan-200">{project.type}</p>
                         <h3 className="mt-3 text-xl font-semibold text-white">{project.title}</h3>
                         <p className="mt-3 text-sm leading-7 text-slate-300">{project.note}</p>
-                        <div className="mt-5 rounded-2xl border border-dashed border-slate-700/90 bg-slate-900/70 p-4 text-xs uppercase tracking-[0.22em] text-slate-500">
-                            Photo / video placeholder
+                        <div className="mt-5 rounded-2xl border border-white/10 bg-slate-900/70 p-4 text-[11px] uppercase tracking-[0.22em] text-slate-400">
+                            Build log + test notes
                         </div>
                     </article>
                 ))}

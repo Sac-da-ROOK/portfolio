@@ -3,16 +3,15 @@ import type { ReactNode } from "react";
 type SkillBadgeProps = {
     name: string;
     detail: string;
-    level: number;
     icon: ReactNode;
 };
 
-export default function SkillBadge({ name, detail, level, icon }: SkillBadgeProps) {
+export default function SkillBadge({ name, detail, icon }: SkillBadgeProps) {
     return (
         <div
             tabIndex={0}
             role="group"
-            aria-label={`${name} proficiency ${level} percent. ${detail}`}
+            aria-label={`${name}. ${detail}`}
             className="interactive-card glass-card-soft group relative overflow-hidden rounded-[1.4rem] p-4 ui-transition hover:-translate-y-1 hover:border-cyan-400/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/40"
         >
             <div className="flex items-center gap-3">
@@ -20,21 +19,9 @@ export default function SkillBadge({ name, detail, level, icon }: SkillBadgeProp
                     {icon}
                 </span>
                 <div className="min-w-0 flex-1">
-                    <div className="flex items-center justify-between gap-3">
-                        <p className="truncate text-sm font-semibold text-white">{name}</p>
-                        <span className="text-xs font-semibold uppercase tracking-[0.28em] text-slate-400">{level}%</span>
-                    </div>
-                    <div className="mt-2 h-2 overflow-hidden rounded-full bg-white/12">
-                        <div
-                            className="h-full rounded-full bg-gradient-to-r from-cyan-400 via-slate-300 to-amber-300 transition-all duration-500"
-                            style={{ width: `${level}%` }}
-                        />
-                    </div>
+                    <p className="truncate text-sm font-semibold text-white">{name}</p>
+                    <p className="mt-2 text-[11px] uppercase tracking-[0.22em] text-slate-400">{detail}</p>
                 </div>
-            </div>
-
-            <div className="pointer-events-none absolute left-4 right-4 top-full mt-3 hidden rounded-2xl border border-white/12 bg-slate-950/95 px-3 py-2 text-xs leading-5 text-slate-200 shadow-2xl backdrop-blur-md group-hover:block group-focus-within:block">
-                {detail}
             </div>
         </div>
     );

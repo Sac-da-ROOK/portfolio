@@ -3,7 +3,8 @@ import Section from "@/components/Section";
 
 const socials = [
     { label: "Email", href: "mailto:aarushsrivastava@gmail.com", display: "Email" },
-    { label: "LinkedIn", href: "https://www.linkedin.com/in/yourprofile", display: "LinkedIn" },
+    { label: "GitHub", href: "https://github.com/Sac-da-ROOK", display: "GitHub" },
+    { label: "LinkedIn", href: "https://www.linkedin.com", display: "LinkedIn" },
 ];
 
 export default function ContactSection() {
@@ -15,23 +16,16 @@ export default function ContactSection() {
                     <p className="text-xs font-semibold uppercase tracking-[0.35em] text-cyan-200">Get in touch</p>
                     <h2 id="contact-heading" className="mt-4 text-3xl font-semibold text-white sm:text-4xl lg:text-5xl">Let’s connect on STEM ideas and opportunities.</h2>
                     <p className="mt-6 text-base leading-8 text-slate-300 sm:text-lg">
-                        I welcome conversations about competitions, projects, robotics, and collaborative STEM initiatives. I usually respond quickly with thoughtful follow-up.
+                        I enjoy talking about competitions, projects, robotics, and collaborative STEM learning. I’m always glad to connect with others who are curious and building things.
                     </p>
 
                     <div className="mt-10 grid gap-4 rounded-[2rem] border border-white/12 bg-slate-950/60 p-6">
                         <div className="glass-card-soft flex items-center justify-between gap-4 rounded-3xl px-5 py-4">
                             <div>
                                 <p className="text-sm uppercase tracking-[0.28em] text-slate-400">Availability</p>
-                                <p className="mt-2 text-lg font-semibold text-white">Open for STEM collaboration</p>
+                                <p className="mt-2 text-lg font-semibold text-white">Interested in STEM learning, competitions and collaborative projects.</p>
                             </div>
-                            <span className="inline-flex rounded-full bg-emerald-400/10 px-3 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-emerald-200">Now</span>
-                        </div>
-                        <div className="glass-card-soft flex items-center justify-between gap-4 rounded-3xl px-5 py-4">
-                            <div>
-                                <p className="text-sm uppercase tracking-[0.28em] text-slate-400">Response time</p>
-                                <p className="mt-2 text-lg font-semibold text-white">1–2 business days</p>
-                            </div>
-                            <span className="inline-flex rounded-full bg-cyan-400/10 px-3 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-cyan-200">Reliable</span>
+                            <span className="inline-flex rounded-full bg-emerald-400/10 px-3 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-emerald-200">Open</span>
                         </div>
                     </div>
 
@@ -52,7 +46,7 @@ export default function ContactSection() {
                             ))}
                             <div className="glass-card-soft rounded-3xl px-5 py-4 text-sm font-medium text-slate-200">
                                 <span className="block text-xs uppercase tracking-[0.3em] text-slate-500">Phone</span>
-                                <span className="mt-1 block text-base font-semibold">+1 (224) 647-1484</span>
+                                <span className="mt-1 block text-base font-semibold">+1 248-826-3513</span>
                             </div>
                         </div>
                     </div>

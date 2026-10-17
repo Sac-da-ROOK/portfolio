@@ -94,10 +94,11 @@ export const projects: ProjectData[] = [
         href: "https://omnimath-rho.vercel.app",
         repo: "https://github.com/Sac-da-ROOK",
         githubUrl: "https://github.com/Sac-da-ROOK",
-        screenshot: "/images/featured/placeholder.svg",
+        screenshot: "/images/featured/math-sprint-arena-1.svg",
         gallery: [
-            "/images/featured/placeholder.svg",
-            "/images/featured/placeholder.svg"
+            "/images/featured/math-sprint-arena-1.svg",
+            "/images/featured/math-sprint-arena-2.svg",
+            "/images/featured/math-sprint-arena-3.svg"
         ],
         featured: true,
         overview:
@@ -199,10 +200,11 @@ export const projects: ProjectData[] = [
         href: "https://aarushportfolio.vercel.app",
         repo: "https://github.com/Sac-da-ROOK",
         githubUrl: "https://github.com/Sac-da-ROOK",
-        screenshot: "/images/featured/placeholder.svg",
+        screenshot: "/images/featured/ultimate-type-1.svg",
         gallery: [
-            "/images/featured/placeholder.svg",
-            "/images/featured/placeholder.svg"
+            "/images/featured/ultimate-type-1.svg",
+            "/images/featured/ultimate-type-2.svg",
+            "/images/featured/ultimate-type-3.svg"
         ],
         overview:
             "My portfolio is the central representation of my work, ideas, and engineering direction. It synthesizes the projects, skills, and thinking behind my work into a cohesive digital identity.",
@@ -250,10 +252,11 @@ export const projects: ProjectData[] = [
         href: "",
         repo: "https://github.com/Sac-da-ROOK",
         githubUrl: "https://github.com/Sac-da-ROOK",
-        screenshot: "/images/featured/placeholder.svg",
+        screenshot: "/images/featured/global-route-navigator-1.svg",
         gallery: [
-            "/images/featured/placeholder.svg",
-            "/images/featured/placeholder.svg"
+            "/images/featured/global-route-navigator-1.svg",
+            "/images/featured/global-route-navigator-2.svg",
+            "/images/featured/global-route-navigator-1.svg"
         ],
         overview:
             "Personal Browser is a concept project centered on building a more focused and intentional browsing experience. The goal is to reduce extraneous noise and keep the interface feeling calm and intentional.",
@@ -301,10 +304,11 @@ export const projects: ProjectData[] = [
         href: "",
         repo: "https://github.com/Sac-da-ROOK",
         githubUrl: "https://github.com/Sac-da-ROOK",
-        screenshot: "/images/featured/placeholder.svg",
+        screenshot: "/images/featured/math-sprint-arena-2.svg",
         gallery: [
-            "/images/featured/placeholder.svg",
-            "/images/featured/placeholder.svg"
+            "/images/featured/math-sprint-arena-2.svg",
+            "/images/featured/math-sprint-arena-3.svg",
+            "/images/featured/math-sprint-arena-1.svg"
         ],
         overview:
             "Basic Arcade is an experimental arcade project focused on creating fast, fun interactions with a friendly and readable interface. The aim is to make simple game mechanics feel polished and enjoyable.",
@@ -352,10 +356,11 @@ export const projects: ProjectData[] = [
         href: "",
         repo: "https://github.com/Sac-da-ROOK",
         githubUrl: "https://github.com/Sac-da-ROOK",
-        screenshot: "/images/featured/placeholder.svg",
+        screenshot: "/images/featured/global-route-navigator-2.svg",
         gallery: [
-            "/images/featured/placeholder.svg",
-            "/images/featured/placeholder.svg"
+            "/images/featured/global-route-navigator-2.svg",
+            "/images/featured/global-route-navigator-1.svg",
+            "/images/featured/global-route-navigator-2.svg"
         ],
         overview:
             "Global Route Navigator was built as an exploration in structured route planning. The idea was to make decision-making easier by bringing clarity, structure, and route visibility into one interface.",
@@ -403,10 +408,11 @@ export const projects: ProjectData[] = [
         href: "",
         repo: "https://github.com/Sac-da-ROOK",
         githubUrl: "https://github.com/Sac-da-ROOK",
-        screenshot: "/images/featured/placeholder.svg",
+        screenshot: "/images/featured/ultimate-type-2.svg",
         gallery: [
-            "/images/featured/placeholder.svg",
-            "/images/featured/placeholder.svg"
+            "/images/featured/ultimate-type-2.svg",
+            "/images/featured/ultimate-type-3.svg",
+            "/images/featured/ultimate-type-1.svg"
         ],
         overview:
             "Dynamic Diagram is a visualization project designed to make abstract relationships easier to understand. The idea is to turn dense information into a cleaner system of connected structure and motion.",
@@ -454,10 +460,11 @@ export const projects: ProjectData[] = [
         href: "",
         repo: "https://github.com/Sac-da-ROOK",
         githubUrl: "https://github.com/Sac-da-ROOK",
-        screenshot: "/images/featured/placeholder.svg",
+        screenshot: "/images/featured/math-sprint-arena-3.svg",
         gallery: [
-            "/images/featured/placeholder.svg",
-            "/images/featured/placeholder.svg"
+            "/images/featured/math-sprint-arena-3.svg",
+            "/images/featured/math-sprint-arena-1.svg",
+            "/images/featured/math-sprint-arena-2.svg"
         ],
         overview:
             "Omni Adventure Engine is a concept project exploring how a game world can become more modular, dynamic, and expressive through flexible progression systems. The idea is to create the skeleton for adventures that feel connected and alive.",
@@ -505,10 +512,11 @@ export const projects: ProjectData[] = [
         href: "",
         repo: "https://github.com/Sac-da-ROOK",
         githubUrl: "https://github.com/Sac-da-ROOK",
-        screenshot: "/images/featured/placeholder.svg",
+        screenshot: "/images/featured/math-sprint-arena-1.svg",
         gallery: [
-            "/images/featured/placeholder.svg",
-            "/images/featured/placeholder.svg"
+            "/images/featured/math-sprint-arena-1.svg",
+            "/images/featured/math-sprint-arena-2.svg",
+            "/images/featured/math-sprint-arena-3.svg"
         ],
         overview:
             "Arcade Prototype Beta explores how a simple game can feel sharp and rewarding even in a small format. The concept is built around quick mechanics, physical feedback, and short challenge loops.",

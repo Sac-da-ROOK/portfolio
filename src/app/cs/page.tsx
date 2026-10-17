@@ -93,7 +93,7 @@ const timelineEntries = [
     {
         year: "June 2026",
         title: "Started Building My Portfolio",
-        description: "Placeholder entry describing my ongoing effort to create a clearer, more professional body of work and technical identity.",
+        description: "Started building my portfolio to organize projects, reflections, and technical growth in one place and make my work easier to explain clearly.",
         technologies: ["Portfolio", "Design", "Iteration"]
     },
     {

@@ -35,7 +35,7 @@ export default function Hero() {
                         Student engineer building software, competing in STEM, and documenting a long-term learning journey with measurable progress.
                     </p>
 
-                    <p className="mt-4 text-xs uppercase tracking-[0.32em] text-amber-900">Grade 8 • Future Engineer & Research-Minded Builder</p>
+                    <p className="mt-4 text-xs uppercase tracking-[0.32em] text-amber-900">Grade 7 • Future Engineer & Research-Minded Builder</p>
 
                     <div className="mt-7 flex flex-wrap gap-3">
                         {highlights.map((item) => (

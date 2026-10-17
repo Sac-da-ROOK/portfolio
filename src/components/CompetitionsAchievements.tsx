@@ -8,76 +8,76 @@ type Track = {
 
 const tracks: Track[] = [
     {
-        name: "AMC 8",
+        name: "Algebra 1",
         highlights: [
-            "Score placeholder: 00 / 25",
-            "Top percentile placeholder",
-            "Certificate placeholder"
+            "Current Coursework",
+            "Regular problem sets and pace checks",
+            "Classroom-based skill development"
         ],
-        reflection: "Practicing AMC-style questions strengthened pattern recognition and improved calm decision-making under time pressure."
+        reflection: "I am building strong algebraic reasoning through current coursework, regular problem solving, and careful review of mistakes."
     },
     {
-        name: "MathCounts",
+        name: "Python",
         highlights: [
-            "Chapter/School round placeholder",
-            "Sprint/Target round notes",
-            "Ranking placeholder"
+            "Learning through projects",
+            "Writing code for logic and automation",
+            "Building structure and debugging habits"
         ],
-        reflection: "MathCounts helped me build speed with precision and taught me to break challenging problems into reusable strategies."
-    },
-    {
-        name: "Math Kangaroo",
-        highlights: [
-            "Participation year placeholder",
-            "Score range placeholder",
-            "Recognition placeholder"
-        ],
-        reflection: "Math Kangaroo strengthened flexible thinking by requiring quick shifts between arithmetic, logic, and pattern-based problems."
-    },
-    {
-        name: "Science Olympiad",
-        highlights: [
-            "Event participation placeholder",
-            "Medal placeholder",
-            "Team result placeholder"
-        ],
-        reflection: "Science Olympiad sharpened both scientific reasoning and collaboration, especially when balancing prep across multiple events."
+        reflection: "Python practice is helping me build confidence with logic, syntax, and project structure while learning by creating useful tools."
     },
     {
         name: "Robotics",
         highlights: [
-            "Competition placeholder",
-            "Build award placeholder",
-            "Driver/control role placeholder"
+            "Projects in motion and control",
+            "Hands-on testing and improvement",
+            "Systems thinking across hardware and software"
         ],
-        reflection: "Robotics taught me how software and hardware trade-offs influence real-world performance, reliability, and teamwork."
+        reflection: "Robotics helps me apply sensors, iteration, and problem-solving to real engineering challenges with measurable improvement over time."
+    },
+    {
+        name: "Scientific Method",
+        highlights: [
+            "Applied through experiments",
+            "Observation and evidence gathering",
+            "Reflection after each trial"
+        ],
+        reflection: "I use the scientific method to turn questions into testable experiments and to improve my thinking through evidence and revision."
     },
     {
         name: "Chess",
         highlights: [
-            "Tournament placeholder",
-            "Rating milestone placeholder",
-            "Best game result placeholder"
+            "Tournament experience",
+            "Pattern recognition and strategy",
+            "Reviewing games for improvement"
         ],
-        reflection: "Chess improved long-horizon planning, tactical awareness, and post-match analysis habits I now apply to STEM projects."
+        reflection: "Chess strengthens long-term planning, calm decision-making, and tactical awareness in ways that connect directly to STEM problem solving."
+    },
+    {
+        name: "Technical Writing",
+        highlights: [
+            "Project reports",
+            "Learning journal entries",
+            "Clear explanation of methods and ideas"
+        ],
+        reflection: "Writing helps me organize my thinking, explain projects clearly, and turn experiences into useful learning records."
     }
 ];
 
 const timeline = [
     { year: "2023", event: "First local STEM competitions", note: "Started building a competition routine and reflection notes." },
-    { year: "2024", event: "Expanded into math + science circuits", note: "Began collecting certificates, rank snapshots, and lessons learned." },
+    { year: "2024", event: "Expanded into math + science circuits", note: "Began developing deeper habits around practice, review, and learning documentation." },
     { year: "2025", event: "Robotics and chess crossover", note: "Used strategy and systems thinking across domains." },
-    { year: "2026", event: "Portfolio-ready achievement tracking", note: "Structured competition data into goals, outcomes, and improvement plans." }
+    { year: "2026", event: "Portfolio development", note: "Structured project work, lessons, and technical writing into a clearer public story." }
 ];
 
 export default function CompetitionsAchievements() {
     return (
         <Section id="competitions" aria-labelledby="competitions-heading">
             <div className="max-w-3xl">
-                <p className="section-kicker">Competitions & Achievements</p>
-                <h2 id="competitions-heading" className="section-title">Performance, awards, and the lessons behind each result.</h2>
+                <p className="section-kicker">Competitions & Growth</p>
+                <h2 id="competitions-heading" className="section-title">Progress, reflection, and the skills I am building through real work.</h2>
                 <p className="section-lead">
-                    This section tracks my progress across mathematics, science, robotics, and chess. Each competition entry includes outcomes and reflections to turn every event into a measurable growth loop.
+                    This section focuses on the learning and growth I am building across mathematics, science, robotics, and chess. I only include evidence-based progress and current practice areas.
                 </p>
             </div>
 

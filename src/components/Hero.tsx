@@ -2,7 +2,7 @@ import Link from "next/link";
 import AnimatedSection from "@/components/AnimatedSection";
 import CurrentChessRating from "@/components/CurrentChessRating";
 
-const highlights = ["Mathematics", "Robotics", "Computer Science", "Chess"];
+const highlights = ["LEARN", "BUILD", "COMPETE", "REFLECT"];
 
 const quickStats = [
     { label: "Projects", value: "12+" },
@@ -32,16 +32,16 @@ export default function Hero() {
                     </h1>
 
                     <p className="mt-4 max-w-2xl text-base leading-8 text-slate-700 sm:text-lg lg:text-xl">
-                        Student engineer building software, competing in STEM, and documenting a long-term learning journey with measurable progress.
+                        Student • Mathematics • Science • Computing • Chess
                     </p>
 
-                    <p className="mt-4 text-xs uppercase tracking-[0.32em] text-amber-900">Grade 7 • Future Engineer & Research-Minded Builder</p>
+                    <p className="mt-4 text-xs uppercase tracking-[0.32em] text-amber-900">Grade 7 • Student • Mathematics • Science • Computing • Chess</p>
 
                     <div className="mt-7 flex flex-wrap gap-3">
                         {highlights.map((item) => (
                             <span
                                 key={item}
-                                className="glass-chip rounded-full px-4 py-2 text-sm font-medium text-slate-800"
+                                className="glass-chip rounded-full px-4 py-2 text-sm font-semibold uppercase tracking-[0.22em] text-slate-800"
                             >
                                 {item}
                             </span>
@@ -49,7 +49,7 @@ export default function Hero() {
                     </div>
 
                     <p className="mt-8 max-w-2xl text-base leading-8 text-slate-700 sm:text-lg">
-                        I pursue STEM through mathematics, robotics, science inquiry, and strategic thinking, turning curiosity into measurable progress through disciplined practice and real-world projects.
+                        I’m a student who enjoys understanding how things work, solving challenging problems, and turning ideas into projects. I’m currently exploring mathematics, biology, computer science, robotics, and chess while documenting what I learn along the way.
                     </p>
 
                     <div className="mt-10 grid gap-3 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5">
@@ -93,16 +93,17 @@ export default function Hero() {
                     </AnimatedSection>
 
                     <AnimatedSection className="interactive-card glass-card rounded-3xl p-5 ui-transition hover:-translate-y-1 hover:border-cyan-400/30" delay={120}>
-                        <p className="text-xs uppercase tracking-[0.22em] text-slate-600">Current STEM Focus</p>
-                        <div className="mt-4 grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
+                        <p className="text-xs uppercase tracking-[0.22em] text-slate-600">Core activities</p>
+                        <div className="mt-4 grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
                             {[
-                                { title: "Math Competitions", note: "Problem sets and timed rounds" },
-                                { title: "Robotics Systems", note: "Iteration and reliability" },
-                                { title: "Learning Journal", note: "Weekly notes and reflections" }
+                                { title: "LEARN", note: "Math, biology, CS, and scientific ideas" },
+                                { title: "BUILD", note: "Projects, robotics, and software experiments" },
+                                { title: "COMPETE", note: "STEM challenges and strategic problem solving" },
+                                { title: "REFLECT", note: "Notes, journals, and what I’m learning" }
                             ].map((item) => (
                                 <div key={item.title} className="glass-card-soft rounded-2xl px-4 py-3 text-sm text-slate-700">
-                                    <p className="font-semibold text-slate-900">{item.title}</p>
-                                    <p className="mt-1 text-xs uppercase tracking-[0.18em] text-slate-600">{item.note}</p>
+                                    <p className="font-semibold uppercase tracking-[0.18em] text-slate-900">{item.title}</p>
+                                    <p className="mt-1 text-[11px] uppercase tracking-[0.16em] text-slate-600">{item.note}</p>
                                 </div>
                             ))}
                         </div>

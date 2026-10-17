@@ -11,6 +11,7 @@ const navItems = [
     { id: "about", label: "About", href: "#about" },
     { id: "competitions", label: "Competitions & Achievements", href: "#competitions" },
     { id: "learning", label: "Learning", href: "#learning" },
+    { id: "academics", label: "Academics", href: "/academics" },
     { id: "chess", label: "Chess", href: "#chess" },
     { id: "robotics", label: "Robotics", href: "#robotics" },
     { id: "gallery", label: "Gallery", href: "/gallery" },

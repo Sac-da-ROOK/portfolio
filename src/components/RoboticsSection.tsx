@@ -1,10 +1,12 @@
 import Link from "next/link";
 import Section from "@/components/Section";
 
-const roboticsProjects = [
-    { title: "Autonomous Line Follower", type: "Control Systems", note: "Sensor-driven navigation and tuning for reliable motion on a track." },
-    { title: "Object Sorting Bot", type: "Computer Vision", note: "Classification and actuator logic for sorting items by a repeatable rule." },
-    { title: "Robotics Dashboard", type: "Telemetry", note: "Testing logs and motor data used to improve reliability and debugging." }
+const engineeringCycle = [
+    "Version 1 — Photo → Design → Performance",
+    "Problem — Robot fails sharp turns",
+    "Investigation — Sensor Positioning / Speed / Control Algorithm",
+    "Version 2 — Modification",
+    "Result — Measured Improvement"
 ];
 
 export default function RoboticsSection() {
@@ -12,21 +14,29 @@ export default function RoboticsSection() {
         <Section id="robotics" aria-labelledby="robotics-heading">
             <div className="max-w-3xl">
                 <p className="section-kicker">Robotics</p>
-                <h2 id="robotics-heading" className="section-title">Hardware + software projects with competition-ready iteration.</h2>
-                <p className="section-lead">Recent work in control systems, sensing, and technical testing.</p>
+                <h2 id="robotics-heading" className="section-title">Robotics work is in progress and will be documented as real engineering builds.</h2>
+                <p className="section-lead">I do not publish placeholder builds. When a robot project is ready, I will document the full engineering design cycle: build, test, diagnose, improve, and measure the result.</p>
             </div>
 
-            <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-                {roboticsProjects.map((project) => (
-                    <article key={project.title} className="interactive-card glass-card rounded-3xl p-6 ui-transition hover:-translate-y-1 hover:border-cyan-400/30">
-                        <p className="text-[11px] uppercase tracking-[0.28em] text-cyan-200">{project.type}</p>
-                        <h3 className="mt-3 text-xl font-semibold text-white">{project.title}</h3>
-                        <p className="mt-3 text-sm leading-7 text-slate-300">{project.note}</p>
-                        <div className="mt-5 rounded-2xl border border-white/10 bg-slate-900/70 p-4 text-[11px] uppercase tracking-[0.22em] text-slate-400">
-                            Build log + test notes
-                        </div>
-                    </article>
-                ))}
+            <div className="mt-10 grid gap-6 md:grid-cols-2">
+                <div className="interactive-card glass-card rounded-3xl p-6 ui-transition hover:-translate-y-1 hover:border-cyan-400/30">
+                    <p className="text-[11px] uppercase tracking-[0.28em] text-cyan-200">Current status</p>
+                    <h3 className="mt-3 text-xl font-semibold text-white">No public robotics project yet</h3>
+                    <p className="mt-3 text-sm leading-7 text-slate-300">
+                        This section will only feature real builds once the project has been built, tested, and documented with evidence.
+                    </p>
+                </div>
+
+                <div className="interactive-card glass-card rounded-3xl p-6 ui-transition hover:-translate-y-1 hover:border-cyan-400/30">
+                    <p className="text-[11px] uppercase tracking-[0.28em] text-emerald-200">Documentation standard</p>
+                    <div className="mt-4 space-y-3">
+                        {engineeringCycle.map((item) => (
+                            <div key={item} className="rounded-2xl border border-white/10 bg-slate-900/70 px-4 py-3 text-sm text-slate-200">
+                                {item}
+                            </div>
+                        ))}
+                    </div>
+                </div>
             </div>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">

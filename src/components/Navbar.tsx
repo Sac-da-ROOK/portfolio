@@ -12,6 +12,8 @@ const navItems = [
     { id: "competitions", label: "Competitions & Achievements", href: "#competitions" },
     { id: "learning", label: "Learning", href: "#learning" },
     { id: "academics", label: "Academics", href: "/academics" },
+    { id: "research", label: "Research", href: "/research" },
+    { id: "biology", label: "Biology", href: "/biology" },
     { id: "chess", label: "Chess", href: "#chess" },
     { id: "robotics", label: "Robotics", href: "#robotics" },
     { id: "gallery", label: "Gallery", href: "/gallery" },
@@ -105,29 +107,29 @@ export default function Navbar({ theme = "default" }: { theme?: NavbarTheme }) {
     }, [isOpen]);
 
     const shellClasses = isCsTheme
-        ? "border border-cyan-400/20 bg-[#081a2a]/80 shadow-[0_18px_34px_rgba(8,47,73,0.28)] backdrop-blur-md"
+        ? "border border-cyan-300/30 bg-[#061b2d]/95 shadow-[0_18px_34px_rgba(8,47,73,0.36)] backdrop-blur-md"
         : "border border-slate-900/20 bg-white/92 shadow-[0_10px_28px_rgba(15,23,42,0.08)] backdrop-blur-sm";
 
     const brandClasses = isCsTheme
-        ? "border border-cyan-300/30 bg-gradient-to-br from-cyan-400 to-emerald-400 text-slate-950 shadow-[4px_4px_0_rgba(34,211,238,0.2)]"
+        ? "border border-cyan-300/40 bg-gradient-to-br from-cyan-400 to-emerald-400 text-slate-950 shadow-[4px_4px_0_rgba(34,211,238,0.22)]"
         : "border border-slate-900/20 bg-amber-200 text-slate-900 shadow-[4px_4px_0_rgba(17,24,39,0.08)]";
 
-    const textClasses = isCsTheme ? "text-slate-200" : "text-slate-600";
+    const textClasses = isCsTheme ? "text-slate-100" : "text-slate-700";
     const activeTextClasses = isCsTheme ? "text-white" : "text-slate-900";
     const activeBarClasses = isCsTheme
-        ? "from-cyan-400 via-sky-400 to-emerald-400"
+        ? "from-cyan-300 via-sky-400 to-emerald-400"
         : "from-amber-400 to-yellow-300";
     const mobileShellClasses = isCsTheme
         ? "border border-cyan-400/20 bg-[#081a2a]/95"
         : "border border-slate-900/20 bg-white/96";
     const mobileItemClasses = isCsTheme
-        ? "border border-cyan-400/20 bg-slate-900/40 text-slate-200 hover:bg-cyan-500/10 hover:text-white"
+        ? "border border-cyan-400/25 bg-slate-900/45 text-slate-100 hover:bg-cyan-500/10 hover:text-white"
         : "border border-slate-900/20 text-slate-700 hover:bg-amber-50 hover:text-slate-900";
     const mobileActiveItemClasses = isCsTheme
-        ? "border border-cyan-300/40 bg-gradient-to-r from-cyan-500/20 to-emerald-500/20 text-white"
+        ? "border border-cyan-300/50 bg-gradient-to-r from-cyan-500/25 to-emerald-500/20 text-white shadow-[0_0_16px_rgba(34,211,238,0.2)]"
         : "border-amber-300 bg-amber-100 text-slate-900";
     const menuButtonClasses = isCsTheme
-        ? "border border-cyan-300/30 bg-gradient-to-r from-cyan-500/20 to-emerald-500/15 text-cyan-50 hover:bg-cyan-500/20"
+        ? "border border-cyan-300/35 bg-gradient-to-r from-cyan-500/20 to-emerald-500/15 text-cyan-50 hover:bg-cyan-500/20 shadow-[0_0_16px_rgba(34,211,238,0.14)]"
         : "border border-slate-900/20 bg-amber-100 text-slate-900 hover:bg-amber-200";
 
     const csButtonClasses = isCsTheme
@@ -136,7 +138,7 @@ export default function Navbar({ theme = "default" }: { theme?: NavbarTheme }) {
 
     return (
         <header ref={headerRef} className="fixed inset-x-0 top-0 z-50 px-3 pt-3 sm:px-4 sm:pt-4 md:px-5 lg:px-8">
-            <div className={`mx-auto flex w-full max-w-7xl items-center gap-3 rounded-[1.35rem] px-3 py-2.5 sm:px-4 lg:px-5 ${shellClasses}`}>
+            <div className={`mx-auto flex w-full max-w-[100rem] items-center gap-3 rounded-[1.35rem] px-3 py-2.5 sm:px-4 lg:px-5 ${shellClasses}`}>
                 <div className="flex min-w-0 shrink-0 items-center gap-2 sm:gap-2.5">
                     <Link href="/" aria-label="Go to the homepage" className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl text-sm font-semibold transition-transform duration-200 hover:-translate-y-0.5 sm:h-11 sm:w-11 ${brandClasses}`}>
                         AS
@@ -148,11 +150,11 @@ export default function Navbar({ theme = "default" }: { theme?: NavbarTheme }) {
                 </div>
 
                 <nav className="hidden min-w-0 flex-1 items-center justify-center md:flex" aria-label="Primary navigation">
-                    <div className="flex min-w-0 items-center justify-center gap-1.5 whitespace-nowrap lg:gap-2">
+                    <div className="flex min-w-0 items-center justify-center gap-2 whitespace-nowrap lg:gap-3">
                         {navItems.map((item) => {
                             const isRouteLink = item.href.startsWith("/");
                             const isActive = activeSection === item.id;
-                            const linkClasses = `group relative flex items-center justify-center whitespace-nowrap px-2 py-2 text-[10px] font-semibold leading-none tracking-[-0.01em] ui-transition sm:text-[10.5px] lg:px-2.5 lg:text-[11px] ${isActive ? activeTextClasses : textClasses} ${isCsTheme ? "hover:text-white" : "hover:text-slate-900"}`;
+                            const linkClasses = `group relative flex items-center justify-center whitespace-nowrap px-2.5 py-2 text-[10px] font-bold leading-none tracking-[-0.01em] ui-transition sm:text-[10.5px] lg:px-3 lg:text-[11px] ${isActive ? activeTextClasses : textClasses} ${isCsTheme ? "hover:text-white drop-shadow-[0_0_10px_rgba(125,211,252,0.16)]" : "hover:text-slate-900"}`;
 
                             if (isRouteLink) {
                                 return (

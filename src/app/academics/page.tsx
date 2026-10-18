@@ -113,6 +113,18 @@ export default function AcademicsPage() {
                                 >
                                     Explore CS
                                 </Link>
+                                <Link
+                                    href="/research"
+                                    className="inline-flex items-center justify-center rounded-full border border-cyan-300/30 bg-slate-950/40 px-5 py-3 text-sm font-semibold text-cyan-50 transition hover:border-cyan-200/60 hover:bg-slate-900/70"
+                                >
+                                    Research & Inquiry
+                                </Link>
+                                <Link
+                                    href="/biology"
+                                    className="inline-flex items-center justify-center rounded-full border border-emerald-300/30 bg-emerald-500/10 px-5 py-3 text-sm font-semibold text-emerald-50 transition hover:border-emerald-200/60 hover:bg-emerald-500/20"
+                                >
+                                    Biology Portfolio
+                                </Link>
                             </div>
                         </div>
                     </header>

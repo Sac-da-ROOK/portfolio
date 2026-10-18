@@ -191,7 +191,7 @@ export default function Navbar({ theme = "default" }: { theme?: NavbarTheme }) {
                                 const isSubmenuActive = pathname === "/research" || pathname === "/biology";
 
                                 return (
-                                    <div key={item.id} className="relative" onMouseEnter={() => setScienceOpen(true)} onMouseLeave={() => setScienceOpen(false)}>
+                                    <div key={item.id} className="relative">
                                         <button
                                             type="button"
                                             aria-expanded={scienceOpen}

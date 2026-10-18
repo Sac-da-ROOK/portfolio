@@ -1,7 +1,7 @@
 import { readFile, readdir } from "node:fs/promises";
 import path from "node:path";
 
-export type GalleryMediaType = "photo" | "video";
+export type GalleryMediaType = "photo" | "video" | "pdf";
 
 export type GalleryMetadataEntry = {
     src: string;
@@ -22,6 +22,7 @@ export type GalleryItem = {
 
 const imageExtensions = new Set([".jpg", ".jpeg", ".png", ".webp", ".gif"]);
 const videoExtensions = new Set([".mp4", ".webm", ".mov", ".m4v"]);
+const pdfExtensions = new Set([".pdf"]);
 
 function normalizeMediaPath(fileName: string) {
     return `/gallery/${fileName}`;
@@ -94,7 +95,7 @@ async function getGalleryMetadataMap() {
 
             metadataMap.set(source, {
                 src: source,
-                type: candidate.type === "video" ? "video" : "photo",
+                type: candidate.type === "video" ? "video" : candidate.type === "pdf" ? "pdf" : "photo",
                 caption: typeof candidate.caption === "string" ? candidate.caption.trim() || undefined : undefined,
                 article: typeof candidate.article === "string" ? candidate.article.trim() || null : null,
             });
@@ -117,7 +118,7 @@ export async function getGalleryItems(): Promise<GalleryItem[]> {
             .map((entry) => entry.name)
             .filter((fileName) => {
                 const extension = path.extname(fileName).toLowerCase();
-                return imageExtensions.has(extension) || videoExtensions.has(extension);
+                return imageExtensions.has(extension) || videoExtensions.has(extension) || pdfExtensions.has(extension);
             })
             .sort((a, b) => a.localeCompare(b));
 
@@ -126,10 +127,11 @@ export async function getGalleryItems(): Promise<GalleryItem[]> {
             const src = normalizeMediaPath(fileName);
             const metadata = metadataMap.get(src) ?? metadataMap.get(normalizeMetadataSource(fileName));
             const title = fileName.replace(/\.[^/.]+$/, "").replace(/[-_]+/g, " ").replace(/\b\w/g, (char) => char.toUpperCase());
+            const type = pdfExtensions.has(extension) ? "pdf" : imageExtensions.has(extension) ? "photo" : "video";
 
             return {
                 src,
-                type: imageExtensions.has(extension) ? "photo" : "video",
+                type,
                 title,
                 caption: metadata?.caption,
                 articleSlug: normalizeArticleSlug(metadata?.article),

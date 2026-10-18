@@ -6,7 +6,7 @@ import { useEffect, useMemo, useState } from "react";
 
 export type GalleryLightboxItem = {
     src: string;
-    type: "photo" | "video";
+    type: "photo" | "video" | "pdf";
     title: string;
     caption?: string;
     articleSlug?: string;
@@ -59,12 +59,22 @@ export default function GalleryLightbox({ items, initialIndex, onClose }: Galler
                 <div className="flex items-center justify-between border-b border-white/10 px-4 py-3 sm:px-6">
                     <div className="min-w-0 pr-3">
                         <p className="truncate text-[10px] font-semibold uppercase tracking-[0.22em] text-slate-300">
-                            {item.type === "video" ? "Video" : "Photo"}
+                            {item.type === "video" ? "Video" : item.type === "pdf" ? "PDF" : "Photo"}
                         </p>
                         <h2 className="truncate text-sm font-semibold text-white sm:text-base">{item.title}</h2>
                     </div>
 
                     <div className="flex items-center gap-2">
+                        {item.type === "pdf" ? (
+                            <a
+                                href={item.src}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="hidden rounded-full border border-cyan-400/30 bg-cyan-500/10 px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-cyan-100 transition hover:bg-cyan-500/20 sm:inline-flex"
+                            >
+                                Show PDF
+                            </a>
+                        ) : null}
                         {item.articleSlug && item.articleTitle ? (
                             <Link href={`/lab-journal/${item.articleSlug}`} className="hidden rounded-full border border-white/15 bg-white/5 px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-white transition hover:bg-white/10 sm:inline-flex">
                                 From the Lab Journal
@@ -86,6 +96,16 @@ export default function GalleryLightbox({ items, initialIndex, onClose }: Galler
                             <video className="max-h-[78vh] w-full max-w-5xl rounded-[1.25rem] bg-black object-contain" controls autoPlay>
                                 <source src={item.src} />
                             </video>
+                        ) : item.type === "pdf" ? (
+                            <div className="flex h-full w-full max-w-5xl flex-col overflow-hidden rounded-[1.25rem] border border-white/10 bg-white">
+                                <div className="flex items-center justify-between border-b border-slate-200 bg-slate-100 px-4 py-3 text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-700">
+                                    <span>PDF Preview</span>
+                                    <a href={item.src} target="_blank" rel="noopener noreferrer" className="rounded-full border border-slate-300 bg-white px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-700 transition hover:border-slate-400 hover:bg-slate-50">
+                                        Show PDF
+                                    </a>
+                                </div>
+                                <iframe src={item.src} title={item.title} className="h-full w-full bg-white" loading="lazy" />
+                            </div>
                         ) : (
                             <Image src={item.src} alt={item.title} width={1800} height={1200} className="max-h-[78vh] w-full max-w-5xl rounded-[1.25rem] object-contain" priority />
                         )}

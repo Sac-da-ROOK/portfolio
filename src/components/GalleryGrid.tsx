@@ -39,7 +39,11 @@ export default function GalleryGrid({ items, activeFilter }: GalleryGridProps) {
         let result = items;
 
         if (activeFilter !== "ALL") {
-            result = result.filter((item) => item.type === (activeFilter === "PHOTOS" ? "photo" : "video"));
+            if (activeFilter === "PHOTOS") {
+                result = result.filter((item) => item.type === "photo" || item.type === "pdf");
+            } else {
+                result = result.filter((item) => item.type === "video");
+            }
         }
 
         if (!searchTerm) {

@@ -13,6 +13,17 @@ const formatUpdatedDate = (updatedAt: string) => {
     }
 };
 
+const evidenceStandard = [
+    "GitHub repo",
+    "README",
+    "Problem",
+    "Screenshots",
+    "Setup",
+    "Technologies",
+    "What I built",
+    "Lessons learned"
+];
+
 export default function GithubRepoCard({ repo, featured = false }: GithubRepoCardProps) {
     return (
         <article className={`interactive-card group relative overflow-hidden rounded-3xl border bg-slate-950/80 p-6 shadow-xl ui-transition hover:-translate-y-1 hover:border-cyan-400/30 hover:bg-slate-900/90 ${featured ? "border-cyan-400/40" : "border-white/10"}`}>
@@ -34,6 +45,17 @@ export default function GithubRepoCard({ repo, featured = false }: GithubRepoCar
                         {topic}
                     </span>
                 ))}
+            </div>
+
+            <div className="mt-6 rounded-2xl border border-cyan-400/15 bg-[#0a1b2d] p-4">
+                <p className="text-[10px] font-semibold uppercase tracking-[0.28em] text-emerald-300">Evidence standard</p>
+                <div className="mt-3 flex flex-wrap gap-2">
+                    {evidenceStandard.map((item) => (
+                        <span key={item} className="rounded-full border border-cyan-400/15 bg-cyan-500/8 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-cyan-100">
+                            {item}
+                        </span>
+                    ))}
+                </div>
             </div>
 
             <div className="mt-6 grid gap-3 sm:grid-cols-2">

@@ -29,11 +29,11 @@ export default function GithubRepos() {
     return (
         <section id="github-repos" className="border-t border-white/10 bg-[#050816] px-6 py-24 sm:px-8 lg:px-12" aria-labelledby="github-repos-heading">
             <div className="mx-auto max-w-6xl">
-                <div className="max-w-2xl">
+                <div className="max-w-3xl">
                     <p className="text-sm font-semibold uppercase tracking-[0.3em] text-cyan-200">Projects • GitHub</p>
-                    <h2 id="github-repos-heading" className="mt-3 text-3xl font-semibold text-white sm:text-4xl">Always up to date with my latest public work.</h2>
+                    <h2 id="github-repos-heading" className="mt-3 text-3xl font-semibold text-white sm:text-4xl">Evidence over repo count.</h2>
                     <p className="mt-6 text-base leading-8 text-slate-300 sm:text-lg">
-                        Public repositories are fetched directly from GitHub, so this catalog stays current as I ship new experiments and refinements.
+                        I care more about projects that show a real problem, a clear implementation, and a thoughtful reflection on what I learned. Public repositories are fetched directly from GitHub, but the strongest evidence is the quality of the work behind them.
                     </p>
                 </div>
 

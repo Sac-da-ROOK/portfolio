@@ -38,6 +38,28 @@ const goals = [
     "Expand collaboration skills by working with other developers to build software that is clear, maintainable, and meaningful."
 ];
 
+const progressionStages = [
+    {
+        title: "Grade 7–8",
+        items: ["Python fundamentals", "Small programs", "Algorithms", "Data projects"]
+    },
+    {
+        title: "Later growth",
+        items: ["Web development", "APIs", "AI and ML", "Competitive programming", "Research software"]
+    }
+];
+
+const evidenceChecklist = [
+    "GitHub repository",
+    "README",
+    "Problem statement",
+    "Screenshots",
+    "Installation and run instructions",
+    "Technologies",
+    "What I personally built",
+    "Lessons learned"
+];
+
 const currentWork = [
     {
         title: "Autonomous hardware systems",
@@ -338,6 +360,49 @@ export default function ComputerSciencePage() {
                                     <p className="mt-4 text-base leading-8 text-slate-300">{work.description}</p>
                                 </div>
                             ))}
+                        </div>
+                    </section>
+
+                    <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20">
+                        <div className="mb-8 max-w-3xl">
+                            <p className="text-xs font-semibold uppercase tracking-[0.32em] text-cyan-300">GitHub evidence</p>
+                            <h2 className="mt-4 text-3xl font-semibold tracking-[-0.03em] text-white sm:text-4xl">
+                                Quality matters more than repository count.
+                            </h2>
+                            <p className="mt-5 text-base leading-8 text-slate-300 sm:text-lg">
+                                I care more about projects that show real thinking, clear structure, working code, and reflection than about having a large number of repositories.
+                            </p>
+                        </div>
+
+                        <div className="grid gap-6 lg:grid-cols-2">
+                            <div className="rounded-[2rem] border border-cyan-400/20 bg-[#0b1c2d] p-7 sm:p-8">
+                                <p className="text-xs font-semibold uppercase tracking-[0.28em] text-emerald-300">Progression</p>
+                                <div className="mt-6 space-y-5">
+                                    {progressionStages.map((stage) => (
+                                        <div key={stage.title} className="rounded-[1.5rem] border border-cyan-400/15 bg-slate-950/45 p-4">
+                                            <h3 className="text-lg font-semibold text-white">{stage.title}</h3>
+                                            <div className="mt-3 flex flex-wrap gap-2">
+                                                {stage.items.map((item) => (
+                                                    <span key={item} className="rounded-full border border-cyan-400/20 bg-cyan-500/8 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-cyan-100">
+                                                        {item}
+                                                    </span>
+                                                ))}
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+
+                            <div className="rounded-[2rem] border border-emerald-400/20 bg-gradient-to-br from-[#0b1c2d] via-[#091923] to-[#0a1324] p-7 sm:p-8">
+                                <p className="text-xs font-semibold uppercase tracking-[0.28em] text-cyan-200">Evidence standard</p>
+                                <div className="mt-6 grid gap-3 sm:grid-cols-2">
+                                    {evidenceChecklist.map((item) => (
+                                        <div key={item} className="rounded-2xl border border-cyan-400/15 bg-slate-950/45 px-4 py-3 text-sm font-medium text-slate-100">
+                                            {item}
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
                         </div>
                     </section>
 

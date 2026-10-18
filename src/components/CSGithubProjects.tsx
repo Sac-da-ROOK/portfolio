@@ -11,13 +11,13 @@ export default function CSGithubProjects() {
 
     return (
         <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20" aria-labelledby="github-projects-heading">
-            <div className="mb-8 max-w-2xl">
+            <div className="mb-8 max-w-3xl">
                 <p className="text-xs font-semibold uppercase tracking-[0.32em] text-cyan-300">GitHub</p>
                 <h2 id="github-projects-heading" className="mt-4 text-3xl font-semibold tracking-[-0.03em] text-white sm:text-4xl">
-                    My Projects on GitHub
+                    GitHub evidence: quality over repository count
                 </h2>
                 <p className="mt-4 text-base leading-8 text-slate-300 sm:text-lg">
-                    A collection of the projects, experiments, and ideas I&apos;ve built and worked on.
+                    I focus on projects that demonstrate problem-solving, clear structure, learning, and reflection. The strongest work is not just public code, but code that shows a real problem, thoughtful implementation, and a clear explanation of what I built and what I learned.
                 </p>
             </div>
 

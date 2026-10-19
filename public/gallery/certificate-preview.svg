@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1200" viewBox="0 0 1200 1200" role="img" aria-labelledby="title desc">
+  <title id="title">Certificate preview</title>
+  <desc id="desc">A certificate-style preview used for PDF documents in the gallery.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#f8fbff"/>
+      <stop offset="100%" stop-color="#eef8ff"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0%" stop-color="#0ea5e9"/>
+      <stop offset="80%" stop-color="#22c55e"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="1200" fill="url(#bg)"/>
+  <rect x="80" y="80" width="1040" height="1040" rx="38" fill="#ffffff" stroke="#dbeafe" stroke-width="4"/>
+  <rect x="120" y="120" width="960" height="120" rx="22" fill="url(#accent)"/>
+  <text x="600" y="190" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="46" font-weight="700" fill="#ffffff">Certificate</text>
+  <text x="600" y="340" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="700" fill="#0f172a">Document Preview</text>
+  <text x="600" y="420" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="24" fill="#475569">Achievement / Participation Record</text>
+  <line x1="240" y1="515" x2="960" y2="515" stroke="#cbd5e1" stroke-width="3"/>
+  <text x="600" y="590" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="700" fill="#0f172a">Official recognition</text>
+  <text x="600" y="650" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="26" fill="#334155">This document certifies participation, recognition,</text>
+  <text x="600" y="690" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="26" fill="#334155">and achievement in a STEM or academic program.</text>
+  <g>
+    <rect x="215" y="770" width="220" height="140" rx="18" fill="#eff6ff" stroke="#bae6fd"/>
+    <text x="325" y="820" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#0f172a">Status</text>
+    <text x="325" y="860" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" fill="#0f172a">Verified</text>
+    <rect x="490" y="770" width="220" height="140" rx="18" fill="#ecfdf5" stroke="#bbf7d0"/>
+    <text x="600" y="820" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#0f172a">Issued</text>
+    <text x="600" y="860" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" fill="#0f172a">2025–2026</text>
+    <rect x="765" y="770" width="220" height="140" rx="18" fill="#f0fdf4" stroke="#bbf7d0"/>
+    <text x="875" y="820" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#0f172a">Program</text>
+    <text x="875" y="860" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700" fill="#0f172a">STEM</text>
+  </g>
+</svg>

@@ -166,6 +166,10 @@ export default function GalleryGrid({ items, activeFilter }: GalleryGridProps) {
                                                 Video
                                             </div>
                                         </>
+                                    ) : item.type === "pdf" ? (
+                                        <div className="absolute left-2 top-2 z-10 rounded-full border border-cyan-300/40 bg-slate-900/70 px-2 py-1 text-[9px] font-semibold uppercase tracking-[0.2em] text-cyan-100 backdrop-blur-sm">
+                                            PDF
+                                        </div>
                                     ) : null}
 
                                     {item.type === "video" ? (
@@ -180,7 +184,7 @@ export default function GalleryGrid({ items, activeFilter }: GalleryGridProps) {
                                         </div>
                                     ) : (
                                         <Image
-                                            src={item.src}
+                                            src={item.type === "pdf" ? (item.previewSrc ?? "/gallery/certificate-preview.svg") : item.src}
                                             alt={item.title}
                                             width={1200}
                                             height={1200}

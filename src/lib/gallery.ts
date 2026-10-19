@@ -5,6 +5,7 @@ export type GalleryMediaType = "photo" | "video" | "pdf";
 
 export type GalleryMetadataEntry = {
     src: string;
+    previewSrc?: string;
     type?: GalleryMediaType;
     caption?: string;
     article?: string | null;
@@ -12,6 +13,7 @@ export type GalleryMetadataEntry = {
 
 export type GalleryItem = {
     src: string;
+    previewSrc?: string;
     type: GalleryMediaType;
     title: string;
     source?: string;
@@ -20,7 +22,7 @@ export type GalleryItem = {
     articleTitle?: string;
 };
 
-const imageExtensions = new Set([".jpg", ".jpeg", ".png", ".webp", ".gif"]);
+const imageExtensions = new Set([".jpg", ".jpeg", ".png", ".webp", ".gif", ".svg"]);
 const videoExtensions = new Set([".mp4", ".webm", ".mov", ".m4v"]);
 const pdfExtensions = new Set([".pdf"]);
 
@@ -95,6 +97,7 @@ async function getGalleryMetadataMap() {
 
             metadataMap.set(source, {
                 src: source,
+                previewSrc: typeof candidate.previewSrc === "string" ? normalizeMetadataSource(candidate.previewSrc) : undefined,
                 type: candidate.type === "video" ? "video" : candidate.type === "pdf" ? "pdf" : "photo",
                 caption: typeof candidate.caption === "string" ? candidate.caption.trim() || undefined : undefined,
                 article: typeof candidate.article === "string" ? candidate.article.trim() || null : null,
@@ -131,6 +134,7 @@ export async function getGalleryItems(): Promise<GalleryItem[]> {
 
             return {
                 src,
+                previewSrc: metadata?.previewSrc,
                 type,
                 title,
                 caption: metadata?.caption,

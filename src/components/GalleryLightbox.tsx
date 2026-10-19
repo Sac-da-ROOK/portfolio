@@ -6,6 +6,7 @@ import { useEffect, useMemo, useState } from "react";
 
 export type GalleryLightboxItem = {
     src: string;
+    previewSrc?: string;
     type: "photo" | "video" | "pdf";
     title: string;
     caption?: string;
@@ -97,14 +98,21 @@ export default function GalleryLightbox({ items, initialIndex, onClose }: Galler
                                 <source src={item.src} />
                             </video>
                         ) : item.type === "pdf" ? (
-                            <div className="flex h-full w-full max-w-5xl flex-col overflow-hidden rounded-[1.25rem] border border-white/10 bg-white">
+                            <div className="flex h-full w-full max-w-5xl flex-col overflow-hidden rounded-[1.25rem] border border-white/10 bg-white shadow-[0_16px_35px_rgba(15,23,42,0.16)]">
                                 <div className="flex items-center justify-between border-b border-slate-200 bg-slate-100 px-4 py-3 text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-700">
-                                    <span>PDF Preview</span>
+                                    <span>Certificate preview</span>
                                     <a href={item.src} target="_blank" rel="noopener noreferrer" className="rounded-full border border-slate-300 bg-white px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-700 transition hover:border-slate-400 hover:bg-slate-50">
                                         Show PDF
                                     </a>
                                 </div>
-                                <iframe src={item.src} title={item.title} className="h-full w-full bg-white" loading="lazy" />
+                                <Image
+                                    src={item.previewSrc ?? item.src}
+                                    alt={item.title}
+                                    width={1800}
+                                    height={1200}
+                                    className="h-full w-full object-contain"
+                                    priority
+                                />
                             </div>
                         ) : (
                             <Image src={item.src} alt={item.title} width={1800} height={1200} className="max-h-[78vh] w-full max-w-5xl rounded-[1.25rem] object-contain" priority />

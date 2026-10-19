@@ -8,81 +8,92 @@
     {
         "src": "/gallery/image.pdf",
         "type": "pdf",
+        "previewSrc": "/gallery/previews/image.png",
         "caption": "A certificate of participation awarded by the NorthSouth Foundation for successfully participating in their various competitions and olympiads.",
         "article": null
     },
     {
         "src": "/gallery/image1.pdf",
         "type": "pdf",
+        "previewSrc": "/gallery/previews/image1.png",
         "caption": "A certificate of participation awarded by the Harisumiran Temple for successfully participating in their chess tournament.",
         "article": null
     },
     {
         "src": "/gallery/image2.pdf",
         "type": "pdf",
+        "previewSrc": "/gallery/previews/image2.png",
         "caption": "A certificate of participation awarded by the International Academic Competitions for successfully qualifying for the 2025 National Science Bee in Orlando, FL.",
         "article": null
     },
     {
         "src": "/gallery/image3.pdf",
         "type": "pdf",
+        "previewSrc": "/gallery/previews/image3.png",
         "caption": "A certificate of participation awarded by the International Academic Competitions for successfully qualifying for the 2026 National Science Bee in Orlando, FL.",
         "article": null
     },
     {
         "src": "/gallery/image4.pdf",
         "type": "pdf",
+        "previewSrc": "/gallery/previews/image4.png",
         "caption": "A certificate of participation awarded by the Illinois Shotokan Karate Club (ISKC) for successfully participating in their karate tournament.",
         "article": null
     },
     {
         "src": "/gallery/image5.pdf",
         "type": "pdf",
+        "previewSrc": "/gallery/previews/image5.png",
         "caption": "A certificate of participation awarded by the International Academic Competitions for successfully finishing in the top 3 in IL, earning the title of regional finalist.",
         "article": null
     },
     {
         "src": "/gallery/image6.pdf",
         "type": "pdf",
+        "previewSrc": "/gallery/previews/image6.png",
         "caption": "A certificate of participation awarded by BrightChamps for successfully participating in their technology program.",
         "article": null
     },
     {
         "src": "/gallery/image7.pdf",
         "type": "pdf",
-        "caption": "A certificate of participation awarded by the Math Kangaroo Competition for successfully earning the following ranks: Score - 51 / 96, \nNational Rank - 43, \nState of Illinois Rank - 40",
+        "previewSrc": "/gallery/previews/image7.png",
+        "caption": "A certificate of participation awarded by the Math Kangaroo Competition for successfully earning the following ranks: Score - 51 / 96, National Rank - 43, State of Illinois Rank - 40",
         "article": null
     },
     {
         "src": "/gallery/image8.pdf",
         "type": "pdf",
+        "previewSrc": "/gallery/previews/image8.png",
         "caption": "A certificate of participation awarded by the NorthSouth Foundation for successfully participating in their 2026 Intermediate Essay Writing category.",
         "article": null
     },
     {
         "src": "/gallery/image9.pdf",
         "type": "pdf",
+        "previewSrc": "/gallery/previews/image9.png",
         "caption": "A certificate of participation awarded by the NorthSouth Foundation for successfully participating in their 2025 Intermediate Science category.",
         "article": null
     },
     {
         "src": "/gallery/image10.pdf",
         "type": "pdf",
+        "previewSrc": "/gallery/previews/image10.png",
         "caption": "A certificate of participation awarded by the NorthSouth Foundation for successfully participating in their 2026 Math Level 3 category.",
         "article": null
     },
     {
         "src": "/gallery/image11.pdf",
         "type": "pdf",
+        "previewSrc": "/gallery/previews/image11.png",
         "caption": "A certificate of participation awarded by the NorthSouth Foundation for successfully participating in their 2026 Senior Science category.",
         "article": null
     },
     {
         "src": "/gallery/image12.pdf",
         "type": "pdf",
+        "previewSrc": "/gallery/previews/image12.png",
         "caption": "A certificate of participation presented by Whitehat Jr. for successfully placing in the top 20% of their program.",
         "article": null
     }
-
-
 ]

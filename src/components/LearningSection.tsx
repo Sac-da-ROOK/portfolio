@@ -25,6 +25,29 @@ const courses = [
     { title: "AI For Everyone — Andrew Ng / DeepLearning.AI", href: "https://www.coursera.org/learn/ai-for-everyone" }
 ];
 
+const currentExplorations = [
+    {
+        subject: "Biology",
+        items: ["Cells and how they work", "Plant and animal structures", "Simple lab observations and data"]
+    },
+    {
+        subject: "Mathematics",
+        items: ["Fractions and ratios", "Word problems and logic puzzles", "Fast mental math and problem solving"]
+    },
+    {
+        subject: "Computer Science",
+        items: ["Python basics", "Loops and conditionals", "Breaking problems into steps"]
+    },
+    {
+        subject: "Engineering",
+        items: ["Building simple robots", "Testing designs and fixing mistakes", "How machines use sensors and movement"]
+    },
+    {
+        subject: "Chess",
+        items: ["Opening ideas", "Tactics and patterns", "Looking for good moves and blunders"]
+    }
+];
+
 const goals = [
     { title: "Publish weekly STEM learning notes.", href: "#blog" },
     { title: "Complete a deeper calculus problem set track.", href: "#competitions" },
@@ -40,6 +63,31 @@ export default function LearningSection() {
                 <p className="section-lead">
                     I document what I learn so ideas can compound across projects, competitions, and long-term STEM goals.
                 </p>
+            </div>
+
+            <div className="mt-10 rounded-[2rem] border border-cyan-300/30 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 p-6 shadow-[0_18px_48px_rgba(14,116,144,0.22)] sm:p-7">
+                <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+                    <div>
+                        <p className="text-[11px] uppercase tracking-[0.28em] text-cyan-300">Currently Exploring</p>
+                        <h3 className="mt-2 text-2xl font-semibold text-blue-500">Fall 2026</h3>
+                    </div>
+                </div>
+
+                <div className="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-5">
+                    {currentExplorations.map((area) => (
+                        <article key={area.subject} className="rounded-[1.5rem] border border-cyan-300/20 bg-slate-100/95 p-4 shadow-sm">
+                            <h4 className="text-lg font-semibold text-slate-900">{area.subject}</h4>
+                            <ul className="mt-3 space-y-2 text-sm leading-6 text-slate-700">
+                                {area.items.map((item) => (
+                                    <li key={item} className="flex gap-2">
+                                        <span aria-hidden="true" className="mt-1 text-cyan-700">•</span>
+                                        <span>{item}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        </article>
+                    ))}
+                </div>
             </div>
 
             <div className="mt-10 grid gap-6 lg:grid-cols-2">

@@ -17,6 +17,7 @@ const navItems = [
     { id: "robotics", label: "Robotics", href: "#robotics" },
     { id: "gallery", label: "Gallery", href: "/gallery" },
     { id: "blog", label: "Blog", href: "#blog" },
+    { id: "now", label: "Now", href: "/now" },
     { id: "contact", label: "Contact", href: "#contact" }
 ];
 

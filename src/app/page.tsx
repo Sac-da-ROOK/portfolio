@@ -1,6 +1,7 @@
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import About from "@/components/About";
+import ActivitiesLeadership from "@/components/ActivitiesLeadership";
 import AnimatedSection from "@/components/AnimatedSection";
 import BlogSection from "@/components/BlogSection";
 import ChessSection from "@/components/ChessSection";
@@ -46,7 +47,10 @@ export default function Home() {
         <AnimatedSection delay={140}>
           <LearningSection />
         </AnimatedSection>
-        <AnimatedSection delay={160}>
+        <AnimatedSection delay={150}>
+          <ActivitiesLeadership />
+        </AnimatedSection>
+        <AnimatedSection delay={170}>
           <ChessSection />
         </AnimatedSection>
         <AnimatedSection delay={180}>

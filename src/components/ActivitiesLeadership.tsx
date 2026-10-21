@@ -51,29 +51,29 @@ export default function ActivitiesLeadership() {
 
             <div className="mt-10 grid gap-6 xl:grid-cols-2">
                 {activities.map((activity) => (
-                    <article key={activity.title} className="interactive-card glass-card rounded-[2rem] p-6 ui-transition hover:-translate-y-1 hover:border-cyan-400/30">
-                        <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-cyan-200">Activity</p>
-                        <h3 className="mt-3 text-2xl font-semibold tracking-[-0.03em] text-white">{activity.title}</h3>
+                    <article key={activity.title} className="interactive-card glass-card rounded-[2rem] p-6 ui-transition hover:-translate-y-1 hover:border-sky-400/40">
+                        <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-sky-800">Activity</p>
+                        <h3 className="mt-3 text-2xl font-semibold tracking-[-0.03em] text-sky-950">{activity.title}</h3>
 
                         <div className="mt-5 space-y-4">
-                            <div className="rounded-2xl border border-white/10 bg-slate-900/70 p-4">
-                                <p className="text-[10px] font-semibold uppercase tracking-[0.26em] text-slate-400">What did I do?</p>
-                                <p className="mt-2 text-sm leading-7 text-slate-200">{activity.what}</p>
+                            <div className="rounded-2xl border border-sky-200 bg-sky-50 p-4">
+                                <p className="text-[10px] font-semibold uppercase tracking-[0.26em] text-sky-800">What did I do?</p>
+                                <p className="mt-2 text-sm leading-7 text-sky-900">{activity.what}</p>
                             </div>
 
-                            <div className="rounded-2xl border border-white/10 bg-slate-900/70 p-4">
-                                <p className="text-[10px] font-semibold uppercase tracking-[0.26em] text-slate-400">What responsibility did I have?</p>
-                                <p className="mt-2 text-sm leading-7 text-slate-200">{activity.responsibility}</p>
+                            <div className="rounded-2xl border border-sky-200 bg-sky-50 p-4">
+                                <p className="text-[10px] font-semibold uppercase tracking-[0.26em] text-sky-800">What responsibility did I have?</p>
+                                <p className="mt-2 text-sm leading-7 text-sky-900">{activity.responsibility}</p>
                             </div>
 
-                            <div className="rounded-2xl border border-emerald-400/20 bg-emerald-500/5 p-4">
-                                <p className="text-[10px] font-semibold uppercase tracking-[0.26em] text-emerald-200">What changed because I participated?</p>
-                                <p className="mt-2 text-sm leading-7 text-slate-200">{activity.impact}</p>
+                            <div className="rounded-2xl border border-cyan-200 bg-cyan-50 p-4">
+                                <p className="text-[10px] font-semibold uppercase tracking-[0.26em] text-cyan-800">What changed because I participated?</p>
+                                <p className="mt-2 text-sm leading-7 text-cyan-900">{activity.impact}</p>
                             </div>
 
-                            <div className="rounded-2xl border border-amber-400/20 bg-amber-500/5 p-4">
-                                <p className="text-[10px] font-semibold uppercase tracking-[0.26em] text-amber-200">What did I learn?</p>
-                                <p className="mt-2 text-sm leading-7 text-slate-200">{activity.learning}</p>
+                            <div className="rounded-2xl border border-indigo-200 bg-indigo-50 p-4">
+                                <p className="text-[10px] font-semibold uppercase tracking-[0.26em] text-indigo-800">What did I learn?</p>
+                                <p className="mt-2 text-sm leading-7 text-indigo-900">{activity.learning}</p>
                             </div>
                         </div>
                     </article>

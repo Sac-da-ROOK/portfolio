@@ -206,7 +206,7 @@ export const projects: ProjectData[] = [
             "A portfolio experience built to present my work with clarity, personality, and a strong technical aesthetic.",
         status: "Portfolio",
         tags: ["Next.js", "TypeScript", "Design"],
-        href: "https://aarushportfolio.vercel.app",
+        href: "https://aarushsrivastava.me",
         repo: "https://github.com/Sac-da-ROOK",
         githubUrl: "https://github.com/Sac-da-ROOK",
         screenshot: "/images/featured/ultimate-type-1.svg",

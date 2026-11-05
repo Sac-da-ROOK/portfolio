@@ -119,6 +119,24 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <EasterEggs />
         <a href="#main-content" className="skip-link sr-only focus:not-sr-only fixed left-4 top-4 z-50 rounded-md bg-white/5 px-3 py-2 text-sm text-white">Skip to main content</a>
         <PageTransitionProvider>{children}</PageTransitionProvider>
+
+        <footer className="border-t border-slate-200 bg-white/80 text-slate-700 backdrop-blur-sm">
+          <div className="mx-auto flex max-w-6xl flex-col gap-4 px-4 py-6 text-sm sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
+            <div>
+              <p className="font-semibold text-slate-900">Aarush Srivastava</p>
+              <p className="mt-1 text-slate-600">STEM portfolio, projects, research, and journal.</p>
+            </div>
+
+            <nav aria-label="Footer navigation" className="flex flex-wrap items-center gap-3 text-sm">
+              <a href="/#about" className="rounded-full px-2 py-1 transition hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400">About</a>
+              <a href="/academics" className="rounded-full px-2 py-1 transition hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400">Academics</a>
+              <a href="/projects" className="rounded-full px-2 py-1 transition hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400">Projects</a>
+              <a href="/research" className="rounded-full px-2 py-1 transition hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400">Research</a>
+              <a href="/lab-journal" className="rounded-full px-2 py-1 transition hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400">Journal</a>
+              <a href="/#contact" className="rounded-full px-2 py-1 transition hover:text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400">Contact</a>
+            </nav>
+          </div>
+        </footer>
       </body>
     </html>
   );

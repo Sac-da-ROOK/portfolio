@@ -7,29 +7,19 @@ import { useEffect, useRef, useState } from "react";
 type NavbarTheme = "default" | "cs";
 
 const navItems = [
-    { id: "home", label: "Home", href: "#home" },
-    { id: "about", label: "About", href: "#about" },
-    { id: "competitions", label: "Competitions & Achievements", href: "#competitions" },
-    { id: "learning", label: "Learning", href: "#learning" },
-    { id: "math", label: "Math", href: "/academics" },
-    { id: "science", label: "Science", href: "/research" },
-    { id: "chess", label: "Chess", href: "#chess" },
-    { id: "robotics", label: "Robotics", href: "#robotics" },
-    { id: "gallery", label: "Gallery", href: "/gallery" },
-    { id: "blog", label: "Blog", href: "#blog" },
-    { id: "now", label: "Now", href: "/now" },
-    { id: "contact", label: "Contact", href: "#contact" }
-];
-
-const scienceSubitems = [
+    { id: "home", label: "Home", href: "/" },
+    { id: "about", label: "About", href: "/#about" },
+    { id: "academics", label: "Academics", href: "/academics" },
+    { id: "projects", label: "Projects", href: "/projects" },
     { id: "research", label: "Research", href: "/research" },
-    { id: "biology", label: "Biology", href: "/biology" }
+    { id: "competitions", label: "Competitions", href: "/#competitions" },
+    { id: "journal", label: "Journal", href: "/lab-journal" },
+    { id: "contact", label: "Contact", href: "/#contact" }
 ];
 
 export default function Navbar({ theme = "default" }: { theme?: NavbarTheme }) {
     const [isOpen, setIsOpen] = useState(false);
     const [activeSection, setActiveSection] = useState("home");
-    const [scienceOpen, setScienceOpen] = useState(false);
     const headerRef = useRef<HTMLElement | null>(null);
     const menuRef = useRef<HTMLDivElement | null>(null);
     const buttonRef = useRef<HTMLButtonElement | null>(null);
@@ -79,32 +69,6 @@ export default function Navbar({ theme = "default" }: { theme?: NavbarTheme }) {
             firstMenuLinkRef.current?.focus();
         }
     }, [isOpen]);
-
-    useEffect(() => {
-        if (!scienceOpen) return;
-
-        const onPointerDown = (event: PointerEvent) => {
-            const target = event.target as Node | null;
-            if (!target) return;
-            const dropdown = document.getElementById("science-dropdown");
-            if (dropdown?.contains(target)) return;
-            setScienceOpen(false);
-        };
-
-        const onKeyDown = (event: KeyboardEvent) => {
-            if (event.key === "Escape") {
-                setScienceOpen(false);
-            }
-        };
-
-        window.addEventListener("pointerdown", onPointerDown);
-        window.addEventListener("keydown", onKeyDown);
-
-        return () => {
-            window.removeEventListener("pointerdown", onPointerDown);
-            window.removeEventListener("keydown", onKeyDown);
-        };
-    }, [scienceOpen]);
 
     useEffect(() => {
         const onPointerDown = (event: PointerEvent) => {
@@ -188,41 +152,6 @@ export default function Navbar({ theme = "default" }: { theme?: NavbarTheme }) {
                             const isActive = activeSection === item.id;
                             const linkClasses = `group relative flex items-center justify-center whitespace-nowrap px-2.5 py-2 text-[10px] font-bold leading-none tracking-[-0.01em] ui-transition sm:text-[10.5px] lg:px-3 lg:text-[11px] ${isActive ? activeTextClasses : textClasses} ${isCsTheme ? "hover:text-white drop-shadow-[0_0_10px_rgba(125,211,252,0.16)]" : "hover:text-slate-900"}`;
 
-                            if (item.id === "science") {
-                                const isSubmenuActive = pathname === "/research" || pathname === "/biology";
-
-                                return (
-                                    <div key={item.id} className="relative">
-                                        <button
-                                            type="button"
-                                            aria-expanded={scienceOpen}
-                                            aria-controls="science-dropdown"
-                                            className={`${linkClasses} rounded-full`}
-                                            onClick={() => setScienceOpen((prev) => !prev)}
-                                        >
-                                            {item.label}
-                                            <span className={`absolute inset-x-1 -bottom-1 h-[2px] rounded-full bg-gradient-to-r ${activeBarClasses} ui-transition ${isSubmenuActive ? "opacity-100" : "opacity-0 group-hover:opacity-100"}`} />
-                                        </button>
-
-                                        <div
-                                            id="science-dropdown"
-                                            className={`absolute left-1/2 top-full z-20 mt-2 w-44 -translate-x-1/2 rounded-2xl border border-cyan-400/20 bg-[#0a1b2d]/95 p-2 shadow-[0_18px_34px_rgba(8,47,73,0.34)] backdrop-blur-md transition-all duration-300 ease-out ${scienceOpen ? "pointer-events-auto translate-y-0 opacity-100" : "pointer-events-none -translate-y-2 opacity-0"}`}
-                                        >
-                                            {scienceSubitems.map((subItem) => (
-                                                <Link
-                                                    key={subItem.id}
-                                                    href={subItem.href}
-                                                    className={`flex w-full items-center justify-between rounded-xl px-3 py-2 text-left text-[10.5px] font-semibold tracking-[-0.01em] transition ${pathname === subItem.href ? "bg-cyan-500/15 text-white" : "text-slate-200 hover:bg-slate-800/80 hover:text-white"}`}
-                                                    onClick={() => setScienceOpen(false)}
-                                                >
-                                                    {subItem.label}
-                                                </Link>
-                                            ))}
-                                        </div>
-                                    </div>
-                                );
-                            }
-
                             if (isRouteLink) {
                                 return (
                                     <Link
@@ -294,39 +223,6 @@ export default function Navbar({ theme = "default" }: { theme?: NavbarTheme }) {
                             const isRouteLink = item.href.startsWith("/");
                             const isActive = activeSection === item.id;
                             const className = `rounded-2xl px-4 py-3 text-sm font-semibold ui-transition ${isActive ? mobileActiveItemClasses : mobileItemClasses}`;
-
-                            if (item.id === "science") {
-                                return (
-                                    <div key={item.id} className="space-y-2">
-                                        <button
-                                            type="button"
-                                            aria-expanded={scienceOpen}
-                                            aria-controls="mobile-science-menu"
-                                            className={`${className} flex w-full items-center justify-between`}
-                                            onClick={() => setScienceOpen((prev) => !prev)}
-                                        >
-                                            <span>{item.label}</span>
-                                            <span className="text-xs">{scienceOpen ? "−" : "+"}</span>
-                                        </button>
-
-                                        <div id="mobile-science-menu" className={`space-y-2 overflow-hidden transition-all duration-300 ease-out ${scienceOpen ? "max-h-40 opacity-100" : "max-h-0 opacity-0"}`}>
-                                            {scienceSubitems.map((subItem) => (
-                                                <Link
-                                                    key={subItem.id}
-                                                    href={subItem.href}
-                                                    className={`block rounded-2xl border px-4 py-2.5 text-sm font-medium ui-transition ${pathname === subItem.href ? "border-cyan-300/50 bg-cyan-500/10 text-white" : "border-cyan-400/15 bg-slate-900/35 text-slate-200 hover:bg-cyan-500/10 hover:text-white"}`}
-                                                    onClick={() => {
-                                                        setScienceOpen(false);
-                                                        closeMenu(false);
-                                                    }}
-                                                >
-                                                    {subItem.label}
-                                                </Link>
-                                            ))}
-                                        </div>
-                                    </div>
-                                );
-                            }
 
                             if (isRouteLink) {
                                 return (

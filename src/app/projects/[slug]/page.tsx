@@ -5,7 +5,7 @@ import Section from "@/components/Section";
 import ProjectFooter from "@/components/projects/ProjectFooter";
 import ProjectGallery from "@/components/projects/ProjectGallery";
 import ProjectHero from "@/components/projects/ProjectHero";
-import { getProjectBySlug, getProjectSlugs, metadataForProject } from "@/lib/projects";
+import { getProjectBySlug, getProjectSlugs, metadataForProject, projects } from "@/lib/projects";
 
 type ProjectPageProps = {
     params: Promise<{
@@ -54,6 +54,10 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
     const nextVersion = project.nextSteps && project.nextSteps.length > 0 ? project.nextSteps : ["I will add future improvements and ideas for this project later."];
     const sourceCode = project.sourceCode || project.githubUrl || project.repo || "https://github.com/Sac-da-ROOK";
 
+    const relatedProjects = projects
+        .filter((item) => item.slug !== project.slug)
+        .slice(0, 3);
+
     return (
         <main className="min-h-screen bg-[#050b16] text-slate-100">
             <Navbar theme="cs" />
@@ -72,9 +76,19 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
                         }}
                     >
                         <div className="mx-auto max-w-6xl">
+                            <nav aria-label="Breadcrumb" className="mb-6 text-sm text-cyan-100/80">
+                                <div className="flex flex-wrap items-center gap-2">
+                                    <Link href="/" className="transition hover:text-white">Home</Link>
+                                    <span aria-hidden="true">/</span>
+                                    <Link href="/projects" className="transition hover:text-white">Projects</Link>
+                                    <span aria-hidden="true">/</span>
+                                    <span className="text-white">{project.title}</span>
+                                </div>
+                            </nav>
+
                             <div className="mb-8 flex items-center justify-start">
-                                <Link href="/cs" className="inline-flex items-center gap-2 rounded-full border border-cyan-400/20 bg-[#0a1830]/80 px-4 py-2 text-sm font-medium !text-cyan-100 transition hover:border-cyan-300/40 hover:bg-[#0d2340]">
-                                    ← Back to Computer Science
+                                <Link href="/projects" className="inline-flex items-center gap-2 rounded-full border border-cyan-400/20 bg-[#0a1830]/80 px-4 py-2 text-sm font-medium !text-cyan-100 transition hover:border-cyan-300/40 hover:bg-[#0d2340]">
+                                    ← Back to Projects
                                 </Link>
                             </div>
 
@@ -201,6 +215,24 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
                             </article>
 
                             {project.gallery && project.gallery.length > 0 ? <ProjectGallery project={project} /> : null}
+
+                            <section className="mt-10 rounded-[2rem] border border-cyan-400/20 bg-[#0a1830]/80 p-5 sm:p-6">
+                                <div className="flex items-center justify-between gap-3">
+                                    <h2 className="text-2xl font-semibold tracking-[-0.03em] text-white">Related projects</h2>
+                                    <Link href="/projects" className="text-sm font-semibold text-cyan-200 transition hover:text-white">Browse all projects →</Link>
+                                </div>
+
+                                <div className="mt-5 grid gap-4 md:grid-cols-3">
+                                    {relatedProjects.map((related) => (
+                                        <Link key={related.slug} href={`/projects/${related.slug}`} className="rounded-[1.5rem] border border-cyan-400/15 bg-[#102238] p-4 transition hover:border-cyan-300/40 hover:bg-[#122a42]">
+                                            <p className="text-[10px] uppercase tracking-[0.24em] text-cyan-200">{related.status}</p>
+                                            <h3 className="mt-2 text-lg font-semibold text-white">{related.title}</h3>
+                                            <p className="mt-2 text-sm leading-6 text-slate-300">{related.subtitle}</p>
+                                        </Link>
+                                    ))}
+                                </div>
+                            </section>
+
                             <ProjectFooter />
                         </div>
                     </Section>

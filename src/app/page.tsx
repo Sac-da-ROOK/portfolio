@@ -9,9 +9,11 @@ import CompetitionsAchievements from "@/components/CompetitionsAchievements";
 import LearningSection from "@/components/LearningSection";
 import Hero from "@/components/Hero";
 import Navbar from "@/components/Navbar";
+import ProjectCard from "@/components/ProjectCard";
 import RoboticsSection from "@/components/RoboticsSection";
 import SectionSkeleton from "@/components/SectionSkeleton";
 import StemGallerySection from "@/components/StemGallerySection";
+import { featuredProjects } from "@/lib/projects";
 
 const Journey = dynamic(() => import("@/components/Journey"), {
   ssr: true,
@@ -88,6 +90,35 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        <section className="section-shell px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
+          <div className="mx-auto max-w-6xl">
+            <div className="max-w-3xl">
+              <p className="section-kicker">Featured Work</p>
+              <h2 className="section-title">Evidence of how I think, build, and improve.</h2>
+            </div>
+
+            <div className="mt-8 grid gap-6 xl:grid-cols-3">
+              {featuredProjects.slice(0, 3).map((project) => (
+                <ProjectCard
+                  key={project.slug}
+                  title={project.title}
+                  description={project.description}
+                  details={project.details}
+                  status={project.status}
+                  tags={project.tags}
+                  detailPath={`/projects/${project.slug}`}
+                  liveHref={project.href || `/projects/${project.slug}`}
+                  repo={project.repo}
+                  screenshot={project.screenshot}
+                  gallery={project.gallery}
+                  featured={project.featured}
+                />
+              ))}
+            </div>
+          </div>
+        </section>
+
         <AnimatedSection delay={60}>
           <About />
         </AnimatedSection>

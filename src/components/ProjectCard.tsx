@@ -37,15 +37,14 @@ export default function ProjectCard({
     return (
         <article className={`interactive-card group relative overflow-hidden rounded-[2rem] border border-cyan-200/25 bg-[linear-gradient(180deg,rgba(15,24,38,0.98),rgba(17,30,45,0.96))] text-slate-50 shadow-[0_18px_40px_rgba(14,116,144,0.12)] ui-transition hover:-translate-y-1 hover:border-cyan-200/40 ${featured ? "ring-1 ring-cyan-200/25" : ""}`} style={{ transitionDelay: `${delay}ms` }}>
             <div className="relative overflow-hidden rounded-t-[2rem] border-b border-cyan-200/10 bg-slate-800/80">
-                <div className="relative h-44 overflow-hidden sm:h-52">
-                    <Image
-                        src={screenshot}
-                        alt={`${title} screenshot`}
-                        fill
-                        className="object-cover transition duration-500 group-hover:scale-105"
-                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                        priority={false}
-                    />
+                <div className="relative h-44 overflow-hidden sm:h-52" aria-hidden="true">
+                    <div className="flex h-full w-full items-center justify-center bg-[radial-gradient(circle_at_top,_rgba(34,211,238,0.20),_rgba(15,23,42,0.90)_55%)]">
+                        <div className="flex flex-col items-center gap-3 text-cyan-100/80">
+                            <div className="h-14 w-14 rounded-full border border-cyan-200/30 bg-cyan-400/10" />
+                            <div className="h-2.5 w-28 rounded-full bg-cyan-200/15" />
+                            <div className="h-2.5 w-20 rounded-full bg-cyan-200/10" />
+                        </div>
+                    </div>
                 </div>
                 <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-slate-950/90 to-transparent" />
                 <div className="absolute left-4 top-4 rounded-full border border-cyan-200/35 bg-sky-300/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.24em] text-cyan-50 backdrop-blur-sm">

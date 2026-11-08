@@ -11,6 +11,15 @@ type UsChessMemberEventsResponse = {
     }>;
 };
 
+export async function fetchTournamentHistoryCount(): Promise<number> {
+    try {
+        const events = await fetchUsChessJson<UsChessMemberEventsResponse>(`/members/${US_CHESS_MEMBER_ID}/events?Offset=0&Size=1000`);
+        return events.items?.length ?? 0;
+    } catch {
+        return 0;
+    }
+}
+
 type UsChessMemberSectionsResponse = {
     items: Array<{
         sectionName: string;

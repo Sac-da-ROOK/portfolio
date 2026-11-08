@@ -1,17 +1,13 @@
 import Link from "next/link";
 import AnimatedSection from "@/components/AnimatedSection";
 import CurrentChessRating from "@/components/CurrentChessRating";
+import { getHeroStats } from "@/lib/website-stats";
 
 const highlights = ["LEARN", "BUILD", "COMPETE", "REFLECT"];
 
-const quickStats = [
-    { label: "Projects", value: "12+" },
-    { label: "Competitions", value: "10+" },
-    { label: "Books", value: "30+" },
-    { label: "Awards", value: "8+" }
-];
+export default async function Hero() {
+    const heroStats = await getHeroStats();
 
-export default function Hero() {
     return (
         <section id="home" className="section-shell relative isolate overflow-hidden">
             <div className="absolute inset-0 -z-10 overflow-hidden">
@@ -53,11 +49,11 @@ export default function Hero() {
                     </p>
 
                     <div className="mt-10 grid gap-3 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5">
-                        {quickStats.map((stat) => (
-                            <div key={stat.label} className="glass-card-soft rounded-2xl px-4 py-4">
+                        {heroStats.map((stat) => (
+                            <Link key={stat.label} href={stat.href} className="glass-card-soft rounded-2xl px-4 py-4 transition hover:-translate-y-0.5 hover:border-cyan-400/30 hover:bg-white/90" aria-label={`${stat.label}: ${stat.value}. ${stat.definition}`}>
                                 <p className="text-[11px] uppercase tracking-[0.26em] text-slate-600">{stat.label}</p>
                                 <p className="mt-1 text-2xl font-semibold text-slate-900">{stat.value}</p>
-                            </div>
+                            </Link>
                         ))}
                         <CurrentChessRating variant="hero" />
                     </div>

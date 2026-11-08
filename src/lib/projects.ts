@@ -44,7 +44,7 @@ export const projects: ProjectData[] = [
         description:
             "Built for speed and accuracy, UltimateType combines real-time metrics, progress tracking, and productive practice flows that help users improve faster.",
         details:
-            "A polished typing experience that turns repetition into meaningful training by showing accuracy, cadence, and evolution across every session.",
+            "Built a browser-based typing practice tool to measure speed, accuracy, and consistency across sessions. I focused on cleaner feedback loops, smarter timer behavior, and visible progress so repeated practice became more useful and easier to trust.",
         status: "Production",
         tags: ["React", "TypeScript", "Vercel"],
         href: "https://ultimate-type.vercel.app",
@@ -97,17 +97,17 @@ export const projects: ProjectData[] = [
         description:
             "OmniMath combines guided practice with dynamic visual tools, helping students explore abstract ideas through concrete, playful interactions.",
         details:
-            "A modern learning hub for building confidence with math through examples, guided explanations, and interactive exercises.",
+            "I designed an interactive math study flow around approachable explanations and quick checks, using structure and feedback to reduce the intimidation of abstract topics. The goal was to make difficult ideas feel more concrete and easier to revisit over time.",
         status: "Active",
         tags: ["Next.js", "React", "Education"],
         href: "https://omnimath-rho.vercel.app",
         repo: "https://github.com/Sac-da-ROOK",
         githubUrl: "https://github.com/Sac-da-ROOK",
-        screenshot: "/images/featured/math-sprint-arena-1.svg",
+        screenshot: "/images/featured/global-route-navigator-1.svg",
         gallery: [
-            "/images/featured/math-sprint-arena-1.svg",
-            "/images/featured/math-sprint-arena-2.svg",
-            "/images/featured/math-sprint-arena-3.svg"
+            "/images/featured/global-route-navigator-1.svg",
+            "/images/featured/global-route-navigator-2.svg",
+            "/images/featured/ultimate-type-1.svg"
         ],
         featured: true,
         overview:
@@ -150,16 +150,16 @@ export const projects: ProjectData[] = [
         description:
             "Designed to make math practice feel kinetic, this game blends responsive interaction with goal-driven progressions and crisp visual feedback.",
         details:
-            "MathSprint turns skill-building into a pacing challenge, rewarding accuracy, speed, and smart play across every round.",
+            "I built a timed review loop to make math practice feel energetic without sacrificing clarity. The idea was to reward accuracy and pace while keeping the experience readable, fast, and motivating for repeated practice.",
         status: "Live",
         tags: ["JavaScript", "Game", "Web"],
         href: "https://math-sprint-arena.vercel.app",
         repo: "https://github.com/Sac-da-ROOK",
         githubUrl: "https://github.com/Sac-da-ROOK",
-        screenshot: "/images/featured/math-sprint-arena-1.svg",
+        screenshot: "/images/featured/math-sprint-arena-2.svg",
         gallery: [
-            "/images/featured/math-sprint-arena-1.svg",
             "/images/featured/math-sprint-arena-2.svg",
+            "/images/featured/math-sprint-arena-1.svg",
             "/images/featured/math-sprint-arena-3.svg"
         ],
         featured: true,

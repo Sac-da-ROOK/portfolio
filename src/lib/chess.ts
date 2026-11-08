@@ -11,10 +11,63 @@ type UsChessMemberEventsResponse = {
     }>;
 };
 
+type UsChessMemberGamesResponse = {
+    items: Array<{
+        section?: {
+            id: string;
+            number: number;
+            name: string;
+        };
+        event?: {
+            id: string;
+            name: string;
+            startDate: string;
+            endDate: string;
+            stateCode?: string;
+        };
+        player?: {
+            color?: string;
+            outcome?: string;
+        };
+        opponent?: {
+            id: string;
+            firstName?: string;
+            lastName?: string;
+            stateRep?: string;
+            color?: string;
+            outcome?: string;
+        };
+    }>;
+    offset: number;
+    pageSize: number;
+    hasPreviousPage: boolean;
+    hasNextPage: boolean;
+};
+
 export async function fetchTournamentHistoryCount(): Promise<number> {
     try {
         const events = await fetchUsChessJson<UsChessMemberEventsResponse>(`/members/${US_CHESS_MEMBER_ID}/events?Offset=0&Size=1000`);
         return events.items?.length ?? 0;
+    } catch {
+        return 0;
+    }
+}
+
+export async function fetchMatchesPlayedCount(): Promise<number> {
+    try {
+        let total = 0;
+        let offset = 0;
+
+        while (true) {
+            const games = await fetchUsChessJson<UsChessMemberGamesResponse>(`/members/${US_CHESS_MEMBER_ID}/games?Offset=${offset}&Size=100`);
+            total += games.items?.length ?? 0;
+
+            if (!games.hasNextPage) {
+                return total;
+            }
+
+            offset += games.pageSize ?? 100;
+        }
     } catch {
         return 0;
     }

@@ -1,4 +1,4 @@
-import { fetchTournamentHistoryCount } from "@/lib/chess";
+import { fetchMatchesPlayedCount } from "@/lib/chess";
 
 export type PublicProjectRecord = {
     id: string;
@@ -71,8 +71,8 @@ export const publicBookRecords: PublicBookRecord[] = [
 export const statDefinitions = {
     projects:
         "Completed public projects currently documented on the site. Prototype and concept builds are excluded from the main completed-project total unless they are explicitly marked as complete.",
-    tournaments:
-        "The total number of completed US Chess tournaments in the public tournament history for this profile, as listed on the official player record.",
+    chessMatchesPlayed:
+        "The total number of individual chess games played across every tournament and section in the official US Chess history for this profile.",
     awards:
         "Publicly verified awards or recognized results linked to official documentation. Participation-only certificates are not counted here.",
     books:
@@ -80,11 +80,11 @@ export const statDefinitions = {
 } as const;
 
 export async function getWebsiteStats() {
-    const tournaments = await fetchTournamentHistoryCount();
+    const chessMatchesPlayed = await fetchMatchesPlayedCount();
 
     return {
         projects: publicProjectRecords.filter((project) => project.isPublic && ["Completed", "Active"].includes(project.status)).length,
-        tournaments,
+        chessMatchesPlayed,
         awards: 21,
         books: publicBookRecords.filter((entry) => entry.isPublic && entry.status === "Completed").length
     };
@@ -101,10 +101,10 @@ export async function getHeroStats() {
             definition: statDefinitions.projects
         },
         {
-            label: "Tournaments",
-            value: String(websiteStats.tournaments),
+            label: "Chess Matches Played",
+            value: String(websiteStats.chessMatchesPlayed),
             href: "https://ratings.uschess.org/player/31082517",
-            definition: statDefinitions.tournaments
+            definition: statDefinitions.chessMatchesPlayed
         },
         {
             label: "Books",
